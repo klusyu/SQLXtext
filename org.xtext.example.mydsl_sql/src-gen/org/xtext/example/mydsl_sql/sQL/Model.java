@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}</li>
  *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getInsert <em>Insert</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getCreate <em>Create</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel()
@@ -67,5 +69,49 @@ public interface Model extends EObject
    * @generated
    */
   void setQuery(SelectQuery value);
+
+  /**
+   * Returns the value of the '<em><b>Insert</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Insert</em>' containment reference.
+   * @see #setInsert(InsertStatement)
+   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Insert()
+   * @model containment="true"
+   * @generated
+   */
+  InsertStatement getInsert();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getInsert <em>Insert</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Insert</em>' containment reference.
+   * @see #getInsert()
+   * @generated
+   */
+  void setInsert(InsertStatement value);
+
+  /**
+   * Returns the value of the '<em><b>Create</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Create</em>' containment reference.
+   * @see #setCreate(CreateTableStatement)
+   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Create()
+   * @model containment="true"
+   * @generated
+   */
+  CreateTableStatement getCreate();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getCreate <em>Create</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Create</em>' containment reference.
+   * @see #getCreate()
+   * @generated
+   */
+  void setCreate(CreateTableStatement value);
 
 } // Model

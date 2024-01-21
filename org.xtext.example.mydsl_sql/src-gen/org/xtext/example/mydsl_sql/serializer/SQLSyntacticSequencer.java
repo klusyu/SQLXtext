@@ -22,6 +22,8 @@ import org.xtext.example.mydsl_sql.services.SQLGrammarAccess;
 public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SQLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_CreateTableStatement___IFKeyword_2_0_NOTKeyword_2_1_EXISTSKeyword_2_2__q;
+	protected AbstractElementAlias match_KeyDefinition_CommaKeyword_4_1_q;
 	protected AbstractElementAlias match_Model_JRNPARAMTerminalRuleCall_0_q;
 	protected AbstractElementAlias match_OpFunctionArgAgregate_ALLKeyword_0_0_or_DISTINCTKeyword_0_1;
 	protected AbstractElementAlias match_OperandGroup_LeftParenthesisKeyword_1_0_q;
@@ -33,6 +35,7 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_PivotTable_XMLKeyword_1_q;
 	protected AbstractElementAlias match_Select_DISTINCTKeyword_1_q;
 	protected AbstractElementAlias match_Select___TOPKeyword_2_0___INTTerminalRuleCall_2_1_0_or_SIGNED_DOUBLETerminalRuleCall_2_1_1___PERCENTKeyword_2_2_q___WITHKeyword_2_3_0_TIESKeyword_2_3_1__q__q;
+	protected AbstractElementAlias match_TtlDefinition_DAYSKeyword_3_1_or_HOURSKeyword_3_0;
 	protected AbstractElementAlias match_UnpivotTable_____EXCLUDEKeyword_1_0_1_or_INCLUDEKeyword_1_0_0___NULLSKeyword_1_1__q;
 	protected AbstractElementAlias match_WindowingClauseOperandFollowing_FOLLOWINGKeyword_1_2_1_1_or_PRECEDINGKeyword_1_2_1_0;
 	protected AbstractElementAlias match_WindowingClauseOperandFollowing___CURRENTKeyword_1_1_0_ROWKeyword_1_1_1___or___UNBOUNDEDKeyword_1_0_0_FOLLOWINGKeyword_1_0_1__;
@@ -43,6 +46,8 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SQLGrammarAccess) access;
+		match_CreateTableStatement___IFKeyword_2_0_NOTKeyword_2_1_EXISTSKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreateTableStatementAccess().getIFKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getCreateTableStatementAccess().getNOTKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getCreateTableStatementAccess().getEXISTSKeyword_2_2()));
+		match_KeyDefinition_CommaKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getKeyDefinitionAccess().getCommaKeyword_4_1());
 		match_Model_JRNPARAMTerminalRuleCall_0_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getJRNPARAMTerminalRuleCall_0());
 		match_OpFunctionArgAgregate_ALLKeyword_0_0_or_DISTINCTKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOpFunctionArgAgregateAccess().getALLKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getOpFunctionArgAgregateAccess().getDISTINCTKeyword_0_1()));
 		match_OperandGroup_LeftParenthesisKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getOperandGroupAccess().getLeftParenthesisKeyword_1_0());
@@ -54,6 +59,7 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_PivotTable_XMLKeyword_1_q = new TokenAlias(false, true, grammarAccess.getPivotTableAccess().getXMLKeyword_1());
 		match_Select_DISTINCTKeyword_1_q = new TokenAlias(false, true, grammarAccess.getSelectAccess().getDISTINCTKeyword_1());
 		match_Select___TOPKeyword_2_0___INTTerminalRuleCall_2_1_0_or_SIGNED_DOUBLETerminalRuleCall_2_1_1___PERCENTKeyword_2_2_q___WITHKeyword_2_3_0_TIESKeyword_2_3_1__q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSelectAccess().getTOPKeyword_2_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSelectAccess().getINTTerminalRuleCall_2_1_0()), new TokenAlias(false, false, grammarAccess.getSelectAccess().getSIGNED_DOUBLETerminalRuleCall_2_1_1())), new TokenAlias(false, true, grammarAccess.getSelectAccess().getPERCENTKeyword_2_2()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSelectAccess().getWITHKeyword_2_3_0()), new TokenAlias(false, false, grammarAccess.getSelectAccess().getTIESKeyword_2_3_1())));
+		match_TtlDefinition_DAYSKeyword_3_1_or_HOURSKeyword_3_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTtlDefinitionAccess().getDAYSKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getTtlDefinitionAccess().getHOURSKeyword_3_0()));
 		match_UnpivotTable_____EXCLUDEKeyword_1_0_1_or_INCLUDEKeyword_1_0_0___NULLSKeyword_1_1__q = new GroupAlias(false, true, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getUnpivotTableAccess().getEXCLUDEKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getUnpivotTableAccess().getINCLUDEKeyword_1_0_0())), new TokenAlias(false, false, grammarAccess.getUnpivotTableAccess().getNULLSKeyword_1_1()));
 		match_WindowingClauseOperandFollowing_FOLLOWINGKeyword_1_2_1_1_or_PRECEDINGKeyword_1_2_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getWindowingClauseOperandFollowingAccess().getFOLLOWINGKeyword_1_2_1_1()), new TokenAlias(false, false, grammarAccess.getWindowingClauseOperandFollowingAccess().getPRECEDINGKeyword_1_2_1_0()));
 		match_WindowingClauseOperandFollowing___CURRENTKeyword_1_1_0_ROWKeyword_1_1_1___or___UNBOUNDEDKeyword_1_0_0_FOLLOWINGKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getWindowingClauseOperandFollowingAccess().getCURRENTKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getWindowingClauseOperandFollowingAccess().getROWKeyword_1_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getWindowingClauseOperandFollowingAccess().getUNBOUNDEDKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getWindowingClauseOperandFollowingAccess().getFOLLOWINGKeyword_1_0_1())));
@@ -138,7 +144,11 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Model_JRNPARAMTerminalRuleCall_0_q.equals(syntax))
+			if (match_CreateTableStatement___IFKeyword_2_0_NOTKeyword_2_1_EXISTSKeyword_2_2__q.equals(syntax))
+				emit_CreateTableStatement___IFKeyword_2_0_NOTKeyword_2_1_EXISTSKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_KeyDefinition_CommaKeyword_4_1_q.equals(syntax))
+				emit_KeyDefinition_CommaKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_JRNPARAMTerminalRuleCall_0_q.equals(syntax))
 				emit_Model_JRNPARAMTerminalRuleCall_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpFunctionArgAgregate_ALLKeyword_0_0_or_DISTINCTKeyword_0_1.equals(syntax))
 				emit_OpFunctionArgAgregate_ALLKeyword_0_0_or_DISTINCTKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -160,6 +170,8 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Select_DISTINCTKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Select___TOPKeyword_2_0___INTTerminalRuleCall_2_1_0_or_SIGNED_DOUBLETerminalRuleCall_2_1_1___PERCENTKeyword_2_2_q___WITHKeyword_2_3_0_TIESKeyword_2_3_1__q__q.equals(syntax))
 				emit_Select___TOPKeyword_2_0___INTTerminalRuleCall_2_1_0_or_SIGNED_DOUBLETerminalRuleCall_2_1_1___PERCENTKeyword_2_2_q___WITHKeyword_2_3_0_TIESKeyword_2_3_1__q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TtlDefinition_DAYSKeyword_3_1_or_HOURSKeyword_3_0.equals(syntax))
+				emit_TtlDefinition_DAYSKeyword_3_1_or_HOURSKeyword_3_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_UnpivotTable_____EXCLUDEKeyword_1_0_1_or_INCLUDEKeyword_1_0_0___NULLSKeyword_1_1__q.equals(syntax))
 				emit_UnpivotTable_____EXCLUDEKeyword_1_0_1_or_INCLUDEKeyword_1_0_0___NULLSKeyword_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_WindowingClauseOperandFollowing_FOLLOWINGKeyword_1_2_1_1_or_PRECEDINGKeyword_1_2_1_0.equals(syntax))
@@ -179,9 +191,41 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     ('IF' 'NOT' 'EXISTS')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'CREATE' 'TABLE' (ambiguity) tbl=Tables
+	 
+	 * </pre>
+	 */
+	protected void emit_CreateTableStatement___IFKeyword_2_0_NOTKeyword_2_1_EXISTSKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shard_key_definition=ShardKeyDefinition (ambiguity) ')' (rule end)
+	 *     shard_key_definition=ShardKeyDefinition (ambiguity) ')' ttl_definition=TtlDefinition
+	 *     shard_key_definition=ShardKeyDefinition (ambiguity) id_list_with_size=IDListWithSize
+	 
+	 * </pre>
+	 */
+	protected void emit_KeyDefinition_CommaKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     JRNPARAM?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) create=CreateTableStatement
+	 *     (rule start) (ambiguity) insert=InsertStatement
 	 *     (rule start) (ambiguity) query=SelectQuery
 	 *     (rule start) (ambiguity) wq=WithQuery
 	 
@@ -340,6 +384,20 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Select___TOPKeyword_2_0___INTTerminalRuleCall_2_1_0_or_SIGNED_DOUBLETerminalRuleCall_2_1_1___PERCENTKeyword_2_2_q___WITHKeyword_2_3_0_TIESKeyword_2_3_1__q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'HOURS' | 'DAYS'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     integer=INT (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TtlDefinition_DAYSKeyword_3_1_or_HOURSKeyword_3_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

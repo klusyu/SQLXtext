@@ -45,6 +45,46 @@
     <genClasses ecoreClass="SQL.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Model/wq"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Model/query"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Model/insert"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Model/create"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//InsertStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertStatement/tbl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertStatement/cols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertStatement/vals"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//CreateTableStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//CreateTableStatement/tbl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//CreateTableStatement/table_definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//CreateTableStatement/ttl_definition"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//TableDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableDefinition/column_definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableDefinition/key_definition"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//ColumnDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//ColumnDefinition/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//ColumnDefinition/type_definition"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//KeyDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//KeyDefinition/shard_key_definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//KeyDefinition/id_list_with_size"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//KeyDefinition/ttl_definition"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//IDListWithSize">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//IDListWithSize/id_with_size"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//IDWithSize">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//IDWithSize/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//IDWithSize/storage_size"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//StorageSize"/>
+    <genClasses ecoreClass="SQL.ecore#//ShardKeyDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//ShardKeyDefinition/id_list_with_size"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//TtlDefinition"/>
+    <genClasses ecoreClass="SQL.ecore#//RegionDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//RegionDefinition/region_name"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//WithQuery">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//WithQuery/w"/>

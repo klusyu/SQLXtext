@@ -19,11 +19,13 @@ import org.xtext.example.mydsl_sql.sQL.AnalyticClause;
 import org.xtext.example.mydsl_sql.sQL.AnalyticExprArg;
 import org.xtext.example.mydsl_sql.sQL.Between;
 import org.xtext.example.mydsl_sql.sQL.Col;
+import org.xtext.example.mydsl_sql.sQL.ColumnDefinition;
 import org.xtext.example.mydsl_sql.sQL.ColumnNames;
 import org.xtext.example.mydsl_sql.sQL.ColumnOperand;
 import org.xtext.example.mydsl_sql.sQL.ColumnOrAlias;
 import org.xtext.example.mydsl_sql.sQL.Comparison;
 import org.xtext.example.mydsl_sql.sQL.Concat;
+import org.xtext.example.mydsl_sql.sQL.CreateTableStatement;
 import org.xtext.example.mydsl_sql.sQL.DbObjectName;
 import org.xtext.example.mydsl_sql.sQL.DbObjectNameAll;
 import org.xtext.example.mydsl_sql.sQL.Division;
@@ -39,10 +41,14 @@ import org.xtext.example.mydsl_sql.sQL.FullExpression;
 import org.xtext.example.mydsl_sql.sQL.FunctionAnalytical;
 import org.xtext.example.mydsl_sql.sQL.FunctionExtract;
 import org.xtext.example.mydsl_sql.sQL.GroupByColumnFull;
+import org.xtext.example.mydsl_sql.sQL.IDListWithSize;
+import org.xtext.example.mydsl_sql.sQL.IDWithSize;
 import org.xtext.example.mydsl_sql.sQL.InOper;
+import org.xtext.example.mydsl_sql.sQL.InsertStatement;
 import org.xtext.example.mydsl_sql.sQL.IntegerValue;
 import org.xtext.example.mydsl_sql.sQL.JRParameter;
 import org.xtext.example.mydsl_sql.sQL.JoinCondition;
+import org.xtext.example.mydsl_sql.sQL.KeyDefinition;
 import org.xtext.example.mydsl_sql.sQL.Like;
 import org.xtext.example.mydsl_sql.sQL.LikeOperand;
 import org.xtext.example.mydsl_sql.sQL.Limit;
@@ -74,6 +80,7 @@ import org.xtext.example.mydsl_sql.sQL.PivotTable;
 import org.xtext.example.mydsl_sql.sQL.Plus;
 import org.xtext.example.mydsl_sql.sQL.Prms;
 import org.xtext.example.mydsl_sql.sQL.QueryPartitionClause;
+import org.xtext.example.mydsl_sql.sQL.RegionDefinition;
 import org.xtext.example.mydsl_sql.sQL.Row;
 import org.xtext.example.mydsl_sql.sQL.RowValue;
 import org.xtext.example.mydsl_sql.sQL.RowValues;
@@ -83,8 +90,10 @@ import org.xtext.example.mydsl_sql.sQL.SQLPackage;
 import org.xtext.example.mydsl_sql.sQL.ScalarOperand;
 import org.xtext.example.mydsl_sql.sQL.Select;
 import org.xtext.example.mydsl_sql.sQL.SelectSubSet;
+import org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition;
 import org.xtext.example.mydsl_sql.sQL.SqlCaseWhen;
 import org.xtext.example.mydsl_sql.sQL.SubQueryOperand;
+import org.xtext.example.mydsl_sql.sQL.TableDefinition;
 import org.xtext.example.mydsl_sql.sQL.TableOrAlias;
 import org.xtext.example.mydsl_sql.sQL.UnipivotInClause;
 import org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg;
@@ -134,6 +143,9 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.COL:
 				sequence_ColumnFull(context, (Col) semanticObject); 
 				return; 
+			case SQLPackage.COLUMN_DEFINITION:
+				sequence_ColumnDefinition(context, (ColumnDefinition) semanticObject); 
+				return; 
 			case SQLPackage.COLUMN_NAMES:
 				sequence_ColumnName(context, (ColumnNames) semanticObject); 
 				return; 
@@ -148,6 +160,9 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case SQLPackage.CONCAT:
 				sequence_Operand(context, (Concat) semanticObject); 
+				return; 
+			case SQLPackage.CREATE_TABLE_STATEMENT:
+				sequence_CreateTableStatement(context, (CreateTableStatement) semanticObject); 
 				return; 
 			case SQLPackage.DB_OBJECT_NAME:
 				sequence_DbObjectName(context, (DbObjectName) semanticObject); 
@@ -207,8 +222,17 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.GROUP_BY_COLUMN_FULL:
 				sequence_GroupByColumnFull(context, (GroupByColumnFull) semanticObject); 
 				return; 
+			case SQLPackage.ID_LIST_WITH_SIZE:
+				sequence_IDListWithSize(context, (IDListWithSize) semanticObject); 
+				return; 
+			case SQLPackage.ID_WITH_SIZE:
+				sequence_IDWithSize(context, (IDWithSize) semanticObject); 
+				return; 
 			case SQLPackage.IN_OPER:
 				sequence_InOperator(context, (InOper) semanticObject); 
+				return; 
+			case SQLPackage.INSERT_STATEMENT:
+				sequence_InsertStatement(context, (InsertStatement) semanticObject); 
 				return; 
 			case SQLPackage.INTEGER_VALUE:
 				sequence_IntegerValue(context, (IntegerValue) semanticObject); 
@@ -218,6 +242,9 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case SQLPackage.JOIN_CONDITION:
 				sequence_JoinCondition(context, (JoinCondition) semanticObject); 
+				return; 
+			case SQLPackage.KEY_DEFINITION:
+				sequence_KeyDefinition(context, (KeyDefinition) semanticObject); 
 				return; 
 			case SQLPackage.LIKE:
 				sequence_Like(context, (Like) semanticObject); 
@@ -319,6 +346,9 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.QUERY_PARTITION_CLAUSE:
 				sequence_QueryPartitionClause(context, (QueryPartitionClause) semanticObject); 
 				return; 
+			case SQLPackage.REGION_DEFINITION:
+				sequence_RegionDefinition(context, (RegionDefinition) semanticObject); 
+				return; 
 			case SQLPackage.ROW:
 				sequence_Row(context, (Row) semanticObject); 
 				return; 
@@ -362,11 +392,17 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.SELECT_SUB_SET:
 				sequence_SelectSubSet(context, (SelectSubSet) semanticObject); 
 				return; 
+			case SQLPackage.SHARD_KEY_DEFINITION:
+				sequence_ShardKeyDefinition(context, (ShardKeyDefinition) semanticObject); 
+				return; 
 			case SQLPackage.SQL_CASE_WHEN:
 				sequence_SqlCaseWhen(context, (SqlCaseWhen) semanticObject); 
 				return; 
 			case SQLPackage.SUB_QUERY_OPERAND:
 				sequence_SubQueryOperand(context, (SubQueryOperand) semanticObject); 
+				return; 
+			case SQLPackage.TABLE_DEFINITION:
+				sequence_TableDefinition(context, (TableDefinition) semanticObject); 
 				return; 
 			case SQLPackage.TABLE_OR_ALIAS:
 				sequence_TableOrAlias(context, (TableOrAlias) semanticObject); 
@@ -509,6 +545,29 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ColumnDefinition returns ColumnDefinition
+	 *
+	 * Constraint:
+	 *     (id=ID type_definition=TypeDefinition)
+	 * </pre>
+	 */
+	protected void sequence_ColumnDefinition(ISerializationContext context, ColumnDefinition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.COLUMN_DEFINITION__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.COLUMN_DEFINITION__ID));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.COLUMN_DEFINITION__TYPE_DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.COLUMN_DEFINITION__TYPE_DEFINITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getColumnDefinitionAccess().getIdIDTerminalRuleCall_0_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getColumnDefinitionAccess().getType_definitionTypeDefinitionParserRuleCall_1_0(), semanticObject.getType_definition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ColumnFull returns Col
 	 *     PivotForClause returns Col
 	 *
@@ -612,6 +671,20 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_Comparison(ISerializationContext context, Comparison semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CreateTableStatement returns CreateTableStatement
+	 *
+	 * Constraint:
+	 *     (tbl=Tables table_definition=TableDefinition ttl_definition=TtlDefinition?)
+	 * </pre>
+	 */
+	protected void sequence_CreateTableStatement(ISerializationContext context, CreateTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -969,6 +1042,34 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     IDListWithSize returns IDListWithSize
+	 *
+	 * Constraint:
+	 *     (id_with_size+=IDWithSize id_with_size+=IDWithSize*)
+	 * </pre>
+	 */
+	protected void sequence_IDListWithSize(ISerializationContext context, IDListWithSize semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     IDWithSize returns IDWithSize
+	 *
+	 * Constraint:
+	 *     (id=ID storage_size=StorageSize?)
+	 * </pre>
+	 */
+	protected void sequence_IDWithSize(ISerializationContext context, IDWithSize semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     InOperator returns InOper
 	 *
 	 * Constraint:
@@ -983,6 +1084,34 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     InsertStatement returns InsertStatement
+	 *
+	 * Constraint:
+	 *     (tbl=Tables cols=Columns vals=Values)
+	 * </pre>
+	 */
+	protected void sequence_InsertStatement(ISerializationContext context, InsertStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__TBL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__TBL));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__COLS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__COLS));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__VALS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__VALS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getInsertStatementAccess().getTblTablesParserRuleCall_2_0(), semanticObject.getTbl());
+		feeder.accept(grammarAccess.getInsertStatementAccess().getColsColumnsParserRuleCall_3_0(), semanticObject.getCols());
+		feeder.accept(grammarAccess.getInsertStatementAccess().getValsValuesParserRuleCall_4_0(), semanticObject.getVals());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     StorageSize returns IntegerValue
+	 *     TtlDefinition returns IntegerValue
 	 *     IntegerValue returns IntegerValue
 	 *
 	 * Constraint:
@@ -1045,6 +1174,20 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     KeyDefinition returns KeyDefinition
+	 *
+	 * Constraint:
+	 *     (shard_key_definition=ShardKeyDefinition? id_list_with_size=IDListWithSize? ttl_definition=TtlDefinition?)
+	 * </pre>
+	 */
+	protected void sequence_KeyDefinition(ISerializationContext context, KeyDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     LikeOperand returns LikeOperand
 	 *
 	 * Constraint:
@@ -1099,7 +1242,7 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (wq=WithQuery? query=SelectQuery)
+	 *     (wq=WithQuery? (query=SelectQuery | insert=InsertStatement | create=CreateTableStatement))
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -1640,6 +1783,20 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     RegionDefinition returns RegionDefinition
+	 *
+	 * Constraint:
+	 *     region_name+=STRING
+	 * </pre>
+	 */
+	protected void sequence_RegionDefinition(ISerializationContext context, RegionDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     RowValues returns RowValue
 	 *     RowValues.RowValues_1_0 returns RowValue
 	 *     RowValue returns RowValue
@@ -1838,6 +1995,26 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ShardKeyDefinition returns ShardKeyDefinition
+	 *
+	 * Constraint:
+	 *     id_list_with_size=IDListWithSize
+	 * </pre>
+	 */
+	protected void sequence_ShardKeyDefinition(ISerializationContext context, ShardKeyDefinition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.SHARD_KEY_DEFINITION__ID_LIST_WITH_SIZE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.SHARD_KEY_DEFINITION__ID_LIST_WITH_SIZE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getShardKeyDefinitionAccess().getId_list_with_sizeIDListWithSizeParserRuleCall_2_0(), semanticObject.getId_list_with_size());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     SQLCaseWhens returns SqlCaseWhen
 	 *     SQLCaseWhens.WhenList_1_0 returns SqlCaseWhen
 	 *     SqlCaseWhen returns SqlCaseWhen
@@ -1868,6 +2045,24 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSubQueryOperandAccess().getSelSelectQueryParserRuleCall_2_0(), semanticObject.getSel());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TableDefinition returns TableDefinition
+	 *
+	 * Constraint:
+	 *     (
+	 *         (column_definition+=ColumnDefinition | key_definition+=KeyDefinition) 
+	 *         column_definition+=ColumnDefinition? 
+	 *         (key_definition+=KeyDefinition? column_definition+=ColumnDefinition?)*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_TableDefinition(ISerializationContext context, TableDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -81,6 +81,61 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseInsertStatement(InsertStatement object)
+      {
+        return createInsertStatementAdapter();
+      }
+      @Override
+      public Adapter caseCreateTableStatement(CreateTableStatement object)
+      {
+        return createCreateTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseTableDefinition(TableDefinition object)
+      {
+        return createTableDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseColumnDefinition(ColumnDefinition object)
+      {
+        return createColumnDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseKeyDefinition(KeyDefinition object)
+      {
+        return createKeyDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseIDListWithSize(IDListWithSize object)
+      {
+        return createIDListWithSizeAdapter();
+      }
+      @Override
+      public Adapter caseIDWithSize(IDWithSize object)
+      {
+        return createIDWithSizeAdapter();
+      }
+      @Override
+      public Adapter caseStorageSize(StorageSize object)
+      {
+        return createStorageSizeAdapter();
+      }
+      @Override
+      public Adapter caseShardKeyDefinition(ShardKeyDefinition object)
+      {
+        return createShardKeyDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseTtlDefinition(TtlDefinition object)
+      {
+        return createTtlDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseRegionDefinition(RegionDefinition object)
+      {
+        return createRegionDefinitionAdapter();
+      }
+      @Override
       public Adapter caseWithQuery(WithQuery object)
       {
         return createWithQueryAdapter();
@@ -643,6 +698,171 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.InsertStatement <em>Insert Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.InsertStatement
+   * @generated
+   */
+  public Adapter createInsertStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.CreateTableStatement <em>Create Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.CreateTableStatement
+   * @generated
+   */
+  public Adapter createCreateTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableDefinition <em>Table Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.TableDefinition
+   * @generated
+   */
+  public Adapter createTableDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ColumnDefinition <em>Column Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnDefinition
+   * @generated
+   */
+  public Adapter createColumnDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.KeyDefinition <em>Key Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.KeyDefinition
+   * @generated
+   */
+  public Adapter createKeyDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.IDListWithSize <em>ID List With Size</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.IDListWithSize
+   * @generated
+   */
+  public Adapter createIDListWithSizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.IDWithSize <em>ID With Size</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.IDWithSize
+   * @generated
+   */
+  public Adapter createIDWithSizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.StorageSize <em>Storage Size</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.StorageSize
+   * @generated
+   */
+  public Adapter createStorageSizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition <em>Shard Key Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition
+   * @generated
+   */
+  public Adapter createShardKeyDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TtlDefinition <em>Ttl Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.TtlDefinition
+   * @generated
+   */
+  public Adapter createTtlDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.RegionDefinition <em>Region Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.RegionDefinition
+   * @generated
+   */
+  public Adapter createRegionDefinitionAdapter()
   {
     return null;
   }

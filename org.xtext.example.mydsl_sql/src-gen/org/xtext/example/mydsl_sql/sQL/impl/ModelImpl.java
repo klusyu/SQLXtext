@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl_sql.sQL.CreateTableStatement;
+import org.xtext.example.mydsl_sql.sQL.InsertStatement;
 import org.xtext.example.mydsl_sql.sQL.Model;
 import org.xtext.example.mydsl_sql.sQL.SQLPackage;
 import org.xtext.example.mydsl_sql.sQL.SelectQuery;
@@ -27,6 +29,8 @@ import org.xtext.example.mydsl_sql.sQL.WithQuery;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getWq <em>Wq</em>}</li>
  *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getQuery <em>Query</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getInsert <em>Insert</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getCreate <em>Create</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +56,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected SelectQuery query;
+
+  /**
+   * The cached value of the '{@link #getInsert() <em>Insert</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInsert()
+   * @generated
+   * @ordered
+   */
+  protected InsertStatement insert;
+
+  /**
+   * The cached value of the '{@link #getCreate() <em>Create</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCreate()
+   * @generated
+   * @ordered
+   */
+  protected CreateTableStatement create;
 
   /**
    * <!-- begin-user-doc -->
@@ -180,6 +204,106 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public InsertStatement getInsert()
+  {
+    return insert;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetInsert(InsertStatement newInsert, NotificationChain msgs)
+  {
+    InsertStatement oldInsert = insert;
+    insert = newInsert;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__INSERT, oldInsert, newInsert);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setInsert(InsertStatement newInsert)
+  {
+    if (newInsert != insert)
+    {
+      NotificationChain msgs = null;
+      if (insert != null)
+        msgs = ((InternalEObject)insert).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__INSERT, null, msgs);
+      if (newInsert != null)
+        msgs = ((InternalEObject)newInsert).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__INSERT, null, msgs);
+      msgs = basicSetInsert(newInsert, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__INSERT, newInsert, newInsert));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CreateTableStatement getCreate()
+  {
+    return create;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCreate(CreateTableStatement newCreate, NotificationChain msgs)
+  {
+    CreateTableStatement oldCreate = create;
+    create = newCreate;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__CREATE, oldCreate, newCreate);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCreate(CreateTableStatement newCreate)
+  {
+    if (newCreate != create)
+    {
+      NotificationChain msgs = null;
+      if (create != null)
+        msgs = ((InternalEObject)create).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__CREATE, null, msgs);
+      if (newCreate != null)
+        msgs = ((InternalEObject)newCreate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__CREATE, null, msgs);
+      msgs = basicSetCreate(newCreate, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__CREATE, newCreate, newCreate));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -188,6 +312,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return basicSetWq(null, msgs);
       case SQLPackage.MODEL__QUERY:
         return basicSetQuery(null, msgs);
+      case SQLPackage.MODEL__INSERT:
+        return basicSetInsert(null, msgs);
+      case SQLPackage.MODEL__CREATE:
+        return basicSetCreate(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -206,6 +334,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getWq();
       case SQLPackage.MODEL__QUERY:
         return getQuery();
+      case SQLPackage.MODEL__INSERT:
+        return getInsert();
+      case SQLPackage.MODEL__CREATE:
+        return getCreate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -225,6 +357,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case SQLPackage.MODEL__QUERY:
         setQuery((SelectQuery)newValue);
+        return;
+      case SQLPackage.MODEL__INSERT:
+        setInsert((InsertStatement)newValue);
+        return;
+      case SQLPackage.MODEL__CREATE:
+        setCreate((CreateTableStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -246,6 +384,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SQLPackage.MODEL__QUERY:
         setQuery((SelectQuery)null);
         return;
+      case SQLPackage.MODEL__INSERT:
+        setInsert((InsertStatement)null);
+        return;
+      case SQLPackage.MODEL__CREATE:
+        setCreate((CreateTableStatement)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -264,6 +408,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return wq != null;
       case SQLPackage.MODEL__QUERY:
         return query != null;
+      case SQLPackage.MODEL__INSERT:
+        return insert != null;
+      case SQLPackage.MODEL__CREATE:
+        return create != null;
     }
     return super.eIsSet(featureID);
   }

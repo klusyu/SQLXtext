@@ -80,6 +80,83 @@ public class SQLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SQLPackage.INSERT_STATEMENT:
+      {
+        InsertStatement insertStatement = (InsertStatement)theEObject;
+        T result = caseInsertStatement(insertStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.CREATE_TABLE_STATEMENT:
+      {
+        CreateTableStatement createTableStatement = (CreateTableStatement)theEObject;
+        T result = caseCreateTableStatement(createTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.TABLE_DEFINITION:
+      {
+        TableDefinition tableDefinition = (TableDefinition)theEObject;
+        T result = caseTableDefinition(tableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.COLUMN_DEFINITION:
+      {
+        ColumnDefinition columnDefinition = (ColumnDefinition)theEObject;
+        T result = caseColumnDefinition(columnDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.KEY_DEFINITION:
+      {
+        KeyDefinition keyDefinition = (KeyDefinition)theEObject;
+        T result = caseKeyDefinition(keyDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.ID_LIST_WITH_SIZE:
+      {
+        IDListWithSize idListWithSize = (IDListWithSize)theEObject;
+        T result = caseIDListWithSize(idListWithSize);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.ID_WITH_SIZE:
+      {
+        IDWithSize idWithSize = (IDWithSize)theEObject;
+        T result = caseIDWithSize(idWithSize);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.STORAGE_SIZE:
+      {
+        StorageSize storageSize = (StorageSize)theEObject;
+        T result = caseStorageSize(storageSize);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.SHARD_KEY_DEFINITION:
+      {
+        ShardKeyDefinition shardKeyDefinition = (ShardKeyDefinition)theEObject;
+        T result = caseShardKeyDefinition(shardKeyDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.TTL_DEFINITION:
+      {
+        TtlDefinition ttlDefinition = (TtlDefinition)theEObject;
+        T result = caseTtlDefinition(ttlDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.REGION_DEFINITION:
+      {
+        RegionDefinition regionDefinition = (RegionDefinition)theEObject;
+        T result = caseRegionDefinition(regionDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SQLPackage.WITH_QUERY:
       {
         WithQuery withQuery = (WithQuery)theEObject;
@@ -733,6 +810,8 @@ public class SQLSwitch<T> extends Switch<T>
       {
         IntegerValue integerValue = (IntegerValue)theEObject;
         T result = caseIntegerValue(integerValue);
+        if (result == null) result = caseStorageSize(integerValue);
+        if (result == null) result = caseTtlDefinition(integerValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -906,6 +985,182 @@ public class SQLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Insert Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Insert Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInsertStatement(InsertStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Table Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateTableStatement(CreateTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Table Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Table Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTableDefinition(TableDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Column Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Column Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColumnDefinition(ColumnDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Key Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Key Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseKeyDefinition(KeyDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ID List With Size</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ID List With Size</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIDListWithSize(IDListWithSize object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ID With Size</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ID With Size</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIDWithSize(IDWithSize object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Storage Size</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Storage Size</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStorageSize(StorageSize object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Shard Key Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Shard Key Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseShardKeyDefinition(ShardKeyDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ttl Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ttl Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTtlDefinition(TtlDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Region Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Region Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRegionDefinition(RegionDefinition object)
   {
     return null;
   }

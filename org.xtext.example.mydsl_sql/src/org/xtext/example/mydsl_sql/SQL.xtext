@@ -5,7 +5,27 @@ generate sQL "http://www.xtext.org/example/mydsl_sql/SQL"
 
 
 Model:
-	JRNPARAM? wq=WithQuery? query=SelectQuery;
+	JRNPARAM? wq=WithQuery? (query=SelectQuery | insert=InsertStatement | create=CreateStatement);
+
+InsertStatement:
+	'INSERT' 'INTO' tbl=Tables cols=Columns vals=Values
+;
+
+CreateStatement:
+	'CREATE' create_tbl=CreateTable
+;
+
+CreateTable:
+	('TEMPORARY')? 'TABLE' ine=IfNotExists? tableName=TableOrAlias (
+        ('(' tableElementList ')')? createTableOptions? partitionClause? duplicateAsQueryExpression?
+        | 'LIKE' tableRef
+        | '(' 'LIKE' tableRef ')'
+    )
+;
+
+IfNotExists:
+    'IF' 'NOT' 'EXISTS'
+;
 
 WithQuery:
 	w='WITH' wname=DbObjectName withCols=(WithColumns)? 'AS' '(' query=SelectQuery ')' (',' additionalWname+=DbObjectName additionalWithCols+=(WithColumns)? 'AS' '(' additionalQueries+=SelectQuery ')')*;

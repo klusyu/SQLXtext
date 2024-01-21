@@ -33,6 +33,105 @@ public interface SQLFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Insert Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Insert Statement</em>'.
+   * @generated
+   */
+  InsertStatement createInsertStatement();
+
+  /**
+   * Returns a new object of class '<em>Create Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Table Statement</em>'.
+   * @generated
+   */
+  CreateTableStatement createCreateTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Table Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Table Definition</em>'.
+   * @generated
+   */
+  TableDefinition createTableDefinition();
+
+  /**
+   * Returns a new object of class '<em>Column Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Column Definition</em>'.
+   * @generated
+   */
+  ColumnDefinition createColumnDefinition();
+
+  /**
+   * Returns a new object of class '<em>Key Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Key Definition</em>'.
+   * @generated
+   */
+  KeyDefinition createKeyDefinition();
+
+  /**
+   * Returns a new object of class '<em>ID List With Size</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ID List With Size</em>'.
+   * @generated
+   */
+  IDListWithSize createIDListWithSize();
+
+  /**
+   * Returns a new object of class '<em>ID With Size</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ID With Size</em>'.
+   * @generated
+   */
+  IDWithSize createIDWithSize();
+
+  /**
+   * Returns a new object of class '<em>Storage Size</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Storage Size</em>'.
+   * @generated
+   */
+  StorageSize createStorageSize();
+
+  /**
+   * Returns a new object of class '<em>Shard Key Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Shard Key Definition</em>'.
+   * @generated
+   */
+  ShardKeyDefinition createShardKeyDefinition();
+
+  /**
+   * Returns a new object of class '<em>Ttl Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ttl Definition</em>'.
+   * @generated
+   */
+  TtlDefinition createTtlDefinition();
+
+  /**
+   * Returns a new object of class '<em>Region Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Region Definition</em>'.
+   * @generated
+   */
+  RegionDefinition createRegionDefinition();
+
+  /**
    * Returns a new object of class '<em>With Query</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

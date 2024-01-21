@@ -67,6 +67,17 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
     switch (eClass.getClassifierID())
     {
       case SQLPackage.MODEL: return createModel();
+      case SQLPackage.INSERT_STATEMENT: return createInsertStatement();
+      case SQLPackage.CREATE_TABLE_STATEMENT: return createCreateTableStatement();
+      case SQLPackage.TABLE_DEFINITION: return createTableDefinition();
+      case SQLPackage.COLUMN_DEFINITION: return createColumnDefinition();
+      case SQLPackage.KEY_DEFINITION: return createKeyDefinition();
+      case SQLPackage.ID_LIST_WITH_SIZE: return createIDListWithSize();
+      case SQLPackage.ID_WITH_SIZE: return createIDWithSize();
+      case SQLPackage.STORAGE_SIZE: return createStorageSize();
+      case SQLPackage.SHARD_KEY_DEFINITION: return createShardKeyDefinition();
+      case SQLPackage.TTL_DEFINITION: return createTtlDefinition();
+      case SQLPackage.REGION_DEFINITION: return createRegionDefinition();
       case SQLPackage.WITH_QUERY: return createWithQuery();
       case SQLPackage.WITH_COLUMNS: return createWithColumns();
       case SQLPackage.FETCH_FIRST: return createFetchFirst();
@@ -226,6 +237,138 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InsertStatement createInsertStatement()
+  {
+    InsertStatementImpl insertStatement = new InsertStatementImpl();
+    return insertStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CreateTableStatement createCreateTableStatement()
+  {
+    CreateTableStatementImpl createTableStatement = new CreateTableStatementImpl();
+    return createTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableDefinition createTableDefinition()
+  {
+    TableDefinitionImpl tableDefinition = new TableDefinitionImpl();
+    return tableDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnDefinition createColumnDefinition()
+  {
+    ColumnDefinitionImpl columnDefinition = new ColumnDefinitionImpl();
+    return columnDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public KeyDefinition createKeyDefinition()
+  {
+    KeyDefinitionImpl keyDefinition = new KeyDefinitionImpl();
+    return keyDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IDListWithSize createIDListWithSize()
+  {
+    IDListWithSizeImpl idListWithSize = new IDListWithSizeImpl();
+    return idListWithSize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IDWithSize createIDWithSize()
+  {
+    IDWithSizeImpl idWithSize = new IDWithSizeImpl();
+    return idWithSize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StorageSize createStorageSize()
+  {
+    StorageSizeImpl storageSize = new StorageSizeImpl();
+    return storageSize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ShardKeyDefinition createShardKeyDefinition()
+  {
+    ShardKeyDefinitionImpl shardKeyDefinition = new ShardKeyDefinitionImpl();
+    return shardKeyDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TtlDefinition createTtlDefinition()
+  {
+    TtlDefinitionImpl ttlDefinition = new TtlDefinitionImpl();
+    return ttlDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RegionDefinition createRegionDefinition()
+  {
+    RegionDefinitionImpl regionDefinition = new RegionDefinitionImpl();
+    return regionDefinition;
   }
 
   /**

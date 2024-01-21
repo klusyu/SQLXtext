@@ -31,6 +31,11 @@ public class SQLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SQLGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getModelAccess().getAlternatives_2(), "rule__Model__Alternatives_2");
+			builder.put(grammarAccess.getTableDefinitionAccess().getAlternatives_0(), "rule__TableDefinition__Alternatives_0");
+			builder.put(grammarAccess.getTableDefinitionAccess().getAlternatives_1_1(), "rule__TableDefinition__Alternatives_1_1");
+			builder.put(grammarAccess.getTtlDefinitionAccess().getAlternatives_3(), "rule__TtlDefinition__Alternatives_3");
+			builder.put(grammarAccess.getTypeDefinitionAccess().getAlternatives(), "rule__TypeDefinition__Alternatives");
 			builder.put(grammarAccess.getFetchFirstAccess().getRowAlternatives_1_0(), "rule__FetchFirst__RowAlternatives_1_0");
 			builder.put(grammarAccess.getLimitAccess().getAlternatives(), "rule__Limit__Alternatives");
 			builder.put(grammarAccess.getSelectSubSetAccess().getOpAlternatives_0_0(), "rule__SelectSubSet__OpAlternatives_0_0");
@@ -85,6 +90,21 @@ public class SQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getXFunctionAccess().getAlternatives(), "rule__XFunction__Alternatives");
 			builder.put(grammarAccess.getEXTRACT_VALUESAccess().getAlternatives(), "rule__EXTRACT_VALUES__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getInsertStatementAccess().getGroup(), "rule__InsertStatement__Group__0");
+			builder.put(grammarAccess.getCreateTableStatementAccess().getGroup(), "rule__CreateTableStatement__Group__0");
+			builder.put(grammarAccess.getCreateTableStatementAccess().getGroup_2(), "rule__CreateTableStatement__Group_2__0");
+			builder.put(grammarAccess.getTableDefinitionAccess().getGroup(), "rule__TableDefinition__Group__0");
+			builder.put(grammarAccess.getTableDefinitionAccess().getGroup_1(), "rule__TableDefinition__Group_1__0");
+			builder.put(grammarAccess.getColumnDefinitionAccess().getGroup(), "rule__ColumnDefinition__Group__0");
+			builder.put(grammarAccess.getKeyDefinitionAccess().getGroup(), "rule__KeyDefinition__Group__0");
+			builder.put(grammarAccess.getKeyDefinitionAccess().getGroup_4(), "rule__KeyDefinition__Group_4__0");
+			builder.put(grammarAccess.getIDListWithSizeAccess().getGroup(), "rule__IDListWithSize__Group__0");
+			builder.put(grammarAccess.getIDListWithSizeAccess().getGroup_1(), "rule__IDListWithSize__Group_1__0");
+			builder.put(grammarAccess.getIDWithSizeAccess().getGroup(), "rule__IDWithSize__Group__0");
+			builder.put(grammarAccess.getStorageSizeAccess().getGroup(), "rule__StorageSize__Group__0");
+			builder.put(grammarAccess.getShardKeyDefinitionAccess().getGroup(), "rule__ShardKeyDefinition__Group__0");
+			builder.put(grammarAccess.getTtlDefinitionAccess().getGroup(), "rule__TtlDefinition__Group__0");
+			builder.put(grammarAccess.getRegionDefinitionAccess().getGroup(), "rule__RegionDefinition__Group__0");
 			builder.put(grammarAccess.getWithQueryAccess().getGroup(), "rule__WithQuery__Group__0");
 			builder.put(grammarAccess.getWithQueryAccess().getGroup_7(), "rule__WithQuery__Group_7__0");
 			builder.put(grammarAccess.getWithColumnsAccess().getGroup(), "rule__WithColumns__Group__0");
@@ -249,7 +269,30 @@ public class SQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJoinTypeAccess().getGroup_1_1(), "rule__JoinType__Group_1_1__0");
 			builder.put(grammarAccess.getFNAMEAccess().getGroup(), "rule__FNAME__Group__0");
 			builder.put(grammarAccess.getModelAccess().getWqAssignment_1(), "rule__Model__WqAssignment_1");
-			builder.put(grammarAccess.getModelAccess().getQueryAssignment_2(), "rule__Model__QueryAssignment_2");
+			builder.put(grammarAccess.getModelAccess().getQueryAssignment_2_0(), "rule__Model__QueryAssignment_2_0");
+			builder.put(grammarAccess.getModelAccess().getInsertAssignment_2_1(), "rule__Model__InsertAssignment_2_1");
+			builder.put(grammarAccess.getModelAccess().getCreateAssignment_2_2(), "rule__Model__CreateAssignment_2_2");
+			builder.put(grammarAccess.getInsertStatementAccess().getTblAssignment_2(), "rule__InsertStatement__TblAssignment_2");
+			builder.put(grammarAccess.getInsertStatementAccess().getColsAssignment_3(), "rule__InsertStatement__ColsAssignment_3");
+			builder.put(grammarAccess.getInsertStatementAccess().getValsAssignment_4(), "rule__InsertStatement__ValsAssignment_4");
+			builder.put(grammarAccess.getCreateTableStatementAccess().getTblAssignment_3(), "rule__CreateTableStatement__TblAssignment_3");
+			builder.put(grammarAccess.getCreateTableStatementAccess().getTable_definitionAssignment_5(), "rule__CreateTableStatement__Table_definitionAssignment_5");
+			builder.put(grammarAccess.getCreateTableStatementAccess().getTtl_definitionAssignment_7(), "rule__CreateTableStatement__Ttl_definitionAssignment_7");
+			builder.put(grammarAccess.getTableDefinitionAccess().getColumn_definitionAssignment_0_0(), "rule__TableDefinition__Column_definitionAssignment_0_0");
+			builder.put(grammarAccess.getTableDefinitionAccess().getKey_definitionAssignment_0_1(), "rule__TableDefinition__Key_definitionAssignment_0_1");
+			builder.put(grammarAccess.getTableDefinitionAccess().getColumn_definitionAssignment_1_1_0(), "rule__TableDefinition__Column_definitionAssignment_1_1_0");
+			builder.put(grammarAccess.getTableDefinitionAccess().getKey_definitionAssignment_1_1_1(), "rule__TableDefinition__Key_definitionAssignment_1_1_1");
+			builder.put(grammarAccess.getColumnDefinitionAccess().getIdAssignment_0(), "rule__ColumnDefinition__IdAssignment_0");
+			builder.put(grammarAccess.getColumnDefinitionAccess().getType_definitionAssignment_1(), "rule__ColumnDefinition__Type_definitionAssignment_1");
+			builder.put(grammarAccess.getKeyDefinitionAccess().getShard_key_definitionAssignment_4_0(), "rule__KeyDefinition__Shard_key_definitionAssignment_4_0");
+			builder.put(grammarAccess.getKeyDefinitionAccess().getId_list_with_sizeAssignment_5(), "rule__KeyDefinition__Id_list_with_sizeAssignment_5");
+			builder.put(grammarAccess.getKeyDefinitionAccess().getTtl_definitionAssignment_7(), "rule__KeyDefinition__Ttl_definitionAssignment_7");
+			builder.put(grammarAccess.getIDListWithSizeAccess().getId_with_sizeAssignment_0(), "rule__IDListWithSize__Id_with_sizeAssignment_0");
+			builder.put(grammarAccess.getIDListWithSizeAccess().getId_with_sizeAssignment_1_1(), "rule__IDListWithSize__Id_with_sizeAssignment_1_1");
+			builder.put(grammarAccess.getIDWithSizeAccess().getIdAssignment_0(), "rule__IDWithSize__IdAssignment_0");
+			builder.put(grammarAccess.getIDWithSizeAccess().getStorage_sizeAssignment_1(), "rule__IDWithSize__Storage_sizeAssignment_1");
+			builder.put(grammarAccess.getShardKeyDefinitionAccess().getId_list_with_sizeAssignment_2(), "rule__ShardKeyDefinition__Id_list_with_sizeAssignment_2");
+			builder.put(grammarAccess.getRegionDefinitionAccess().getRegion_nameAssignment_2(), "rule__RegionDefinition__Region_nameAssignment_2");
 			builder.put(grammarAccess.getWithQueryAccess().getWAssignment_0(), "rule__WithQuery__WAssignment_0");
 			builder.put(grammarAccess.getWithQueryAccess().getWnameAssignment_1(), "rule__WithQuery__WnameAssignment_1");
 			builder.put(grammarAccess.getWithQueryAccess().getWithColsAssignment_2(), "rule__WithQuery__WithColsAssignment_2");
