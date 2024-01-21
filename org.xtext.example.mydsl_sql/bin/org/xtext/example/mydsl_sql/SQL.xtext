@@ -1,0 +1,9 @@
+grammar org.xtext.example.mydsl_sql.SQL with org.eclipse.xtext.common.Terminals
+
+generate sQL "http://www.xtext.org/example/mydsl_sql/SQL"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
