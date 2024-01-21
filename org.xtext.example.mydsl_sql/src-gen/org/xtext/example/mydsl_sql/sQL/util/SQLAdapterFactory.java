@@ -81,9 +81,534 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseWithQuery(WithQuery object)
       {
-        return createGreetingAdapter();
+        return createWithQueryAdapter();
+      }
+      @Override
+      public Adapter caseWithColumns(WithColumns object)
+      {
+        return createWithColumnsAdapter();
+      }
+      @Override
+      public Adapter caseFetchFirst(FetchFirst object)
+      {
+        return createFetchFirstAdapter();
+      }
+      @Override
+      public Adapter caseOffset(Offset object)
+      {
+        return createOffsetAdapter();
+      }
+      @Override
+      public Adapter caseLimit(Limit object)
+      {
+        return createLimitAdapter();
+      }
+      @Override
+      public Adapter caseSelectQuery(SelectQuery object)
+      {
+        return createSelectQueryAdapter();
+      }
+      @Override
+      public Adapter caseSelectSubSet(SelectSubSet object)
+      {
+        return createSelectSubSetAdapter();
+      }
+      @Override
+      public Adapter caseSelect(Select object)
+      {
+        return createSelectAdapter();
+      }
+      @Override
+      public Adapter caseOrColumn(OrColumn object)
+      {
+        return createOrColumnAdapter();
+      }
+      @Override
+      public Adapter caseColumnOrAlias(ColumnOrAlias object)
+      {
+        return createColumnOrAliasAdapter();
+      }
+      @Override
+      public Adapter caseColumnFull(ColumnFull object)
+      {
+        return createColumnFullAdapter();
+      }
+      @Override
+      public Adapter caseOrTable(OrTable object)
+      {
+        return createOrTableAdapter();
+      }
+      @Override
+      public Adapter caseFromTable(FromTable object)
+      {
+        return createFromTableAdapter();
+      }
+      @Override
+      public Adapter caseFromTableJoin(FromTableJoin object)
+      {
+        return createFromTableJoinAdapter();
+      }
+      @Override
+      public Adapter caseJoinCondition(JoinCondition object)
+      {
+        return createJoinConditionAdapter();
+      }
+      @Override
+      public Adapter caseUsingCols(UsingCols object)
+      {
+        return createUsingColsAdapter();
+      }
+      @Override
+      public Adapter caseTableOrAlias(TableOrAlias object)
+      {
+        return createTableOrAliasAdapter();
+      }
+      @Override
+      public Adapter caseFromValues(FromValues object)
+      {
+        return createFromValuesAdapter();
+      }
+      @Override
+      public Adapter caseFromValuesColumns(FromValuesColumns object)
+      {
+        return createFromValuesColumnsAdapter();
+      }
+      @Override
+      public Adapter caseFromValuesColumnNames(FromValuesColumnNames object)
+      {
+        return createFromValuesColumnNamesAdapter();
+      }
+      @Override
+      public Adapter caseColumnNames(ColumnNames object)
+      {
+        return createColumnNamesAdapter();
+      }
+      @Override
+      public Adapter caseValues(Values object)
+      {
+        return createValuesAdapter();
+      }
+      @Override
+      public Adapter caseRows(Rows object)
+      {
+        return createRowsAdapter();
+      }
+      @Override
+      public Adapter caseRow(Row object)
+      {
+        return createRowAdapter();
+      }
+      @Override
+      public Adapter caseRowValues(RowValues object)
+      {
+        return createRowValuesAdapter();
+      }
+      @Override
+      public Adapter caseRowValue(RowValue object)
+      {
+        return createRowValueAdapter();
+      }
+      @Override
+      public Adapter casePivotTable(PivotTable object)
+      {
+        return createPivotTableAdapter();
+      }
+      @Override
+      public Adapter casePivotFunctions(PivotFunctions object)
+      {
+        return createPivotFunctionsAdapter();
+      }
+      @Override
+      public Adapter casePivotFunction(PivotFunction object)
+      {
+        return createPivotFunctionAdapter();
+      }
+      @Override
+      public Adapter casePivotInClause(PivotInClause object)
+      {
+        return createPivotInClauseAdapter();
+      }
+      @Override
+      public Adapter caseUnpivotTable(UnpivotTable object)
+      {
+        return createUnpivotTableAdapter();
+      }
+      @Override
+      public Adapter caseUnpivotInClause(UnpivotInClause object)
+      {
+        return createUnpivotInClauseAdapter();
+      }
+      @Override
+      public Adapter caseUnpivotInClauseArgs(UnpivotInClauseArgs object)
+      {
+        return createUnpivotInClauseArgsAdapter();
+      }
+      @Override
+      public Adapter caseUnpivotInClauseArg(UnpivotInClauseArg object)
+      {
+        return createUnpivotInClauseArgAdapter();
+      }
+      @Override
+      public Adapter casePivotForClause(PivotForClause object)
+      {
+        return createPivotForClauseAdapter();
+      }
+      @Override
+      public Adapter casePivotColumns(PivotColumns object)
+      {
+        return createPivotColumnsAdapter();
+      }
+      @Override
+      public Adapter casePivots(Pivots object)
+      {
+        return createPivotsAdapter();
+      }
+      @Override
+      public Adapter casePivotCol(PivotCol object)
+      {
+        return createPivotColAdapter();
+      }
+      @Override
+      public Adapter caseTableFull(TableFull object)
+      {
+        return createTableFullAdapter();
+      }
+      @Override
+      public Adapter caseDbObjectNameAll(DbObjectNameAll object)
+      {
+        return createDbObjectNameAllAdapter();
+      }
+      @Override
+      public Adapter caseDbObjectName(DbObjectName object)
+      {
+        return createDbObjectNameAdapter();
+      }
+      @Override
+      public Adapter caseOrOrderByColumn(OrOrderByColumn object)
+      {
+        return createOrOrderByColumnAdapter();
+      }
+      @Override
+      public Adapter caseOrderByColumnFull(OrderByColumnFull object)
+      {
+        return createOrderByColumnFullAdapter();
+      }
+      @Override
+      public Adapter caseOrGroupByColumn(OrGroupByColumn object)
+      {
+        return createOrGroupByColumnAdapter();
+      }
+      @Override
+      public Adapter caseGroupByColumnFull(GroupByColumnFull object)
+      {
+        return createGroupByColumnFullAdapter();
+      }
+      @Override
+      public Adapter caseOrExpr(OrExpr object)
+      {
+        return createOrExprAdapter();
+      }
+      @Override
+      public Adapter caseFullExpression(FullExpression object)
+      {
+        return createFullExpressionAdapter();
+      }
+      @Override
+      public Adapter caseExprGroup(ExprGroup object)
+      {
+        return createExprGroupAdapter();
+      }
+      @Override
+      public Adapter caseXExpr(XExpr object)
+      {
+        return createXExprAdapter();
+      }
+      @Override
+      public Adapter casePrms(Prms object)
+      {
+        return createPrmsAdapter();
+      }
+      @Override
+      public Adapter caseJRParameter(JRParameter object)
+      {
+        return createJRParameterAdapter();
+      }
+      @Override
+      public Adapter caseComparison(Comparison object)
+      {
+        return createComparisonAdapter();
+      }
+      @Override
+      public Adapter caseLike(Like object)
+      {
+        return createLikeAdapter();
+      }
+      @Override
+      public Adapter caseLikeOperand(LikeOperand object)
+      {
+        return createLikeOperandAdapter();
+      }
+      @Override
+      public Adapter caseBetween(Between object)
+      {
+        return createBetweenAdapter();
+      }
+      @Override
+      public Adapter caseInOper(InOper object)
+      {
+        return createInOperAdapter();
+      }
+      @Override
+      public Adapter caseExistsOper(ExistsOper object)
+      {
+        return createExistsOperAdapter();
+      }
+      @Override
+      public Adapter caseOperandListGroup(OperandListGroup object)
+      {
+        return createOperandListGroupAdapter();
+      }
+      @Override
+      public Adapter caseOperandList(OperandList object)
+      {
+        return createOperandListAdapter();
+      }
+      @Override
+      public Adapter caseOperands(Operands object)
+      {
+        return createOperandsAdapter();
+      }
+      @Override
+      public Adapter caseOperand(Operand object)
+      {
+        return createOperandAdapter();
+      }
+      @Override
+      public Adapter caseOpFunction(OpFunction object)
+      {
+        return createOpFunctionAdapter();
+      }
+      @Override
+      public Adapter caseFunctionExtract(FunctionExtract object)
+      {
+        return createFunctionExtractAdapter();
+      }
+      @Override
+      public Adapter caseFunctionAnalytical(FunctionAnalytical object)
+      {
+        return createFunctionAnalyticalAdapter();
+      }
+      @Override
+      public Adapter caseAnalyticClause(AnalyticClause object)
+      {
+        return createAnalyticClauseAdapter();
+      }
+      @Override
+      public Adapter caseWindowingClause(WindowingClause object)
+      {
+        return createWindowingClauseAdapter();
+      }
+      @Override
+      public Adapter caseWindowingClauseBetween(WindowingClauseBetween object)
+      {
+        return createWindowingClauseBetweenAdapter();
+      }
+      @Override
+      public Adapter caseWindowingClauseOperandFollowing(WindowingClauseOperandFollowing object)
+      {
+        return createWindowingClauseOperandFollowingAdapter();
+      }
+      @Override
+      public Adapter caseWindowingClauseOperandPreceding(WindowingClauseOperandPreceding object)
+      {
+        return createWindowingClauseOperandPrecedingAdapter();
+      }
+      @Override
+      public Adapter caseOrderByClause(OrderByClause object)
+      {
+        return createOrderByClauseAdapter();
+      }
+      @Override
+      public Adapter caseOrderByClauseArgs(OrderByClauseArgs object)
+      {
+        return createOrderByClauseArgsAdapter();
+      }
+      @Override
+      public Adapter caseOrderByClauseArg(OrderByClauseArg object)
+      {
+        return createOrderByClauseArgAdapter();
+      }
+      @Override
+      public Adapter caseQueryPartitionClause(QueryPartitionClause object)
+      {
+        return createQueryPartitionClauseAdapter();
+      }
+      @Override
+      public Adapter caseAnalyticExprArgs(AnalyticExprArgs object)
+      {
+        return createAnalyticExprArgsAdapter();
+      }
+      @Override
+      public Adapter caseAnalyticExprArg(AnalyticExprArg object)
+      {
+        return createAnalyticExprArgAdapter();
+      }
+      @Override
+      public Adapter caseOpFunctionArg(OpFunctionArg object)
+      {
+        return createOpFunctionArgAdapter();
+      }
+      @Override
+      public Adapter caseOpFunctionArgOperand(OpFunctionArgOperand object)
+      {
+        return createOpFunctionArgOperandAdapter();
+      }
+      @Override
+      public Adapter caseOpFunctionCast(OpFunctionCast object)
+      {
+        return createOpFunctionCastAdapter();
+      }
+      @Override
+      public Adapter caseOpFunctionArgAgregate(OpFunctionArgAgregate object)
+      {
+        return createOpFunctionArgAgregateAdapter();
+      }
+      @Override
+      public Adapter casePOperand(POperand object)
+      {
+        return createPOperandAdapter();
+      }
+      @Override
+      public Adapter caseExpOperand(ExpOperand object)
+      {
+        return createExpOperandAdapter();
+      }
+      @Override
+      public Adapter caseColumnOperand(ColumnOperand object)
+      {
+        return createColumnOperandAdapter();
+      }
+      @Override
+      public Adapter caseSubQueryOperand(SubQueryOperand object)
+      {
+        return createSubQueryOperandAdapter();
+      }
+      @Override
+      public Adapter caseScalarOperand(ScalarOperand object)
+      {
+        return createScalarOperandAdapter();
+      }
+      @Override
+      public Adapter caseSQLCaseOperand(SQLCaseOperand object)
+      {
+        return createSQLCaseOperandAdapter();
+      }
+      @Override
+      public Adapter caseSQLCaseWhens(SQLCaseWhens object)
+      {
+        return createSQLCaseWhensAdapter();
+      }
+      @Override
+      public Adapter caseSqlCaseWhen(SqlCaseWhen object)
+      {
+        return createSqlCaseWhenAdapter();
+      }
+      @Override
+      public Adapter caseIntegerValue(IntegerValue object)
+      {
+        return createIntegerValueAdapter();
+      }
+      @Override
+      public Adapter caseUnsignedValue(UnsignedValue object)
+      {
+        return createUnsignedValueAdapter();
+      }
+      @Override
+      public Adapter caseCol(Col object)
+      {
+        return createColAdapter();
+      }
+      @Override
+      public Adapter caseabc(abc object)
+      {
+        return createabcAdapter();
+      }
+      @Override
+      public Adapter caseUnipivotInClause(UnipivotInClause object)
+      {
+        return createUnipivotInClauseAdapter();
+      }
+      @Override
+      public Adapter caseuicargs(uicargs object)
+      {
+        return createuicargsAdapter();
+      }
+      @Override
+      public Adapter casepvcs(pvcs object)
+      {
+        return createpvcsAdapter();
+      }
+      @Override
+      public Adapter casepcols(pcols object)
+      {
+        return createpcolsAdapter();
+      }
+      @Override
+      public Adapter casetbls(tbls object)
+      {
+        return createtblsAdapter();
+      }
+      @Override
+      public Adapter caseOpList(OpList object)
+      {
+        return createOpListAdapter();
+      }
+      @Override
+      public Adapter casePlus(Plus object)
+      {
+        return createPlusAdapter();
+      }
+      @Override
+      public Adapter caseMinus(Minus object)
+      {
+        return createMinusAdapter();
+      }
+      @Override
+      public Adapter caseConcat(Concat object)
+      {
+        return createConcatAdapter();
+      }
+      @Override
+      public Adapter caseMultiply(Multiply object)
+      {
+        return createMultiplyAdapter();
+      }
+      @Override
+      public Adapter caseDivision(Division object)
+      {
+        return createDivisionAdapter();
+      }
+      @Override
+      public Adapter caseOBCArgs(OBCArgs object)
+      {
+        return createOBCArgsAdapter();
+      }
+      @Override
+      public Adapter caseAExpArgs(AExpArgs object)
+      {
+        return createAExpArgsAdapter();
+      }
+      @Override
+      public Adapter caseOpFList(OpFList object)
+      {
+        return createOpFListAdapter();
+      }
+      @Override
+      public Adapter caseWhenList(WhenList object)
+      {
+        return createWhenListAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +648,1591 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WithQuery <em>With Query</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.Greeting
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createWithQueryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WithColumns <em>With Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.WithColumns
+   * @generated
+   */
+  public Adapter createWithColumnsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FetchFirst <em>Fetch First</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FetchFirst
+   * @generated
+   */
+  public Adapter createFetchFirstAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Offset <em>Offset</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Offset
+   * @generated
+   */
+  public Adapter createOffsetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Limit <em>Limit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Limit
+   * @generated
+   */
+  public Adapter createLimitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SelectQuery <em>Select Query</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectQuery
+   * @generated
+   */
+  public Adapter createSelectQueryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SelectSubSet <em>Select Sub Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectSubSet
+   * @generated
+   */
+  public Adapter createSelectSubSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Select <em>Select</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Select
+   * @generated
+   */
+  public Adapter createSelectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrColumn <em>Or Column</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrColumn
+   * @generated
+   */
+  public Adapter createOrColumnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias <em>Column Or Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias
+   * @generated
+   */
+  public Adapter createColumnOrAliasAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ColumnFull <em>Column Full</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnFull
+   * @generated
+   */
+  public Adapter createColumnFullAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrTable <em>Or Table</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrTable
+   * @generated
+   */
+  public Adapter createOrTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FromTable <em>From Table</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTable
+   * @generated
+   */
+  public Adapter createFromTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FromTableJoin <em>From Table Join</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTableJoin
+   * @generated
+   */
+  public Adapter createFromTableJoinAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.JoinCondition <em>Join Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.JoinCondition
+   * @generated
+   */
+  public Adapter createJoinConditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UsingCols <em>Using Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UsingCols
+   * @generated
+   */
+  public Adapter createUsingColsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias <em>Table Or Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias
+   * @generated
+   */
+  public Adapter createTableOrAliasAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FromValues <em>From Values</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValues
+   * @generated
+   */
+  public Adapter createFromValuesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FromValuesColumns <em>From Values Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValuesColumns
+   * @generated
+   */
+  public Adapter createFromValuesColumnsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FromValuesColumnNames <em>From Values Column Names</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValuesColumnNames
+   * @generated
+   */
+  public Adapter createFromValuesColumnNamesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ColumnNames <em>Column Names</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnNames
+   * @generated
+   */
+  public Adapter createColumnNamesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Values <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Values
+   * @generated
+   */
+  public Adapter createValuesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Rows <em>Rows</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Rows
+   * @generated
+   */
+  public Adapter createRowsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Row <em>Row</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Row
+   * @generated
+   */
+  public Adapter createRowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.RowValues <em>Row Values</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.RowValues
+   * @generated
+   */
+  public Adapter createRowValuesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.RowValue <em>Row Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.RowValue
+   * @generated
+   */
+  public Adapter createRowValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotTable <em>Pivot Table</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotTable
+   * @generated
+   */
+  public Adapter createPivotTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotFunctions <em>Pivot Functions</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotFunctions
+   * @generated
+   */
+  public Adapter createPivotFunctionsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotFunction <em>Pivot Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotFunction
+   * @generated
+   */
+  public Adapter createPivotFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotInClause <em>Pivot In Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotInClause
+   * @generated
+   */
+  public Adapter createPivotInClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotTable <em>Unpivot Table</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotTable
+   * @generated
+   */
+  public Adapter createUnpivotTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClause <em>Unpivot In Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClause
+   * @generated
+   */
+  public Adapter createUnpivotInClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArgs <em>Unpivot In Clause Args</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArgs
+   * @generated
+   */
+  public Adapter createUnpivotInClauseArgsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg <em>Unpivot In Clause Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg
+   * @generated
+   */
+  public Adapter createUnpivotInClauseArgAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotForClause <em>Pivot For Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotForClause
+   * @generated
+   */
+  public Adapter createPivotForClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotColumns <em>Pivot Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotColumns
+   * @generated
+   */
+  public Adapter createPivotColumnsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Pivots <em>Pivots</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Pivots
+   * @generated
+   */
+  public Adapter createPivotsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.PivotCol <em>Pivot Col</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotCol
+   * @generated
+   */
+  public Adapter createPivotColAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableFull <em>Table Full</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.TableFull
+   * @generated
+   */
+  public Adapter createTableFullAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.DbObjectNameAll <em>Db Object Name All</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.DbObjectNameAll
+   * @generated
+   */
+  public Adapter createDbObjectNameAllAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.DbObjectName <em>Db Object Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.DbObjectName
+   * @generated
+   */
+  public Adapter createDbObjectNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrOrderByColumn <em>Or Order By Column</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrOrderByColumn
+   * @generated
+   */
+  public Adapter createOrOrderByColumnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrderByColumnFull <em>Order By Column Full</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByColumnFull
+   * @generated
+   */
+  public Adapter createOrderByColumnFullAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrGroupByColumn <em>Or Group By Column</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrGroupByColumn
+   * @generated
+   */
+  public Adapter createOrGroupByColumnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.GroupByColumnFull <em>Group By Column Full</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.GroupByColumnFull
+   * @generated
+   */
+  public Adapter createGroupByColumnFullAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrExpr <em>Or Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrExpr
+   * @generated
+   */
+  public Adapter createOrExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FullExpression <em>Full Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression
+   * @generated
+   */
+  public Adapter createFullExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ExprGroup <em>Expr Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ExprGroup
+   * @generated
+   */
+  public Adapter createExprGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.XExpr <em>XExpr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.XExpr
+   * @generated
+   */
+  public Adapter createXExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Prms <em>Prms</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Prms
+   * @generated
+   */
+  public Adapter createPrmsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.JRParameter <em>JR Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.JRParameter
+   * @generated
+   */
+  public Adapter createJRParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Comparison <em>Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Comparison
+   * @generated
+   */
+  public Adapter createComparisonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Like <em>Like</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Like
+   * @generated
+   */
+  public Adapter createLikeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.LikeOperand <em>Like Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.LikeOperand
+   * @generated
+   */
+  public Adapter createLikeOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Between <em>Between</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Between
+   * @generated
+   */
+  public Adapter createBetweenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.InOper <em>In Oper</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.InOper
+   * @generated
+   */
+  public Adapter createInOperAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ExistsOper <em>Exists Oper</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ExistsOper
+   * @generated
+   */
+  public Adapter createExistsOperAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OperandListGroup <em>Operand List Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OperandListGroup
+   * @generated
+   */
+  public Adapter createOperandListGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OperandList <em>Operand List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OperandList
+   * @generated
+   */
+  public Adapter createOperandListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Operands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Operands
+   * @generated
+   */
+  public Adapter createOperandsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Operand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand
+   * @generated
+   */
+  public Adapter createOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpFunction <em>Op Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunction
+   * @generated
+   */
+  public Adapter createOpFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FunctionExtract <em>Function Extract</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionExtract
+   * @generated
+   */
+  public Adapter createFunctionExtractAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.FunctionAnalytical <em>Function Analytical</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionAnalytical
+   * @generated
+   */
+  public Adapter createFunctionAnalyticalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.AnalyticClause <em>Analytic Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticClause
+   * @generated
+   */
+  public Adapter createAnalyticClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClause <em>Windowing Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClause
+   * @generated
+   */
+  public Adapter createWindowingClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween <em>Windowing Clause Between</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween
+   * @generated
+   */
+  public Adapter createWindowingClauseBetweenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing <em>Windowing Clause Operand Following</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing
+   * @generated
+   */
+  public Adapter createWindowingClauseOperandFollowingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding <em>Windowing Clause Operand Preceding</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding
+   * @generated
+   */
+  public Adapter createWindowingClauseOperandPrecedingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrderByClause <em>Order By Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClause
+   * @generated
+   */
+  public Adapter createOrderByClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrderByClauseArgs <em>Order By Clause Args</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClauseArgs
+   * @generated
+   */
+  public Adapter createOrderByClauseArgsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OrderByClauseArg <em>Order By Clause Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClauseArg
+   * @generated
+   */
+  public Adapter createOrderByClauseArgAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.QueryPartitionClause <em>Query Partition Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.QueryPartitionClause
+   * @generated
+   */
+  public Adapter createQueryPartitionClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.AnalyticExprArgs <em>Analytic Expr Args</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticExprArgs
+   * @generated
+   */
+  public Adapter createAnalyticExprArgsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.AnalyticExprArg <em>Analytic Expr Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticExprArg
+   * @generated
+   */
+  public Adapter createAnalyticExprArgAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArg <em>Op Function Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArg
+   * @generated
+   */
+  public Adapter createOpFunctionArgAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand <em>Op Function Arg Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand
+   * @generated
+   */
+  public Adapter createOpFunctionArgOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionCast <em>Op Function Cast</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionCast
+   * @generated
+   */
+  public Adapter createOpFunctionCastAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArgAgregate <em>Op Function Arg Agregate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArgAgregate
+   * @generated
+   */
+  public Adapter createOpFunctionArgAgregateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.POperand <em>POperand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.POperand
+   * @generated
+   */
+  public Adapter createPOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ExpOperand <em>Exp Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ExpOperand
+   * @generated
+   */
+  public Adapter createExpOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ColumnOperand <em>Column Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOperand
+   * @generated
+   */
+  public Adapter createColumnOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SubQueryOperand <em>Sub Query Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SubQueryOperand
+   * @generated
+   */
+  public Adapter createSubQueryOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand <em>Scalar Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand
+   * @generated
+   */
+  public Adapter createScalarOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseOperand <em>Case Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseOperand
+   * @generated
+   */
+  public Adapter createSQLCaseOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseWhens <em>Case Whens</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseWhens
+   * @generated
+   */
+  public Adapter createSQLCaseWhensAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SqlCaseWhen <em>Sql Case When</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SqlCaseWhen
+   * @generated
+   */
+  public Adapter createSqlCaseWhenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.IntegerValue <em>Integer Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.IntegerValue
+   * @generated
+   */
+  public Adapter createIntegerValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UnsignedValue <em>Unsigned Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UnsignedValue
+   * @generated
+   */
+  public Adapter createUnsignedValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Col <em>Col</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Col
+   * @generated
+   */
+  public Adapter createColAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.abc <em>abc</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.abc
+   * @generated
+   */
+  public Adapter createabcAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.UnipivotInClause <em>Unipivot In Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.UnipivotInClause
+   * @generated
+   */
+  public Adapter createUnipivotInClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.uicargs <em>uicargs</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.uicargs
+   * @generated
+   */
+  public Adapter createuicargsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.pvcs <em>pvcs</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.pvcs
+   * @generated
+   */
+  public Adapter createpvcsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.pcols <em>pcols</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.pcols
+   * @generated
+   */
+  public Adapter createpcolsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.tbls <em>tbls</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.tbls
+   * @generated
+   */
+  public Adapter createtblsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpList <em>Op List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpList
+   * @generated
+   */
+  public Adapter createOpListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Plus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Plus
+   * @generated
+   */
+  public Adapter createPlusAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Minus <em>Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Minus
+   * @generated
+   */
+  public Adapter createMinusAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Concat <em>Concat</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Concat
+   * @generated
+   */
+  public Adapter createConcatAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Multiply <em>Multiply</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Multiply
+   * @generated
+   */
+  public Adapter createMultiplyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Division <em>Division</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Division
+   * @generated
+   */
+  public Adapter createDivisionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OBCArgs <em>OBC Args</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OBCArgs
+   * @generated
+   */
+  public Adapter createOBCArgsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.AExpArgs <em>AExp Args</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.AExpArgs
+   * @generated
+   */
+  public Adapter createAExpArgsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.OpFList <em>Op FList</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFList
+   * @generated
+   */
+  public Adapter createOpFListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.WhenList <em>When List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.WhenList
+   * @generated
+   */
+  public Adapter createWhenListAdapter()
   {
     return null;
   }

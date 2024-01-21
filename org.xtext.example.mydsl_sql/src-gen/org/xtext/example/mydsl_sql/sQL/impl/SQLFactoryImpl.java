@@ -4,6 +4,7 @@
 package org.xtext.example.mydsl_sql.sQL.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +67,152 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
     switch (eClass.getClassifierID())
     {
       case SQLPackage.MODEL: return createModel();
-      case SQLPackage.GREETING: return createGreeting();
+      case SQLPackage.WITH_QUERY: return createWithQuery();
+      case SQLPackage.WITH_COLUMNS: return createWithColumns();
+      case SQLPackage.FETCH_FIRST: return createFetchFirst();
+      case SQLPackage.OFFSET: return createOffset();
+      case SQLPackage.LIMIT: return createLimit();
+      case SQLPackage.SELECT_QUERY: return createSelectQuery();
+      case SQLPackage.SELECT_SUB_SET: return createSelectSubSet();
+      case SQLPackage.SELECT: return createSelect();
+      case SQLPackage.OR_COLUMN: return createOrColumn();
+      case SQLPackage.COLUMN_OR_ALIAS: return createColumnOrAlias();
+      case SQLPackage.COLUMN_FULL: return createColumnFull();
+      case SQLPackage.OR_TABLE: return createOrTable();
+      case SQLPackage.FROM_TABLE: return createFromTable();
+      case SQLPackage.FROM_TABLE_JOIN: return createFromTableJoin();
+      case SQLPackage.JOIN_CONDITION: return createJoinCondition();
+      case SQLPackage.USING_COLS: return createUsingCols();
+      case SQLPackage.TABLE_OR_ALIAS: return createTableOrAlias();
+      case SQLPackage.FROM_VALUES: return createFromValues();
+      case SQLPackage.FROM_VALUES_COLUMNS: return createFromValuesColumns();
+      case SQLPackage.FROM_VALUES_COLUMN_NAMES: return createFromValuesColumnNames();
+      case SQLPackage.COLUMN_NAMES: return createColumnNames();
+      case SQLPackage.VALUES: return createValues();
+      case SQLPackage.ROWS: return createRows();
+      case SQLPackage.ROW: return createRow();
+      case SQLPackage.ROW_VALUES: return createRowValues();
+      case SQLPackage.ROW_VALUE: return createRowValue();
+      case SQLPackage.PIVOT_TABLE: return createPivotTable();
+      case SQLPackage.PIVOT_FUNCTIONS: return createPivotFunctions();
+      case SQLPackage.PIVOT_FUNCTION: return createPivotFunction();
+      case SQLPackage.PIVOT_IN_CLAUSE: return createPivotInClause();
+      case SQLPackage.UNPIVOT_TABLE: return createUnpivotTable();
+      case SQLPackage.UNPIVOT_IN_CLAUSE: return createUnpivotInClause();
+      case SQLPackage.UNPIVOT_IN_CLAUSE_ARGS: return createUnpivotInClauseArgs();
+      case SQLPackage.UNPIVOT_IN_CLAUSE_ARG: return createUnpivotInClauseArg();
+      case SQLPackage.PIVOT_FOR_CLAUSE: return createPivotForClause();
+      case SQLPackage.PIVOT_COLUMNS: return createPivotColumns();
+      case SQLPackage.PIVOTS: return createPivots();
+      case SQLPackage.PIVOT_COL: return createPivotCol();
+      case SQLPackage.TABLE_FULL: return createTableFull();
+      case SQLPackage.DB_OBJECT_NAME_ALL: return createDbObjectNameAll();
+      case SQLPackage.DB_OBJECT_NAME: return createDbObjectName();
+      case SQLPackage.OR_ORDER_BY_COLUMN: return createOrOrderByColumn();
+      case SQLPackage.ORDER_BY_COLUMN_FULL: return createOrderByColumnFull();
+      case SQLPackage.OR_GROUP_BY_COLUMN: return createOrGroupByColumn();
+      case SQLPackage.GROUP_BY_COLUMN_FULL: return createGroupByColumnFull();
+      case SQLPackage.OR_EXPR: return createOrExpr();
+      case SQLPackage.FULL_EXPRESSION: return createFullExpression();
+      case SQLPackage.EXPR_GROUP: return createExprGroup();
+      case SQLPackage.XEXPR: return createXExpr();
+      case SQLPackage.PRMS: return createPrms();
+      case SQLPackage.JR_PARAMETER: return createJRParameter();
+      case SQLPackage.COMPARISON: return createComparison();
+      case SQLPackage.LIKE: return createLike();
+      case SQLPackage.LIKE_OPERAND: return createLikeOperand();
+      case SQLPackage.BETWEEN: return createBetween();
+      case SQLPackage.IN_OPER: return createInOper();
+      case SQLPackage.EXISTS_OPER: return createExistsOper();
+      case SQLPackage.OPERAND_LIST_GROUP: return createOperandListGroup();
+      case SQLPackage.OPERAND_LIST: return createOperandList();
+      case SQLPackage.OPERANDS: return createOperands();
+      case SQLPackage.OPERAND: return createOperand();
+      case SQLPackage.OP_FUNCTION: return createOpFunction();
+      case SQLPackage.FUNCTION_EXTRACT: return createFunctionExtract();
+      case SQLPackage.FUNCTION_ANALYTICAL: return createFunctionAnalytical();
+      case SQLPackage.ANALYTIC_CLAUSE: return createAnalyticClause();
+      case SQLPackage.WINDOWING_CLAUSE: return createWindowingClause();
+      case SQLPackage.WINDOWING_CLAUSE_BETWEEN: return createWindowingClauseBetween();
+      case SQLPackage.WINDOWING_CLAUSE_OPERAND_FOLLOWING: return createWindowingClauseOperandFollowing();
+      case SQLPackage.WINDOWING_CLAUSE_OPERAND_PRECEDING: return createWindowingClauseOperandPreceding();
+      case SQLPackage.ORDER_BY_CLAUSE: return createOrderByClause();
+      case SQLPackage.ORDER_BY_CLAUSE_ARGS: return createOrderByClauseArgs();
+      case SQLPackage.ORDER_BY_CLAUSE_ARG: return createOrderByClauseArg();
+      case SQLPackage.QUERY_PARTITION_CLAUSE: return createQueryPartitionClause();
+      case SQLPackage.ANALYTIC_EXPR_ARGS: return createAnalyticExprArgs();
+      case SQLPackage.ANALYTIC_EXPR_ARG: return createAnalyticExprArg();
+      case SQLPackage.OP_FUNCTION_ARG: return createOpFunctionArg();
+      case SQLPackage.OP_FUNCTION_ARG_OPERAND: return createOpFunctionArgOperand();
+      case SQLPackage.OP_FUNCTION_CAST: return createOpFunctionCast();
+      case SQLPackage.OP_FUNCTION_ARG_AGREGATE: return createOpFunctionArgAgregate();
+      case SQLPackage.POPERAND: return createPOperand();
+      case SQLPackage.EXP_OPERAND: return createExpOperand();
+      case SQLPackage.COLUMN_OPERAND: return createColumnOperand();
+      case SQLPackage.SUB_QUERY_OPERAND: return createSubQueryOperand();
+      case SQLPackage.SCALAR_OPERAND: return createScalarOperand();
+      case SQLPackage.SQL_CASE_OPERAND: return createSQLCaseOperand();
+      case SQLPackage.SQL_CASE_WHENS: return createSQLCaseWhens();
+      case SQLPackage.SQL_CASE_WHEN: return createSqlCaseWhen();
+      case SQLPackage.INTEGER_VALUE: return createIntegerValue();
+      case SQLPackage.UNSIGNED_VALUE: return createUnsignedValue();
+      case SQLPackage.COL: return createCol();
+      case SQLPackage.ABC: return createabc();
+      case SQLPackage.UNIPIVOT_IN_CLAUSE: return createUnipivotInClause();
+      case SQLPackage.UICARGS: return createuicargs();
+      case SQLPackage.PVCS: return createpvcs();
+      case SQLPackage.PCOLS: return createpcols();
+      case SQLPackage.TBLS: return createtbls();
+      case SQLPackage.OP_LIST: return createOpList();
+      case SQLPackage.PLUS: return createPlus();
+      case SQLPackage.MINUS: return createMinus();
+      case SQLPackage.CONCAT: return createConcat();
+      case SQLPackage.MULTIPLY: return createMultiply();
+      case SQLPackage.DIVISION: return createDivision();
+      case SQLPackage.OBC_ARGS: return createOBCArgs();
+      case SQLPackage.AEXP_ARGS: return createAExpArgs();
+      case SQLPackage.OP_FLIST: return createOpFList();
+      case SQLPackage.WHEN_LIST: return createWhenList();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case SQLPackage.XFUNCTION:
+        return createXFunctionFromString(eDataType, initialValue);
+      case SQLPackage.EXTRACT_VALUES:
+        return createEXTRACT_VALUESFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case SQLPackage.XFUNCTION:
+        return convertXFunctionToString(eDataType, instanceValue);
+      case SQLPackage.EXTRACT_VALUES:
+        return convertEXTRACT_VALUESToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -90,10 +234,1314 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public WithQuery createWithQuery()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    WithQueryImpl withQuery = new WithQueryImpl();
+    return withQuery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WithColumns createWithColumns()
+  {
+    WithColumnsImpl withColumns = new WithColumnsImpl();
+    return withColumns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FetchFirst createFetchFirst()
+  {
+    FetchFirstImpl fetchFirst = new FetchFirstImpl();
+    return fetchFirst;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Offset createOffset()
+  {
+    OffsetImpl offset = new OffsetImpl();
+    return offset;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Limit createLimit()
+  {
+    LimitImpl limit = new LimitImpl();
+    return limit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SelectQuery createSelectQuery()
+  {
+    SelectQueryImpl selectQuery = new SelectQueryImpl();
+    return selectQuery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SelectSubSet createSelectSubSet()
+  {
+    SelectSubSetImpl selectSubSet = new SelectSubSetImpl();
+    return selectSubSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Select createSelect()
+  {
+    SelectImpl select = new SelectImpl();
+    return select;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrColumn createOrColumn()
+  {
+    OrColumnImpl orColumn = new OrColumnImpl();
+    return orColumn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnOrAlias createColumnOrAlias()
+  {
+    ColumnOrAliasImpl columnOrAlias = new ColumnOrAliasImpl();
+    return columnOrAlias;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnFull createColumnFull()
+  {
+    ColumnFullImpl columnFull = new ColumnFullImpl();
+    return columnFull;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrTable createOrTable()
+  {
+    OrTableImpl orTable = new OrTableImpl();
+    return orTable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FromTable createFromTable()
+  {
+    FromTableImpl fromTable = new FromTableImpl();
+    return fromTable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FromTableJoin createFromTableJoin()
+  {
+    FromTableJoinImpl fromTableJoin = new FromTableJoinImpl();
+    return fromTableJoin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public JoinCondition createJoinCondition()
+  {
+    JoinConditionImpl joinCondition = new JoinConditionImpl();
+    return joinCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UsingCols createUsingCols()
+  {
+    UsingColsImpl usingCols = new UsingColsImpl();
+    return usingCols;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableOrAlias createTableOrAlias()
+  {
+    TableOrAliasImpl tableOrAlias = new TableOrAliasImpl();
+    return tableOrAlias;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FromValues createFromValues()
+  {
+    FromValuesImpl fromValues = new FromValuesImpl();
+    return fromValues;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FromValuesColumns createFromValuesColumns()
+  {
+    FromValuesColumnsImpl fromValuesColumns = new FromValuesColumnsImpl();
+    return fromValuesColumns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FromValuesColumnNames createFromValuesColumnNames()
+  {
+    FromValuesColumnNamesImpl fromValuesColumnNames = new FromValuesColumnNamesImpl();
+    return fromValuesColumnNames;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnNames createColumnNames()
+  {
+    ColumnNamesImpl columnNames = new ColumnNamesImpl();
+    return columnNames;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Values createValues()
+  {
+    ValuesImpl values = new ValuesImpl();
+    return values;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Rows createRows()
+  {
+    RowsImpl rows = new RowsImpl();
+    return rows;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Row createRow()
+  {
+    RowImpl row = new RowImpl();
+    return row;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RowValues createRowValues()
+  {
+    RowValuesImpl rowValues = new RowValuesImpl();
+    return rowValues;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RowValue createRowValue()
+  {
+    RowValueImpl rowValue = new RowValueImpl();
+    return rowValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotTable createPivotTable()
+  {
+    PivotTableImpl pivotTable = new PivotTableImpl();
+    return pivotTable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotFunctions createPivotFunctions()
+  {
+    PivotFunctionsImpl pivotFunctions = new PivotFunctionsImpl();
+    return pivotFunctions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotFunction createPivotFunction()
+  {
+    PivotFunctionImpl pivotFunction = new PivotFunctionImpl();
+    return pivotFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotInClause createPivotInClause()
+  {
+    PivotInClauseImpl pivotInClause = new PivotInClauseImpl();
+    return pivotInClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnpivotTable createUnpivotTable()
+  {
+    UnpivotTableImpl unpivotTable = new UnpivotTableImpl();
+    return unpivotTable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnpivotInClause createUnpivotInClause()
+  {
+    UnpivotInClauseImpl unpivotInClause = new UnpivotInClauseImpl();
+    return unpivotInClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnpivotInClauseArgs createUnpivotInClauseArgs()
+  {
+    UnpivotInClauseArgsImpl unpivotInClauseArgs = new UnpivotInClauseArgsImpl();
+    return unpivotInClauseArgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnpivotInClauseArg createUnpivotInClauseArg()
+  {
+    UnpivotInClauseArgImpl unpivotInClauseArg = new UnpivotInClauseArgImpl();
+    return unpivotInClauseArg;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotForClause createPivotForClause()
+  {
+    PivotForClauseImpl pivotForClause = new PivotForClauseImpl();
+    return pivotForClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotColumns createPivotColumns()
+  {
+    PivotColumnsImpl pivotColumns = new PivotColumnsImpl();
+    return pivotColumns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Pivots createPivots()
+  {
+    PivotsImpl pivots = new PivotsImpl();
+    return pivots;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PivotCol createPivotCol()
+  {
+    PivotColImpl pivotCol = new PivotColImpl();
+    return pivotCol;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableFull createTableFull()
+  {
+    TableFullImpl tableFull = new TableFullImpl();
+    return tableFull;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DbObjectNameAll createDbObjectNameAll()
+  {
+    DbObjectNameAllImpl dbObjectNameAll = new DbObjectNameAllImpl();
+    return dbObjectNameAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DbObjectName createDbObjectName()
+  {
+    DbObjectNameImpl dbObjectName = new DbObjectNameImpl();
+    return dbObjectName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrOrderByColumn createOrOrderByColumn()
+  {
+    OrOrderByColumnImpl orOrderByColumn = new OrOrderByColumnImpl();
+    return orOrderByColumn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrderByColumnFull createOrderByColumnFull()
+  {
+    OrderByColumnFullImpl orderByColumnFull = new OrderByColumnFullImpl();
+    return orderByColumnFull;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrGroupByColumn createOrGroupByColumn()
+  {
+    OrGroupByColumnImpl orGroupByColumn = new OrGroupByColumnImpl();
+    return orGroupByColumn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GroupByColumnFull createGroupByColumnFull()
+  {
+    GroupByColumnFullImpl groupByColumnFull = new GroupByColumnFullImpl();
+    return groupByColumnFull;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrExpr createOrExpr()
+  {
+    OrExprImpl orExpr = new OrExprImpl();
+    return orExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FullExpression createFullExpression()
+  {
+    FullExpressionImpl fullExpression = new FullExpressionImpl();
+    return fullExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExprGroup createExprGroup()
+  {
+    ExprGroupImpl exprGroup = new ExprGroupImpl();
+    return exprGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public XExpr createXExpr()
+  {
+    XExprImpl xExpr = new XExprImpl();
+    return xExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Prms createPrms()
+  {
+    PrmsImpl prms = new PrmsImpl();
+    return prms;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public JRParameter createJRParameter()
+  {
+    JRParameterImpl jrParameter = new JRParameterImpl();
+    return jrParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Comparison createComparison()
+  {
+    ComparisonImpl comparison = new ComparisonImpl();
+    return comparison;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Like createLike()
+  {
+    LikeImpl like = new LikeImpl();
+    return like;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LikeOperand createLikeOperand()
+  {
+    LikeOperandImpl likeOperand = new LikeOperandImpl();
+    return likeOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Between createBetween()
+  {
+    BetweenImpl between = new BetweenImpl();
+    return between;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InOper createInOper()
+  {
+    InOperImpl inOper = new InOperImpl();
+    return inOper;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExistsOper createExistsOper()
+  {
+    ExistsOperImpl existsOper = new ExistsOperImpl();
+    return existsOper;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperandListGroup createOperandListGroup()
+  {
+    OperandListGroupImpl operandListGroup = new OperandListGroupImpl();
+    return operandListGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperandList createOperandList()
+  {
+    OperandListImpl operandList = new OperandListImpl();
+    return operandList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operands createOperands()
+  {
+    OperandsImpl operands = new OperandsImpl();
+    return operands;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operand createOperand()
+  {
+    OperandImpl operand = new OperandImpl();
+    return operand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpFunction createOpFunction()
+  {
+    OpFunctionImpl opFunction = new OpFunctionImpl();
+    return opFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionExtract createFunctionExtract()
+  {
+    FunctionExtractImpl functionExtract = new FunctionExtractImpl();
+    return functionExtract;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionAnalytical createFunctionAnalytical()
+  {
+    FunctionAnalyticalImpl functionAnalytical = new FunctionAnalyticalImpl();
+    return functionAnalytical;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnalyticClause createAnalyticClause()
+  {
+    AnalyticClauseImpl analyticClause = new AnalyticClauseImpl();
+    return analyticClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WindowingClause createWindowingClause()
+  {
+    WindowingClauseImpl windowingClause = new WindowingClauseImpl();
+    return windowingClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WindowingClauseBetween createWindowingClauseBetween()
+  {
+    WindowingClauseBetweenImpl windowingClauseBetween = new WindowingClauseBetweenImpl();
+    return windowingClauseBetween;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WindowingClauseOperandFollowing createWindowingClauseOperandFollowing()
+  {
+    WindowingClauseOperandFollowingImpl windowingClauseOperandFollowing = new WindowingClauseOperandFollowingImpl();
+    return windowingClauseOperandFollowing;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WindowingClauseOperandPreceding createWindowingClauseOperandPreceding()
+  {
+    WindowingClauseOperandPrecedingImpl windowingClauseOperandPreceding = new WindowingClauseOperandPrecedingImpl();
+    return windowingClauseOperandPreceding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrderByClause createOrderByClause()
+  {
+    OrderByClauseImpl orderByClause = new OrderByClauseImpl();
+    return orderByClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrderByClauseArgs createOrderByClauseArgs()
+  {
+    OrderByClauseArgsImpl orderByClauseArgs = new OrderByClauseArgsImpl();
+    return orderByClauseArgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrderByClauseArg createOrderByClauseArg()
+  {
+    OrderByClauseArgImpl orderByClauseArg = new OrderByClauseArgImpl();
+    return orderByClauseArg;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public QueryPartitionClause createQueryPartitionClause()
+  {
+    QueryPartitionClauseImpl queryPartitionClause = new QueryPartitionClauseImpl();
+    return queryPartitionClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnalyticExprArgs createAnalyticExprArgs()
+  {
+    AnalyticExprArgsImpl analyticExprArgs = new AnalyticExprArgsImpl();
+    return analyticExprArgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnalyticExprArg createAnalyticExprArg()
+  {
+    AnalyticExprArgImpl analyticExprArg = new AnalyticExprArgImpl();
+    return analyticExprArg;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpFunctionArg createOpFunctionArg()
+  {
+    OpFunctionArgImpl opFunctionArg = new OpFunctionArgImpl();
+    return opFunctionArg;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpFunctionArgOperand createOpFunctionArgOperand()
+  {
+    OpFunctionArgOperandImpl opFunctionArgOperand = new OpFunctionArgOperandImpl();
+    return opFunctionArgOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpFunctionCast createOpFunctionCast()
+  {
+    OpFunctionCastImpl opFunctionCast = new OpFunctionCastImpl();
+    return opFunctionCast;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpFunctionArgAgregate createOpFunctionArgAgregate()
+  {
+    OpFunctionArgAgregateImpl opFunctionArgAgregate = new OpFunctionArgAgregateImpl();
+    return opFunctionArgAgregate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public POperand createPOperand()
+  {
+    POperandImpl pOperand = new POperandImpl();
+    return pOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExpOperand createExpOperand()
+  {
+    ExpOperandImpl expOperand = new ExpOperandImpl();
+    return expOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnOperand createColumnOperand()
+  {
+    ColumnOperandImpl columnOperand = new ColumnOperandImpl();
+    return columnOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SubQueryOperand createSubQueryOperand()
+  {
+    SubQueryOperandImpl subQueryOperand = new SubQueryOperandImpl();
+    return subQueryOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ScalarOperand createScalarOperand()
+  {
+    ScalarOperandImpl scalarOperand = new ScalarOperandImpl();
+    return scalarOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SQLCaseOperand createSQLCaseOperand()
+  {
+    SQLCaseOperandImpl sqlCaseOperand = new SQLCaseOperandImpl();
+    return sqlCaseOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SQLCaseWhens createSQLCaseWhens()
+  {
+    SQLCaseWhensImpl sqlCaseWhens = new SQLCaseWhensImpl();
+    return sqlCaseWhens;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SqlCaseWhen createSqlCaseWhen()
+  {
+    SqlCaseWhenImpl sqlCaseWhen = new SqlCaseWhenImpl();
+    return sqlCaseWhen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntegerValue createIntegerValue()
+  {
+    IntegerValueImpl integerValue = new IntegerValueImpl();
+    return integerValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnsignedValue createUnsignedValue()
+  {
+    UnsignedValueImpl unsignedValue = new UnsignedValueImpl();
+    return unsignedValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Col createCol()
+  {
+    ColImpl col = new ColImpl();
+    return col;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public abc createabc()
+  {
+    abcImpl abc = new abcImpl();
+    return abc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnipivotInClause createUnipivotInClause()
+  {
+    UnipivotInClauseImpl unipivotInClause = new UnipivotInClauseImpl();
+    return unipivotInClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public uicargs createuicargs()
+  {
+    uicargsImpl uicargs = new uicargsImpl();
+    return uicargs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public pvcs createpvcs()
+  {
+    pvcsImpl pvcs = new pvcsImpl();
+    return pvcs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public pcols createpcols()
+  {
+    pcolsImpl pcols = new pcolsImpl();
+    return pcols;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public tbls createtbls()
+  {
+    tblsImpl tbls = new tblsImpl();
+    return tbls;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpList createOpList()
+  {
+    OpListImpl opList = new OpListImpl();
+    return opList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Plus createPlus()
+  {
+    PlusImpl plus = new PlusImpl();
+    return plus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Minus createMinus()
+  {
+    MinusImpl minus = new MinusImpl();
+    return minus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Concat createConcat()
+  {
+    ConcatImpl concat = new ConcatImpl();
+    return concat;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Multiply createMultiply()
+  {
+    MultiplyImpl multiply = new MultiplyImpl();
+    return multiply;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Division createDivision()
+  {
+    DivisionImpl division = new DivisionImpl();
+    return division;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OBCArgs createOBCArgs()
+  {
+    OBCArgsImpl obcArgs = new OBCArgsImpl();
+    return obcArgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AExpArgs createAExpArgs()
+  {
+    AExpArgsImpl aExpArgs = new AExpArgsImpl();
+    return aExpArgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OpFList createOpFList()
+  {
+    OpFListImpl opFList = new OpFListImpl();
+    return opFList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhenList createWhenList()
+  {
+    WhenListImpl whenList = new WhenListImpl();
+    return whenList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XFunction createXFunctionFromString(EDataType eDataType, String initialValue)
+  {
+    XFunction result = XFunction.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertXFunctionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EXTRACT_VALUES createEXTRACT_VALUESFromString(EDataType eDataType, String initialValue)
+  {
+    EXTRACT_VALUES result = EXTRACT_VALUES.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertEXTRACT_VALUESToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

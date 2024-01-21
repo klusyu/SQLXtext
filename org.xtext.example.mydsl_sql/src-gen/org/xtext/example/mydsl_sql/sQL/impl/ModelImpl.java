@@ -3,23 +3,19 @@
  */
 package org.xtext.example.mydsl_sql.sQL.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.xtext.example.mydsl_sql.sQL.Greeting;
 import org.xtext.example.mydsl_sql.sQL.Model;
 import org.xtext.example.mydsl_sql.sQL.SQLPackage;
+import org.xtext.example.mydsl_sql.sQL.SelectQuery;
+import org.xtext.example.mydsl_sql.sQL.WithQuery;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +25,8 @@ import org.xtext.example.mydsl_sql.sQL.SQLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getWq <em>Wq</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getQuery <em>Query</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +34,24 @@ import org.xtext.example.mydsl_sql.sQL.SQLPackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getWq() <em>Wq</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getWq()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected WithQuery wq;
+
+  /**
+   * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQuery()
+   * @generated
+   * @ordered
+   */
+  protected SelectQuery query;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +80,98 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<Greeting> getGreetings()
+  public WithQuery getWq()
   {
-    if (greetings == null)
+    return wq;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetWq(WithQuery newWq, NotificationChain msgs)
+  {
+    WithQuery oldWq = wq;
+    wq = newWq;
+    if (eNotificationRequired())
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, SQLPackage.MODEL__GREETINGS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__WQ, oldWq, newWq);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return greetings;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setWq(WithQuery newWq)
+  {
+    if (newWq != wq)
+    {
+      NotificationChain msgs = null;
+      if (wq != null)
+        msgs = ((InternalEObject)wq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__WQ, null, msgs);
+      if (newWq != null)
+        msgs = ((InternalEObject)newWq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__WQ, null, msgs);
+      msgs = basicSetWq(newWq, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__WQ, newWq, newWq));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SelectQuery getQuery()
+  {
+    return query;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetQuery(SelectQuery newQuery, NotificationChain msgs)
+  {
+    SelectQuery oldQuery = query;
+    query = newQuery;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__QUERY, oldQuery, newQuery);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setQuery(SelectQuery newQuery)
+  {
+    if (newQuery != query)
+    {
+      NotificationChain msgs = null;
+      if (query != null)
+        msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__QUERY, null, msgs);
+      if (newQuery != null)
+        msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__QUERY, null, msgs);
+      msgs = basicSetQuery(newQuery, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__QUERY, newQuery, newQuery));
   }
 
   /**
@@ -92,8 +184,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case SQLPackage.MODEL__WQ:
+        return basicSetWq(null, msgs);
+      case SQLPackage.MODEL__QUERY:
+        return basicSetQuery(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +202,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case SQLPackage.MODEL__WQ:
+        return getWq();
+      case SQLPackage.MODEL__QUERY:
+        return getQuery();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,15 +215,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case SQLPackage.MODEL__WQ:
+        setWq((WithQuery)newValue);
+        return;
+      case SQLPackage.MODEL__QUERY:
+        setQuery((SelectQuery)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +240,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case SQLPackage.MODEL__WQ:
+        setWq((WithQuery)null);
+        return;
+      case SQLPackage.MODEL__QUERY:
+        setQuery((SelectQuery)null);
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +260,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case SQLPackage.MODEL__WQ:
+        return wq != null;
+      case SQLPackage.MODEL__QUERY:
+        return query != null;
     }
     return super.eIsSet(featureID);
   }

@@ -71,7 +71,7 @@ import org.eclipse.xtext.ui.shared.Access;
 import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
 import org.xtext.example.mydsl_sql.ide.contentassist.antlr.PartialSQLContentAssistParser;
 import org.xtext.example.mydsl_sql.ide.contentassist.antlr.SQLParser;
-import org.xtext.example.mydsl_sql.ide.contentassist.antlr.internal.InternalSQLLexer;
+import org.xtext.example.mydsl_sql.ide.contentassist.antlr.lexer.InternalSQLLexer;
 import org.xtext.example.mydsl_sql.ui.contentassist.SQLProposalProvider;
 import org.xtext.example.mydsl_sql.ui.labeling.SQLDescriptionLabelProvider;
 import org.xtext.example.mydsl_sql.ui.labeling.SQLLabelProvider;
@@ -110,7 +110,7 @@ public abstract class AbstractSQLUiModule extends DefaultUiModule {
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(org.xtext.example.mydsl_sql.parser.antlr.internal.InternalSQLLexer.class);
+			.to(org.xtext.example.mydsl_sql.parser.antlr.lexer.InternalSQLLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2

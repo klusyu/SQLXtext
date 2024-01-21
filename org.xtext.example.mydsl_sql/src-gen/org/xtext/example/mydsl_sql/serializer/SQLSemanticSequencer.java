@@ -14,9 +14,95 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.example.mydsl_sql.sQL.Greeting;
+import org.xtext.example.mydsl_sql.sQL.AExpArgs;
+import org.xtext.example.mydsl_sql.sQL.AnalyticClause;
+import org.xtext.example.mydsl_sql.sQL.AnalyticExprArg;
+import org.xtext.example.mydsl_sql.sQL.Between;
+import org.xtext.example.mydsl_sql.sQL.Col;
+import org.xtext.example.mydsl_sql.sQL.ColumnNames;
+import org.xtext.example.mydsl_sql.sQL.ColumnOperand;
+import org.xtext.example.mydsl_sql.sQL.ColumnOrAlias;
+import org.xtext.example.mydsl_sql.sQL.Comparison;
+import org.xtext.example.mydsl_sql.sQL.Concat;
+import org.xtext.example.mydsl_sql.sQL.DbObjectName;
+import org.xtext.example.mydsl_sql.sQL.DbObjectNameAll;
+import org.xtext.example.mydsl_sql.sQL.Division;
+import org.xtext.example.mydsl_sql.sQL.ExistsOper;
+import org.xtext.example.mydsl_sql.sQL.ExpOperand;
+import org.xtext.example.mydsl_sql.sQL.ExprGroup;
+import org.xtext.example.mydsl_sql.sQL.FetchFirst;
+import org.xtext.example.mydsl_sql.sQL.FromTable;
+import org.xtext.example.mydsl_sql.sQL.FromTableJoin;
+import org.xtext.example.mydsl_sql.sQL.FromValues;
+import org.xtext.example.mydsl_sql.sQL.FromValuesColumns;
+import org.xtext.example.mydsl_sql.sQL.FullExpression;
+import org.xtext.example.mydsl_sql.sQL.FunctionAnalytical;
+import org.xtext.example.mydsl_sql.sQL.FunctionExtract;
+import org.xtext.example.mydsl_sql.sQL.GroupByColumnFull;
+import org.xtext.example.mydsl_sql.sQL.InOper;
+import org.xtext.example.mydsl_sql.sQL.IntegerValue;
+import org.xtext.example.mydsl_sql.sQL.JRParameter;
+import org.xtext.example.mydsl_sql.sQL.JoinCondition;
+import org.xtext.example.mydsl_sql.sQL.Like;
+import org.xtext.example.mydsl_sql.sQL.LikeOperand;
+import org.xtext.example.mydsl_sql.sQL.Limit;
+import org.xtext.example.mydsl_sql.sQL.Minus;
 import org.xtext.example.mydsl_sql.sQL.Model;
+import org.xtext.example.mydsl_sql.sQL.Multiply;
+import org.xtext.example.mydsl_sql.sQL.OBCArgs;
+import org.xtext.example.mydsl_sql.sQL.Offset;
+import org.xtext.example.mydsl_sql.sQL.OpFList;
+import org.xtext.example.mydsl_sql.sQL.OpFunction;
+import org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand;
+import org.xtext.example.mydsl_sql.sQL.OpFunctionCast;
+import org.xtext.example.mydsl_sql.sQL.OpList;
+import org.xtext.example.mydsl_sql.sQL.Operand;
+import org.xtext.example.mydsl_sql.sQL.OperandListGroup;
+import org.xtext.example.mydsl_sql.sQL.Operands;
+import org.xtext.example.mydsl_sql.sQL.OrColumn;
+import org.xtext.example.mydsl_sql.sQL.OrExpr;
+import org.xtext.example.mydsl_sql.sQL.OrGroupByColumn;
+import org.xtext.example.mydsl_sql.sQL.OrOrderByColumn;
+import org.xtext.example.mydsl_sql.sQL.OrTable;
+import org.xtext.example.mydsl_sql.sQL.OrderByClause;
+import org.xtext.example.mydsl_sql.sQL.OrderByClauseArg;
+import org.xtext.example.mydsl_sql.sQL.OrderByColumnFull;
+import org.xtext.example.mydsl_sql.sQL.POperand;
+import org.xtext.example.mydsl_sql.sQL.PivotFunctions;
+import org.xtext.example.mydsl_sql.sQL.PivotInClause;
+import org.xtext.example.mydsl_sql.sQL.PivotTable;
+import org.xtext.example.mydsl_sql.sQL.Plus;
+import org.xtext.example.mydsl_sql.sQL.Prms;
+import org.xtext.example.mydsl_sql.sQL.QueryPartitionClause;
+import org.xtext.example.mydsl_sql.sQL.Row;
+import org.xtext.example.mydsl_sql.sQL.RowValue;
+import org.xtext.example.mydsl_sql.sQL.RowValues;
+import org.xtext.example.mydsl_sql.sQL.Rows;
+import org.xtext.example.mydsl_sql.sQL.SQLCaseOperand;
 import org.xtext.example.mydsl_sql.sQL.SQLPackage;
+import org.xtext.example.mydsl_sql.sQL.ScalarOperand;
+import org.xtext.example.mydsl_sql.sQL.Select;
+import org.xtext.example.mydsl_sql.sQL.SelectSubSet;
+import org.xtext.example.mydsl_sql.sQL.SqlCaseWhen;
+import org.xtext.example.mydsl_sql.sQL.SubQueryOperand;
+import org.xtext.example.mydsl_sql.sQL.TableOrAlias;
+import org.xtext.example.mydsl_sql.sQL.UnipivotInClause;
+import org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg;
+import org.xtext.example.mydsl_sql.sQL.UnpivotTable;
+import org.xtext.example.mydsl_sql.sQL.UnsignedValue;
+import org.xtext.example.mydsl_sql.sQL.UsingCols;
+import org.xtext.example.mydsl_sql.sQL.Values;
+import org.xtext.example.mydsl_sql.sQL.WhenList;
+import org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween;
+import org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing;
+import org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding;
+import org.xtext.example.mydsl_sql.sQL.WithQuery;
+import org.xtext.example.mydsl_sql.sQL.XExpr;
+import org.xtext.example.mydsl_sql.sQL.abc;
+import org.xtext.example.mydsl_sql.sQL.pcols;
+import org.xtext.example.mydsl_sql.sQL.pvcs;
+import org.xtext.example.mydsl_sql.sQL.tbls;
+import org.xtext.example.mydsl_sql.sQL.uicargs;
 import org.xtext.example.mydsl_sql.services.SQLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -33,11 +119,315 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SQLPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SQLPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case SQLPackage.AEXP_ARGS:
+				sequence_AnalyticExprArgs(context, (AExpArgs) semanticObject); 
+				return; 
+			case SQLPackage.ANALYTIC_CLAUSE:
+				sequence_AnalyticClause(context, (AnalyticClause) semanticObject); 
+				return; 
+			case SQLPackage.ANALYTIC_EXPR_ARG:
+				sequence_AnalyticExprArg(context, (AnalyticExprArg) semanticObject); 
+				return; 
+			case SQLPackage.BETWEEN:
+				sequence_Between(context, (Between) semanticObject); 
+				return; 
+			case SQLPackage.COL:
+				sequence_ColumnFull(context, (Col) semanticObject); 
+				return; 
+			case SQLPackage.COLUMN_NAMES:
+				sequence_ColumnName(context, (ColumnNames) semanticObject); 
+				return; 
+			case SQLPackage.COLUMN_OPERAND:
+				sequence_ColumnOperand(context, (ColumnOperand) semanticObject); 
+				return; 
+			case SQLPackage.COLUMN_OR_ALIAS:
+				sequence_ColumnOrAlias(context, (ColumnOrAlias) semanticObject); 
+				return; 
+			case SQLPackage.COMPARISON:
+				sequence_Comparison(context, (Comparison) semanticObject); 
+				return; 
+			case SQLPackage.CONCAT:
+				sequence_Operand(context, (Concat) semanticObject); 
+				return; 
+			case SQLPackage.DB_OBJECT_NAME:
+				sequence_DbObjectName(context, (DbObjectName) semanticObject); 
+				return; 
+			case SQLPackage.DB_OBJECT_NAME_ALL:
+				sequence_DbObjectNameAll(context, (DbObjectNameAll) semanticObject); 
+				return; 
+			case SQLPackage.DIVISION:
+				sequence_Operand(context, (Division) semanticObject); 
+				return; 
+			case SQLPackage.EXISTS_OPER:
+				sequence_ExistsOperator(context, (ExistsOper) semanticObject); 
+				return; 
+			case SQLPackage.EXP_OPERAND:
+				sequence_ExclamationParameterOperand(context, (ExpOperand) semanticObject); 
+				return; 
+			case SQLPackage.EXPR_GROUP:
+				sequence_ExpressionGroup(context, (ExprGroup) semanticObject); 
+				return; 
+			case SQLPackage.FETCH_FIRST:
+				sequence_FetchFirst(context, (FetchFirst) semanticObject); 
+				return; 
+			case SQLPackage.FROM_TABLE:
+				sequence_FromTable(context, (FromTable) semanticObject); 
+				return; 
+			case SQLPackage.FROM_TABLE_JOIN:
+				sequence_FromTableJoin(context, (FromTableJoin) semanticObject); 
+				return; 
+			case SQLPackage.FROM_VALUES:
+				sequence_FromValues(context, (FromValues) semanticObject); 
+				return; 
+			case SQLPackage.FROM_VALUES_COLUMNS:
+				sequence_FromValuesColumns(context, (FromValuesColumns) semanticObject); 
+				return; 
+			case SQLPackage.FULL_EXPRESSION:
+				if (rule == grammarAccess.getExpressionFragmentSecondRule()) {
+					sequence_ExpressionFragmentSecond(context, (FullExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFullExpressionRule()
+						|| action == grammarAccess.getFullExpressionAccess().getOrExprEntriesAction_1_0()
+						|| rule == grammarAccess.getExpressionFragmentRule()) {
+					sequence_ExpressionFragment(context, (FullExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getExpressionRule()) {
+					sequence_Expression(context, (FullExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case SQLPackage.FUNCTION_ANALYTICAL:
+				sequence_FunctionAnalytical(context, (FunctionAnalytical) semanticObject); 
+				return; 
+			case SQLPackage.FUNCTION_EXTRACT:
+				sequence_FunctionExtract(context, (FunctionExtract) semanticObject); 
+				return; 
+			case SQLPackage.GROUP_BY_COLUMN_FULL:
+				sequence_GroupByColumnFull(context, (GroupByColumnFull) semanticObject); 
+				return; 
+			case SQLPackage.IN_OPER:
+				sequence_InOperator(context, (InOper) semanticObject); 
+				return; 
+			case SQLPackage.INTEGER_VALUE:
+				sequence_IntegerValue(context, (IntegerValue) semanticObject); 
+				return; 
+			case SQLPackage.JR_PARAMETER:
+				sequence_JRParameter(context, (JRParameter) semanticObject); 
+				return; 
+			case SQLPackage.JOIN_CONDITION:
+				sequence_JoinCondition(context, (JoinCondition) semanticObject); 
+				return; 
+			case SQLPackage.LIKE:
+				sequence_Like(context, (Like) semanticObject); 
+				return; 
+			case SQLPackage.LIKE_OPERAND:
+				sequence_LikeOperand(context, (LikeOperand) semanticObject); 
+				return; 
+			case SQLPackage.LIMIT:
+				sequence_Limit(context, (Limit) semanticObject); 
+				return; 
+			case SQLPackage.MINUS:
+				sequence_Operand(context, (Minus) semanticObject); 
 				return; 
 			case SQLPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case SQLPackage.MULTIPLY:
+				sequence_Operand(context, (Multiply) semanticObject); 
+				return; 
+			case SQLPackage.OBC_ARGS:
+				sequence_OrderByClauseArgs(context, (OBCArgs) semanticObject); 
+				return; 
+			case SQLPackage.OFFSET:
+				sequence_Offset(context, (Offset) semanticObject); 
+				return; 
+			case SQLPackage.OP_FLIST:
+				sequence_OpFunctionArg(context, (OpFList) semanticObject); 
+				return; 
+			case SQLPackage.OP_FUNCTION:
+				sequence_OperandFunction(context, (OpFunction) semanticObject); 
+				return; 
+			case SQLPackage.OP_FUNCTION_ARG_OPERAND:
+				sequence_OpFunctionArgOperand(context, (OpFunctionArgOperand) semanticObject); 
+				return; 
+			case SQLPackage.OP_FUNCTION_CAST:
+				sequence_OpFunctionCast(context, (OpFunctionCast) semanticObject); 
+				return; 
+			case SQLPackage.OP_LIST:
+				sequence_OperandList(context, (OpList) semanticObject); 
+				return; 
+			case SQLPackage.OPERAND:
+				if (rule == grammarAccess.getOperandFragmentRule()) {
+					sequence_OperandFragment(context, (Operand) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getXOperandFragmentRule()) {
+					sequence_XOperandFragment(context, (Operand) semanticObject); 
+					return; 
+				}
+				else break;
+			case SQLPackage.OPERAND_LIST_GROUP:
+				sequence_OperandListGroup(context, (OperandListGroup) semanticObject); 
+				return; 
+			case SQLPackage.OPERANDS:
+				sequence_Operand(context, (Operands) semanticObject); 
+				return; 
+			case SQLPackage.OR_COLUMN:
+				sequence_Columns(context, (OrColumn) semanticObject); 
+				return; 
+			case SQLPackage.OR_EXPR:
+				sequence_FullExpression(context, (OrExpr) semanticObject); 
+				return; 
+			case SQLPackage.OR_GROUP_BY_COLUMN:
+				sequence_GroupByColumns(context, (OrGroupByColumn) semanticObject); 
+				return; 
+			case SQLPackage.OR_ORDER_BY_COLUMN:
+				sequence_OrderByColumns(context, (OrOrderByColumn) semanticObject); 
+				return; 
+			case SQLPackage.OR_TABLE:
+				sequence_Tables(context, (OrTable) semanticObject); 
+				return; 
+			case SQLPackage.ORDER_BY_CLAUSE:
+				sequence_OrderByClause(context, (OrderByClause) semanticObject); 
+				return; 
+			case SQLPackage.ORDER_BY_CLAUSE_ARG:
+				sequence_OrderByClauseArg(context, (OrderByClauseArg) semanticObject); 
+				return; 
+			case SQLPackage.ORDER_BY_COLUMN_FULL:
+				sequence_OrderByColumnFull(context, (OrderByColumnFull) semanticObject); 
+				return; 
+			case SQLPackage.POPERAND:
+				sequence_ParameterOperand(context, (POperand) semanticObject); 
+				return; 
+			case SQLPackage.PIVOT_FUNCTIONS:
+				sequence_PivotFunctions(context, (PivotFunctions) semanticObject); 
+				return; 
+			case SQLPackage.PIVOT_IN_CLAUSE:
+				sequence_PivotInClause(context, (PivotInClause) semanticObject); 
+				return; 
+			case SQLPackage.PIVOT_TABLE:
+				sequence_PivotTable(context, (PivotTable) semanticObject); 
+				return; 
+			case SQLPackage.PLUS:
+				sequence_Operand(context, (Plus) semanticObject); 
+				return; 
+			case SQLPackage.PRMS:
+				sequence_XExpressionParams(context, (Prms) semanticObject); 
+				return; 
+			case SQLPackage.QUERY_PARTITION_CLAUSE:
+				sequence_QueryPartitionClause(context, (QueryPartitionClause) semanticObject); 
+				return; 
+			case SQLPackage.ROW:
+				sequence_Row(context, (Row) semanticObject); 
+				return; 
+			case SQLPackage.ROW_VALUE:
+				sequence_RowValue(context, (RowValue) semanticObject); 
+				return; 
+			case SQLPackage.ROW_VALUES:
+				sequence_RowValues(context, (RowValues) semanticObject); 
+				return; 
+			case SQLPackage.ROWS:
+				sequence_Rows(context, (Rows) semanticObject); 
+				return; 
+			case SQLPackage.SQL_CASE_OPERAND:
+				sequence_SQLCASE(context, (SQLCaseOperand) semanticObject); 
+				return; 
+			case SQLPackage.SCALAR_OPERAND:
+				if (rule == grammarAccess.getRowValuesRule()
+						|| action == grammarAccess.getRowValuesAccess().getRowValuesEntriesAction_1_0()
+						|| rule == grammarAccess.getRowValueRule()
+						|| rule == grammarAccess.getScalarNumberOperandRule()) {
+					sequence_ScalarNumberOperand(context, (ScalarOperand) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getOperandListRule()
+						|| action == grammarAccess.getOperandListAccess().getOpListEntriesAction_1_0()
+						|| rule == grammarAccess.getScalarOperandRule()) {
+					sequence_ScalarOperand(context, (ScalarOperand) semanticObject); 
+					return; 
+				}
+				else break;
+			case SQLPackage.SELECT:
+				if (rule == grammarAccess.getSelectRule()) {
+					sequence_Select(context, (Select) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getSelectQueryRule()) {
+					sequence_Select_SelectQuery(context, (Select) semanticObject); 
+					return; 
+				}
+				else break;
+			case SQLPackage.SELECT_SUB_SET:
+				sequence_SelectSubSet(context, (SelectSubSet) semanticObject); 
+				return; 
+			case SQLPackage.SQL_CASE_WHEN:
+				sequence_SqlCaseWhen(context, (SqlCaseWhen) semanticObject); 
+				return; 
+			case SQLPackage.SUB_QUERY_OPERAND:
+				sequence_SubQueryOperand(context, (SubQueryOperand) semanticObject); 
+				return; 
+			case SQLPackage.TABLE_OR_ALIAS:
+				sequence_TableOrAlias(context, (TableOrAlias) semanticObject); 
+				return; 
+			case SQLPackage.UNIPIVOT_IN_CLAUSE:
+				sequence_UnpivotInClause(context, (UnipivotInClause) semanticObject); 
+				return; 
+			case SQLPackage.UNPIVOT_IN_CLAUSE_ARG:
+				sequence_UnpivotInClauseArg(context, (UnpivotInClauseArg) semanticObject); 
+				return; 
+			case SQLPackage.UNPIVOT_TABLE:
+				sequence_UnpivotTable(context, (UnpivotTable) semanticObject); 
+				return; 
+			case SQLPackage.UNSIGNED_VALUE:
+				sequence_UnsignedValue(context, (UnsignedValue) semanticObject); 
+				return; 
+			case SQLPackage.USING_COLS:
+				sequence_UsingCols(context, (UsingCols) semanticObject); 
+				return; 
+			case SQLPackage.VALUES:
+				sequence_Values(context, (Values) semanticObject); 
+				return; 
+			case SQLPackage.WHEN_LIST:
+				sequence_SQLCaseWhens(context, (WhenList) semanticObject); 
+				return; 
+			case SQLPackage.WINDOWING_CLAUSE_BETWEEN:
+				sequence_WindowingClauseBetween(context, (WindowingClauseBetween) semanticObject); 
+				return; 
+			case SQLPackage.WINDOWING_CLAUSE_OPERAND_FOLLOWING:
+				sequence_WindowingClauseOperandFollowing(context, (WindowingClauseOperandFollowing) semanticObject); 
+				return; 
+			case SQLPackage.WINDOWING_CLAUSE_OPERAND_PRECEDING:
+				sequence_WindowingClauseOperandPreceding(context, (WindowingClauseOperandPreceding) semanticObject); 
+				return; 
+			case SQLPackage.WITH_QUERY:
+				sequence_WithQuery(context, (WithQuery) semanticObject); 
+				return; 
+			case SQLPackage.XEXPR:
+				if (rule == grammarAccess.getXExpressionRule()) {
+					sequence_XExpression(context, (XExpr) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getXExpression_Rule()) {
+					sequence_XExpression_(context, (XExpr) semanticObject); 
+					return; 
+				}
+				else break;
+			case SQLPackage.ABC:
+				sequence_FromValuesColumnNames(context, (abc) semanticObject); 
+				return; 
+			case SQLPackage.PCOLS:
+				sequence_PivotCol(context, (pcols) semanticObject); 
+				return; 
+			case SQLPackage.PVCS:
+				sequence_PivotCols(context, (pvcs) semanticObject); 
+				return; 
+			case SQLPackage.TBLS:
+				sequence_TableFull(context, (tbls) semanticObject); 
+				return; 
+			case SQLPackage.UICARGS:
+				sequence_UnpivotInClauseArgs(context, (uicargs) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -47,20 +437,659 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     AnalyticClause returns AnalyticClause
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (abc=QueryPartitionClause? (obc=OrderByClause winc=WindowingClause?)?)
 	 * </pre>
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_AnalyticClause(ISerializationContext context, AnalyticClause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     QueryPartitionClause returns AnalyticExprArg
+	 *     AnalyticExprArgs returns AnalyticExprArg
+	 *     AnalyticExprArgs.AExpArgs_1_0 returns AnalyticExprArg
+	 *     AnalyticExprArg returns AnalyticExprArg
+	 *
+	 * Constraint:
+	 *     (ce=Operand colAlias=DbObjectName?)
+	 * </pre>
+	 */
+	protected void sequence_AnalyticExprArg(ISerializationContext context, AnalyticExprArg semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     QueryPartitionClause returns AExpArgs
+	 *     AnalyticExprArgs returns AExpArgs
+	 *
+	 * Constraint:
+	 *     (entries+=AnalyticExprArgs_AExpArgs_1_0 entries+=AnalyticExprArg+)
+	 * </pre>
+	 */
+	protected void sequence_AnalyticExprArgs(ISerializationContext context, AExpArgs semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Between returns Between
+	 *
+	 * Constraint:
+	 *     (opBetween=BetweenValue op2=OperandGroup op3=OperandGroup)
+	 * </pre>
+	 */
+	protected void sequence_Between(ISerializationContext context, Between semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.BETWEEN__OP_BETWEEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.BETWEEN__OP_BETWEEN));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.BETWEEN__OP2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.BETWEEN__OP2));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.BETWEEN__OP3) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.BETWEEN__OP3));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBetweenAccess().getOpBetweenBetweenValueParserRuleCall_0_0(), semanticObject.getOpBetween());
+		feeder.accept(grammarAccess.getBetweenAccess().getOp2OperandGroupParserRuleCall_1_0(), semanticObject.getOp2());
+		feeder.accept(grammarAccess.getBetweenAccess().getOp3OperandGroupParserRuleCall_3_0(), semanticObject.getOp3());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ColumnFull returns Col
+	 *     PivotForClause returns Col
+	 *
+	 * Constraint:
+	 *     (entries+=ColumnFull_Col_1_0 entries+=DbObjectName+)
+	 * </pre>
+	 */
+	protected void sequence_ColumnFull(ISerializationContext context, Col semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FromValuesColumnNames returns ColumnNames
+	 *     FromValuesColumnNames.abc_1_0 returns ColumnNames
+	 *     ColumnName returns ColumnNames
+	 *
+	 * Constraint:
+	 *     colName=STRING
+	 * </pre>
+	 */
+	protected void sequence_ColumnName(ISerializationContext context, ColumnNames semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.COLUMN_NAMES__COL_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.COLUMN_NAMES__COL_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getColumnNameAccess().getColNameSTRINGTerminalRuleCall_0(), semanticObject.getColName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ColumnOperand returns ColumnOperand
+	 *
+	 * Constraint:
+	 *     (cfull=ColumnFull ora='(+)'?)
+	 * </pre>
+	 */
+	protected void sequence_ColumnOperand(ISerializationContext context, ColumnOperand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Columns returns ColumnOrAlias
+	 *     Columns.OrColumn_1_0 returns ColumnOrAlias
+	 *     ColumnOrAlias returns ColumnOrAlias
+	 *     PivotForClause returns ColumnOrAlias
+	 *
+	 * Constraint:
+	 *     ((ce=OperandGroup alias='AS'? colAlias=DbObjectName?) | allCols=STAR | dbAllCols=DbObjectNameAll)
+	 * </pre>
+	 */
+	protected void sequence_ColumnOrAlias(ISerializationContext context, ColumnOrAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Columns returns OrColumn
+	 *     PivotForClause returns OrColumn
+	 *
+	 * Constraint:
+	 *     (entries+=Columns_OrColumn_1_0 entries+=ColumnOrAlias+)
+	 * </pre>
+	 */
+	protected void sequence_Columns(ISerializationContext context, OrColumn semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Comparison returns Comparison
+	 *
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             operator='&gt;' | 
+	 *             operator='&gt;=' | 
+	 *             operator='&lt;' | 
+	 *             operator='&lt;=' | 
+	 *             operator='=' | 
+	 *             operator='&lt;&gt;' | 
+	 *             operator='!=' | 
+	 *             operator='^='
+	 *         ) 
+	 *         (subOperator='ANY' | subOperator='ALL' | subOperator='SOME')? 
+	 *         op2=Operand
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Comparison(ISerializationContext context, Comparison semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DbObjectNameAll returns DbObjectNameAll
+	 *
+	 * Constraint:
+	 *     dbname=DBID
+	 * </pre>
+	 */
+	protected void sequence_DbObjectNameAll(ISerializationContext context, DbObjectNameAll semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.DB_OBJECT_NAME_ALL__DBNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.DB_OBJECT_NAME_ALL__DBNAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDbObjectNameAllAccess().getDbnameDBIDParserRuleCall_0_0(), semanticObject.getDbname());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WithColumns returns DbObjectName
+	 *     ColumnFull returns DbObjectName
+	 *     ColumnFull.Col_1_0 returns DbObjectName
+	 *     UsingCols returns DbObjectName
+	 *     UsingCols.UsingCols_1_0 returns DbObjectName
+	 *     PivotFunction returns DbObjectName
+	 *     PivotForClause returns DbObjectName
+	 *     PivotColumns returns DbObjectName
+	 *     PivotCols returns DbObjectName
+	 *     PivotCols.pvcs_1_0 returns DbObjectName
+	 *     PivotCol returns DbObjectName
+	 *     PivotCol.pcols_1_0 returns DbObjectName
+	 *     TableFull returns DbObjectName
+	 *     TableFull.tbls_1_0 returns DbObjectName
+	 *     DbObjectName returns DbObjectName
+	 *
+	 * Constraint:
+	 *     dbname=DBID
+	 * </pre>
+	 */
+	protected void sequence_DbObjectName(ISerializationContext context, DbObjectName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.DB_OBJECT_NAME__DBNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.DB_OBJECT_NAME__DBNAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDbObjectNameAccess().getDbnameDBIDParserRuleCall_0(), semanticObject.getDbname());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ExclamationParameterOperand returns ExpOperand
+	 *
+	 * Constraint:
+	 *     prm=JRNPARAM
+	 * </pre>
+	 */
+	protected void sequence_ExclamationParameterOperand(ISerializationContext context, ExpOperand semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.EXP_OPERAND__PRM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.EXP_OPERAND__PRM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExclamationParameterOperandAccess().getPrmJRNPARAMTerminalRuleCall_0(), semanticObject.getPrm());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ExistsOperator returns ExistsOper
+	 *
+	 * Constraint:
+	 *     (op=ExistsValue (subquery=SubQueryOperand | opList=OperandListGroup))
+	 * </pre>
+	 */
+	protected void sequence_ExistsOperator(ISerializationContext context, ExistsOper semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ExpressionFragmentSecond returns FullExpression
+	 *
+	 * Constraint:
+	 *     (((c='AND' | c='OR') efrag=ExpressionFragment) | notPrm=JRNPARAM)
+	 * </pre>
+	 */
+	protected void sequence_ExpressionFragmentSecond(ISerializationContext context, FullExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FullExpression returns FullExpression
+	 *     FullExpression.OrExpr_1_0 returns FullExpression
+	 *     ExpressionFragment returns FullExpression
+	 *
+	 * Constraint:
+	 *     (
+	 *         expgroup=ExpressionGroup | 
+	 *         exp=Expression | 
+	 *         xexp=XExpression | 
+	 *         xexp=XExpression_ | 
+	 *         notPrm=JRNPARAM | 
+	 *         in=InOperator | 
+	 *         exists=ExistsOperator
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ExpressionFragment(ISerializationContext context, FullExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ExpressionGroup returns ExprGroup
+	 *
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             isnot='NOT' | 
+	 *             isnot='NOT
+	 *             '
+	 *         )? 
+	 *         expr=FullExpression
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ExpressionGroup(ISerializationContext context, ExprGroup semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns FullExpression
+	 *
+	 * Constraint:
+	 *     (
+	 *         op1=Operand 
+	 *         (
+	 *             isnull=IsNullValue | 
+	 *             in=InOperator | 
+	 *             exists=ExistsOperator | 
+	 *             between=Between | 
+	 *             like=Like | 
+	 *             comp=Comparison
+	 *         )
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Expression(ISerializationContext context, FullExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FetchFirst returns FetchFirst
+	 *
+	 * Constraint:
+	 *     (fetchFirst=UnsignedValue (row='ROW' | row='ROWS'))
+	 * </pre>
+	 */
+	protected void sequence_FetchFirst(ISerializationContext context, FetchFirst semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FromTableJoin returns FromTableJoin
+	 *
+	 * Constraint:
+	 *     (join=JoinType onTable=TableOrAlias (joinExpr=FullExpression | joinCond=JoinCondition))
+	 * </pre>
+	 */
+	protected void sequence_FromTableJoin(ISerializationContext context, FromTableJoin semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Tables returns FromTable
+	 *     Tables.OrTable_1_0 returns FromTable
+	 *     FromTable returns FromTable
+	 *
+	 * Constraint:
+	 *     (table=TableOrAlias fjoin+=FromTableJoin*)
+	 * </pre>
+	 */
+	protected void sequence_FromTable(ISerializationContext context, FromTable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FromValuesColumnNames returns abc
+	 *
+	 * Constraint:
+	 *     (entries+=FromValuesColumnNames_abc_1_0 entries+=ColumnName+)
+	 * </pre>
+	 */
+	protected void sequence_FromValuesColumnNames(ISerializationContext context, abc semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FromValuesColumns returns FromValuesColumns
+	 *
+	 * Constraint:
+	 *     fvCols=FromValuesColumnNames
+	 * </pre>
+	 */
+	protected void sequence_FromValuesColumns(ISerializationContext context, FromValuesColumns semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.FROM_VALUES_COLUMNS__FV_COLS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.FROM_VALUES_COLUMNS__FV_COLS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFromValuesColumnsAccess().getFvColsFromValuesColumnNamesParserRuleCall_2_0(), semanticObject.getFvCols());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FromValues returns FromValues
+	 *
+	 * Constraint:
+	 *     (values=Values c=FromValuesColumns?)
+	 * </pre>
+	 */
+	protected void sequence_FromValues(ISerializationContext context, FromValues semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FullExpression returns OrExpr
+	 *
+	 * Constraint:
+	 *     (entries+=FullExpression_OrExpr_1_0 entries+=ExpressionFragmentSecond+)
+	 * </pre>
+	 */
+	protected void sequence_FullExpression(ISerializationContext context, OrExpr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FunctionAnalytical returns FunctionAnalytical
+	 *
+	 * Constraint:
+	 *     anClause=AnalyticClause
+	 * </pre>
+	 */
+	protected void sequence_FunctionAnalytical(ISerializationContext context, FunctionAnalytical semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.FUNCTION_ANALYTICAL__AN_CLAUSE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.FUNCTION_ANALYTICAL__AN_CLAUSE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFunctionAnalyticalAccess().getAnClauseAnalyticClauseParserRuleCall_2_0(), semanticObject.getAnClause());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     FunctionExtract returns FunctionExtract
+	 *
+	 * Constraint:
+	 *     (v=EXTRACT_VALUES operand=OperandGroup)
+	 * </pre>
+	 */
+	protected void sequence_FunctionExtract(ISerializationContext context, FunctionExtract semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.FUNCTION_EXTRACT__V) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.FUNCTION_EXTRACT__V));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.FUNCTION_EXTRACT__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.FUNCTION_EXTRACT__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFunctionExtractAccess().getVEXTRACT_VALUESEnumRuleCall_2_0(), semanticObject.getV());
+		feeder.accept(grammarAccess.getFunctionExtractAccess().getOperandOperandGroupParserRuleCall_4_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GroupByColumns returns GroupByColumnFull
+	 *     GroupByColumns.OrGroupByColumn_1_0 returns GroupByColumnFull
+	 *     GroupByColumnFull returns GroupByColumnFull
+	 *
+	 * Constraint:
+	 *     (colGrBy=ColumnFull | gbFunction=OperandFunction | grByInt=UNSIGNED)
+	 * </pre>
+	 */
+	protected void sequence_GroupByColumnFull(ISerializationContext context, GroupByColumnFull semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GroupByColumns returns OrGroupByColumn
+	 *
+	 * Constraint:
+	 *     (entries+=GroupByColumns_OrGroupByColumn_1_0 entries+=GroupByColumnFull+)
+	 * </pre>
+	 */
+	protected void sequence_GroupByColumns(ISerializationContext context, OrGroupByColumn semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     InOperator returns InOper
+	 *
+	 * Constraint:
+	 *     (op=InValue (subquery=SubQueryOperand | opList=OperandListGroup))
+	 * </pre>
+	 */
+	protected void sequence_InOperator(ISerializationContext context, InOper semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     IntegerValue returns IntegerValue
+	 *
+	 * Constraint:
+	 *     integer=INT
+	 * </pre>
+	 */
+	protected void sequence_IntegerValue(ISerializationContext context, IntegerValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INTEGER_VALUE__INTEGER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INTEGER_VALUE__INTEGER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntegerValueAccess().getIntegerINTTerminalRuleCall_0(), semanticObject.getInteger());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     XExpressionParams returns JRParameter
+	 *     XExpressionParams.Prms_1_0 returns JRParameter
+	 *     JRParameter returns JRParameter
+	 *
+	 * Constraint:
+	 *     jrprm=ID
+	 * </pre>
+	 */
+	protected void sequence_JRParameter(ISerializationContext context, JRParameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.JR_PARAMETER__JRPRM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.JR_PARAMETER__JRPRM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getJRParameterAccess().getJrprmIDTerminalRuleCall_0(), semanticObject.getJrprm());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     JoinCondition returns JoinCondition
+	 *
+	 * Constraint:
+	 *     useCols=UsingCols
+	 * </pre>
+	 */
+	protected void sequence_JoinCondition(ISerializationContext context, JoinCondition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.JOIN_CONDITION__USE_COLS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.JOIN_CONDITION__USE_COLS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getJoinConditionAccess().getUseColsUsingColsParserRuleCall_2_0(), semanticObject.getUseCols());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     LikeOperand returns LikeOperand
+	 *
+	 * Constraint:
+	 *     (op2=StringOperand | fop2=OperandFunction | fcast=OpFunctionCast | fparam=ParameterOperand)
+	 * </pre>
+	 */
+	protected void sequence_LikeOperand(ISerializationContext context, LikeOperand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Like returns Like
+	 *
+	 * Constraint:
+	 *     (opLike=LikeValue op2=LikeOperand)
+	 * </pre>
+	 */
+	protected void sequence_Like(ISerializationContext context, Like semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.LIKE__OP_LIKE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.LIKE__OP_LIKE));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.LIKE__OP2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.LIKE__OP2));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLikeAccess().getOpLikeLikeValueParserRuleCall_0_0(), semanticObject.getOpLike());
+		feeder.accept(grammarAccess.getLikeAccess().getOp2LikeOperandParserRuleCall_1_0(), semanticObject.getOp2());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Limit returns Limit
+	 *
+	 * Constraint:
+	 *     (l1=UNSIGNED l2=UNSIGNED?)?
+	 * </pre>
+	 */
+	protected void sequence_Limit(ISerializationContext context, Limit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -70,10 +1099,1079 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     (wq=WithQuery? query=SelectQuery)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Offset returns Offset
+	 *
+	 * Constraint:
+	 *     offset=INT
+	 * </pre>
+	 */
+	protected void sequence_Offset(ISerializationContext context, Offset semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OFFSET__OFFSET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OFFSET__OFFSET));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOffsetAccess().getOffsetINTTerminalRuleCall_0(), semanticObject.getOffset());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OpFunctionArg returns OpFunctionArgOperand
+	 *     OpFunctionArg.OpFList_1_0 returns OpFunctionArgOperand
+	 *     OpFunctionArgOperand returns OpFunctionArgOperand
+	 *
+	 * Constraint:
+	 *     (op=OpFunctionArgAgregate | op=Operand)
+	 * </pre>
+	 */
+	protected void sequence_OpFunctionArgOperand(ISerializationContext context, OpFunctionArgOperand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OpFunctionArg returns OpFList
+	 *
+	 * Constraint:
+	 *     (entries+=OpFunctionArg_OpFList_1_0 entries+=OpFunctionArgOperand+)
+	 * </pre>
+	 */
+	protected void sequence_OpFunctionArg(ISerializationContext context, OpFList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OpFunctionCast returns OpFunctionCast
+	 *
+	 * Constraint:
+	 *     (op=OperandGroup type=ID (p=UNSIGNED p2=UNSIGNED?)?)
+	 * </pre>
+	 */
+	protected void sequence_OpFunctionCast(ISerializationContext context, OpFunctionCast semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandFragment returns Operand
+	 *
+	 * Constraint:
+	 *     (
+	 *         column=ColumnOperand | 
+	 *         xop=XOperandFragment | 
+	 *         subq=SubQueryOperand | 
+	 *         fcast=OpFunctionCast | 
+	 *         fext=FunctionExtract | 
+	 *         func=OperandFunction | 
+	 *         sqlcase=SQLCASE
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_OperandFragment(ISerializationContext context, Operand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandFunction returns OpFunction
+	 *
+	 * Constraint:
+	 *     (fname=FNAME (star=STAR | args=OpFunctionArg)? fan=FunctionAnalytical?)
+	 * </pre>
+	 */
+	protected void sequence_OperandFunction(ISerializationContext context, OpFunction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandListGroup returns OperandListGroup
+	 *
+	 * Constraint:
+	 *     opGroup=OperandList
+	 * </pre>
+	 */
+	protected void sequence_OperandListGroup(ISerializationContext context, OperandListGroup semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERAND_LIST_GROUP__OP_GROUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERAND_LIST_GROUP__OP_GROUP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandListGroupAccess().getOpGroupOperandListParserRuleCall_1_0(), semanticObject.getOpGroup());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandList returns OpList
+	 *
+	 * Constraint:
+	 *     (entries+=OperandList_OpList_1_0 entries+=ScalarOperand+)
+	 * </pre>
+	 */
+	protected void sequence_OperandList(ISerializationContext context, OpList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandGroup returns Concat
+	 *     Operand returns Concat
+	 *     Operand.Plus_1_0_0_0 returns Concat
+	 *     Operand.Minus_1_0_1_0 returns Concat
+	 *     Operand.Concat_1_0_2_0 returns Concat
+	 *     Operand.Multiply_1_0_3_0 returns Concat
+	 *     Operand.Division_1_0_4_0 returns Concat
+	 *     OpFunctionArgAgregate returns Concat
+	 *
+	 * Constraint:
+	 *     (left=Operand_Concat_1_0_2_0 right=OperandFragment)
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Concat semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandAccess().getConcatLeftAction_1_0_2_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOperandAccess().getRightOperandFragmentParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandGroup returns Division
+	 *     Operand returns Division
+	 *     Operand.Plus_1_0_0_0 returns Division
+	 *     Operand.Minus_1_0_1_0 returns Division
+	 *     Operand.Concat_1_0_2_0 returns Division
+	 *     Operand.Multiply_1_0_3_0 returns Division
+	 *     Operand.Division_1_0_4_0 returns Division
+	 *     OpFunctionArgAgregate returns Division
+	 *
+	 * Constraint:
+	 *     (left=Operand_Division_1_0_4_0 right=OperandFragment)
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Division semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandAccess().getDivisionLeftAction_1_0_4_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOperandAccess().getRightOperandFragmentParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandGroup returns Minus
+	 *     Operand returns Minus
+	 *     Operand.Plus_1_0_0_0 returns Minus
+	 *     Operand.Minus_1_0_1_0 returns Minus
+	 *     Operand.Concat_1_0_2_0 returns Minus
+	 *     Operand.Multiply_1_0_3_0 returns Minus
+	 *     Operand.Division_1_0_4_0 returns Minus
+	 *     OpFunctionArgAgregate returns Minus
+	 *
+	 * Constraint:
+	 *     (left=Operand_Minus_1_0_1_0 right=OperandFragment)
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Minus semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandAccess().getMinusLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOperandAccess().getRightOperandFragmentParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandGroup returns Multiply
+	 *     Operand returns Multiply
+	 *     Operand.Plus_1_0_0_0 returns Multiply
+	 *     Operand.Minus_1_0_1_0 returns Multiply
+	 *     Operand.Concat_1_0_2_0 returns Multiply
+	 *     Operand.Multiply_1_0_3_0 returns Multiply
+	 *     Operand.Division_1_0_4_0 returns Multiply
+	 *     OpFunctionArgAgregate returns Multiply
+	 *
+	 * Constraint:
+	 *     (left=Operand_Multiply_1_0_3_0 right=OperandFragment)
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Multiply semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandAccess().getMultiplyLeftAction_1_0_3_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOperandAccess().getRightOperandFragmentParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandGroup returns Operands
+	 *     Operand returns Operands
+	 *     Operand.Plus_1_0_0_0 returns Operands
+	 *     Operand.Minus_1_0_1_0 returns Operands
+	 *     Operand.Concat_1_0_2_0 returns Operands
+	 *     Operand.Multiply_1_0_3_0 returns Operands
+	 *     Operand.Division_1_0_4_0 returns Operands
+	 *     OpFunctionArgAgregate returns Operands
+	 *
+	 * Constraint:
+	 *     op1=OperandFragment
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Operands semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__OP1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__OP1));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandAccess().getOp1OperandFragmentParserRuleCall_0_0(), semanticObject.getOp1());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandGroup returns Plus
+	 *     Operand returns Plus
+	 *     Operand.Plus_1_0_0_0 returns Plus
+	 *     Operand.Minus_1_0_1_0 returns Plus
+	 *     Operand.Concat_1_0_2_0 returns Plus
+	 *     Operand.Multiply_1_0_3_0 returns Plus
+	 *     Operand.Division_1_0_4_0 returns Plus
+	 *     OpFunctionArgAgregate returns Plus
+	 *
+	 * Constraint:
+	 *     (left=Operand_Plus_1_0_0_0 right=OperandFragment)
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Plus semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.OPERANDS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperandAccess().getPlusLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOperandAccess().getRightOperandFragmentParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OrderByClauseArgs returns OrderByClauseArg
+	 *     OrderByClauseArgs.OBCArgs_1_0 returns OrderByClauseArg
+	 *     OrderByClauseArg returns OrderByClauseArg
+	 *
+	 * Constraint:
+	 *     col=AnalyticExprArg
+	 * </pre>
+	 */
+	protected void sequence_OrderByClauseArg(ISerializationContext context, OrderByClauseArg semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.ORDER_BY_CLAUSE_ARG__COL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.ORDER_BY_CLAUSE_ARG__COL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOrderByClauseArgAccess().getColAnalyticExprArgParserRuleCall_0_0(), semanticObject.getCol());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OrderByClauseArgs returns OBCArgs
+	 *
+	 * Constraint:
+	 *     (entries+=OrderByClauseArgs_OBCArgs_1_0 entries+=OrderByClauseArg+)
+	 * </pre>
+	 */
+	protected void sequence_OrderByClauseArgs(ISerializationContext context, OBCArgs semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OrderByClause returns OrderByClause
+	 *
+	 * Constraint:
+	 *     args=OrderByClauseArgs
+	 * </pre>
+	 */
+	protected void sequence_OrderByClause(ISerializationContext context, OrderByClause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.ORDER_BY_CLAUSE__ARGS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.ORDER_BY_CLAUSE__ARGS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOrderByClauseAccess().getArgsOrderByClauseArgsParserRuleCall_1_0(), semanticObject.getArgs());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OrderByColumns returns OrderByColumnFull
+	 *     OrderByColumns.OrOrderByColumn_1_0 returns OrderByColumnFull
+	 *     OrderByColumnFull returns OrderByColumnFull
+	 *
+	 * Constraint:
+	 *     ((colOrder=ColumnFull | colOrderInt=UNSIGNED) (direction='ASC' | direction='DESC')?)
+	 * </pre>
+	 */
+	protected void sequence_OrderByColumnFull(ISerializationContext context, OrderByColumnFull semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OrderByColumns returns OrOrderByColumn
+	 *
+	 * Constraint:
+	 *     (entries+=OrderByColumns_OrOrderByColumn_1_0 entries+=OrderByColumnFull+)
+	 * </pre>
+	 */
+	protected void sequence_OrderByColumns(ISerializationContext context, OrOrderByColumn semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ParameterOperand returns POperand
+	 *
+	 * Constraint:
+	 *     prm=JRPARAM
+	 * </pre>
+	 */
+	protected void sequence_ParameterOperand(ISerializationContext context, POperand semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.POPERAND__PRM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.POPERAND__PRM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParameterOperandAccess().getPrmJRPARAMTerminalRuleCall_0(), semanticObject.getPrm());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PivotFunction returns pcols
+	 *     PivotColumns returns pcols
+	 *     PivotCols returns pcols
+	 *     PivotCols.pvcs_1_0 returns pcols
+	 *     PivotCol returns pcols
+	 *
+	 * Constraint:
+	 *     (entries+=PivotCol_pcols_1_0 entries+=DbObjectName+)
+	 * </pre>
+	 */
+	protected void sequence_PivotCol(ISerializationContext context, pcols semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PivotColumns returns pvcs
+	 *     PivotCols returns pvcs
+	 *
+	 * Constraint:
+	 *     (entries+=PivotCols_pvcs_1_0 entries+=PivotCol+)
+	 * </pre>
+	 */
+	protected void sequence_PivotCols(ISerializationContext context, pvcs semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PivotFunctions returns PivotFunctions
+	 *
+	 * Constraint:
+	 *     abc=ID
+	 * </pre>
+	 */
+	protected void sequence_PivotFunctions(ISerializationContext context, PivotFunctions semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.PIVOT_FUNCTIONS__ABC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.PIVOT_FUNCTIONS__ABC));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPivotFunctionsAccess().getAbcIDTerminalRuleCall_0(), semanticObject.getAbc());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PivotInClause returns PivotInClause
+	 *
+	 * Constraint:
+	 *     (sq=SubQueryOperand | args=UnpivotInClauseArgs | pinany=PivotInClauseAny)
+	 * </pre>
+	 */
+	protected void sequence_PivotInClause(ISerializationContext context, PivotInClause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PivotTable returns PivotTable
+	 *
+	 * Constraint:
+	 *     (pfun=PivotFunctions pfor=PivotForClause pin=PivotInClause)
+	 * </pre>
+	 */
+	protected void sequence_PivotTable(ISerializationContext context, PivotTable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.PIVOT_TABLE__PFUN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.PIVOT_TABLE__PFUN));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.PIVOT_TABLE__PFOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.PIVOT_TABLE__PFOR));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.PIVOT_TABLE__PIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.PIVOT_TABLE__PIN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPivotTableAccess().getPfunPivotFunctionsParserRuleCall_3_0(), semanticObject.getPfun());
+		feeder.accept(grammarAccess.getPivotTableAccess().getPforPivotForClauseParserRuleCall_4_0(), semanticObject.getPfor());
+		feeder.accept(grammarAccess.getPivotTableAccess().getPinPivotInClauseParserRuleCall_5_0(), semanticObject.getPin());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     QueryPartitionClause returns QueryPartitionClause
+	 *
+	 * Constraint:
+	 *     args=AnalyticExprArgs
+	 * </pre>
+	 */
+	protected void sequence_QueryPartitionClause(ISerializationContext context, QueryPartitionClause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.QUERY_PARTITION_CLAUSE__ARGS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.QUERY_PARTITION_CLAUSE__ARGS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQueryPartitionClauseAccess().getArgsAnalyticExprArgsParserRuleCall_2_0_0(), semanticObject.getArgs());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RowValues returns RowValue
+	 *     RowValues.RowValues_1_0 returns RowValue
+	 *     RowValue returns RowValue
+	 *
+	 * Constraint:
+	 *     null='NULL'
+	 * </pre>
+	 */
+	protected void sequence_RowValue(ISerializationContext context, RowValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.ROW_VALUE__NULL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.ROW_VALUE__NULL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRowValueAccess().getNullNULLKeyword_1_0(), semanticObject.getNull());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RowValues returns RowValues
+	 *
+	 * Constraint:
+	 *     (entries+=RowValues_RowValues_1_0 entries+=RowValue+)
+	 * </pre>
+	 */
+	protected void sequence_RowValues(ISerializationContext context, RowValues semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Rows returns Row
+	 *     Rows.Rows_1_0 returns Row
+	 *     Row returns Row
+	 *
+	 * Constraint:
+	 *     rowValues=RowValues
+	 * </pre>
+	 */
+	protected void sequence_Row(ISerializationContext context, Row semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.ROW__ROW_VALUES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.ROW__ROW_VALUES));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRowAccess().getRowValuesRowValuesParserRuleCall_1_0(), semanticObject.getRowValues());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Rows returns Rows
+	 *
+	 * Constraint:
+	 *     (entries+=Rows_Rows_1_0 entries+=Row+)
+	 * </pre>
+	 */
+	protected void sequence_Rows(ISerializationContext context, Rows semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SQLCASE returns SQLCaseOperand
+	 *
+	 * Constraint:
+	 *     ((wop=OperandGroup | expr=FullExpression)? when=SQLCaseWhens)
+	 * </pre>
+	 */
+	protected void sequence_SQLCASE(ISerializationContext context, SQLCaseOperand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SQLCaseWhens returns WhenList
+	 *
+	 * Constraint:
+	 *     (entries+=SQLCaseWhens_WhenList_1_0 entries+=SqlCaseWhen+)
+	 * </pre>
+	 */
+	protected void sequence_SQLCaseWhens(ISerializationContext context, WhenList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RowValues returns ScalarOperand
+	 *     RowValues.RowValues_1_0 returns ScalarOperand
+	 *     RowValue returns ScalarOperand
+	 *     ScalarNumberOperand returns ScalarOperand
+	 *
+	 * Constraint:
+	 *     (soUInt=UNSIGNED | soint=INT | sodbl=SIGNED_DOUBLE | sostr=StringOperand)
+	 * </pre>
+	 */
+	protected void sequence_ScalarNumberOperand(ISerializationContext context, ScalarOperand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperandList returns ScalarOperand
+	 *     OperandList.OpList_1_0 returns ScalarOperand
+	 *     ScalarOperand returns ScalarOperand
+	 *
+	 * Constraint:
+	 *     (sostr=StringOperand | sodbl=SIGNED_DOUBLE | sodate=DATE | sotime=TIME | sodt=TIMESTAMP)
+	 * </pre>
+	 */
+	protected void sequence_ScalarOperand(ISerializationContext context, ScalarOperand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SelectSubSet returns SelectSubSet
+	 *
+	 * Constraint:
+	 *     ((op='UNION' | op='INTERSECT' | op='MINUS' | op='EXCEPT') all='ALL'? query=Select)
+	 * </pre>
+	 */
+	protected void sequence_SelectSubSet(ISerializationContext context, SelectSubSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Select returns Select
+	 *
+	 * Constraint:
+	 *     (
+	 *         select='SELECT' 
+	 *         cols=Columns 
+	 *         tbl=Tables 
+	 *         whereExpression=FullExpression? 
+	 *         groupByEntry=GroupByColumns? 
+	 *         havingEntry=FullExpression? 
+	 *         orderByEntry=OrderByColumns? 
+	 *         lim=Limit? 
+	 *         offset=Offset? 
+	 *         fetchFirst=FetchFirst?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Select(ISerializationContext context, Select semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SelectQuery returns Select
+	 *
+	 * Constraint:
+	 *     (
+	 *         select='SELECT' 
+	 *         cols=Columns 
+	 *         tbl=Tables 
+	 *         whereExpression=FullExpression? 
+	 *         groupByEntry=GroupByColumns? 
+	 *         havingEntry=FullExpression? 
+	 *         orderByEntry=OrderByColumns? 
+	 *         lim=Limit? 
+	 *         offset=Offset? 
+	 *         fetchFirst=FetchFirst? 
+	 *         op+=SelectSubSet*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Select_SelectQuery(ISerializationContext context, Select semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SQLCaseWhens returns SqlCaseWhen
+	 *     SQLCaseWhens.WhenList_1_0 returns SqlCaseWhen
+	 *     SqlCaseWhen returns SqlCaseWhen
+	 *
+	 * Constraint:
+	 *     ((wop=OperandGroup | expr=FullExpression) texp=OperandGroup eexp=OperandGroup?)
+	 * </pre>
+	 */
+	protected void sequence_SqlCaseWhen(ISerializationContext context, SqlCaseWhen semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SubQueryOperand returns SubQueryOperand
+	 *
+	 * Constraint:
+	 *     sel=SelectQuery
+	 * </pre>
+	 */
+	protected void sequence_SubQueryOperand(ISerializationContext context, SubQueryOperand semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.SUB_QUERY_OPERAND__SEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.SUB_QUERY_OPERAND__SEL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSubQueryOperandAccess().getSelSelectQueryParserRuleCall_2_0(), semanticObject.getSel());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TableFull returns tbls
+	 *
+	 * Constraint:
+	 *     (entries+=TableFull_tbls_1_0 entries+=DbObjectName+)
+	 * </pre>
+	 */
+	protected void sequence_TableFull(ISerializationContext context, tbls semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TableOrAlias returns TableOrAlias
+	 *
+	 * Constraint:
+	 *     ((tfull=TableFull | sq=SubQueryOperand | values=FromValues) (pivot=PivotTable | unpivot=UnpivotTable)? alias='AS'? tblAlias=DbObjectName?)
+	 * </pre>
+	 */
+	protected void sequence_TableOrAlias(ISerializationContext context, TableOrAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Tables returns OrTable
+	 *
+	 * Constraint:
+	 *     (entries+=Tables_OrTable_1_0 entries+=FromTable+)
+	 * </pre>
+	 */
+	protected void sequence_Tables(ISerializationContext context, OrTable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     UnpivotInClauseArgs returns UnpivotInClauseArg
+	 *     UnpivotInClauseArgs.uicargs_1_0 returns UnpivotInClauseArg
+	 *     UnpivotInClauseArg returns UnpivotInClauseArg
+	 *
+	 * Constraint:
+	 *     (pcols=PivotColumns cfuls=PivotColumns?)
+	 * </pre>
+	 */
+	protected void sequence_UnpivotInClauseArg(ISerializationContext context, UnpivotInClauseArg semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     UnpivotInClauseArgs returns uicargs
+	 *
+	 * Constraint:
+	 *     (entries+=UnpivotInClauseArgs_uicargs_1_0 entries+=UnpivotInClauseArg+)
+	 * </pre>
+	 */
+	protected void sequence_UnpivotInClauseArgs(ISerializationContext context, uicargs semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     UnpivotInClause returns UnipivotInClause
+	 *
+	 * Constraint:
+	 *     (op='IN' args=UnpivotInClauseArgs)
+	 * </pre>
+	 */
+	protected void sequence_UnpivotInClause(ISerializationContext context, UnipivotInClause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.UNIPIVOT_IN_CLAUSE__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.UNIPIVOT_IN_CLAUSE__OP));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.UNIPIVOT_IN_CLAUSE__ARGS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.UNIPIVOT_IN_CLAUSE__ARGS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnpivotInClauseAccess().getOpINKeyword_1_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getUnpivotInClauseAccess().getArgsUnpivotInClauseArgsParserRuleCall_3_0(), semanticObject.getArgs());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     UnpivotTable returns UnpivotTable
+	 *
+	 * Constraint:
+	 *     (pcols=PivotColumns pfor=PivotForClause inop=UnpivotInClause)
+	 * </pre>
+	 */
+	protected void sequence_UnpivotTable(ISerializationContext context, UnpivotTable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.UNPIVOT_TABLE__PCOLS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.UNPIVOT_TABLE__PCOLS));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.UNPIVOT_TABLE__PFOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.UNPIVOT_TABLE__PFOR));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.UNPIVOT_TABLE__INOP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.UNPIVOT_TABLE__INOP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnpivotTableAccess().getPcolsPivotColumnsParserRuleCall_3_0(), semanticObject.getPcols());
+		feeder.accept(grammarAccess.getUnpivotTableAccess().getPforPivotForClauseParserRuleCall_4_0(), semanticObject.getPfor());
+		feeder.accept(grammarAccess.getUnpivotTableAccess().getInopUnpivotInClauseParserRuleCall_5_0(), semanticObject.getInop());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     UnsignedValue returns UnsignedValue
+	 *
+	 * Constraint:
+	 *     integer=UNSIGNED
+	 * </pre>
+	 */
+	protected void sequence_UnsignedValue(ISerializationContext context, UnsignedValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.UNSIGNED_VALUE__INTEGER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.UNSIGNED_VALUE__INTEGER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnsignedValueAccess().getIntegerUNSIGNEDTerminalRuleCall_0(), semanticObject.getInteger());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WithColumns returns UsingCols
+	 *     UsingCols returns UsingCols
+	 *
+	 * Constraint:
+	 *     (entries+=UsingCols_UsingCols_1_0 entries+=DbObjectName+)
+	 * </pre>
+	 */
+	protected void sequence_UsingCols(ISerializationContext context, UsingCols semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Values returns Values
+	 *
+	 * Constraint:
+	 *     rows=Rows
+	 * </pre>
+	 */
+	protected void sequence_Values(ISerializationContext context, Values semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.VALUES__ROWS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.VALUES__ROWS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getValuesAccess().getRowsRowsParserRuleCall_2_0(), semanticObject.getRows());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WindowingClause returns WindowingClauseBetween
+	 *     WindowingClauseBetween returns WindowingClauseBetween
+	 *
+	 * Constraint:
+	 *     (wcoP=WindowingClauseOperandPreceding wcoF=WindowingClauseOperandFollowing)
+	 * </pre>
+	 */
+	protected void sequence_WindowingClauseBetween(ISerializationContext context, WindowingClauseBetween semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.WINDOWING_CLAUSE_BETWEEN__WCO_P) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.WINDOWING_CLAUSE_BETWEEN__WCO_P));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.WINDOWING_CLAUSE_BETWEEN__WCO_F) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.WINDOWING_CLAUSE_BETWEEN__WCO_F));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWindowingClauseBetweenAccess().getWcoPWindowingClauseOperandPrecedingParserRuleCall_1_0(), semanticObject.getWcoP());
+		feeder.accept(grammarAccess.getWindowingClauseBetweenAccess().getWcoFWindowingClauseOperandFollowingParserRuleCall_3_0(), semanticObject.getWcoF());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WindowingClauseOperandFollowing returns WindowingClauseOperandFollowing
+	 *
+	 * Constraint:
+	 *     exp=AnalyticExprArg?
+	 * </pre>
+	 */
+	protected void sequence_WindowingClauseOperandFollowing(ISerializationContext context, WindowingClauseOperandFollowing semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WindowingClause returns WindowingClauseOperandPreceding
+	 *     WindowingClauseOperandPreceding returns WindowingClauseOperandPreceding
+	 *
+	 * Constraint:
+	 *     expr=AnalyticExprArg?
+	 * </pre>
+	 */
+	protected void sequence_WindowingClauseOperandPreceding(ISerializationContext context, WindowingClauseOperandPreceding semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WithQuery returns WithQuery
+	 *
+	 * Constraint:
+	 *     (
+	 *         w='WITH' 
+	 *         wname=DbObjectName 
+	 *         withCols=WithColumns? 
+	 *         query=SelectQuery 
+	 *         (additionalWname+=DbObjectName additionalWithCols+=WithColumns? additionalQueries+=SelectQuery)*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_WithQuery(ISerializationContext context, WithQuery semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     XExpressionParams returns Prms
+	 *
+	 * Constraint:
+	 *     (entries+=XExpressionParams_Prms_1_0 entries+=JRParameter+)
+	 * </pre>
+	 */
+	protected void sequence_XExpressionParams(ISerializationContext context, Prms semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     XExpression returns XExpr
+	 *
+	 * Constraint:
+	 *     (xf=XFunction col=OperandGroup prm=XExpressionParams?)
+	 * </pre>
+	 */
+	protected void sequence_XExpression(ISerializationContext context, XExpr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     XExpression_ returns XExpr
+	 *
+	 * Constraint:
+	 *     (xf=XFunction col=OperandGroup prm=XExpressionParams?)
+	 * </pre>
+	 */
+	protected void sequence_XExpression_(ISerializationContext context, XExpr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     XOperandFragment returns Operand
+	 *
+	 * Constraint:
+	 *     (param=ParameterOperand | eparam=ExclamationParameterOperand | scalar=ScalarNumberOperand)
+	 * </pre>
+	 */
+	protected void sequence_XOperandFragment(ISerializationContext context, Operand semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

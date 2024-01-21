@@ -12,4 +12,5 @@ Require-Bundle: org.xtext.example.mydsl_sql,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.xtext.example.mydsl_sql.ide.contentassist.antlr.internal,
- org.xtext.example.mydsl_sql.ide.contentassist.antlr
+ org.xtext.example.mydsl_sql.ide.contentassist.antlr,
+ org.xtext.example.mydsl_sql.ide.contentassist.antlr.lexer

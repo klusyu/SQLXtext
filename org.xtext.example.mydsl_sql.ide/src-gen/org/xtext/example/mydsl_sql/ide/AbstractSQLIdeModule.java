@@ -17,7 +17,7 @@ import org.eclipse.xtext.ide.refactoring.IRenameStrategy2;
 import org.eclipse.xtext.ide.server.rename.IRenameService2;
 import org.eclipse.xtext.ide.server.rename.RenameService2;
 import org.xtext.example.mydsl_sql.ide.contentassist.antlr.SQLParser;
-import org.xtext.example.mydsl_sql.ide.contentassist.antlr.internal.InternalSQLLexer;
+import org.xtext.example.mydsl_sql.ide.contentassist.antlr.lexer.InternalSQLLexer;
 
 /**
  * Manual modifications go to {@link SQLIdeModule}.

@@ -3,8 +3,6 @@
  */
 package org.xtext.example.mydsl_sql.sQL;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel()
@@ -26,15 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl_sql.sQL.Greeting}.
+   * Returns the value of the '<em><b>Wq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greetings</em>' containment reference list.
-   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Greetings()
+   * @return the value of the '<em>Wq</em>' containment reference.
+   * @see #setWq(WithQuery)
+   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Wq()
    * @model containment="true"
    * @generated
    */
-  EList<Greeting> getGreetings();
+  WithQuery getWq();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Wq</em>' containment reference.
+   * @see #getWq()
+   * @generated
+   */
+  void setWq(WithQuery value);
+
+  /**
+   * Returns the value of the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Query</em>' containment reference.
+   * @see #setQuery(SelectQuery)
+   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Query()
+   * @model containment="true"
+   * @generated
+   */
+  SelectQuery getQuery();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Query</em>' containment reference.
+   * @see #getQuery()
+   * @generated
+   */
+  void setQuery(SelectQuery value);
 
 } // Model

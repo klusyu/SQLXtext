@@ -5,6 +5,7 @@ package org.xtext.example.mydsl_sql.sQL;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -68,13 +69,22 @@ public interface SQLPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Wq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__WQ = 0;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__QUERY = 1;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -83,35 +93,4012 @@ public interface SQLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl <em>With Query</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.GreetingImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getGreeting()
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWithQuery()
    * @generated
    */
-  int GREETING = 1;
+  int WITH_QUERY = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GREETING__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>W</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int WITH_QUERY__W = 0;
+
+  /**
+   * The feature id for the '<em><b>Wname</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY__WNAME = 1;
+
+  /**
+   * The feature id for the '<em><b>With Cols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY__WITH_COLS = 2;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY__QUERY = 3;
+
+  /**
+   * The feature id for the '<em><b>Additional Wname</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY__ADDITIONAL_WNAME = 4;
+
+  /**
+   * The feature id for the '<em><b>Additional With Cols</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY__ADDITIONAL_WITH_COLS = 5;
+
+  /**
+   * The feature id for the '<em><b>Additional Queries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY__ADDITIONAL_QUERIES = 6;
+
+  /**
+   * The number of structural features of the '<em>With Query</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_QUERY_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithColumnsImpl <em>With Columns</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WithColumnsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWithColumns()
+   * @generated
+   */
+  int WITH_COLUMNS = 2;
+
+  /**
+   * The number of structural features of the '<em>With Columns</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WITH_COLUMNS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FetchFirstImpl <em>Fetch First</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FetchFirstImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFetchFirst()
+   * @generated
+   */
+  int FETCH_FIRST = 3;
+
+  /**
+   * The feature id for the '<em><b>Fetch First</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH_FIRST__FETCH_FIRST = 0;
+
+  /**
+   * The feature id for the '<em><b>Row</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH_FIRST__ROW = 1;
+
+  /**
+   * The number of structural features of the '<em>Fetch First</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FETCH_FIRST_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OffsetImpl <em>Offset</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OffsetImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOffset()
+   * @generated
+   */
+  int OFFSET = 4;
+
+  /**
+   * The feature id for the '<em><b>Offset</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OFFSET__OFFSET = 0;
+
+  /**
+   * The number of structural features of the '<em>Offset</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OFFSET_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.LimitImpl <em>Limit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.LimitImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLimit()
+   * @generated
+   */
+  int LIMIT = 5;
+
+  /**
+   * The feature id for the '<em><b>L1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIMIT__L1 = 0;
+
+  /**
+   * The feature id for the '<em><b>L2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIMIT__L2 = 1;
+
+  /**
+   * The number of structural features of the '<em>Limit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIMIT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectQueryImpl <em>Select Query</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SelectQueryImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectQuery()
+   * @generated
+   */
+  int SELECT_QUERY = 6;
+
+  /**
+   * The number of structural features of the '<em>Select Query</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_QUERY_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectSubSetImpl <em>Select Sub Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SelectSubSetImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectSubSet()
+   * @generated
+   */
+  int SELECT_SUB_SET = 7;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_SUB_SET__OP = 0;
+
+  /**
+   * The feature id for the '<em><b>All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_SUB_SET__ALL = 1;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_SUB_SET__QUERY = 2;
+
+  /**
+   * The number of structural features of the '<em>Select Sub Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_SUB_SET_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectImpl <em>Select</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SelectImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelect()
+   * @generated
+   */
+  int SELECT = 8;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__OP = SELECT_QUERY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Select</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__SELECT = SELECT_QUERY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Cols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__COLS = SELECT_QUERY_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Tbl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__TBL = SELECT_QUERY_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Where Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__WHERE_EXPRESSION = SELECT_QUERY_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Group By Entry</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__GROUP_BY_ENTRY = SELECT_QUERY_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Having Entry</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__HAVING_ENTRY = SELECT_QUERY_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Order By Entry</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__ORDER_BY_ENTRY = SELECT_QUERY_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Lim</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__LIM = SELECT_QUERY_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Offset</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__OFFSET = SELECT_QUERY_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Fetch First</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__FETCH_FIRST = SELECT_QUERY_FEATURE_COUNT + 10;
+
+  /**
+   * The number of structural features of the '<em>Select</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_FEATURE_COUNT = SELECT_QUERY_FEATURE_COUNT + 11;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotForClauseImpl <em>Pivot For Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotForClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotForClause()
+   * @generated
+   */
+  int PIVOT_FOR_CLAUSE = 35;
+
+  /**
+   * The number of structural features of the '<em>Pivot For Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_FOR_CLAUSE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrColumnImpl <em>Or Column</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrColumnImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrColumn()
+   * @generated
+   */
+  int OR_COLUMN = 9;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_COLUMN__ENTRIES = PIVOT_FOR_CLAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Or Column</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_COLUMN_FEATURE_COUNT = PIVOT_FOR_CLAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnOrAliasImpl <em>Column Or Alias</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnOrAliasImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnOrAlias()
+   * @generated
+   */
+  int COLUMN_OR_ALIAS = 10;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS__ENTRIES = OR_COLUMN__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Ce</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS__CE = OR_COLUMN_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Alias</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS__ALIAS = OR_COLUMN_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Col Alias</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS__COL_ALIAS = OR_COLUMN_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>All Cols</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS__ALL_COLS = OR_COLUMN_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Db All Cols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS__DB_ALL_COLS = OR_COLUMN_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Column Or Alias</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OR_ALIAS_FEATURE_COUNT = OR_COLUMN_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnFullImpl <em>Column Full</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnFullImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnFull()
+   * @generated
+   */
+  int COLUMN_FULL = 11;
+
+  /**
+   * The number of structural features of the '<em>Column Full</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_FULL_FEATURE_COUNT = PIVOT_FOR_CLAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrTableImpl <em>Or Table</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrTableImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrTable()
+   * @generated
+   */
+  int OR_TABLE = 12;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_TABLE__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Or Table</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_TABLE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromTableImpl <em>From Table</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FromTableImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromTable()
+   * @generated
+   */
+  int FROM_TABLE = 13;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE__ENTRIES = OR_TABLE__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Table</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE__TABLE = OR_TABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Fjoin</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE__FJOIN = OR_TABLE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>From Table</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE_FEATURE_COUNT = OR_TABLE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromTableJoinImpl <em>From Table Join</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FromTableJoinImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromTableJoin()
+   * @generated
+   */
+  int FROM_TABLE_JOIN = 14;
+
+  /**
+   * The feature id for the '<em><b>Join</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE_JOIN__JOIN = 0;
+
+  /**
+   * The feature id for the '<em><b>On Table</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE_JOIN__ON_TABLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Join Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE_JOIN__JOIN_EXPR = 2;
+
+  /**
+   * The feature id for the '<em><b>Join Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE_JOIN__JOIN_COND = 3;
+
+  /**
+   * The number of structural features of the '<em>From Table Join</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TABLE_JOIN_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.JoinConditionImpl <em>Join Condition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.JoinConditionImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getJoinCondition()
+   * @generated
+   */
+  int JOIN_CONDITION = 15;
+
+  /**
+   * The feature id for the '<em><b>Use Cols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOIN_CONDITION__USE_COLS = 0;
+
+  /**
+   * The number of structural features of the '<em>Join Condition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOIN_CONDITION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UsingColsImpl <em>Using Cols</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UsingColsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUsingCols()
+   * @generated
+   */
+  int USING_COLS = 16;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USING_COLS__ENTRIES = WITH_COLUMNS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Using Cols</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USING_COLS_FEATURE_COUNT = WITH_COLUMNS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableOrAliasImpl <em>Table Or Alias</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.TableOrAliasImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableOrAlias()
+   * @generated
+   */
+  int TABLE_OR_ALIAS = 17;
+
+  /**
+   * The feature id for the '<em><b>Tfull</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__TFULL = 0;
+
+  /**
+   * The feature id for the '<em><b>Sq</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__SQ = 1;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__VALUES = 2;
+
+  /**
+   * The feature id for the '<em><b>Pivot</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__PIVOT = 3;
+
+  /**
+   * The feature id for the '<em><b>Unpivot</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__UNPIVOT = 4;
+
+  /**
+   * The feature id for the '<em><b>Alias</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__ALIAS = 5;
+
+  /**
+   * The feature id for the '<em><b>Tbl Alias</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS__TBL_ALIAS = 6;
+
+  /**
+   * The number of structural features of the '<em>Table Or Alias</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_OR_ALIAS_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromValuesImpl <em>From Values</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FromValuesImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValues()
+   * @generated
+   */
+  int FROM_VALUES = 18;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_VALUES__VALUES = 0;
+
+  /**
+   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_VALUES__C = 1;
+
+  /**
+   * The number of structural features of the '<em>From Values</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_VALUES_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnsImpl <em>From Values Columns</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValuesColumns()
+   * @generated
+   */
+  int FROM_VALUES_COLUMNS = 19;
+
+  /**
+   * The feature id for the '<em><b>Fv Cols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_VALUES_COLUMNS__FV_COLS = 0;
+
+  /**
+   * The number of structural features of the '<em>From Values Columns</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_VALUES_COLUMNS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnNamesImpl <em>From Values Column Names</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnNamesImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValuesColumnNames()
+   * @generated
+   */
+  int FROM_VALUES_COLUMN_NAMES = 20;
+
+  /**
+   * The number of structural features of the '<em>From Values Column Names</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_VALUES_COLUMN_NAMES_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnNamesImpl <em>Column Names</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnNamesImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnNames()
+   * @generated
+   */
+  int COLUMN_NAMES = 21;
+
+  /**
+   * The feature id for the '<em><b>Col Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_NAMES__COL_NAME = FROM_VALUES_COLUMN_NAMES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Column Names</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_NAMES_FEATURE_COUNT = FROM_VALUES_COLUMN_NAMES_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ValuesImpl <em>Values</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ValuesImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getValues()
+   * @generated
+   */
+  int VALUES = 22;
+
+  /**
+   * The feature id for the '<em><b>Rows</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUES__ROWS = 0;
+
+  /**
+   * The number of structural features of the '<em>Values</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowsImpl <em>Rows</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.RowsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRows()
+   * @generated
+   */
+  int ROWS = 23;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROWS__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Rows</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROWS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowImpl <em>Row</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.RowImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRow()
+   * @generated
+   */
+  int ROW = 24;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW__ENTRIES = ROWS__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Row Values</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW__ROW_VALUES = ROWS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Row</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW_FEATURE_COUNT = ROWS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowValuesImpl <em>Row Values</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.RowValuesImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRowValues()
+   * @generated
+   */
+  int ROW_VALUES = 25;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW_VALUES__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Row Values</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW_VALUES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowValueImpl <em>Row Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.RowValueImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRowValue()
+   * @generated
+   */
+  int ROW_VALUE = 26;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW_VALUE__ENTRIES = ROW_VALUES__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Null</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW_VALUE__NULL = ROW_VALUES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Row Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROW_VALUE_FEATURE_COUNT = ROW_VALUES_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotTableImpl <em>Pivot Table</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotTableImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotTable()
+   * @generated
+   */
+  int PIVOT_TABLE = 27;
+
+  /**
+   * The feature id for the '<em><b>Pfun</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_TABLE__PFUN = 0;
+
+  /**
+   * The feature id for the '<em><b>Pfor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_TABLE__PFOR = 1;
+
+  /**
+   * The feature id for the '<em><b>Pin</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_TABLE__PIN = 2;
+
+  /**
+   * The number of structural features of the '<em>Pivot Table</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_TABLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionsImpl <em>Pivot Functions</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotFunctions()
+   * @generated
+   */
+  int PIVOT_FUNCTIONS = 28;
+
+  /**
+   * The feature id for the '<em><b>Abc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_FUNCTIONS__ABC = 0;
+
+  /**
+   * The number of structural features of the '<em>Pivot Functions</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_FUNCTIONS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionImpl <em>Pivot Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotFunction()
+   * @generated
+   */
+  int PIVOT_FUNCTION = 29;
+
+  /**
+   * The number of structural features of the '<em>Pivot Function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_FUNCTION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotInClauseImpl <em>Pivot In Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotInClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotInClause()
+   * @generated
+   */
+  int PIVOT_IN_CLAUSE = 30;
+
+  /**
+   * The feature id for the '<em><b>Sq</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_IN_CLAUSE__SQ = 0;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_IN_CLAUSE__ARGS = 1;
+
+  /**
+   * The feature id for the '<em><b>Pinany</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_IN_CLAUSE__PINANY = 2;
+
+  /**
+   * The number of structural features of the '<em>Pivot In Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_IN_CLAUSE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotTableImpl <em>Unpivot Table</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotTableImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotTable()
+   * @generated
+   */
+  int UNPIVOT_TABLE = 31;
+
+  /**
+   * The feature id for the '<em><b>Pcols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_TABLE__PCOLS = 0;
+
+  /**
+   * The feature id for the '<em><b>Pfor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_TABLE__PFOR = 1;
+
+  /**
+   * The feature id for the '<em><b>Inop</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_TABLE__INOP = 2;
+
+  /**
+   * The number of structural features of the '<em>Unpivot Table</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_TABLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseImpl <em>Unpivot In Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClause()
+   * @generated
+   */
+  int UNPIVOT_IN_CLAUSE = 32;
+
+  /**
+   * The number of structural features of the '<em>Unpivot In Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_IN_CLAUSE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgsImpl <em>Unpivot In Clause Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClauseArgs()
+   * @generated
+   */
+  int UNPIVOT_IN_CLAUSE_ARGS = 33;
+
+  /**
+   * The number of structural features of the '<em>Unpivot In Clause Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_IN_CLAUSE_ARGS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgImpl <em>Unpivot In Clause Arg</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClauseArg()
+   * @generated
+   */
+  int UNPIVOT_IN_CLAUSE_ARG = 34;
+
+  /**
+   * The feature id for the '<em><b>Pcols</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_IN_CLAUSE_ARG__PCOLS = UNPIVOT_IN_CLAUSE_ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Cfuls</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_IN_CLAUSE_ARG__CFULS = UNPIVOT_IN_CLAUSE_ARGS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Unpivot In Clause Arg</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPIVOT_IN_CLAUSE_ARG_FEATURE_COUNT = UNPIVOT_IN_CLAUSE_ARGS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotColumnsImpl <em>Pivot Columns</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotColumnsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotColumns()
+   * @generated
+   */
+  int PIVOT_COLUMNS = 36;
+
+  /**
+   * The number of structural features of the '<em>Pivot Columns</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_COLUMNS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotsImpl <em>Pivots</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivots()
+   * @generated
+   */
+  int PIVOTS = 37;
+
+  /**
+   * The number of structural features of the '<em>Pivots</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOTS_FEATURE_COUNT = PIVOT_COLUMNS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotColImpl <em>Pivot Col</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PivotColImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotCol()
+   * @generated
+   */
+  int PIVOT_COL = 38;
+
+  /**
+   * The number of structural features of the '<em>Pivot Col</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIVOT_COL_FEATURE_COUNT = PIVOT_FUNCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableFullImpl <em>Table Full</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.TableFullImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableFull()
+   * @generated
+   */
+  int TABLE_FULL = 39;
+
+  /**
+   * The number of structural features of the '<em>Table Full</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_FULL_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameAllImpl <em>Db Object Name All</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameAllImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDbObjectNameAll()
+   * @generated
+   */
+  int DB_OBJECT_NAME_ALL = 40;
+
+  /**
+   * The feature id for the '<em><b>Dbname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DB_OBJECT_NAME_ALL__DBNAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Db Object Name All</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DB_OBJECT_NAME_ALL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameImpl <em>Db Object Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDbObjectName()
+   * @generated
+   */
+  int DB_OBJECT_NAME = 41;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DB_OBJECT_NAME__ENTRIES = COLUMN_FULL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Dbname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DB_OBJECT_NAME__DBNAME = COLUMN_FULL_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Db Object Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DB_OBJECT_NAME_FEATURE_COUNT = COLUMN_FULL_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrOrderByColumnImpl <em>Or Order By Column</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrOrderByColumnImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrOrderByColumn()
+   * @generated
+   */
+  int OR_ORDER_BY_COLUMN = 42;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_ORDER_BY_COLUMN__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Or Order By Column</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_ORDER_BY_COLUMN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByColumnFullImpl <em>Order By Column Full</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByColumnFullImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByColumnFull()
+   * @generated
+   */
+  int ORDER_BY_COLUMN_FULL = 43;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_COLUMN_FULL__ENTRIES = OR_ORDER_BY_COLUMN__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Col Order</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_COLUMN_FULL__COL_ORDER = OR_ORDER_BY_COLUMN_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Col Order Int</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_COLUMN_FULL__COL_ORDER_INT = OR_ORDER_BY_COLUMN_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_COLUMN_FULL__DIRECTION = OR_ORDER_BY_COLUMN_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Order By Column Full</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_COLUMN_FULL_FEATURE_COUNT = OR_ORDER_BY_COLUMN_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrGroupByColumnImpl <em>Or Group By Column</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrGroupByColumnImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrGroupByColumn()
+   * @generated
+   */
+  int OR_GROUP_BY_COLUMN = 44;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_GROUP_BY_COLUMN__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Or Group By Column</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_GROUP_BY_COLUMN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.GroupByColumnFullImpl <em>Group By Column Full</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.GroupByColumnFullImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getGroupByColumnFull()
+   * @generated
+   */
+  int GROUP_BY_COLUMN_FULL = 45;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_BY_COLUMN_FULL__ENTRIES = OR_GROUP_BY_COLUMN__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Col Gr By</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_BY_COLUMN_FULL__COL_GR_BY = OR_GROUP_BY_COLUMN_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Gb Function</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_BY_COLUMN_FULL__GB_FUNCTION = OR_GROUP_BY_COLUMN_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Gr By Int</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_BY_COLUMN_FULL__GR_BY_INT = OR_GROUP_BY_COLUMN_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Group By Column Full</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_BY_COLUMN_FULL_FEATURE_COUNT = OR_GROUP_BY_COLUMN_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrExprImpl <em>Or Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrExprImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrExpr()
+   * @generated
+   */
+  int OR_EXPR = 46;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPR__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Or Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FullExpressionImpl <em>Full Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FullExpressionImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFullExpression()
+   * @generated
+   */
+  int FULL_EXPRESSION = 47;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__ENTRIES = OR_EXPR__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>C</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__C = OR_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Efrag</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__EFRAG = OR_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Not Prm</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__NOT_PRM = OR_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Expgroup</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__EXPGROUP = OR_EXPR_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__EXP = OR_EXPR_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Xexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__XEXP = OR_EXPR_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>In</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__IN = OR_EXPR_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Exists</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__EXISTS = OR_EXPR_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__OP1 = OR_EXPR_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Isnull</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__ISNULL = OR_EXPR_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Between</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__BETWEEN = OR_EXPR_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Like</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__LIKE = OR_EXPR_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Comp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION__COMP = OR_EXPR_FEATURE_COUNT + 12;
+
+  /**
+   * The number of structural features of the '<em>Full Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_EXPRESSION_FEATURE_COUNT = OR_EXPR_FEATURE_COUNT + 13;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ExprGroupImpl <em>Expr Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ExprGroupImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExprGroup()
+   * @generated
+   */
+  int EXPR_GROUP = 48;
+
+  /**
+   * The feature id for the '<em><b>Isnot</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_GROUP__ISNOT = 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_GROUP__EXPR = 1;
+
+  /**
+   * The number of structural features of the '<em>Expr Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR_GROUP_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.XExprImpl <em>XExpr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.XExprImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getXExpr()
+   * @generated
+   */
+  int XEXPR = 49;
+
+  /**
+   * The feature id for the '<em><b>Xf</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPR__XF = 0;
+
+  /**
+   * The feature id for the '<em><b>Col</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPR__COL = 1;
+
+  /**
+   * The feature id for the '<em><b>Prm</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPR__PRM = 2;
+
+  /**
+   * The number of structural features of the '<em>XExpr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPR_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PrmsImpl <em>Prms</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PrmsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPrms()
+   * @generated
+   */
+  int PRMS = 50;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRMS__ENTRIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Prms</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRMS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.JRParameterImpl <em>JR Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.JRParameterImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getJRParameter()
+   * @generated
+   */
+  int JR_PARAMETER = 51;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JR_PARAMETER__ENTRIES = PRMS__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Jrprm</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JR_PARAMETER__JRPRM = PRMS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>JR Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JR_PARAMETER_FEATURE_COUNT = PRMS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ComparisonImpl <em>Comparison</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ComparisonImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getComparison()
+   * @generated
+   */
+  int COMPARISON = 52;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON__OPERATOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Sub Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON__SUB_OPERATOR = 1;
+
+  /**
+   * The feature id for the '<em><b>Op2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON__OP2 = 2;
+
+  /**
+   * The number of structural features of the '<em>Comparison</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.LikeImpl <em>Like</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.LikeImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLike()
+   * @generated
+   */
+  int LIKE = 53;
+
+  /**
+   * The feature id for the '<em><b>Op Like</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE__OP_LIKE = 0;
+
+  /**
+   * The feature id for the '<em><b>Op2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE__OP2 = 1;
+
+  /**
+   * The number of structural features of the '<em>Like</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.LikeOperandImpl <em>Like Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.LikeOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLikeOperand()
+   * @generated
+   */
+  int LIKE_OPERAND = 54;
+
+  /**
+   * The feature id for the '<em><b>Op2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE_OPERAND__OP2 = 0;
+
+  /**
+   * The feature id for the '<em><b>Fop2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE_OPERAND__FOP2 = 1;
+
+  /**
+   * The feature id for the '<em><b>Fcast</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE_OPERAND__FCAST = 2;
+
+  /**
+   * The feature id for the '<em><b>Fparam</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE_OPERAND__FPARAM = 3;
+
+  /**
+   * The number of structural features of the '<em>Like Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIKE_OPERAND_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.BetweenImpl <em>Between</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.BetweenImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getBetween()
+   * @generated
+   */
+  int BETWEEN = 55;
+
+  /**
+   * The feature id for the '<em><b>Op Between</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BETWEEN__OP_BETWEEN = 0;
+
+  /**
+   * The feature id for the '<em><b>Op2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BETWEEN__OP2 = 1;
+
+  /**
+   * The feature id for the '<em><b>Op3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BETWEEN__OP3 = 2;
+
+  /**
+   * The number of structural features of the '<em>Between</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BETWEEN_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.InOperImpl <em>In Oper</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.InOperImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getInOper()
+   * @generated
+   */
+  int IN_OPER = 56;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_OPER__OP = 0;
+
+  /**
+   * The feature id for the '<em><b>Subquery</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_OPER__SUBQUERY = 1;
+
+  /**
+   * The feature id for the '<em><b>Op List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_OPER__OP_LIST = 2;
+
+  /**
+   * The number of structural features of the '<em>In Oper</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_OPER_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ExistsOperImpl <em>Exists Oper</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ExistsOperImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExistsOper()
+   * @generated
+   */
+  int EXISTS_OPER = 57;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXISTS_OPER__OP = 0;
+
+  /**
+   * The feature id for the '<em><b>Subquery</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXISTS_OPER__SUBQUERY = 1;
+
+  /**
+   * The feature id for the '<em><b>Op List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXISTS_OPER__OP_LIST = 2;
+
+  /**
+   * The number of structural features of the '<em>Exists Oper</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXISTS_OPER_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandListGroupImpl <em>Operand List Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OperandListGroupImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperandListGroup()
+   * @generated
+   */
+  int OPERAND_LIST_GROUP = 58;
+
+  /**
+   * The feature id for the '<em><b>Op Group</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_LIST_GROUP__OP_GROUP = 0;
+
+  /**
+   * The number of structural features of the '<em>Operand List Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_LIST_GROUP_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandListImpl <em>Operand List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OperandListImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperandList()
+   * @generated
+   */
+  int OPERAND_LIST = 59;
+
+  /**
+   * The number of structural features of the '<em>Operand List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_LIST_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgAgregateImpl <em>Op Function Arg Agregate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgAgregateImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArgAgregate()
+   * @generated
+   */
+  int OP_FUNCTION_ARG_AGREGATE = 79;
+
+  /**
+   * The number of structural features of the '<em>Op Function Arg Agregate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_ARG_AGREGATE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandsImpl <em>Operands</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OperandsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperands()
+   * @generated
+   */
+  int OPERANDS = 60;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERANDS__OP1 = OP_FUNCTION_ARG_AGREGATE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERANDS__LEFT = OP_FUNCTION_ARG_AGREGATE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERANDS__RIGHT = OP_FUNCTION_ARG_AGREGATE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Operands</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERANDS_FEATURE_COUNT = OP_FUNCTION_ARG_AGREGATE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandImpl <em>Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperand()
+   * @generated
+   */
+  int OPERAND = 61;
+
+  /**
+   * The feature id for the '<em><b>Column</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__COLUMN = 0;
+
+  /**
+   * The feature id for the '<em><b>Xop</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__XOP = 1;
+
+  /**
+   * The feature id for the '<em><b>Subq</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__SUBQ = 2;
+
+  /**
+   * The feature id for the '<em><b>Fcast</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__FCAST = 3;
+
+  /**
+   * The feature id for the '<em><b>Fext</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__FEXT = 4;
+
+  /**
+   * The feature id for the '<em><b>Func</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__FUNC = 5;
+
+  /**
+   * The feature id for the '<em><b>Sqlcase</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__SQLCASE = 6;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__PARAM = 7;
+
+  /**
+   * The feature id for the '<em><b>Eparam</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__EPARAM = 8;
+
+  /**
+   * The feature id for the '<em><b>Scalar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND__SCALAR = 9;
+
+  /**
+   * The number of structural features of the '<em>Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_FEATURE_COUNT = 10;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionImpl <em>Op Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunction()
+   * @generated
+   */
+  int OP_FUNCTION = 62;
+
+  /**
+   * The feature id for the '<em><b>Fname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION__FNAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Star</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION__STAR = 1;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION__ARGS = 2;
+
+  /**
+   * The feature id for the '<em><b>Fan</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION__FAN = 3;
+
+  /**
+   * The number of structural features of the '<em>Op Function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FunctionExtractImpl <em>Function Extract</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FunctionExtractImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFunctionExtract()
+   * @generated
+   */
+  int FUNCTION_EXTRACT = 63;
+
+  /**
+   * The feature id for the '<em><b>V</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EXTRACT__V = 0;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EXTRACT__OPERAND = 1;
+
+  /**
+   * The number of structural features of the '<em>Function Extract</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EXTRACT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FunctionAnalyticalImpl <em>Function Analytical</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.FunctionAnalyticalImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFunctionAnalytical()
+   * @generated
+   */
+  int FUNCTION_ANALYTICAL = 64;
+
+  /**
+   * The feature id for the '<em><b>An Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ANALYTICAL__AN_CLAUSE = 0;
+
+  /**
+   * The number of structural features of the '<em>Function Analytical</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ANALYTICAL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AnalyticClauseImpl <em>Analytic Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.AnalyticClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticClause()
+   * @generated
+   */
+  int ANALYTIC_CLAUSE = 65;
+
+  /**
+   * The feature id for the '<em><b>Abc</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_CLAUSE__ABC = 0;
+
+  /**
+   * The feature id for the '<em><b>Obc</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_CLAUSE__OBC = 1;
+
+  /**
+   * The feature id for the '<em><b>Winc</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_CLAUSE__WINC = 2;
+
+  /**
+   * The number of structural features of the '<em>Analytic Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_CLAUSE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseImpl <em>Windowing Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClause()
+   * @generated
+   */
+  int WINDOWING_CLAUSE = 66;
+
+  /**
+   * The number of structural features of the '<em>Windowing Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseBetweenImpl <em>Windowing Clause Between</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseBetweenImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseBetween()
+   * @generated
+   */
+  int WINDOWING_CLAUSE_BETWEEN = 67;
+
+  /**
+   * The feature id for the '<em><b>Wco P</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_BETWEEN__WCO_P = WINDOWING_CLAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Wco F</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_BETWEEN__WCO_F = WINDOWING_CLAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Windowing Clause Between</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_BETWEEN_FEATURE_COUNT = WINDOWING_CLAUSE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandFollowingImpl <em>Windowing Clause Operand Following</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandFollowingImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseOperandFollowing()
+   * @generated
+   */
+  int WINDOWING_CLAUSE_OPERAND_FOLLOWING = 68;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_OPERAND_FOLLOWING__EXP = 0;
+
+  /**
+   * The number of structural features of the '<em>Windowing Clause Operand Following</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_OPERAND_FOLLOWING_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandPrecedingImpl <em>Windowing Clause Operand Preceding</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandPrecedingImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseOperandPreceding()
+   * @generated
+   */
+  int WINDOWING_CLAUSE_OPERAND_PRECEDING = 69;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_OPERAND_PRECEDING__EXPR = WINDOWING_CLAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Windowing Clause Operand Preceding</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOWING_CLAUSE_OPERAND_PRECEDING_FEATURE_COUNT = WINDOWING_CLAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseImpl <em>Order By Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClause()
+   * @generated
+   */
+  int ORDER_BY_CLAUSE = 70;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_CLAUSE__ARGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Order By Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_CLAUSE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgsImpl <em>Order By Clause Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClauseArgs()
+   * @generated
+   */
+  int ORDER_BY_CLAUSE_ARGS = 71;
+
+  /**
+   * The number of structural features of the '<em>Order By Clause Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_CLAUSE_ARGS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgImpl <em>Order By Clause Arg</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClauseArg()
+   * @generated
+   */
+  int ORDER_BY_CLAUSE_ARG = 72;
+
+  /**
+   * The feature id for the '<em><b>Col</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_CLAUSE_ARG__COL = ORDER_BY_CLAUSE_ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Order By Clause Arg</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_BY_CLAUSE_ARG_FEATURE_COUNT = ORDER_BY_CLAUSE_ARGS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.QueryPartitionClauseImpl <em>Query Partition Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.QueryPartitionClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getQueryPartitionClause()
+   * @generated
+   */
+  int QUERY_PARTITION_CLAUSE = 73;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_PARTITION_CLAUSE__ARGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Query Partition Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_PARTITION_CLAUSE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgsImpl <em>Analytic Expr Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticExprArgs()
+   * @generated
+   */
+  int ANALYTIC_EXPR_ARGS = 74;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_EXPR_ARGS__ARGS = QUERY_PARTITION_CLAUSE__ARGS;
+
+  /**
+   * The number of structural features of the '<em>Analytic Expr Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_EXPR_ARGS_FEATURE_COUNT = QUERY_PARTITION_CLAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgImpl <em>Analytic Expr Arg</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticExprArg()
+   * @generated
+   */
+  int ANALYTIC_EXPR_ARG = 75;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_EXPR_ARG__ARGS = ANALYTIC_EXPR_ARGS__ARGS;
+
+  /**
+   * The feature id for the '<em><b>Ce</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_EXPR_ARG__CE = ANALYTIC_EXPR_ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Col Alias</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_EXPR_ARG__COL_ALIAS = ANALYTIC_EXPR_ARGS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Analytic Expr Arg</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYTIC_EXPR_ARG_FEATURE_COUNT = ANALYTIC_EXPR_ARGS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgImpl <em>Op Function Arg</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArg()
+   * @generated
+   */
+  int OP_FUNCTION_ARG = 76;
+
+  /**
+   * The number of structural features of the '<em>Op Function Arg</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_ARG_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgOperandImpl <em>Op Function Arg Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArgOperand()
+   * @generated
+   */
+  int OP_FUNCTION_ARG_OPERAND = 77;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_ARG_OPERAND__OP = OP_FUNCTION_ARG_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Op Function Arg Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_ARG_OPERAND_FEATURE_COUNT = OP_FUNCTION_ARG_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionCastImpl <em>Op Function Cast</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionCastImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionCast()
+   * @generated
+   */
+  int OP_FUNCTION_CAST = 78;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_CAST__OP = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_CAST__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>P</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_CAST__P = 2;
+
+  /**
+   * The feature id for the '<em><b>P2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_CAST__P2 = 3;
+
+  /**
+   * The number of structural features of the '<em>Op Function Cast</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FUNCTION_CAST_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.POperandImpl <em>POperand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.POperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPOperand()
+   * @generated
+   */
+  int POPERAND = 80;
+
+  /**
+   * The feature id for the '<em><b>Prm</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POPERAND__PRM = 0;
+
+  /**
+   * The number of structural features of the '<em>POperand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POPERAND_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ExpOperandImpl <em>Exp Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ExpOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExpOperand()
+   * @generated
+   */
+  int EXP_OPERAND = 81;
+
+  /**
+   * The feature id for the '<em><b>Prm</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXP_OPERAND__PRM = 0;
+
+  /**
+   * The number of structural features of the '<em>Exp Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXP_OPERAND_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnOperandImpl <em>Column Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnOperand()
+   * @generated
+   */
+  int COLUMN_OPERAND = 82;
+
+  /**
+   * The feature id for the '<em><b>Cfull</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OPERAND__CFULL = 0;
+
+  /**
+   * The feature id for the '<em><b>Ora</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OPERAND__ORA = 1;
+
+  /**
+   * The number of structural features of the '<em>Column Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_OPERAND_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SubQueryOperandImpl <em>Sub Query Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SubQueryOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSubQueryOperand()
+   * @generated
+   */
+  int SUB_QUERY_OPERAND = 83;
+
+  /**
+   * The feature id for the '<em><b>Sel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_QUERY_OPERAND__SEL = 0;
+
+  /**
+   * The number of structural features of the '<em>Sub Query Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_QUERY_OPERAND_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ScalarOperandImpl <em>Scalar Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ScalarOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getScalarOperand()
+   * @generated
+   */
+  int SCALAR_OPERAND = 84;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__ENTRIES = ROW_VALUE__ENTRIES;
+
+  /**
+   * The feature id for the '<em><b>Null</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__NULL = ROW_VALUE__NULL;
+
+  /**
+   * The feature id for the '<em><b>Sostr</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SOSTR = ROW_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Sodbl</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SODBL = ROW_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Sodate</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SODATE = ROW_VALUE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Sotime</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SOTIME = ROW_VALUE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Sodt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SODT = ROW_VALUE_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>So UInt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SO_UINT = ROW_VALUE_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Soint</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND__SOINT = ROW_VALUE_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Scalar Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALAR_OPERAND_FEATURE_COUNT = ROW_VALUE_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SQLCaseOperandImpl <em>Case Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLCaseOperandImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSQLCaseOperand()
+   * @generated
+   */
+  int SQL_CASE_OPERAND = 85;
+
+  /**
+   * The feature id for the '<em><b>Wop</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_OPERAND__WOP = 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_OPERAND__EXPR = 1;
+
+  /**
+   * The feature id for the '<em><b>When</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_OPERAND__WHEN = 2;
+
+  /**
+   * The number of structural features of the '<em>Case Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_OPERAND_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SQLCaseWhensImpl <em>Case Whens</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLCaseWhensImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSQLCaseWhens()
+   * @generated
+   */
+  int SQL_CASE_WHENS = 86;
+
+  /**
+   * The number of structural features of the '<em>Case Whens</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_WHENS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SqlCaseWhenImpl <em>Sql Case When</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SqlCaseWhenImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSqlCaseWhen()
+   * @generated
+   */
+  int SQL_CASE_WHEN = 87;
+
+  /**
+   * The feature id for the '<em><b>Wop</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_WHEN__WOP = SQL_CASE_WHENS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_WHEN__EXPR = SQL_CASE_WHENS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Texp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_WHEN__TEXP = SQL_CASE_WHENS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Eexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_WHEN__EEXP = SQL_CASE_WHENS_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Sql Case When</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQL_CASE_WHEN_FEATURE_COUNT = SQL_CASE_WHENS_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.IntegerValueImpl <em>Integer Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.IntegerValueImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIntegerValue()
+   * @generated
+   */
+  int INTEGER_VALUE = 88;
+
+  /**
+   * The feature id for the '<em><b>Integer</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_VALUE__INTEGER = 0;
+
+  /**
+   * The number of structural features of the '<em>Integer Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnsignedValueImpl <em>Unsigned Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UnsignedValueImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnsignedValue()
+   * @generated
+   */
+  int UNSIGNED_VALUE = 89;
+
+  /**
+   * The feature id for the '<em><b>Integer</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSIGNED_VALUE__INTEGER = 0;
+
+  /**
+   * The number of structural features of the '<em>Unsigned Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSIGNED_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColImpl <em>Col</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ColImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCol()
+   * @generated
+   */
+  int COL = 90;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COL__ENTRIES = COLUMN_FULL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Col</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COL_FEATURE_COUNT = COLUMN_FULL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.abcImpl <em>abc</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.abcImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getabc()
+   * @generated
+   */
+  int ABC = 91;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABC__ENTRIES = FROM_VALUES_COLUMN_NAMES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>abc</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABC_FEATURE_COUNT = FROM_VALUES_COLUMN_NAMES_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnipivotInClauseImpl <em>Unipivot In Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.UnipivotInClauseImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnipivotInClause()
+   * @generated
+   */
+  int UNIPIVOT_IN_CLAUSE = 92;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIPIVOT_IN_CLAUSE__OP = UNPIVOT_IN_CLAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIPIVOT_IN_CLAUSE__ARGS = UNPIVOT_IN_CLAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Unipivot In Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIPIVOT_IN_CLAUSE_FEATURE_COUNT = UNPIVOT_IN_CLAUSE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.uicargsImpl <em>uicargs</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.uicargsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getuicargs()
+   * @generated
+   */
+  int UICARGS = 93;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UICARGS__ENTRIES = UNPIVOT_IN_CLAUSE_ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>uicargs</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UICARGS_FEATURE_COUNT = UNPIVOT_IN_CLAUSE_ARGS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.pvcsImpl <em>pvcs</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.pvcsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getpvcs()
+   * @generated
+   */
+  int PVCS = 94;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PVCS__ENTRIES = PIVOTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>pvcs</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PVCS_FEATURE_COUNT = PIVOTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.pcolsImpl <em>pcols</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.pcolsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getpcols()
+   * @generated
+   */
+  int PCOLS = 95;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PCOLS__ENTRIES = PIVOT_COL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>pcols</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PCOLS_FEATURE_COUNT = PIVOT_COL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.tblsImpl <em>tbls</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.tblsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#gettbls()
+   * @generated
+   */
+  int TBLS = 96;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TBLS__ENTRIES = TABLE_FULL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>tbls</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TBLS_FEATURE_COUNT = TABLE_FULL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpListImpl <em>Op List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpListImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpList()
+   * @generated
+   */
+  int OP_LIST = 97;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_LIST__ENTRIES = OPERAND_LIST_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Op List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_LIST_FEATURE_COUNT = OPERAND_LIST_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PlusImpl <em>Plus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.PlusImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPlus()
+   * @generated
+   */
+  int PLUS = 98;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__OP1 = OPERANDS__OP1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__LEFT = OPERANDS__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__RIGHT = OPERANDS__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Plus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS_FEATURE_COUNT = OPERANDS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.MinusImpl <em>Minus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.MinusImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getMinus()
+   * @generated
+   */
+  int MINUS = 99;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS__OP1 = OPERANDS__OP1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS__LEFT = OPERANDS__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS__RIGHT = OPERANDS__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Minus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS_FEATURE_COUNT = OPERANDS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ConcatImpl <em>Concat</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ConcatImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getConcat()
+   * @generated
+   */
+  int CONCAT = 100;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT__OP1 = OPERANDS__OP1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT__LEFT = OPERANDS__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT__RIGHT = OPERANDS__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Concat</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT_FEATURE_COUNT = OPERANDS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.MultiplyImpl <em>Multiply</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.MultiplyImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getMultiply()
+   * @generated
+   */
+  int MULTIPLY = 101;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLY__OP1 = OPERANDS__OP1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLY__LEFT = OPERANDS__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLY__RIGHT = OPERANDS__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Multiply</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLY_FEATURE_COUNT = OPERANDS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.DivisionImpl <em>Division</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.DivisionImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDivision()
+   * @generated
+   */
+  int DIVISION = 102;
+
+  /**
+   * The feature id for the '<em><b>Op1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__OP1 = OPERANDS__OP1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__LEFT = OPERANDS__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__RIGHT = OPERANDS__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Division</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_FEATURE_COUNT = OPERANDS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OBCArgsImpl <em>OBC Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OBCArgsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOBCArgs()
+   * @generated
+   */
+  int OBC_ARGS = 103;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBC_ARGS__ENTRIES = ORDER_BY_CLAUSE_ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>OBC Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBC_ARGS_FEATURE_COUNT = ORDER_BY_CLAUSE_ARGS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AExpArgsImpl <em>AExp Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.AExpArgsImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAExpArgs()
+   * @generated
+   */
+  int AEXP_ARGS = 104;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXP_ARGS__ARGS = ANALYTIC_EXPR_ARGS__ARGS;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXP_ARGS__ENTRIES = ANALYTIC_EXPR_ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>AExp Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXP_ARGS_FEATURE_COUNT = ANALYTIC_EXPR_ARGS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFListImpl <em>Op FList</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.OpFListImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFList()
+   * @generated
+   */
+  int OP_FLIST = 105;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FLIST__ENTRIES = OP_FUNCTION_ARG_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Op FList</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_FLIST_FEATURE_COUNT = OP_FUNCTION_ARG_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WhenListImpl <em>When List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.WhenListImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWhenList()
+   * @generated
+   */
+  int WHEN_LIST = 106;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_LIST__ENTRIES = SQL_CASE_WHENS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>When List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_LIST_FEATURE_COUNT = SQL_CASE_WHENS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.XFunction <em>XFunction</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.XFunction
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getXFunction()
+   * @generated
+   */
+  int XFUNCTION = 107;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES <em>EXTRACT VALUES</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getEXTRACT_VALUES()
+   * @generated
+   */
+  int EXTRACT_VALUES = 108;
 
 
   /**
@@ -125,36 +4112,3196 @@ public interface SQLPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Model#getGreetings()
+   * @return the meta object for the containment reference '<em>Wq</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Model#getWq()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Wq();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Greeting
+   * @return the meta object for the containment reference '<em>Query</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Model#getQuery()
+   * @see #getModel()
    * @generated
    */
-  EClass getGreeting();
+  EReference getModel_Query();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WithQuery <em>With Query</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Greeting#getName()
-   * @see #getGreeting()
+   * @return the meta object for class '<em>With Query</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EClass getWithQuery();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getW <em>W</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>W</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getW()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EAttribute getWithQuery_W();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getWname <em>Wname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wname</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getWname()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EReference getWithQuery_Wname();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getWithCols <em>With Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>With Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getWithCols()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EReference getWithQuery_WithCols();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Query</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getQuery()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EReference getWithQuery_Query();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getAdditionalWname <em>Additional Wname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Additional Wname</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getAdditionalWname()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EReference getWithQuery_AdditionalWname();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getAdditionalWithCols <em>Additional With Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Additional With Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getAdditionalWithCols()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EReference getWithQuery_AdditionalWithCols();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.WithQuery#getAdditionalQueries <em>Additional Queries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Additional Queries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithQuery#getAdditionalQueries()
+   * @see #getWithQuery()
+   * @generated
+   */
+  EReference getWithQuery_AdditionalQueries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WithColumns <em>With Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>With Columns</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WithColumns
+   * @generated
+   */
+  EClass getWithColumns();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FetchFirst <em>Fetch First</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Fetch First</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FetchFirst
+   * @generated
+   */
+  EClass getFetchFirst();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FetchFirst#getFetchFirst <em>Fetch First</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fetch First</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FetchFirst#getFetchFirst()
+   * @see #getFetchFirst()
+   * @generated
+   */
+  EReference getFetchFirst_FetchFirst();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.FetchFirst#getRow <em>Row</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Row</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FetchFirst#getRow()
+   * @see #getFetchFirst()
+   * @generated
+   */
+  EAttribute getFetchFirst_Row();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Offset <em>Offset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Offset</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Offset
+   * @generated
+   */
+  EClass getOffset();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Offset#getOffset <em>Offset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Offset</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Offset#getOffset()
+   * @see #getOffset()
+   * @generated
+   */
+  EAttribute getOffset_Offset();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Limit <em>Limit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Limit</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Limit
+   * @generated
+   */
+  EClass getLimit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Limit#getL1 <em>L1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>L1</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Limit#getL1()
+   * @see #getLimit()
+   * @generated
+   */
+  EAttribute getLimit_L1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Limit#getL2 <em>L2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>L2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Limit#getL2()
+   * @see #getLimit()
+   * @generated
+   */
+  EAttribute getLimit_L2();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SelectQuery <em>Select Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select Query</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectQuery
+   * @generated
+   */
+  EClass getSelectQuery();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SelectSubSet <em>Select Sub Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select Sub Set</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectSubSet
+   * @generated
+   */
+  EClass getSelectSubSet();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.SelectSubSet#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectSubSet#getOp()
+   * @see #getSelectSubSet()
+   * @generated
+   */
+  EAttribute getSelectSubSet_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.SelectSubSet#getAll <em>All</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>All</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectSubSet#getAll()
+   * @see #getSelectSubSet()
+   * @generated
+   */
+  EAttribute getSelectSubSet_All();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SelectSubSet#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Query</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectSubSet#getQuery()
+   * @see #getSelectSubSet()
+   * @generated
+   */
+  EReference getSelectSubSet_Query();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Select <em>Select</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select
+   * @generated
+   */
+  EClass getSelect();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.Select#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getOp()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Select#getSelect <em>Select</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Select</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getSelect()
+   * @see #getSelect()
+   * @generated
+   */
+  EAttribute getSelect_Select();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getCols <em>Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getCols()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_Cols();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getTbl <em>Tbl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tbl</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getTbl()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_Tbl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getWhereExpression <em>Where Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Where Expression</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getWhereExpression()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_WhereExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getGroupByEntry <em>Group By Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Group By Entry</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getGroupByEntry()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_GroupByEntry();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getHavingEntry <em>Having Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Having Entry</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getHavingEntry()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_HavingEntry();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getOrderByEntry <em>Order By Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Order By Entry</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getOrderByEntry()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_OrderByEntry();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getLim <em>Lim</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lim</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getLim()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_Lim();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getOffset <em>Offset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Offset</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getOffset()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_Offset();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Select#getFetchFirst <em>Fetch First</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fetch First</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Select#getFetchFirst()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_FetchFirst();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrColumn <em>Or Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or Column</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrColumn
+   * @generated
+   */
+  EClass getOrColumn();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OrColumn#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrColumn#getEntries()
+   * @see #getOrColumn()
+   * @generated
+   */
+  EReference getOrColumn_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias <em>Column Or Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Column Or Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias
+   * @generated
+   */
+  EClass getColumnOrAlias();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getCe <em>Ce</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ce</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getCe()
+   * @see #getColumnOrAlias()
+   * @generated
+   */
+  EReference getColumnOrAlias_Ce();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getAlias <em>Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getAlias()
+   * @see #getColumnOrAlias()
+   * @generated
+   */
+  EAttribute getColumnOrAlias_Alias();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getColAlias <em>Col Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Col Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getColAlias()
+   * @see #getColumnOrAlias()
+   * @generated
+   */
+  EReference getColumnOrAlias_ColAlias();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getAllCols <em>All Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>All Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getAllCols()
+   * @see #getColumnOrAlias()
+   * @generated
+   */
+  EAttribute getColumnOrAlias_AllCols();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getDbAllCols <em>Db All Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Db All Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOrAlias#getDbAllCols()
+   * @see #getColumnOrAlias()
+   * @generated
+   */
+  EReference getColumnOrAlias_DbAllCols();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ColumnFull <em>Column Full</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Column Full</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnFull
+   * @generated
+   */
+  EClass getColumnFull();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrTable <em>Or Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrTable
+   * @generated
+   */
+  EClass getOrTable();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OrTable#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrTable#getEntries()
+   * @see #getOrTable()
+   * @generated
+   */
+  EReference getOrTable_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FromTable <em>From Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTable
+   * @generated
+   */
+  EClass getFromTable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromTable#getTable <em>Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTable#getTable()
+   * @see #getFromTable()
+   * @generated
+   */
+  EReference getFromTable_Table();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.FromTable#getFjoin <em>Fjoin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Fjoin</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTable#getFjoin()
+   * @see #getFromTable()
+   * @generated
+   */
+  EReference getFromTable_Fjoin();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FromTableJoin <em>From Table Join</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Table Join</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTableJoin
+   * @generated
+   */
+  EClass getFromTableJoin();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.FromTableJoin#getJoin <em>Join</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Join</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTableJoin#getJoin()
+   * @see #getFromTableJoin()
+   * @generated
+   */
+  EAttribute getFromTableJoin_Join();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromTableJoin#getOnTable <em>On Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>On Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTableJoin#getOnTable()
+   * @see #getFromTableJoin()
+   * @generated
+   */
+  EReference getFromTableJoin_OnTable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromTableJoin#getJoinExpr <em>Join Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Join Expr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTableJoin#getJoinExpr()
+   * @see #getFromTableJoin()
+   * @generated
+   */
+  EReference getFromTableJoin_JoinExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromTableJoin#getJoinCond <em>Join Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Join Cond</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromTableJoin#getJoinCond()
+   * @see #getFromTableJoin()
+   * @generated
+   */
+  EReference getFromTableJoin_JoinCond();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.JoinCondition <em>Join Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Join Condition</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.JoinCondition
+   * @generated
+   */
+  EClass getJoinCondition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.JoinCondition#getUseCols <em>Use Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Use Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.JoinCondition#getUseCols()
+   * @see #getJoinCondition()
+   * @generated
+   */
+  EReference getJoinCondition_UseCols();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UsingCols <em>Using Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Using Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UsingCols
+   * @generated
+   */
+  EClass getUsingCols();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.UsingCols#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UsingCols#getEntries()
+   * @see #getUsingCols()
+   * @generated
+   */
+  EReference getUsingCols_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias <em>Table Or Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table Or Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias
+   * @generated
+   */
+  EClass getTableOrAlias();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getTfull <em>Tfull</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tfull</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getTfull()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EReference getTableOrAlias_Tfull();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getSq <em>Sq</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sq</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getSq()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EReference getTableOrAlias_Sq();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Values</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getValues()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EReference getTableOrAlias_Values();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getPivot <em>Pivot</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pivot</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getPivot()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EReference getTableOrAlias_Pivot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getUnpivot <em>Unpivot</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Unpivot</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getUnpivot()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EReference getTableOrAlias_Unpivot();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getAlias <em>Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getAlias()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EAttribute getTableOrAlias_Alias();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableOrAlias#getTblAlias <em>Tbl Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tbl Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableOrAlias#getTblAlias()
+   * @see #getTableOrAlias()
+   * @generated
+   */
+  EReference getTableOrAlias_TblAlias();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FromValues <em>From Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Values</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValues
+   * @generated
+   */
+  EClass getFromValues();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromValues#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Values</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValues#getValues()
+   * @see #getFromValues()
+   * @generated
+   */
+  EReference getFromValues_Values();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromValues#getC <em>C</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>C</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValues#getC()
+   * @see #getFromValues()
+   * @generated
+   */
+  EReference getFromValues_C();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FromValuesColumns <em>From Values Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Values Columns</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValuesColumns
+   * @generated
+   */
+  EClass getFromValuesColumns();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FromValuesColumns#getFvCols <em>Fv Cols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fv Cols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValuesColumns#getFvCols()
+   * @see #getFromValuesColumns()
+   * @generated
+   */
+  EReference getFromValuesColumns_FvCols();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FromValuesColumnNames <em>From Values Column Names</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Values Column Names</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FromValuesColumnNames
+   * @generated
+   */
+  EClass getFromValuesColumnNames();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ColumnNames <em>Column Names</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Column Names</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnNames
+   * @generated
+   */
+  EClass getColumnNames();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnNames#getColName <em>Col Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Col Name</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnNames#getColName()
+   * @see #getColumnNames()
+   * @generated
+   */
+  EAttribute getColumnNames_ColName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Values <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Values</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Values
+   * @generated
+   */
+  EClass getValues();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Values#getRows <em>Rows</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rows</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Values#getRows()
+   * @see #getValues()
+   * @generated
+   */
+  EReference getValues_Rows();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Rows <em>Rows</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rows</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Rows
+   * @generated
+   */
+  EClass getRows();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.Rows#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Rows#getEntries()
+   * @see #getRows()
+   * @generated
+   */
+  EReference getRows_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Row <em>Row</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Row</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Row
+   * @generated
+   */
+  EClass getRow();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Row#getRowValues <em>Row Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Row Values</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Row#getRowValues()
+   * @see #getRow()
+   * @generated
+   */
+  EReference getRow_RowValues();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.RowValues <em>Row Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Row Values</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.RowValues
+   * @generated
+   */
+  EClass getRowValues();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.RowValues#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.RowValues#getEntries()
+   * @see #getRowValues()
+   * @generated
+   */
+  EReference getRowValues_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.RowValue <em>Row Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Row Value</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.RowValue
+   * @generated
+   */
+  EClass getRowValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.RowValue#getNull <em>Null</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Null</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.RowValue#getNull()
+   * @see #getRowValue()
+   * @generated
+   */
+  EAttribute getRowValue_Null();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotTable <em>Pivot Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotTable
+   * @generated
+   */
+  EClass getPivotTable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.PivotTable#getPfun <em>Pfun</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pfun</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotTable#getPfun()
+   * @see #getPivotTable()
+   * @generated
+   */
+  EReference getPivotTable_Pfun();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.PivotTable#getPfor <em>Pfor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pfor</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotTable#getPfor()
+   * @see #getPivotTable()
+   * @generated
+   */
+  EReference getPivotTable_Pfor();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.PivotTable#getPin <em>Pin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pin</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotTable#getPin()
+   * @see #getPivotTable()
+   * @generated
+   */
+  EReference getPivotTable_Pin();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotFunctions <em>Pivot Functions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot Functions</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotFunctions
+   * @generated
+   */
+  EClass getPivotFunctions();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.PivotFunctions#getAbc <em>Abc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Abc</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotFunctions#getAbc()
+   * @see #getPivotFunctions()
+   * @generated
+   */
+  EAttribute getPivotFunctions_Abc();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotFunction <em>Pivot Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot Function</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotFunction
+   * @generated
+   */
+  EClass getPivotFunction();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotInClause <em>Pivot In Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot In Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotInClause
+   * @generated
+   */
+  EClass getPivotInClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.PivotInClause#getSq <em>Sq</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sq</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotInClause#getSq()
+   * @see #getPivotInClause()
+   * @generated
+   */
+  EReference getPivotInClause_Sq();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.PivotInClause#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotInClause#getArgs()
+   * @see #getPivotInClause()
+   * @generated
+   */
+  EReference getPivotInClause_Args();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.PivotInClause#getPinany <em>Pinany</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pinany</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotInClause#getPinany()
+   * @see #getPivotInClause()
+   * @generated
+   */
+  EAttribute getPivotInClause_Pinany();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotTable <em>Unpivot Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unpivot Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotTable
+   * @generated
+   */
+  EClass getUnpivotTable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.UnpivotTable#getPcols <em>Pcols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pcols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotTable#getPcols()
+   * @see #getUnpivotTable()
+   * @generated
+   */
+  EReference getUnpivotTable_Pcols();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.UnpivotTable#getPfor <em>Pfor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pfor</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotTable#getPfor()
+   * @see #getUnpivotTable()
+   * @generated
+   */
+  EReference getUnpivotTable_Pfor();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.UnpivotTable#getInop <em>Inop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inop</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotTable#getInop()
+   * @see #getUnpivotTable()
+   * @generated
+   */
+  EReference getUnpivotTable_Inop();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClause <em>Unpivot In Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unpivot In Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClause
+   * @generated
+   */
+  EClass getUnpivotInClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArgs <em>Unpivot In Clause Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unpivot In Clause Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArgs
+   * @generated
+   */
+  EClass getUnpivotInClauseArgs();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg <em>Unpivot In Clause Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unpivot In Clause Arg</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg
+   * @generated
+   */
+  EClass getUnpivotInClauseArg();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg#getPcols <em>Pcols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pcols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg#getPcols()
+   * @see #getUnpivotInClauseArg()
+   * @generated
+   */
+  EReference getUnpivotInClauseArg_Pcols();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg#getCfuls <em>Cfuls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cfuls</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg#getCfuls()
+   * @see #getUnpivotInClauseArg()
+   * @generated
+   */
+  EReference getUnpivotInClauseArg_Cfuls();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotForClause <em>Pivot For Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot For Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotForClause
+   * @generated
+   */
+  EClass getPivotForClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotColumns <em>Pivot Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot Columns</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotColumns
+   * @generated
+   */
+  EClass getPivotColumns();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Pivots <em>Pivots</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivots</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Pivots
+   * @generated
+   */
+  EClass getPivots();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.PivotCol <em>Pivot Col</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pivot Col</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.PivotCol
+   * @generated
+   */
+  EClass getPivotCol();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TableFull <em>Table Full</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table Full</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableFull
+   * @generated
+   */
+  EClass getTableFull();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.DbObjectNameAll <em>Db Object Name All</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Db Object Name All</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.DbObjectNameAll
+   * @generated
+   */
+  EClass getDbObjectNameAll();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.DbObjectNameAll#getDbname <em>Dbname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dbname</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.DbObjectNameAll#getDbname()
+   * @see #getDbObjectNameAll()
+   * @generated
+   */
+  EAttribute getDbObjectNameAll_Dbname();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.DbObjectName <em>Db Object Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Db Object Name</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.DbObjectName
+   * @generated
+   */
+  EClass getDbObjectName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.DbObjectName#getDbname <em>Dbname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dbname</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.DbObjectName#getDbname()
+   * @see #getDbObjectName()
+   * @generated
+   */
+  EAttribute getDbObjectName_Dbname();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrOrderByColumn <em>Or Order By Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or Order By Column</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrOrderByColumn
+   * @generated
+   */
+  EClass getOrOrderByColumn();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OrOrderByColumn#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrOrderByColumn#getEntries()
+   * @see #getOrOrderByColumn()
+   * @generated
+   */
+  EReference getOrOrderByColumn_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrderByColumnFull <em>Order By Column Full</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Order By Column Full</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByColumnFull
+   * @generated
+   */
+  EClass getOrderByColumnFull();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OrderByColumnFull#getColOrder <em>Col Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Col Order</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByColumnFull#getColOrder()
+   * @see #getOrderByColumnFull()
+   * @generated
+   */
+  EReference getOrderByColumnFull_ColOrder();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OrderByColumnFull#getColOrderInt <em>Col Order Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Col Order Int</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByColumnFull#getColOrderInt()
+   * @see #getOrderByColumnFull()
+   * @generated
+   */
+  EAttribute getOrderByColumnFull_ColOrderInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OrderByColumnFull#getDirection <em>Direction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Direction</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByColumnFull#getDirection()
+   * @see #getOrderByColumnFull()
+   * @generated
+   */
+  EAttribute getOrderByColumnFull_Direction();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrGroupByColumn <em>Or Group By Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or Group By Column</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrGroupByColumn
+   * @generated
+   */
+  EClass getOrGroupByColumn();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OrGroupByColumn#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrGroupByColumn#getEntries()
+   * @see #getOrGroupByColumn()
+   * @generated
+   */
+  EReference getOrGroupByColumn_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.GroupByColumnFull <em>Group By Column Full</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Group By Column Full</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.GroupByColumnFull
+   * @generated
+   */
+  EClass getGroupByColumnFull();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.GroupByColumnFull#getColGrBy <em>Col Gr By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Col Gr By</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.GroupByColumnFull#getColGrBy()
+   * @see #getGroupByColumnFull()
+   * @generated
+   */
+  EReference getGroupByColumnFull_ColGrBy();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.GroupByColumnFull#getGbFunction <em>Gb Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Gb Function</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.GroupByColumnFull#getGbFunction()
+   * @see #getGroupByColumnFull()
+   * @generated
+   */
+  EReference getGroupByColumnFull_GbFunction();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.GroupByColumnFull#getGrByInt <em>Gr By Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Gr By Int</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.GroupByColumnFull#getGrByInt()
+   * @see #getGroupByColumnFull()
+   * @generated
+   */
+  EAttribute getGroupByColumnFull_GrByInt();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrExpr <em>Or Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or Expr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrExpr
+   * @generated
+   */
+  EClass getOrExpr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OrExpr#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrExpr#getEntries()
+   * @see #getOrExpr()
+   * @generated
+   */
+  EReference getOrExpr_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FullExpression <em>Full Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Full Expression</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression
+   * @generated
+   */
+  EClass getFullExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getC <em>C</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>C</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getC()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EAttribute getFullExpression_C();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getEfrag <em>Efrag</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Efrag</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getEfrag()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Efrag();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getNotPrm <em>Not Prm</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not Prm</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getNotPrm()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EAttribute getFullExpression_NotPrm();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getExpgroup <em>Expgroup</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expgroup</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getExpgroup()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Expgroup();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getExp()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Exp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getXexp <em>Xexp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Xexp</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getXexp()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Xexp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getIn <em>In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>In</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getIn()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_In();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getExists <em>Exists</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exists</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getExists()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Exists();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getOp1 <em>Op1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op1</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getOp1()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Op1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getIsnull <em>Isnull</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Isnull</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getIsnull()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EAttribute getFullExpression_Isnull();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getBetween <em>Between</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Between</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getBetween()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Between();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getLike <em>Like</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Like</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getLike()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Like();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FullExpression#getComp <em>Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comp</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FullExpression#getComp()
+   * @see #getFullExpression()
+   * @generated
+   */
+  EReference getFullExpression_Comp();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ExprGroup <em>Expr Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expr Group</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExprGroup
+   * @generated
+   */
+  EClass getExprGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ExprGroup#getIsnot <em>Isnot</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Isnot</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExprGroup#getIsnot()
+   * @see #getExprGroup()
+   * @generated
+   */
+  EAttribute getExprGroup_Isnot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ExprGroup#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExprGroup#getExpr()
+   * @see #getExprGroup()
+   * @generated
+   */
+  EReference getExprGroup_Expr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.XExpr <em>XExpr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XExpr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.XExpr
+   * @generated
+   */
+  EClass getXExpr();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.XExpr#getXf <em>Xf</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Xf</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.XExpr#getXf()
+   * @see #getXExpr()
+   * @generated
+   */
+  EAttribute getXExpr_Xf();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.XExpr#getCol <em>Col</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Col</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.XExpr#getCol()
+   * @see #getXExpr()
+   * @generated
+   */
+  EReference getXExpr_Col();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.XExpr#getPrm <em>Prm</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Prm</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.XExpr#getPrm()
+   * @see #getXExpr()
+   * @generated
+   */
+  EReference getXExpr_Prm();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Prms <em>Prms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Prms</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Prms
+   * @generated
+   */
+  EClass getPrms();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.Prms#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Prms#getEntries()
+   * @see #getPrms()
+   * @generated
+   */
+  EReference getPrms_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.JRParameter <em>JR Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>JR Parameter</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.JRParameter
+   * @generated
+   */
+  EClass getJRParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.JRParameter#getJrprm <em>Jrprm</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Jrprm</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.JRParameter#getJrprm()
+   * @see #getJRParameter()
+   * @generated
+   */
+  EAttribute getJRParameter_Jrprm();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Comparison <em>Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comparison</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Comparison
+   * @generated
+   */
+  EClass getComparison();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Comparison#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Comparison#getOperator()
+   * @see #getComparison()
+   * @generated
+   */
+  EAttribute getComparison_Operator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Comparison#getSubOperator <em>Sub Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sub Operator</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Comparison#getSubOperator()
+   * @see #getComparison()
+   * @generated
+   */
+  EAttribute getComparison_SubOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Comparison#getOp2 <em>Op2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Comparison#getOp2()
+   * @see #getComparison()
+   * @generated
+   */
+  EReference getComparison_Op2();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Like <em>Like</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Like</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Like
+   * @generated
+   */
+  EClass getLike();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Like#getOpLike <em>Op Like</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op Like</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Like#getOpLike()
+   * @see #getLike()
+   * @generated
+   */
+  EAttribute getLike_OpLike();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Like#getOp2 <em>Op2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Like#getOp2()
+   * @see #getLike()
+   * @generated
+   */
+  EReference getLike_Op2();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.LikeOperand <em>Like Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Like Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.LikeOperand
+   * @generated
+   */
+  EClass getLikeOperand();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.LikeOperand#getOp2 <em>Op2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.LikeOperand#getOp2()
+   * @see #getLikeOperand()
+   * @generated
+   */
+  EAttribute getLikeOperand_Op2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.LikeOperand#getFop2 <em>Fop2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fop2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.LikeOperand#getFop2()
+   * @see #getLikeOperand()
+   * @generated
+   */
+  EReference getLikeOperand_Fop2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.LikeOperand#getFcast <em>Fcast</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fcast</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.LikeOperand#getFcast()
+   * @see #getLikeOperand()
+   * @generated
+   */
+  EReference getLikeOperand_Fcast();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.LikeOperand#getFparam <em>Fparam</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fparam</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.LikeOperand#getFparam()
+   * @see #getLikeOperand()
+   * @generated
+   */
+  EReference getLikeOperand_Fparam();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Between <em>Between</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Between</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Between
+   * @generated
+   */
+  EClass getBetween();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.Between#getOpBetween <em>Op Between</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op Between</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Between#getOpBetween()
+   * @see #getBetween()
+   * @generated
+   */
+  EAttribute getBetween_OpBetween();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Between#getOp2 <em>Op2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Between#getOp2()
+   * @see #getBetween()
+   * @generated
+   */
+  EReference getBetween_Op2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Between#getOp3 <em>Op3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op3</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Between#getOp3()
+   * @see #getBetween()
+   * @generated
+   */
+  EReference getBetween_Op3();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.InOper <em>In Oper</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In Oper</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.InOper
+   * @generated
+   */
+  EClass getInOper();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.InOper#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.InOper#getOp()
+   * @see #getInOper()
+   * @generated
+   */
+  EAttribute getInOper_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.InOper#getSubquery <em>Subquery</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subquery</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.InOper#getSubquery()
+   * @see #getInOper()
+   * @generated
+   */
+  EReference getInOper_Subquery();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.InOper#getOpList <em>Op List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.InOper#getOpList()
+   * @see #getInOper()
+   * @generated
+   */
+  EReference getInOper_OpList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ExistsOper <em>Exists Oper</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exists Oper</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExistsOper
+   * @generated
+   */
+  EClass getExistsOper();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ExistsOper#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExistsOper#getOp()
+   * @see #getExistsOper()
+   * @generated
+   */
+  EAttribute getExistsOper_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ExistsOper#getSubquery <em>Subquery</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subquery</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExistsOper#getSubquery()
+   * @see #getExistsOper()
+   * @generated
+   */
+  EReference getExistsOper_Subquery();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ExistsOper#getOpList <em>Op List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExistsOper#getOpList()
+   * @see #getExistsOper()
+   * @generated
+   */
+  EReference getExistsOper_OpList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OperandListGroup <em>Operand List Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operand List Group</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OperandListGroup
+   * @generated
+   */
+  EClass getOperandListGroup();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OperandListGroup#getOpGroup <em>Op Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op Group</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OperandListGroup#getOpGroup()
+   * @see #getOperandListGroup()
+   * @generated
+   */
+  EReference getOperandListGroup_OpGroup();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OperandList <em>Operand List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operand List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OperandList
+   * @generated
+   */
+  EClass getOperandList();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Operands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operands</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operands
+   * @generated
+   */
+  EClass getOperands();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operands#getOp1 <em>Op1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op1</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operands#getOp1()
+   * @see #getOperands()
+   * @generated
+   */
+  EReference getOperands_Op1();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operands#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operands#getLeft()
+   * @see #getOperands()
+   * @generated
+   */
+  EReference getOperands_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operands#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operands#getRight()
+   * @see #getOperands()
+   * @generated
+   */
+  EReference getOperands_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Operand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand
+   * @generated
+   */
+  EClass getOperand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getColumn <em>Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Column</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getColumn()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Column();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getXop <em>Xop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Xop</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getXop()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Xop();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getSubq <em>Subq</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subq</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getSubq()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Subq();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getFcast <em>Fcast</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fcast</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getFcast()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Fcast();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getFext <em>Fext</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fext</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getFext()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Fext();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getFunc <em>Func</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Func</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getFunc()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Func();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getSqlcase <em>Sqlcase</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sqlcase</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getSqlcase()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Sqlcase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getParam <em>Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Param</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getParam()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Param();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getEparam <em>Eparam</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Eparam</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getEparam()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Eparam();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Operand#getScalar <em>Scalar</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Scalar</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Operand#getScalar()
+   * @see #getOperand()
+   * @generated
+   */
+  EReference getOperand_Scalar();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpFunction <em>Op Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op Function</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunction
+   * @generated
+   */
+  EClass getOpFunction();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OpFunction#getFname <em>Fname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Fname</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunction#getFname()
+   * @see #getOpFunction()
+   * @generated
+   */
+  EAttribute getOpFunction_Fname();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OpFunction#getStar <em>Star</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Star</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunction#getStar()
+   * @see #getOpFunction()
+   * @generated
+   */
+  EAttribute getOpFunction_Star();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OpFunction#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunction#getArgs()
+   * @see #getOpFunction()
+   * @generated
+   */
+  EReference getOpFunction_Args();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OpFunction#getFan <em>Fan</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fan</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunction#getFan()
+   * @see #getOpFunction()
+   * @generated
+   */
+  EReference getOpFunction_Fan();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FunctionExtract <em>Function Extract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Extract</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionExtract
+   * @generated
+   */
+  EClass getFunctionExtract();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.FunctionExtract#getV <em>V</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>V</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionExtract#getV()
+   * @see #getFunctionExtract()
+   * @generated
+   */
+  EAttribute getFunctionExtract_V();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FunctionExtract#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionExtract#getOperand()
+   * @see #getFunctionExtract()
+   * @generated
+   */
+  EReference getFunctionExtract_Operand();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.FunctionAnalytical <em>Function Analytical</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Analytical</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionAnalytical
+   * @generated
+   */
+  EClass getFunctionAnalytical();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.FunctionAnalytical#getAnClause <em>An Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>An Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.FunctionAnalytical#getAnClause()
+   * @see #getFunctionAnalytical()
+   * @generated
+   */
+  EReference getFunctionAnalytical_AnClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.AnalyticClause <em>Analytic Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Analytic Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticClause
+   * @generated
+   */
+  EClass getAnalyticClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.AnalyticClause#getAbc <em>Abc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Abc</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticClause#getAbc()
+   * @see #getAnalyticClause()
+   * @generated
+   */
+  EReference getAnalyticClause_Abc();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.AnalyticClause#getObc <em>Obc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Obc</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticClause#getObc()
+   * @see #getAnalyticClause()
+   * @generated
+   */
+  EReference getAnalyticClause_Obc();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.AnalyticClause#getWinc <em>Winc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Winc</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticClause#getWinc()
+   * @see #getAnalyticClause()
+   * @generated
+   */
+  EReference getAnalyticClause_Winc();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClause <em>Windowing Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Windowing Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClause
+   * @generated
+   */
+  EClass getWindowingClause();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween <em>Windowing Clause Between</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Windowing Clause Between</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween
+   * @generated
+   */
+  EClass getWindowingClauseBetween();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween#getWcoP <em>Wco P</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wco P</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween#getWcoP()
+   * @see #getWindowingClauseBetween()
+   * @generated
+   */
+  EReference getWindowingClauseBetween_WcoP();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween#getWcoF <em>Wco F</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wco F</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseBetween#getWcoF()
+   * @see #getWindowingClauseBetween()
+   * @generated
+   */
+  EReference getWindowingClauseBetween_WcoF();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing <em>Windowing Clause Operand Following</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Windowing Clause Operand Following</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing
+   * @generated
+   */
+  EClass getWindowingClauseOperandFollowing();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandFollowing#getExp()
+   * @see #getWindowingClauseOperandFollowing()
+   * @generated
+   */
+  EReference getWindowingClauseOperandFollowing_Exp();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding <em>Windowing Clause Operand Preceding</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Windowing Clause Operand Preceding</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding
+   * @generated
+   */
+  EClass getWindowingClauseOperandPreceding();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WindowingClauseOperandPreceding#getExpr()
+   * @see #getWindowingClauseOperandPreceding()
+   * @generated
+   */
+  EReference getWindowingClauseOperandPreceding_Expr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrderByClause <em>Order By Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Order By Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClause
+   * @generated
+   */
+  EClass getOrderByClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OrderByClause#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClause#getArgs()
+   * @see #getOrderByClause()
+   * @generated
+   */
+  EReference getOrderByClause_Args();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrderByClauseArgs <em>Order By Clause Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Order By Clause Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClauseArgs
+   * @generated
+   */
+  EClass getOrderByClauseArgs();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OrderByClauseArg <em>Order By Clause Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Order By Clause Arg</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClauseArg
+   * @generated
+   */
+  EClass getOrderByClauseArg();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OrderByClauseArg#getCol <em>Col</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Col</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OrderByClauseArg#getCol()
+   * @see #getOrderByClauseArg()
+   * @generated
+   */
+  EReference getOrderByClauseArg_Col();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.QueryPartitionClause <em>Query Partition Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Query Partition Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.QueryPartitionClause
+   * @generated
+   */
+  EClass getQueryPartitionClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.QueryPartitionClause#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.QueryPartitionClause#getArgs()
+   * @see #getQueryPartitionClause()
+   * @generated
+   */
+  EReference getQueryPartitionClause_Args();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.AnalyticExprArgs <em>Analytic Expr Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Analytic Expr Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticExprArgs
+   * @generated
+   */
+  EClass getAnalyticExprArgs();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.AnalyticExprArg <em>Analytic Expr Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Analytic Expr Arg</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticExprArg
+   * @generated
+   */
+  EClass getAnalyticExprArg();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.AnalyticExprArg#getCe <em>Ce</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ce</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticExprArg#getCe()
+   * @see #getAnalyticExprArg()
+   * @generated
+   */
+  EReference getAnalyticExprArg_Ce();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.AnalyticExprArg#getColAlias <em>Col Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Col Alias</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AnalyticExprArg#getColAlias()
+   * @see #getAnalyticExprArg()
+   * @generated
+   */
+  EReference getAnalyticExprArg_ColAlias();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArg <em>Op Function Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op Function Arg</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArg
+   * @generated
+   */
+  EClass getOpFunctionArg();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand <em>Op Function Arg Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op Function Arg Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand
+   * @generated
+   */
+  EClass getOpFunctionArgOperand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArgOperand#getOp()
+   * @see #getOpFunctionArgOperand()
+   * @generated
+   */
+  EReference getOpFunctionArgOperand_Op();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionCast <em>Op Function Cast</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op Function Cast</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionCast
+   * @generated
+   */
+  EClass getOpFunctionCast();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getOp()
+   * @see #getOpFunctionCast()
+   * @generated
+   */
+  EReference getOpFunctionCast_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getType()
+   * @see #getOpFunctionCast()
+   * @generated
+   */
+  EAttribute getOpFunctionCast_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getP <em>P</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>P</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getP()
+   * @see #getOpFunctionCast()
+   * @generated
+   */
+  EAttribute getOpFunctionCast_P();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getP2 <em>P2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>P2</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionCast#getP2()
+   * @see #getOpFunctionCast()
+   * @generated
+   */
+  EAttribute getOpFunctionCast_P2();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpFunctionArgAgregate <em>Op Function Arg Agregate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op Function Arg Agregate</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFunctionArgAgregate
+   * @generated
+   */
+  EClass getOpFunctionArgAgregate();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.POperand <em>POperand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>POperand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.POperand
+   * @generated
+   */
+  EClass getPOperand();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.POperand#getPrm <em>Prm</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prm</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.POperand#getPrm()
+   * @see #getPOperand()
+   * @generated
+   */
+  EAttribute getPOperand_Prm();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ExpOperand <em>Exp Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exp Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExpOperand
+   * @generated
+   */
+  EClass getExpOperand();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ExpOperand#getPrm <em>Prm</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prm</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ExpOperand#getPrm()
+   * @see #getExpOperand()
+   * @generated
+   */
+  EAttribute getExpOperand_Prm();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ColumnOperand <em>Column Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Column Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOperand
+   * @generated
+   */
+  EClass getColumnOperand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ColumnOperand#getCfull <em>Cfull</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cfull</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOperand#getCfull()
+   * @see #getColumnOperand()
+   * @generated
+   */
+  EReference getColumnOperand_Cfull();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnOperand#getOra <em>Ora</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ora</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnOperand#getOra()
+   * @see #getColumnOperand()
+   * @generated
+   */
+  EAttribute getColumnOperand_Ora();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SubQueryOperand <em>Sub Query Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sub Query Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SubQueryOperand
+   * @generated
+   */
+  EClass getSubQueryOperand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SubQueryOperand#getSel <em>Sel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sel</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SubQueryOperand#getSel()
+   * @see #getSubQueryOperand()
+   * @generated
+   */
+  EReference getSubQueryOperand_Sel();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand <em>Scalar Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scalar Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand
+   * @generated
+   */
+  EClass getScalarOperand();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSostr <em>Sostr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sostr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSostr()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_Sostr();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSodbl <em>Sodbl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sodbl</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSodbl()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_Sodbl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSodate <em>Sodate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sodate</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSodate()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_Sodate();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSotime <em>Sotime</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sotime</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSotime()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_Sotime();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSodt <em>Sodt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sodt</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSodt()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_Sodt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSoUInt <em>So UInt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>So UInt</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSoUInt()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_SoUInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSoint <em>Soint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Soint</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ScalarOperand#getSoint()
+   * @see #getScalarOperand()
+   * @generated
+   */
+  EAttribute getScalarOperand_Soint();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseOperand <em>Case Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Case Operand</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseOperand
+   * @generated
+   */
+  EClass getSQLCaseOperand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseOperand#getWop <em>Wop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wop</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseOperand#getWop()
+   * @see #getSQLCaseOperand()
+   * @generated
+   */
+  EReference getSQLCaseOperand_Wop();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseOperand#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseOperand#getExpr()
+   * @see #getSQLCaseOperand()
+   * @generated
+   */
+  EReference getSQLCaseOperand_Expr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseOperand#getWhen <em>When</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>When</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseOperand#getWhen()
+   * @see #getSQLCaseOperand()
+   * @generated
+   */
+  EReference getSQLCaseOperand_When();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SQLCaseWhens <em>Case Whens</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Case Whens</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SQLCaseWhens
+   * @generated
+   */
+  EClass getSQLCaseWhens();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SqlCaseWhen <em>Sql Case When</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sql Case When</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SqlCaseWhen
+   * @generated
+   */
+  EClass getSqlCaseWhen();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getWop <em>Wop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wop</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getWop()
+   * @see #getSqlCaseWhen()
+   * @generated
+   */
+  EReference getSqlCaseWhen_Wop();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getExpr()
+   * @see #getSqlCaseWhen()
+   * @generated
+   */
+  EReference getSqlCaseWhen_Expr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getTexp <em>Texp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Texp</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getTexp()
+   * @see #getSqlCaseWhen()
+   * @generated
+   */
+  EReference getSqlCaseWhen_Texp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getEexp <em>Eexp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Eexp</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SqlCaseWhen#getEexp()
+   * @see #getSqlCaseWhen()
+   * @generated
+   */
+  EReference getSqlCaseWhen_Eexp();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.IntegerValue <em>Integer Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Integer Value</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.IntegerValue
+   * @generated
+   */
+  EClass getIntegerValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.IntegerValue#getInteger <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Integer</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.IntegerValue#getInteger()
+   * @see #getIntegerValue()
+   * @generated
+   */
+  EAttribute getIntegerValue_Integer();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UnsignedValue <em>Unsigned Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unsigned Value</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnsignedValue
+   * @generated
+   */
+  EClass getUnsignedValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.UnsignedValue#getInteger <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Integer</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnsignedValue#getInteger()
+   * @see #getUnsignedValue()
+   * @generated
+   */
+  EAttribute getUnsignedValue_Integer();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Col <em>Col</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Col</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Col
+   * @generated
+   */
+  EClass getCol();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.Col#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Col#getEntries()
+   * @see #getCol()
+   * @generated
+   */
+  EReference getCol_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.abc <em>abc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>abc</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.abc
+   * @generated
+   */
+  EClass getabc();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.abc#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.abc#getEntries()
+   * @see #getabc()
+   * @generated
+   */
+  EReference getabc_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.UnipivotInClause <em>Unipivot In Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unipivot In Clause</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnipivotInClause
+   * @generated
+   */
+  EClass getUnipivotInClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.UnipivotInClause#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnipivotInClause#getOp()
+   * @see #getUnipivotInClause()
+   * @generated
+   */
+  EAttribute getUnipivotInClause_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.UnipivotInClause#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.UnipivotInClause#getArgs()
+   * @see #getUnipivotInClause()
+   * @generated
+   */
+  EReference getUnipivotInClause_Args();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.uicargs <em>uicargs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>uicargs</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.uicargs
+   * @generated
+   */
+  EClass getuicargs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.uicargs#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.uicargs#getEntries()
+   * @see #getuicargs()
+   * @generated
+   */
+  EReference getuicargs_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.pvcs <em>pvcs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>pvcs</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.pvcs
+   * @generated
+   */
+  EClass getpvcs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.pvcs#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.pvcs#getEntries()
+   * @see #getpvcs()
+   * @generated
+   */
+  EReference getpvcs_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.pcols <em>pcols</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>pcols</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.pcols
+   * @generated
+   */
+  EClass getpcols();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.pcols#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.pcols#getEntries()
+   * @see #getpcols()
+   * @generated
+   */
+  EReference getpcols_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.tbls <em>tbls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>tbls</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.tbls
+   * @generated
+   */
+  EClass gettbls();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.tbls#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.tbls#getEntries()
+   * @see #gettbls()
+   * @generated
+   */
+  EReference gettbls_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpList <em>Op List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpList
+   * @generated
+   */
+  EClass getOpList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OpList#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpList#getEntries()
+   * @see #getOpList()
+   * @generated
+   */
+  EReference getOpList_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Plus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Plus</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Plus
+   * @generated
+   */
+  EClass getPlus();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Minus <em>Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Minus</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Minus
+   * @generated
+   */
+  EClass getMinus();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Concat <em>Concat</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Concat</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Concat
+   * @generated
+   */
+  EClass getConcat();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Multiply <em>Multiply</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiply</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Multiply
+   * @generated
+   */
+  EClass getMultiply();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.Division <em>Division</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Division</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Division
+   * @generated
+   */
+  EClass getDivision();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OBCArgs <em>OBC Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>OBC Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OBCArgs
+   * @generated
+   */
+  EClass getOBCArgs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OBCArgs#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OBCArgs#getEntries()
+   * @see #getOBCArgs()
+   * @generated
+   */
+  EReference getOBCArgs_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.AExpArgs <em>AExp Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>AExp Args</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AExpArgs
+   * @generated
+   */
+  EClass getAExpArgs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.AExpArgs#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.AExpArgs#getEntries()
+   * @see #getAExpArgs()
+   * @generated
+   */
+  EReference getAExpArgs_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.OpFList <em>Op FList</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Op FList</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFList
+   * @generated
+   */
+  EClass getOpFList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.OpFList#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.OpFList#getEntries()
+   * @see #getOpFList()
+   * @generated
+   */
+  EReference getOpFList_Entries();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WhenList <em>When List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>When List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WhenList
+   * @generated
+   */
+  EClass getWhenList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.WhenList#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entries</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.WhenList#getEntries()
+   * @see #getWhenList()
+   * @generated
+   */
+  EReference getWhenList_Entries();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl_sql.sQL.XFunction <em>XFunction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>XFunction</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.XFunction
+   * @generated
+   */
+  EEnum getXFunction();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES <em>EXTRACT VALUES</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>EXTRACT VALUES</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES
+   * @generated
+   */
+  EEnum getEXTRACT_VALUES();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,30 +7337,2620 @@ public interface SQLPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Wq</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__WQ = eINSTANCE.getModel_Wq();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.GreetingImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getGreeting()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EReference MODEL__QUERY = eINSTANCE.getModel_Query();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl <em>With Query</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWithQuery()
+     * @generated
+     */
+    EClass WITH_QUERY = eINSTANCE.getWithQuery();
+
+    /**
+     * The meta object literal for the '<em><b>W</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute WITH_QUERY__W = eINSTANCE.getWithQuery_W();
+
+    /**
+     * The meta object literal for the '<em><b>Wname</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WITH_QUERY__WNAME = eINSTANCE.getWithQuery_Wname();
+
+    /**
+     * The meta object literal for the '<em><b>With Cols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WITH_QUERY__WITH_COLS = eINSTANCE.getWithQuery_WithCols();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WITH_QUERY__QUERY = eINSTANCE.getWithQuery_Query();
+
+    /**
+     * The meta object literal for the '<em><b>Additional Wname</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WITH_QUERY__ADDITIONAL_WNAME = eINSTANCE.getWithQuery_AdditionalWname();
+
+    /**
+     * The meta object literal for the '<em><b>Additional With Cols</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WITH_QUERY__ADDITIONAL_WITH_COLS = eINSTANCE.getWithQuery_AdditionalWithCols();
+
+    /**
+     * The meta object literal for the '<em><b>Additional Queries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WITH_QUERY__ADDITIONAL_QUERIES = eINSTANCE.getWithQuery_AdditionalQueries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithColumnsImpl <em>With Columns</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WithColumnsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWithColumns()
+     * @generated
+     */
+    EClass WITH_COLUMNS = eINSTANCE.getWithColumns();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FetchFirstImpl <em>Fetch First</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FetchFirstImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFetchFirst()
+     * @generated
+     */
+    EClass FETCH_FIRST = eINSTANCE.getFetchFirst();
+
+    /**
+     * The meta object literal for the '<em><b>Fetch First</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FETCH_FIRST__FETCH_FIRST = eINSTANCE.getFetchFirst_FetchFirst();
+
+    /**
+     * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FETCH_FIRST__ROW = eINSTANCE.getFetchFirst_Row();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OffsetImpl <em>Offset</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OffsetImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOffset()
+     * @generated
+     */
+    EClass OFFSET = eINSTANCE.getOffset();
+
+    /**
+     * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OFFSET__OFFSET = eINSTANCE.getOffset_Offset();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.LimitImpl <em>Limit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.LimitImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLimit()
+     * @generated
+     */
+    EClass LIMIT = eINSTANCE.getLimit();
+
+    /**
+     * The meta object literal for the '<em><b>L1</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIMIT__L1 = eINSTANCE.getLimit_L1();
+
+    /**
+     * The meta object literal for the '<em><b>L2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIMIT__L2 = eINSTANCE.getLimit_L2();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectQueryImpl <em>Select Query</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SelectQueryImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectQuery()
+     * @generated
+     */
+    EClass SELECT_QUERY = eINSTANCE.getSelectQuery();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectSubSetImpl <em>Select Sub Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SelectSubSetImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectSubSet()
+     * @generated
+     */
+    EClass SELECT_SUB_SET = eINSTANCE.getSelectSubSet();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECT_SUB_SET__OP = eINSTANCE.getSelectSubSet_Op();
+
+    /**
+     * The meta object literal for the '<em><b>All</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECT_SUB_SET__ALL = eINSTANCE.getSelectSubSet_All();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_SUB_SET__QUERY = eINSTANCE.getSelectSubSet_Query();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectImpl <em>Select</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SelectImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelect()
+     * @generated
+     */
+    EClass SELECT = eINSTANCE.getSelect();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__OP = eINSTANCE.getSelect_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Select</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECT__SELECT = eINSTANCE.getSelect_Select();
+
+    /**
+     * The meta object literal for the '<em><b>Cols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__COLS = eINSTANCE.getSelect_Cols();
+
+    /**
+     * The meta object literal for the '<em><b>Tbl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__TBL = eINSTANCE.getSelect_Tbl();
+
+    /**
+     * The meta object literal for the '<em><b>Where Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__WHERE_EXPRESSION = eINSTANCE.getSelect_WhereExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Group By Entry</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__GROUP_BY_ENTRY = eINSTANCE.getSelect_GroupByEntry();
+
+    /**
+     * The meta object literal for the '<em><b>Having Entry</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__HAVING_ENTRY = eINSTANCE.getSelect_HavingEntry();
+
+    /**
+     * The meta object literal for the '<em><b>Order By Entry</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__ORDER_BY_ENTRY = eINSTANCE.getSelect_OrderByEntry();
+
+    /**
+     * The meta object literal for the '<em><b>Lim</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__LIM = eINSTANCE.getSelect_Lim();
+
+    /**
+     * The meta object literal for the '<em><b>Offset</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__OFFSET = eINSTANCE.getSelect_Offset();
+
+    /**
+     * The meta object literal for the '<em><b>Fetch First</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__FETCH_FIRST = eINSTANCE.getSelect_FetchFirst();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrColumnImpl <em>Or Column</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrColumnImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrColumn()
+     * @generated
+     */
+    EClass OR_COLUMN = eINSTANCE.getOrColumn();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_COLUMN__ENTRIES = eINSTANCE.getOrColumn_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnOrAliasImpl <em>Column Or Alias</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnOrAliasImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnOrAlias()
+     * @generated
+     */
+    EClass COLUMN_OR_ALIAS = eINSTANCE.getColumnOrAlias();
+
+    /**
+     * The meta object literal for the '<em><b>Ce</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLUMN_OR_ALIAS__CE = eINSTANCE.getColumnOrAlias_Ce();
+
+    /**
+     * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_OR_ALIAS__ALIAS = eINSTANCE.getColumnOrAlias_Alias();
+
+    /**
+     * The meta object literal for the '<em><b>Col Alias</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLUMN_OR_ALIAS__COL_ALIAS = eINSTANCE.getColumnOrAlias_ColAlias();
+
+    /**
+     * The meta object literal for the '<em><b>All Cols</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_OR_ALIAS__ALL_COLS = eINSTANCE.getColumnOrAlias_AllCols();
+
+    /**
+     * The meta object literal for the '<em><b>Db All Cols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLUMN_OR_ALIAS__DB_ALL_COLS = eINSTANCE.getColumnOrAlias_DbAllCols();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnFullImpl <em>Column Full</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnFullImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnFull()
+     * @generated
+     */
+    EClass COLUMN_FULL = eINSTANCE.getColumnFull();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrTableImpl <em>Or Table</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrTableImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrTable()
+     * @generated
+     */
+    EClass OR_TABLE = eINSTANCE.getOrTable();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_TABLE__ENTRIES = eINSTANCE.getOrTable_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromTableImpl <em>From Table</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FromTableImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromTable()
+     * @generated
+     */
+    EClass FROM_TABLE = eINSTANCE.getFromTable();
+
+    /**
+     * The meta object literal for the '<em><b>Table</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_TABLE__TABLE = eINSTANCE.getFromTable_Table();
+
+    /**
+     * The meta object literal for the '<em><b>Fjoin</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_TABLE__FJOIN = eINSTANCE.getFromTable_Fjoin();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromTableJoinImpl <em>From Table Join</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FromTableJoinImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromTableJoin()
+     * @generated
+     */
+    EClass FROM_TABLE_JOIN = eINSTANCE.getFromTableJoin();
+
+    /**
+     * The meta object literal for the '<em><b>Join</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FROM_TABLE_JOIN__JOIN = eINSTANCE.getFromTableJoin_Join();
+
+    /**
+     * The meta object literal for the '<em><b>On Table</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_TABLE_JOIN__ON_TABLE = eINSTANCE.getFromTableJoin_OnTable();
+
+    /**
+     * The meta object literal for the '<em><b>Join Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_TABLE_JOIN__JOIN_EXPR = eINSTANCE.getFromTableJoin_JoinExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Join Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_TABLE_JOIN__JOIN_COND = eINSTANCE.getFromTableJoin_JoinCond();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.JoinConditionImpl <em>Join Condition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.JoinConditionImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getJoinCondition()
+     * @generated
+     */
+    EClass JOIN_CONDITION = eINSTANCE.getJoinCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Use Cols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JOIN_CONDITION__USE_COLS = eINSTANCE.getJoinCondition_UseCols();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UsingColsImpl <em>Using Cols</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UsingColsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUsingCols()
+     * @generated
+     */
+    EClass USING_COLS = eINSTANCE.getUsingCols();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference USING_COLS__ENTRIES = eINSTANCE.getUsingCols_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableOrAliasImpl <em>Table Or Alias</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.TableOrAliasImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableOrAlias()
+     * @generated
+     */
+    EClass TABLE_OR_ALIAS = eINSTANCE.getTableOrAlias();
+
+    /**
+     * The meta object literal for the '<em><b>Tfull</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_OR_ALIAS__TFULL = eINSTANCE.getTableOrAlias_Tfull();
+
+    /**
+     * The meta object literal for the '<em><b>Sq</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_OR_ALIAS__SQ = eINSTANCE.getTableOrAlias_Sq();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_OR_ALIAS__VALUES = eINSTANCE.getTableOrAlias_Values();
+
+    /**
+     * The meta object literal for the '<em><b>Pivot</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_OR_ALIAS__PIVOT = eINSTANCE.getTableOrAlias_Pivot();
+
+    /**
+     * The meta object literal for the '<em><b>Unpivot</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_OR_ALIAS__UNPIVOT = eINSTANCE.getTableOrAlias_Unpivot();
+
+    /**
+     * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TABLE_OR_ALIAS__ALIAS = eINSTANCE.getTableOrAlias_Alias();
+
+    /**
+     * The meta object literal for the '<em><b>Tbl Alias</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_OR_ALIAS__TBL_ALIAS = eINSTANCE.getTableOrAlias_TblAlias();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromValuesImpl <em>From Values</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FromValuesImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValues()
+     * @generated
+     */
+    EClass FROM_VALUES = eINSTANCE.getFromValues();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_VALUES__VALUES = eINSTANCE.getFromValues_Values();
+
+    /**
+     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_VALUES__C = eINSTANCE.getFromValues_C();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnsImpl <em>From Values Columns</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValuesColumns()
+     * @generated
+     */
+    EClass FROM_VALUES_COLUMNS = eINSTANCE.getFromValuesColumns();
+
+    /**
+     * The meta object literal for the '<em><b>Fv Cols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FROM_VALUES_COLUMNS__FV_COLS = eINSTANCE.getFromValuesColumns_FvCols();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnNamesImpl <em>From Values Column Names</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FromValuesColumnNamesImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValuesColumnNames()
+     * @generated
+     */
+    EClass FROM_VALUES_COLUMN_NAMES = eINSTANCE.getFromValuesColumnNames();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnNamesImpl <em>Column Names</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnNamesImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnNames()
+     * @generated
+     */
+    EClass COLUMN_NAMES = eINSTANCE.getColumnNames();
+
+    /**
+     * The meta object literal for the '<em><b>Col Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_NAMES__COL_NAME = eINSTANCE.getColumnNames_ColName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ValuesImpl <em>Values</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ValuesImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getValues()
+     * @generated
+     */
+    EClass VALUES = eINSTANCE.getValues();
+
+    /**
+     * The meta object literal for the '<em><b>Rows</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VALUES__ROWS = eINSTANCE.getValues_Rows();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowsImpl <em>Rows</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.RowsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRows()
+     * @generated
+     */
+    EClass ROWS = eINSTANCE.getRows();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROWS__ENTRIES = eINSTANCE.getRows_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowImpl <em>Row</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.RowImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRow()
+     * @generated
+     */
+    EClass ROW = eINSTANCE.getRow();
+
+    /**
+     * The meta object literal for the '<em><b>Row Values</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROW__ROW_VALUES = eINSTANCE.getRow_RowValues();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowValuesImpl <em>Row Values</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.RowValuesImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRowValues()
+     * @generated
+     */
+    EClass ROW_VALUES = eINSTANCE.getRowValues();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROW_VALUES__ENTRIES = eINSTANCE.getRowValues_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RowValueImpl <em>Row Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.RowValueImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRowValue()
+     * @generated
+     */
+    EClass ROW_VALUE = eINSTANCE.getRowValue();
+
+    /**
+     * The meta object literal for the '<em><b>Null</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROW_VALUE__NULL = eINSTANCE.getRowValue_Null();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotTableImpl <em>Pivot Table</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotTableImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotTable()
+     * @generated
+     */
+    EClass PIVOT_TABLE = eINSTANCE.getPivotTable();
+
+    /**
+     * The meta object literal for the '<em><b>Pfun</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIVOT_TABLE__PFUN = eINSTANCE.getPivotTable_Pfun();
+
+    /**
+     * The meta object literal for the '<em><b>Pfor</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIVOT_TABLE__PFOR = eINSTANCE.getPivotTable_Pfor();
+
+    /**
+     * The meta object literal for the '<em><b>Pin</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIVOT_TABLE__PIN = eINSTANCE.getPivotTable_Pin();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionsImpl <em>Pivot Functions</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotFunctions()
+     * @generated
+     */
+    EClass PIVOT_FUNCTIONS = eINSTANCE.getPivotFunctions();
+
+    /**
+     * The meta object literal for the '<em><b>Abc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PIVOT_FUNCTIONS__ABC = eINSTANCE.getPivotFunctions_Abc();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionImpl <em>Pivot Function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotFunctionImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotFunction()
+     * @generated
+     */
+    EClass PIVOT_FUNCTION = eINSTANCE.getPivotFunction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotInClauseImpl <em>Pivot In Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotInClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotInClause()
+     * @generated
+     */
+    EClass PIVOT_IN_CLAUSE = eINSTANCE.getPivotInClause();
+
+    /**
+     * The meta object literal for the '<em><b>Sq</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIVOT_IN_CLAUSE__SQ = eINSTANCE.getPivotInClause_Sq();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIVOT_IN_CLAUSE__ARGS = eINSTANCE.getPivotInClause_Args();
+
+    /**
+     * The meta object literal for the '<em><b>Pinany</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PIVOT_IN_CLAUSE__PINANY = eINSTANCE.getPivotInClause_Pinany();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotTableImpl <em>Unpivot Table</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotTableImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotTable()
+     * @generated
+     */
+    EClass UNPIVOT_TABLE = eINSTANCE.getUnpivotTable();
+
+    /**
+     * The meta object literal for the '<em><b>Pcols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNPIVOT_TABLE__PCOLS = eINSTANCE.getUnpivotTable_Pcols();
+
+    /**
+     * The meta object literal for the '<em><b>Pfor</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNPIVOT_TABLE__PFOR = eINSTANCE.getUnpivotTable_Pfor();
+
+    /**
+     * The meta object literal for the '<em><b>Inop</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNPIVOT_TABLE__INOP = eINSTANCE.getUnpivotTable_Inop();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseImpl <em>Unpivot In Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClause()
+     * @generated
+     */
+    EClass UNPIVOT_IN_CLAUSE = eINSTANCE.getUnpivotInClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgsImpl <em>Unpivot In Clause Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClauseArgs()
+     * @generated
+     */
+    EClass UNPIVOT_IN_CLAUSE_ARGS = eINSTANCE.getUnpivotInClauseArgs();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgImpl <em>Unpivot In Clause Arg</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UnpivotInClauseArgImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClauseArg()
+     * @generated
+     */
+    EClass UNPIVOT_IN_CLAUSE_ARG = eINSTANCE.getUnpivotInClauseArg();
+
+    /**
+     * The meta object literal for the '<em><b>Pcols</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNPIVOT_IN_CLAUSE_ARG__PCOLS = eINSTANCE.getUnpivotInClauseArg_Pcols();
+
+    /**
+     * The meta object literal for the '<em><b>Cfuls</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNPIVOT_IN_CLAUSE_ARG__CFULS = eINSTANCE.getUnpivotInClauseArg_Cfuls();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotForClauseImpl <em>Pivot For Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotForClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotForClause()
+     * @generated
+     */
+    EClass PIVOT_FOR_CLAUSE = eINSTANCE.getPivotForClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotColumnsImpl <em>Pivot Columns</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotColumnsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotColumns()
+     * @generated
+     */
+    EClass PIVOT_COLUMNS = eINSTANCE.getPivotColumns();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotsImpl <em>Pivots</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivots()
+     * @generated
+     */
+    EClass PIVOTS = eINSTANCE.getPivots();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PivotColImpl <em>Pivot Col</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PivotColImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotCol()
+     * @generated
+     */
+    EClass PIVOT_COL = eINSTANCE.getPivotCol();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableFullImpl <em>Table Full</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.TableFullImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableFull()
+     * @generated
+     */
+    EClass TABLE_FULL = eINSTANCE.getTableFull();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameAllImpl <em>Db Object Name All</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameAllImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDbObjectNameAll()
+     * @generated
+     */
+    EClass DB_OBJECT_NAME_ALL = eINSTANCE.getDbObjectNameAll();
+
+    /**
+     * The meta object literal for the '<em><b>Dbname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DB_OBJECT_NAME_ALL__DBNAME = eINSTANCE.getDbObjectNameAll_Dbname();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameImpl <em>Db Object Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.DbObjectNameImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDbObjectName()
+     * @generated
+     */
+    EClass DB_OBJECT_NAME = eINSTANCE.getDbObjectName();
+
+    /**
+     * The meta object literal for the '<em><b>Dbname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DB_OBJECT_NAME__DBNAME = eINSTANCE.getDbObjectName_Dbname();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrOrderByColumnImpl <em>Or Order By Column</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrOrderByColumnImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrOrderByColumn()
+     * @generated
+     */
+    EClass OR_ORDER_BY_COLUMN = eINSTANCE.getOrOrderByColumn();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_ORDER_BY_COLUMN__ENTRIES = eINSTANCE.getOrOrderByColumn_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByColumnFullImpl <em>Order By Column Full</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByColumnFullImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByColumnFull()
+     * @generated
+     */
+    EClass ORDER_BY_COLUMN_FULL = eINSTANCE.getOrderByColumnFull();
+
+    /**
+     * The meta object literal for the '<em><b>Col Order</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ORDER_BY_COLUMN_FULL__COL_ORDER = eINSTANCE.getOrderByColumnFull_ColOrder();
+
+    /**
+     * The meta object literal for the '<em><b>Col Order Int</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ORDER_BY_COLUMN_FULL__COL_ORDER_INT = eINSTANCE.getOrderByColumnFull_ColOrderInt();
+
+    /**
+     * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ORDER_BY_COLUMN_FULL__DIRECTION = eINSTANCE.getOrderByColumnFull_Direction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrGroupByColumnImpl <em>Or Group By Column</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrGroupByColumnImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrGroupByColumn()
+     * @generated
+     */
+    EClass OR_GROUP_BY_COLUMN = eINSTANCE.getOrGroupByColumn();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_GROUP_BY_COLUMN__ENTRIES = eINSTANCE.getOrGroupByColumn_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.GroupByColumnFullImpl <em>Group By Column Full</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.GroupByColumnFullImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getGroupByColumnFull()
+     * @generated
+     */
+    EClass GROUP_BY_COLUMN_FULL = eINSTANCE.getGroupByColumnFull();
+
+    /**
+     * The meta object literal for the '<em><b>Col Gr By</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUP_BY_COLUMN_FULL__COL_GR_BY = eINSTANCE.getGroupByColumnFull_ColGrBy();
+
+    /**
+     * The meta object literal for the '<em><b>Gb Function</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUP_BY_COLUMN_FULL__GB_FUNCTION = eINSTANCE.getGroupByColumnFull_GbFunction();
+
+    /**
+     * The meta object literal for the '<em><b>Gr By Int</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GROUP_BY_COLUMN_FULL__GR_BY_INT = eINSTANCE.getGroupByColumnFull_GrByInt();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrExprImpl <em>Or Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrExprImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrExpr()
+     * @generated
+     */
+    EClass OR_EXPR = eINSTANCE.getOrExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_EXPR__ENTRIES = eINSTANCE.getOrExpr_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FullExpressionImpl <em>Full Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FullExpressionImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFullExpression()
+     * @generated
+     */
+    EClass FULL_EXPRESSION = eINSTANCE.getFullExpression();
+
+    /**
+     * The meta object literal for the '<em><b>C</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FULL_EXPRESSION__C = eINSTANCE.getFullExpression_C();
+
+    /**
+     * The meta object literal for the '<em><b>Efrag</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__EFRAG = eINSTANCE.getFullExpression_Efrag();
+
+    /**
+     * The meta object literal for the '<em><b>Not Prm</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FULL_EXPRESSION__NOT_PRM = eINSTANCE.getFullExpression_NotPrm();
+
+    /**
+     * The meta object literal for the '<em><b>Expgroup</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__EXPGROUP = eINSTANCE.getFullExpression_Expgroup();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__EXP = eINSTANCE.getFullExpression_Exp();
+
+    /**
+     * The meta object literal for the '<em><b>Xexp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__XEXP = eINSTANCE.getFullExpression_Xexp();
+
+    /**
+     * The meta object literal for the '<em><b>In</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__IN = eINSTANCE.getFullExpression_In();
+
+    /**
+     * The meta object literal for the '<em><b>Exists</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__EXISTS = eINSTANCE.getFullExpression_Exists();
+
+    /**
+     * The meta object literal for the '<em><b>Op1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__OP1 = eINSTANCE.getFullExpression_Op1();
+
+    /**
+     * The meta object literal for the '<em><b>Isnull</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FULL_EXPRESSION__ISNULL = eINSTANCE.getFullExpression_Isnull();
+
+    /**
+     * The meta object literal for the '<em><b>Between</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__BETWEEN = eINSTANCE.getFullExpression_Between();
+
+    /**
+     * The meta object literal for the '<em><b>Like</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__LIKE = eINSTANCE.getFullExpression_Like();
+
+    /**
+     * The meta object literal for the '<em><b>Comp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FULL_EXPRESSION__COMP = eINSTANCE.getFullExpression_Comp();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ExprGroupImpl <em>Expr Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ExprGroupImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExprGroup()
+     * @generated
+     */
+    EClass EXPR_GROUP = eINSTANCE.getExprGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Isnot</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPR_GROUP__ISNOT = eINSTANCE.getExprGroup_Isnot();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR_GROUP__EXPR = eINSTANCE.getExprGroup_Expr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.XExprImpl <em>XExpr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.XExprImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getXExpr()
+     * @generated
+     */
+    EClass XEXPR = eINSTANCE.getXExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Xf</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XEXPR__XF = eINSTANCE.getXExpr_Xf();
+
+    /**
+     * The meta object literal for the '<em><b>Col</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XEXPR__COL = eINSTANCE.getXExpr_Col();
+
+    /**
+     * The meta object literal for the '<em><b>Prm</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XEXPR__PRM = eINSTANCE.getXExpr_Prm();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PrmsImpl <em>Prms</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PrmsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPrms()
+     * @generated
+     */
+    EClass PRMS = eINSTANCE.getPrms();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRMS__ENTRIES = eINSTANCE.getPrms_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.JRParameterImpl <em>JR Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.JRParameterImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getJRParameter()
+     * @generated
+     */
+    EClass JR_PARAMETER = eINSTANCE.getJRParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Jrprm</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JR_PARAMETER__JRPRM = eINSTANCE.getJRParameter_Jrprm();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ComparisonImpl <em>Comparison</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ComparisonImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getComparison()
+     * @generated
+     */
+    EClass COMPARISON = eINSTANCE.getComparison();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPARISON__OPERATOR = eINSTANCE.getComparison_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Sub Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPARISON__SUB_OPERATOR = eINSTANCE.getComparison_SubOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Op2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPARISON__OP2 = eINSTANCE.getComparison_Op2();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.LikeImpl <em>Like</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.LikeImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLike()
+     * @generated
+     */
+    EClass LIKE = eINSTANCE.getLike();
+
+    /**
+     * The meta object literal for the '<em><b>Op Like</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIKE__OP_LIKE = eINSTANCE.getLike_OpLike();
+
+    /**
+     * The meta object literal for the '<em><b>Op2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIKE__OP2 = eINSTANCE.getLike_Op2();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.LikeOperandImpl <em>Like Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.LikeOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLikeOperand()
+     * @generated
+     */
+    EClass LIKE_OPERAND = eINSTANCE.getLikeOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Op2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIKE_OPERAND__OP2 = eINSTANCE.getLikeOperand_Op2();
+
+    /**
+     * The meta object literal for the '<em><b>Fop2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIKE_OPERAND__FOP2 = eINSTANCE.getLikeOperand_Fop2();
+
+    /**
+     * The meta object literal for the '<em><b>Fcast</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIKE_OPERAND__FCAST = eINSTANCE.getLikeOperand_Fcast();
+
+    /**
+     * The meta object literal for the '<em><b>Fparam</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIKE_OPERAND__FPARAM = eINSTANCE.getLikeOperand_Fparam();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.BetweenImpl <em>Between</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.BetweenImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getBetween()
+     * @generated
+     */
+    EClass BETWEEN = eINSTANCE.getBetween();
+
+    /**
+     * The meta object literal for the '<em><b>Op Between</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BETWEEN__OP_BETWEEN = eINSTANCE.getBetween_OpBetween();
+
+    /**
+     * The meta object literal for the '<em><b>Op2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BETWEEN__OP2 = eINSTANCE.getBetween_Op2();
+
+    /**
+     * The meta object literal for the '<em><b>Op3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BETWEEN__OP3 = eINSTANCE.getBetween_Op3();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.InOperImpl <em>In Oper</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.InOperImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getInOper()
+     * @generated
+     */
+    EClass IN_OPER = eINSTANCE.getInOper();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IN_OPER__OP = eINSTANCE.getInOper_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Subquery</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN_OPER__SUBQUERY = eINSTANCE.getInOper_Subquery();
+
+    /**
+     * The meta object literal for the '<em><b>Op List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN_OPER__OP_LIST = eINSTANCE.getInOper_OpList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ExistsOperImpl <em>Exists Oper</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ExistsOperImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExistsOper()
+     * @generated
+     */
+    EClass EXISTS_OPER = eINSTANCE.getExistsOper();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXISTS_OPER__OP = eINSTANCE.getExistsOper_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Subquery</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXISTS_OPER__SUBQUERY = eINSTANCE.getExistsOper_Subquery();
+
+    /**
+     * The meta object literal for the '<em><b>Op List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXISTS_OPER__OP_LIST = eINSTANCE.getExistsOper_OpList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandListGroupImpl <em>Operand List Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OperandListGroupImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperandListGroup()
+     * @generated
+     */
+    EClass OPERAND_LIST_GROUP = eINSTANCE.getOperandListGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Op Group</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND_LIST_GROUP__OP_GROUP = eINSTANCE.getOperandListGroup_OpGroup();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandListImpl <em>Operand List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OperandListImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperandList()
+     * @generated
+     */
+    EClass OPERAND_LIST = eINSTANCE.getOperandList();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandsImpl <em>Operands</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OperandsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperands()
+     * @generated
+     */
+    EClass OPERANDS = eINSTANCE.getOperands();
+
+    /**
+     * The meta object literal for the '<em><b>Op1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERANDS__OP1 = eINSTANCE.getOperands_Op1();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERANDS__LEFT = eINSTANCE.getOperands_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERANDS__RIGHT = eINSTANCE.getOperands_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OperandImpl <em>Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperand()
+     * @generated
+     */
+    EClass OPERAND = eINSTANCE.getOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Column</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__COLUMN = eINSTANCE.getOperand_Column();
+
+    /**
+     * The meta object literal for the '<em><b>Xop</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__XOP = eINSTANCE.getOperand_Xop();
+
+    /**
+     * The meta object literal for the '<em><b>Subq</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__SUBQ = eINSTANCE.getOperand_Subq();
+
+    /**
+     * The meta object literal for the '<em><b>Fcast</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__FCAST = eINSTANCE.getOperand_Fcast();
+
+    /**
+     * The meta object literal for the '<em><b>Fext</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__FEXT = eINSTANCE.getOperand_Fext();
+
+    /**
+     * The meta object literal for the '<em><b>Func</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__FUNC = eINSTANCE.getOperand_Func();
+
+    /**
+     * The meta object literal for the '<em><b>Sqlcase</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__SQLCASE = eINSTANCE.getOperand_Sqlcase();
+
+    /**
+     * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__PARAM = eINSTANCE.getOperand_Param();
+
+    /**
+     * The meta object literal for the '<em><b>Eparam</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__EPARAM = eINSTANCE.getOperand_Eparam();
+
+    /**
+     * The meta object literal for the '<em><b>Scalar</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERAND__SCALAR = eINSTANCE.getOperand_Scalar();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionImpl <em>Op Function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunction()
+     * @generated
+     */
+    EClass OP_FUNCTION = eINSTANCE.getOpFunction();
+
+    /**
+     * The meta object literal for the '<em><b>Fname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_FUNCTION__FNAME = eINSTANCE.getOpFunction_Fname();
+
+    /**
+     * The meta object literal for the '<em><b>Star</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_FUNCTION__STAR = eINSTANCE.getOpFunction_Star();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_FUNCTION__ARGS = eINSTANCE.getOpFunction_Args();
+
+    /**
+     * The meta object literal for the '<em><b>Fan</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_FUNCTION__FAN = eINSTANCE.getOpFunction_Fan();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FunctionExtractImpl <em>Function Extract</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FunctionExtractImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFunctionExtract()
+     * @generated
+     */
+    EClass FUNCTION_EXTRACT = eINSTANCE.getFunctionExtract();
+
+    /**
+     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_EXTRACT__V = eINSTANCE.getFunctionExtract_V();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_EXTRACT__OPERAND = eINSTANCE.getFunctionExtract_Operand();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.FunctionAnalyticalImpl <em>Function Analytical</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.FunctionAnalyticalImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFunctionAnalytical()
+     * @generated
+     */
+    EClass FUNCTION_ANALYTICAL = eINSTANCE.getFunctionAnalytical();
+
+    /**
+     * The meta object literal for the '<em><b>An Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_ANALYTICAL__AN_CLAUSE = eINSTANCE.getFunctionAnalytical_AnClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AnalyticClauseImpl <em>Analytic Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.AnalyticClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticClause()
+     * @generated
+     */
+    EClass ANALYTIC_CLAUSE = eINSTANCE.getAnalyticClause();
+
+    /**
+     * The meta object literal for the '<em><b>Abc</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANALYTIC_CLAUSE__ABC = eINSTANCE.getAnalyticClause_Abc();
+
+    /**
+     * The meta object literal for the '<em><b>Obc</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANALYTIC_CLAUSE__OBC = eINSTANCE.getAnalyticClause_Obc();
+
+    /**
+     * The meta object literal for the '<em><b>Winc</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANALYTIC_CLAUSE__WINC = eINSTANCE.getAnalyticClause_Winc();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseImpl <em>Windowing Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClause()
+     * @generated
+     */
+    EClass WINDOWING_CLAUSE = eINSTANCE.getWindowingClause();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseBetweenImpl <em>Windowing Clause Between</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseBetweenImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseBetween()
+     * @generated
+     */
+    EClass WINDOWING_CLAUSE_BETWEEN = eINSTANCE.getWindowingClauseBetween();
+
+    /**
+     * The meta object literal for the '<em><b>Wco P</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WINDOWING_CLAUSE_BETWEEN__WCO_P = eINSTANCE.getWindowingClauseBetween_WcoP();
+
+    /**
+     * The meta object literal for the '<em><b>Wco F</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WINDOWING_CLAUSE_BETWEEN__WCO_F = eINSTANCE.getWindowingClauseBetween_WcoF();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandFollowingImpl <em>Windowing Clause Operand Following</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandFollowingImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseOperandFollowing()
+     * @generated
+     */
+    EClass WINDOWING_CLAUSE_OPERAND_FOLLOWING = eINSTANCE.getWindowingClauseOperandFollowing();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WINDOWING_CLAUSE_OPERAND_FOLLOWING__EXP = eINSTANCE.getWindowingClauseOperandFollowing_Exp();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandPrecedingImpl <em>Windowing Clause Operand Preceding</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WindowingClauseOperandPrecedingImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseOperandPreceding()
+     * @generated
+     */
+    EClass WINDOWING_CLAUSE_OPERAND_PRECEDING = eINSTANCE.getWindowingClauseOperandPreceding();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WINDOWING_CLAUSE_OPERAND_PRECEDING__EXPR = eINSTANCE.getWindowingClauseOperandPreceding_Expr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseImpl <em>Order By Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClause()
+     * @generated
+     */
+    EClass ORDER_BY_CLAUSE = eINSTANCE.getOrderByClause();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ORDER_BY_CLAUSE__ARGS = eINSTANCE.getOrderByClause_Args();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgsImpl <em>Order By Clause Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClauseArgs()
+     * @generated
+     */
+    EClass ORDER_BY_CLAUSE_ARGS = eINSTANCE.getOrderByClauseArgs();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgImpl <em>Order By Clause Arg</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OrderByClauseArgImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClauseArg()
+     * @generated
+     */
+    EClass ORDER_BY_CLAUSE_ARG = eINSTANCE.getOrderByClauseArg();
+
+    /**
+     * The meta object literal for the '<em><b>Col</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ORDER_BY_CLAUSE_ARG__COL = eINSTANCE.getOrderByClauseArg_Col();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.QueryPartitionClauseImpl <em>Query Partition Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.QueryPartitionClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getQueryPartitionClause()
+     * @generated
+     */
+    EClass QUERY_PARTITION_CLAUSE = eINSTANCE.getQueryPartitionClause();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUERY_PARTITION_CLAUSE__ARGS = eINSTANCE.getQueryPartitionClause_Args();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgsImpl <em>Analytic Expr Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticExprArgs()
+     * @generated
+     */
+    EClass ANALYTIC_EXPR_ARGS = eINSTANCE.getAnalyticExprArgs();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgImpl <em>Analytic Expr Arg</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.AnalyticExprArgImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticExprArg()
+     * @generated
+     */
+    EClass ANALYTIC_EXPR_ARG = eINSTANCE.getAnalyticExprArg();
+
+    /**
+     * The meta object literal for the '<em><b>Ce</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANALYTIC_EXPR_ARG__CE = eINSTANCE.getAnalyticExprArg_Ce();
+
+    /**
+     * The meta object literal for the '<em><b>Col Alias</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANALYTIC_EXPR_ARG__COL_ALIAS = eINSTANCE.getAnalyticExprArg_ColAlias();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgImpl <em>Op Function Arg</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArg()
+     * @generated
+     */
+    EClass OP_FUNCTION_ARG = eINSTANCE.getOpFunctionArg();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgOperandImpl <em>Op Function Arg Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArgOperand()
+     * @generated
+     */
+    EClass OP_FUNCTION_ARG_OPERAND = eINSTANCE.getOpFunctionArgOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_FUNCTION_ARG_OPERAND__OP = eINSTANCE.getOpFunctionArgOperand_Op();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionCastImpl <em>Op Function Cast</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionCastImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionCast()
+     * @generated
+     */
+    EClass OP_FUNCTION_CAST = eINSTANCE.getOpFunctionCast();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_FUNCTION_CAST__OP = eINSTANCE.getOpFunctionCast_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_FUNCTION_CAST__TYPE = eINSTANCE.getOpFunctionCast_Type();
+
+    /**
+     * The meta object literal for the '<em><b>P</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_FUNCTION_CAST__P = eINSTANCE.getOpFunctionCast_P();
+
+    /**
+     * The meta object literal for the '<em><b>P2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_FUNCTION_CAST__P2 = eINSTANCE.getOpFunctionCast_P2();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgAgregateImpl <em>Op Function Arg Agregate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpFunctionArgAgregateImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArgAgregate()
+     * @generated
+     */
+    EClass OP_FUNCTION_ARG_AGREGATE = eINSTANCE.getOpFunctionArgAgregate();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.POperandImpl <em>POperand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.POperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPOperand()
+     * @generated
+     */
+    EClass POPERAND = eINSTANCE.getPOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Prm</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POPERAND__PRM = eINSTANCE.getPOperand_Prm();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ExpOperandImpl <em>Exp Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ExpOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExpOperand()
+     * @generated
+     */
+    EClass EXP_OPERAND = eINSTANCE.getExpOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Prm</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXP_OPERAND__PRM = eINSTANCE.getExpOperand_Prm();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnOperandImpl <em>Column Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnOperand()
+     * @generated
+     */
+    EClass COLUMN_OPERAND = eINSTANCE.getColumnOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Cfull</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLUMN_OPERAND__CFULL = eINSTANCE.getColumnOperand_Cfull();
+
+    /**
+     * The meta object literal for the '<em><b>Ora</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_OPERAND__ORA = eINSTANCE.getColumnOperand_Ora();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SubQueryOperandImpl <em>Sub Query Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SubQueryOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSubQueryOperand()
+     * @generated
+     */
+    EClass SUB_QUERY_OPERAND = eINSTANCE.getSubQueryOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Sel</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB_QUERY_OPERAND__SEL = eINSTANCE.getSubQueryOperand_Sel();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ScalarOperandImpl <em>Scalar Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ScalarOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getScalarOperand()
+     * @generated
+     */
+    EClass SCALAR_OPERAND = eINSTANCE.getScalarOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Sostr</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SOSTR = eINSTANCE.getScalarOperand_Sostr();
+
+    /**
+     * The meta object literal for the '<em><b>Sodbl</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SODBL = eINSTANCE.getScalarOperand_Sodbl();
+
+    /**
+     * The meta object literal for the '<em><b>Sodate</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SODATE = eINSTANCE.getScalarOperand_Sodate();
+
+    /**
+     * The meta object literal for the '<em><b>Sotime</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SOTIME = eINSTANCE.getScalarOperand_Sotime();
+
+    /**
+     * The meta object literal for the '<em><b>Sodt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SODT = eINSTANCE.getScalarOperand_Sodt();
+
+    /**
+     * The meta object literal for the '<em><b>So UInt</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SO_UINT = eINSTANCE.getScalarOperand_SoUInt();
+
+    /**
+     * The meta object literal for the '<em><b>Soint</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCALAR_OPERAND__SOINT = eINSTANCE.getScalarOperand_Soint();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SQLCaseOperandImpl <em>Case Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLCaseOperandImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSQLCaseOperand()
+     * @generated
+     */
+    EClass SQL_CASE_OPERAND = eINSTANCE.getSQLCaseOperand();
+
+    /**
+     * The meta object literal for the '<em><b>Wop</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_OPERAND__WOP = eINSTANCE.getSQLCaseOperand_Wop();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_OPERAND__EXPR = eINSTANCE.getSQLCaseOperand_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>When</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_OPERAND__WHEN = eINSTANCE.getSQLCaseOperand_When();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SQLCaseWhensImpl <em>Case Whens</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLCaseWhensImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSQLCaseWhens()
+     * @generated
+     */
+    EClass SQL_CASE_WHENS = eINSTANCE.getSQLCaseWhens();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SqlCaseWhenImpl <em>Sql Case When</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SqlCaseWhenImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSqlCaseWhen()
+     * @generated
+     */
+    EClass SQL_CASE_WHEN = eINSTANCE.getSqlCaseWhen();
+
+    /**
+     * The meta object literal for the '<em><b>Wop</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_WHEN__WOP = eINSTANCE.getSqlCaseWhen_Wop();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_WHEN__EXPR = eINSTANCE.getSqlCaseWhen_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Texp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_WHEN__TEXP = eINSTANCE.getSqlCaseWhen_Texp();
+
+    /**
+     * The meta object literal for the '<em><b>Eexp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQL_CASE_WHEN__EEXP = eINSTANCE.getSqlCaseWhen_Eexp();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.IntegerValueImpl <em>Integer Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.IntegerValueImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIntegerValue()
+     * @generated
+     */
+    EClass INTEGER_VALUE = eINSTANCE.getIntegerValue();
+
+    /**
+     * The meta object literal for the '<em><b>Integer</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTEGER_VALUE__INTEGER = eINSTANCE.getIntegerValue_Integer();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnsignedValueImpl <em>Unsigned Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UnsignedValueImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnsignedValue()
+     * @generated
+     */
+    EClass UNSIGNED_VALUE = eINSTANCE.getUnsignedValue();
+
+    /**
+     * The meta object literal for the '<em><b>Integer</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNSIGNED_VALUE__INTEGER = eINSTANCE.getUnsignedValue_Integer();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColImpl <em>Col</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ColImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCol()
+     * @generated
+     */
+    EClass COL = eINSTANCE.getCol();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COL__ENTRIES = eINSTANCE.getCol_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.abcImpl <em>abc</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.abcImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getabc()
+     * @generated
+     */
+    EClass ABC = eINSTANCE.getabc();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABC__ENTRIES = eINSTANCE.getabc_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnipivotInClauseImpl <em>Unipivot In Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.UnipivotInClauseImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnipivotInClause()
+     * @generated
+     */
+    EClass UNIPIVOT_IN_CLAUSE = eINSTANCE.getUnipivotInClause();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIPIVOT_IN_CLAUSE__OP = eINSTANCE.getUnipivotInClause_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNIPIVOT_IN_CLAUSE__ARGS = eINSTANCE.getUnipivotInClause_Args();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.uicargsImpl <em>uicargs</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.uicargsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getuicargs()
+     * @generated
+     */
+    EClass UICARGS = eINSTANCE.getuicargs();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UICARGS__ENTRIES = eINSTANCE.getuicargs_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.pvcsImpl <em>pvcs</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.pvcsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getpvcs()
+     * @generated
+     */
+    EClass PVCS = eINSTANCE.getpvcs();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PVCS__ENTRIES = eINSTANCE.getpvcs_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.pcolsImpl <em>pcols</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.pcolsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getpcols()
+     * @generated
+     */
+    EClass PCOLS = eINSTANCE.getpcols();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PCOLS__ENTRIES = eINSTANCE.getpcols_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.tblsImpl <em>tbls</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.tblsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#gettbls()
+     * @generated
+     */
+    EClass TBLS = eINSTANCE.gettbls();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TBLS__ENTRIES = eINSTANCE.gettbls_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpListImpl <em>Op List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpListImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpList()
+     * @generated
+     */
+    EClass OP_LIST = eINSTANCE.getOpList();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_LIST__ENTRIES = eINSTANCE.getOpList_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.PlusImpl <em>Plus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.PlusImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPlus()
+     * @generated
+     */
+    EClass PLUS = eINSTANCE.getPlus();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.MinusImpl <em>Minus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.MinusImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getMinus()
+     * @generated
+     */
+    EClass MINUS = eINSTANCE.getMinus();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ConcatImpl <em>Concat</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ConcatImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getConcat()
+     * @generated
+     */
+    EClass CONCAT = eINSTANCE.getConcat();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.MultiplyImpl <em>Multiply</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.MultiplyImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getMultiply()
+     * @generated
+     */
+    EClass MULTIPLY = eINSTANCE.getMultiply();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.DivisionImpl <em>Division</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.DivisionImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDivision()
+     * @generated
+     */
+    EClass DIVISION = eINSTANCE.getDivision();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OBCArgsImpl <em>OBC Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OBCArgsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOBCArgs()
+     * @generated
+     */
+    EClass OBC_ARGS = eINSTANCE.getOBCArgs();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBC_ARGS__ENTRIES = eINSTANCE.getOBCArgs_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.AExpArgsImpl <em>AExp Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.AExpArgsImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAExpArgs()
+     * @generated
+     */
+    EClass AEXP_ARGS = eINSTANCE.getAExpArgs();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AEXP_ARGS__ENTRIES = eINSTANCE.getAExpArgs_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.OpFListImpl <em>Op FList</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.OpFListImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFList()
+     * @generated
+     */
+    EClass OP_FLIST = eINSTANCE.getOpFList();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_FLIST__ENTRIES = eINSTANCE.getOpFList_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WhenListImpl <em>When List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.WhenListImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWhenList()
+     * @generated
+     */
+    EClass WHEN_LIST = eINSTANCE.getWhenList();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_LIST__ENTRIES = eINSTANCE.getWhenList_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.XFunction <em>XFunction</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.XFunction
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getXFunction()
+     * @generated
+     */
+    EEnum XFUNCTION = eINSTANCE.getXFunction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES <em>EXTRACT VALUES</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getEXTRACT_VALUES()
+     * @generated
+     */
+    EEnum EXTRACT_VALUES = eINSTANCE.getEXTRACT_VALUES();
 
   }
 

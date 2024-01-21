@@ -8,6 +8,7 @@ var rootPath = ".."
 Workflow {
 	
 	component = XtextGenerator {
+		
 		configuration = {
 			project = StandardProjectConfig {
 				baseName = "org.xtext.example.mydsl_sql"
@@ -47,6 +48,12 @@ Workflow {
 			}
 			junitSupport = {
 				junitVersion = "5"
+			}
+			parserGenerator = {
+				options = {
+					ignoreCase = true
+					backtrack = true
+				}
 			}
 		}
 	}
