@@ -590,7 +590,7 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ColumnNameList returns ColumnNameList
 	 *
 	 * Constraint:
-	 *     (columnName+=ColumnName columnName+=ColumnName*)
+	 *     (columnName+=ID columnName+=ID*)
 	 * </pre>
 	 */
 	protected void sequence_ColumnNameList(ISerializationContext context, ColumnNameList semanticObject) {

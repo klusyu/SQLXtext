@@ -1382,9 +1382,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getColumnNameList_ColumnName()
+  public EAttribute getColumnNameList_ColumnName()
   {
-    return (EReference)columnNameListEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)columnNameListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -4737,7 +4737,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     createEReference(tableConstraintDefEClass, TABLE_CONSTRAINT_DEF__REF_COLUMN_NAME_LIST);
 
     columnNameListEClass = createEClass(COLUMN_NAME_LIST);
-    createEReference(columnNameListEClass, COLUMN_NAME_LIST__COLUMN_NAME);
+    createEAttribute(columnNameListEClass, COLUMN_NAME_LIST__COLUMN_NAME);
 
     withQueryEClass = createEClass(WITH_QUERY);
     createEAttribute(withQueryEClass, WITH_QUERY__W);
@@ -5267,7 +5267,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     initEReference(getTableConstraintDef_RefColumnNameList(), this.getColumnNameList(), null, "refColumnNameList", null, 0, 1, TableConstraintDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(columnNameListEClass, ColumnNameList.class, "ColumnNameList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getColumnNameList_ColumnName(), this.getColumnNames(), null, "columnName", null, 0, -1, ColumnNameList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getColumnNameList_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, -1, ColumnNameList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(withQueryEClass, WithQuery.class, "WithQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWithQuery_W(), ecorePackage.getEString(), "w", null, 0, 1, WithQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

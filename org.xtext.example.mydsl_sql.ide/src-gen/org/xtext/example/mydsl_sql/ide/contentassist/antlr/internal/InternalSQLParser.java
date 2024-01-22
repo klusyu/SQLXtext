@@ -13522,10 +13522,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
                 {
                 int LA13_1 = input.LA(2);
 
-                if ( (LA13_1==EOF||LA13_1==FROM||LA13_1==LeftParenthesisPlusSignRightParenthesis||LA13_1==AS||(LA13_1>=VerticalLineVerticalLine && LA13_1<=HyphenMinus)||LA13_1==Solidus||LA13_1==RULE_STAR||(LA13_1>=RULE_STRING && LA13_1<=RULE_ID)) ) {
-                    alt13=1;
-                }
-                else if ( (LA13_1==FullStop) ) {
+                if ( (LA13_1==FullStop) ) {
                     int LA13_6 = input.LA(3);
 
                     if ( ((LA13_6>=RULE_STRING && LA13_6<=RULE_ID)) ) {
@@ -13541,6 +13538,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
                         throw nvae;
                     }
+                }
+                else if ( (LA13_1==EOF||LA13_1==FROM||LA13_1==LeftParenthesisPlusSignRightParenthesis||LA13_1==AS||(LA13_1>=VerticalLineVerticalLine && LA13_1<=HyphenMinus)||LA13_1==Solidus||LA13_1==RULE_STAR||(LA13_1>=RULE_STRING && LA13_1<=RULE_ID)) ) {
+                    alt13=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -14200,11 +14200,11 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
                 {
                 int LA18_1 = input.LA(2);
 
-                if ( ((LA18_1>=RULE_STRING && LA18_1<=RULE_ID)) ) {
-                    alt18=2;
-                }
-                else if ( (LA18_1==SELECT) ) {
+                if ( (LA18_1==SELECT) ) {
                     alt18=1;
+                }
+                else if ( ((LA18_1>=RULE_STRING && LA18_1<=RULE_ID)) ) {
+                    alt18=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -15495,16 +15495,6 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             case NOT:
                 {
                 switch ( input.LA(2) ) {
-                case BETWEEN:
-                    {
-                    alt30=4;
-                    }
-                    break;
-                case LIKE:
-                    {
-                    alt30=5;
-                    }
-                    break;
                 case IN:
                     {
                     alt30=2;
@@ -15513,6 +15503,16 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
                 case EXISTS:
                     {
                     alt30=3;
+                    }
+                    break;
+                case BETWEEN:
+                    {
+                    alt30=4;
+                    }
+                    break;
+                case LIKE:
+                    {
+                    alt30=5;
                     }
                     break;
                 default:
@@ -18048,11 +18048,11 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             else if ( (LA49_0==LeftParenthesis) ) {
                 int LA49_2 = input.LA(2);
 
-                if ( (LA49_2==SELECT) ) {
-                    alt49=1;
-                }
-                else if ( (LA49_2==EXTRACT||LA49_2==CAST||LA49_2==CASE||LA49_2==LeftParenthesis||(LA49_2>=RULE_JRPARAM && LA49_2<=RULE_JRNPARAM)||(LA49_2>=RULE_UNSIGNED && LA49_2<=RULE_SIGNED_DOUBLE)||(LA49_2>=RULE_STRING_ && LA49_2<=RULE_ID)) ) {
+                if ( (LA49_2==EXTRACT||LA49_2==CAST||LA49_2==CASE||LA49_2==LeftParenthesis||(LA49_2>=RULE_JRPARAM && LA49_2<=RULE_JRNPARAM)||(LA49_2>=RULE_UNSIGNED && LA49_2<=RULE_SIGNED_DOUBLE)||(LA49_2>=RULE_STRING_ && LA49_2<=RULE_ID)) ) {
                     alt49=2;
+                }
+                else if ( (LA49_2==SELECT) ) {
+                    alt49=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -23543,7 +23543,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6382:1: ( rule__TableConstraintDef__Group_1__5__Impl rule__TableConstraintDef__Group_1__6 )
             // InternalSQLParser.g:6383:2: rule__TableConstraintDef__Group_1__5__Impl rule__TableConstraintDef__Group_1__6
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__TableConstraintDef__Group_1__5__Impl();
 
             state._fsp--;
@@ -24307,7 +24307,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6625:1: ( rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1 )
             // InternalSQLParser.g:6626:2: rule__FieldDefinition__Group__0__Impl rule__FieldDefinition__Group__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__FieldDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -24444,7 +24444,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSQLParser.g:6666:3: ruleColumnAttribute
             	    {
-            	    pushFollow(FOLLOW_20);
+            	    pushFollow(FOLLOW_19);
             	    ruleColumnAttribute();
 
             	    state._fsp--;
@@ -24492,7 +24492,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6679:1: ( rule__DataType__Group__0__Impl rule__DataType__Group__1 )
             // InternalSQLParser.g:6680:2: rule__DataType__Group__0__Impl rule__DataType__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__DataType__Group__0__Impl();
 
             state._fsp--;
@@ -24575,7 +24575,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6706:1: ( rule__DataType__Group__1__Impl rule__DataType__Group__2 )
             // InternalSQLParser.g:6707:2: rule__DataType__Group__1__Impl rule__DataType__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__DataType__Group__1__Impl();
 
             state._fsp--;
@@ -24770,7 +24770,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6760:1: ( rule__FieldLength__Group__0__Impl rule__FieldLength__Group__1 )
             // InternalSQLParser.g:6761:2: rule__FieldLength__Group__0__Impl rule__FieldLength__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__FieldLength__Group__0__Impl();
 
             state._fsp--;
@@ -25002,7 +25002,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6841:1: ( rule__NullAttribute__Group__0__Impl rule__NullAttribute__Group__1 )
             // InternalSQLParser.g:6842:2: rule__NullAttribute__Group__0__Impl rule__NullAttribute__Group__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__NullAttribute__Group__0__Impl();
 
             state._fsp--;
@@ -25172,7 +25172,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:6895:1: ( rule__DefaultValue__Group__0__Impl rule__DefaultValue__Group__1 )
             // InternalSQLParser.g:6896:2: rule__DefaultValue__Group__0__Impl rule__DefaultValue__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__DefaultValue__Group__0__Impl();
 
             state._fsp--;
@@ -25488,7 +25488,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7003:1: ( rule__Comment__Group__0__Impl rule__Comment__Group__1 )
             // InternalSQLParser.g:7004:2: rule__Comment__Group__0__Impl rule__Comment__Group__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__Comment__Group__0__Impl();
 
             state._fsp--;
@@ -25645,7 +25645,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7057:1: ( rule__WithQuery__Group__0__Impl rule__WithQuery__Group__1 )
             // InternalSQLParser.g:7058:2: rule__WithQuery__Group__0__Impl rule__WithQuery__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__WithQuery__Group__0__Impl();
 
             state._fsp--;
@@ -25734,7 +25734,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7084:1: ( rule__WithQuery__Group__1__Impl rule__WithQuery__Group__2 )
             // InternalSQLParser.g:7085:2: rule__WithQuery__Group__1__Impl rule__WithQuery__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__WithQuery__Group__1__Impl();
 
             state._fsp--;
@@ -25823,7 +25823,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7111:1: ( rule__WithQuery__Group__2__Impl rule__WithQuery__Group__3 )
             // InternalSQLParser.g:7112:2: rule__WithQuery__Group__2__Impl rule__WithQuery__Group__3
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__WithQuery__Group__2__Impl();
 
             state._fsp--;
@@ -26351,7 +26351,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7273:1: ( rule__WithQuery__Group_7__0__Impl rule__WithQuery__Group_7__1 )
             // InternalSQLParser.g:7274:2: rule__WithQuery__Group_7__0__Impl rule__WithQuery__Group_7__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__WithQuery__Group_7__0__Impl();
 
             state._fsp--;
@@ -26430,7 +26430,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7300:1: ( rule__WithQuery__Group_7__1__Impl rule__WithQuery__Group_7__2 )
             // InternalSQLParser.g:7301:2: rule__WithQuery__Group_7__1__Impl rule__WithQuery__Group_7__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__WithQuery__Group_7__1__Impl();
 
             state._fsp--;
@@ -26519,7 +26519,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7327:1: ( rule__WithQuery__Group_7__2__Impl rule__WithQuery__Group_7__3 )
             // InternalSQLParser.g:7328:2: rule__WithQuery__Group_7__2__Impl rule__WithQuery__Group_7__3
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__WithQuery__Group_7__2__Impl();
 
             state._fsp--;
@@ -26940,7 +26940,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7462:1: ( rule__WithColumns__Group__0__Impl rule__WithColumns__Group__1 )
             // InternalSQLParser.g:7463:2: rule__WithColumns__Group__0__Impl rule__WithColumns__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__WithColumns__Group__0__Impl();
 
             state._fsp--;
@@ -27176,7 +27176,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7543:1: ( rule__FetchFirst__Group__0__Impl rule__FetchFirst__Group__1 )
             // InternalSQLParser.g:7544:2: rule__FetchFirst__Group__0__Impl rule__FetchFirst__Group__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__FetchFirst__Group__0__Impl();
 
             state._fsp--;
@@ -27265,7 +27265,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7570:1: ( rule__FetchFirst__Group__1__Impl rule__FetchFirst__Group__2 )
             // InternalSQLParser.g:7571:2: rule__FetchFirst__Group__1__Impl rule__FetchFirst__Group__2
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__FetchFirst__Group__1__Impl();
 
             state._fsp--;
@@ -27428,7 +27428,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7624:1: ( rule__Limit__Group_0__0__Impl rule__Limit__Group_0__1 )
             // InternalSQLParser.g:7625:2: rule__Limit__Group_0__0__Impl rule__Limit__Group_0__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__Limit__Group_0__0__Impl();
 
             state._fsp--;
@@ -27765,7 +27765,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7732:1: ( rule__Limit__Group_1_1__0__Impl rule__Limit__Group_1_1__1 )
             // InternalSQLParser.g:7733:2: rule__Limit__Group_1_1__0__Impl rule__Limit__Group_1_1__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__Limit__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -27928,7 +27928,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7786:1: ( rule__SelectQuery__Group__0__Impl rule__SelectQuery__Group__1 )
             // InternalSQLParser.g:7787:2: rule__SelectQuery__Group__0__Impl rule__SelectQuery__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_31);
             rule__SelectQuery__Group__0__Impl();
 
             state._fsp--;
@@ -28065,7 +28065,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSQLParser.g:7827:3: rule__SelectQuery__OpAssignment_1
             	    {
-            	    pushFollow(FOLLOW_33);
+            	    pushFollow(FOLLOW_32);
             	    rule__SelectQuery__OpAssignment_1();
 
             	    state._fsp--;
@@ -28113,7 +28113,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7840:1: ( rule__SelectSubSet__Group__0__Impl rule__SelectSubSet__Group__1 )
             // InternalSQLParser.g:7841:2: rule__SelectSubSet__Group__0__Impl rule__SelectSubSet__Group__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_33);
             rule__SelectSubSet__Group__0__Impl();
 
             state._fsp--;
@@ -28202,7 +28202,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7867:1: ( rule__SelectSubSet__Group__1__Impl rule__SelectSubSet__Group__2 )
             // InternalSQLParser.g:7868:2: rule__SelectSubSet__Group__1__Impl rule__SelectSubSet__Group__2
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_33);
             rule__SelectSubSet__Group__1__Impl();
 
             state._fsp--;
@@ -28386,7 +28386,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7921:1: ( rule__Select__Group__0__Impl rule__Select__Group__1 )
             // InternalSQLParser.g:7922:2: rule__Select__Group__0__Impl rule__Select__Group__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Select__Group__0__Impl();
 
             state._fsp--;
@@ -28475,7 +28475,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7948:1: ( rule__Select__Group__1__Impl rule__Select__Group__2 )
             // InternalSQLParser.g:7949:2: rule__Select__Group__1__Impl rule__Select__Group__2
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Select__Group__1__Impl();
 
             state._fsp--;
@@ -28571,7 +28571,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:7975:1: ( rule__Select__Group__2__Impl rule__Select__Group__3 )
             // InternalSQLParser.g:7976:2: rule__Select__Group__2__Impl rule__Select__Group__3
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Select__Group__2__Impl();
 
             state._fsp--;
@@ -28671,7 +28671,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8002:1: ( rule__Select__Group__3__Impl rule__Select__Group__4 )
             // InternalSQLParser.g:8003:2: rule__Select__Group__3__Impl rule__Select__Group__4
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__Select__Group__3__Impl();
 
             state._fsp--;
@@ -28839,7 +28839,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8056:1: ( rule__Select__Group__5__Impl rule__Select__Group__6 )
             // InternalSQLParser.g:8057:2: rule__Select__Group__5__Impl rule__Select__Group__6
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__5__Impl();
 
             state._fsp--;
@@ -28928,7 +28928,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8083:1: ( rule__Select__Group__6__Impl rule__Select__Group__7 )
             // InternalSQLParser.g:8084:2: rule__Select__Group__6__Impl rule__Select__Group__7
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__6__Impl();
 
             state._fsp--;
@@ -29028,7 +29028,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8110:1: ( rule__Select__Group__7__Impl rule__Select__Group__8 )
             // InternalSQLParser.g:8111:2: rule__Select__Group__7__Impl rule__Select__Group__8
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__7__Impl();
 
             state._fsp--;
@@ -29128,7 +29128,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8137:1: ( rule__Select__Group__8__Impl rule__Select__Group__9 )
             // InternalSQLParser.g:8138:2: rule__Select__Group__8__Impl rule__Select__Group__9
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__8__Impl();
 
             state._fsp--;
@@ -29228,7 +29228,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8164:1: ( rule__Select__Group__9__Impl rule__Select__Group__10 )
             // InternalSQLParser.g:8165:2: rule__Select__Group__9__Impl rule__Select__Group__10
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__9__Impl();
 
             state._fsp--;
@@ -29328,7 +29328,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8191:1: ( rule__Select__Group__10__Impl rule__Select__Group__11 )
             // InternalSQLParser.g:8192:2: rule__Select__Group__10__Impl rule__Select__Group__11
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__10__Impl();
 
             state._fsp--;
@@ -29428,7 +29428,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8218:1: ( rule__Select__Group__11__Impl rule__Select__Group__12 )
             // InternalSQLParser.g:8219:2: rule__Select__Group__11__Impl rule__Select__Group__12
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Select__Group__11__Impl();
 
             state._fsp--;
@@ -29623,7 +29623,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8272:1: ( rule__Select__Group_2__0__Impl rule__Select__Group_2__1 )
             // InternalSQLParser.g:8273:2: rule__Select__Group_2__0__Impl rule__Select__Group_2__1
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_37);
             rule__Select__Group_2__0__Impl();
 
             state._fsp--;
@@ -29702,7 +29702,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8299:1: ( rule__Select__Group_2__1__Impl rule__Select__Group_2__2 )
             // InternalSQLParser.g:8300:2: rule__Select__Group_2__1__Impl rule__Select__Group_2__2
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_38);
             rule__Select__Group_2__1__Impl();
 
             state._fsp--;
@@ -29791,7 +29791,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8326:1: ( rule__Select__Group_2__2__Impl rule__Select__Group_2__3 )
             // InternalSQLParser.g:8327:2: rule__Select__Group_2__2__Impl rule__Select__Group_2__3
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_38);
             rule__Select__Group_2__2__Impl();
 
             state._fsp--;
@@ -29982,7 +29982,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8380:1: ( rule__Select__Group_2_3__0__Impl rule__Select__Group_2_3__1 )
             // InternalSQLParser.g:8381:2: rule__Select__Group_2_3__0__Impl rule__Select__Group_2_3__1
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_39);
             rule__Select__Group_2_3__0__Impl();
 
             state._fsp--;
@@ -30135,7 +30135,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8434:1: ( rule__Select__Group_6__0__Impl rule__Select__Group_6__1 )
             // InternalSQLParser.g:8435:2: rule__Select__Group_6__0__Impl rule__Select__Group_6__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__Select__Group_6__0__Impl();
 
             state._fsp--;
@@ -30298,7 +30298,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8488:1: ( rule__Select__Group_7__0__Impl rule__Select__Group_7__1 )
             // InternalSQLParser.g:8489:2: rule__Select__Group_7__0__Impl rule__Select__Group_7__1
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_41);
             rule__Select__Group_7__0__Impl();
 
             state._fsp--;
@@ -30377,7 +30377,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8515:1: ( rule__Select__Group_7__1__Impl rule__Select__Group_7__2 )
             // InternalSQLParser.g:8516:2: rule__Select__Group_7__1__Impl rule__Select__Group_7__2
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__Select__Group_7__1__Impl();
 
             state._fsp--;
@@ -30540,7 +30540,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8569:1: ( rule__Select__Group_8__0__Impl rule__Select__Group_8__1 )
             // InternalSQLParser.g:8570:2: rule__Select__Group_8__0__Impl rule__Select__Group_8__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__Select__Group_8__0__Impl();
 
             state._fsp--;
@@ -30703,7 +30703,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8623:1: ( rule__Select__Group_9__0__Impl rule__Select__Group_9__1 )
             // InternalSQLParser.g:8624:2: rule__Select__Group_9__0__Impl rule__Select__Group_9__1
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_41);
             rule__Select__Group_9__0__Impl();
 
             state._fsp--;
@@ -30782,7 +30782,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8650:1: ( rule__Select__Group_9__1__Impl rule__Select__Group_9__2 )
             // InternalSQLParser.g:8651:2: rule__Select__Group_9__1__Impl rule__Select__Group_9__2
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__Select__Group_9__1__Impl();
 
             state._fsp--;
@@ -30945,7 +30945,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8704:1: ( rule__Select__Group_10__0__Impl rule__Select__Group_10__1 )
             // InternalSQLParser.g:8705:2: rule__Select__Group_10__0__Impl rule__Select__Group_10__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_43);
             rule__Select__Group_10__0__Impl();
 
             state._fsp--;
@@ -31108,7 +31108,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8758:1: ( rule__Select__Group_11__0__Impl rule__Select__Group_11__1 )
             // InternalSQLParser.g:8759:2: rule__Select__Group_11__0__Impl rule__Select__Group_11__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__Select__Group_11__0__Impl();
 
             state._fsp--;
@@ -31271,7 +31271,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8812:1: ( rule__Select__Group_12__0__Impl rule__Select__Group_12__1 )
             // InternalSQLParser.g:8813:2: rule__Select__Group_12__0__Impl rule__Select__Group_12__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_44);
             rule__Select__Group_12__0__Impl();
 
             state._fsp--;
@@ -31350,7 +31350,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:8839:1: ( rule__Select__Group_12__1__Impl rule__Select__Group_12__2 )
             // InternalSQLParser.g:8840:2: rule__Select__Group_12__1__Impl rule__Select__Group_12__2
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__Select__Group_12__1__Impl();
 
             state._fsp--;
@@ -32064,7 +32064,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9062:1: ( rule__ColumnOrAlias__Group_0__0__Impl rule__ColumnOrAlias__Group_0__1 )
             // InternalSQLParser.g:9063:2: rule__ColumnOrAlias__Group_0__0__Impl rule__ColumnOrAlias__Group_0__1
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_45);
             rule__ColumnOrAlias__Group_0__0__Impl();
 
             state._fsp--;
@@ -32153,7 +32153,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9089:1: ( rule__ColumnOrAlias__Group_0__1__Impl rule__ColumnOrAlias__Group_0__2 )
             // InternalSQLParser.g:9090:2: rule__ColumnOrAlias__Group_0__1__Impl rule__ColumnOrAlias__Group_0__2
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_45);
             rule__ColumnOrAlias__Group_0__1__Impl();
 
             state._fsp--;
@@ -32348,7 +32348,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9143:1: ( rule__ColumnFull__Group__0__Impl rule__ColumnFull__Group__1 )
             // InternalSQLParser.g:9144:2: rule__ColumnFull__Group__0__Impl rule__ColumnFull__Group__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__ColumnFull__Group__0__Impl();
 
             state._fsp--;
@@ -32526,7 +32526,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9197:1: ( rule__ColumnFull__Group_1__0__Impl rule__ColumnFull__Group_1__1 )
             // InternalSQLParser.g:9198:2: rule__ColumnFull__Group_1__0__Impl rule__ColumnFull__Group_1__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__ColumnFull__Group_1__0__Impl();
 
             state._fsp--;
@@ -32650,7 +32650,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9239:3: ( rule__ColumnFull__Group_1_1__0 )
             // InternalSQLParser.g:9239:4: rule__ColumnFull__Group_1_1__0
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_47);
             rule__ColumnFull__Group_1_1__0();
 
             state._fsp--;
@@ -32685,7 +32685,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSQLParser.g:9244:4: rule__ColumnFull__Group_1_1__0
             	    {
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_47);
             	    rule__ColumnFull__Group_1_1__0();
 
             	    state._fsp--;
@@ -32736,7 +32736,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9258:1: ( rule__ColumnFull__Group_1_1__0__Impl rule__ColumnFull__Group_1_1__1 )
             // InternalSQLParser.g:9259:2: rule__ColumnFull__Group_1_1__0__Impl rule__ColumnFull__Group_1_1__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__ColumnFull__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -33450,7 +33450,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9481:1: ( rule__FromTable__Group__0__Impl rule__FromTable__Group__1 )
             // InternalSQLParser.g:9482:2: rule__FromTable__Group__0__Impl rule__FromTable__Group__1
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_48);
             rule__FromTable__Group__0__Impl();
 
             state._fsp--;
@@ -33593,7 +33593,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSQLParser.g:9522:3: rule__FromTable__FjoinAssignment_1
             	    {
-            	    pushFollow(FOLLOW_50);
+            	    pushFollow(FOLLOW_49);
             	    rule__FromTable__FjoinAssignment_1();
 
             	    state._fsp--;
@@ -33730,7 +33730,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9562:1: ( rule__FromTableJoin__Group__1__Impl rule__FromTableJoin__Group__2 )
             // InternalSQLParser.g:9563:2: rule__FromTableJoin__Group__1__Impl rule__FromTableJoin__Group__2
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_50);
             rule__FromTableJoin__Group__1__Impl();
 
             state._fsp--;
@@ -33903,7 +33903,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9616:1: ( rule__FromTableJoin__Group_2_0__0__Impl rule__FromTableJoin__Group_2_0__1 )
             // InternalSQLParser.g:9617:2: rule__FromTableJoin__Group_2_0__0__Impl rule__FromTableJoin__Group_2_0__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__FromTableJoin__Group_2_0__0__Impl();
 
             state._fsp--;
@@ -34145,7 +34145,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9697:1: ( rule__JoinCondition__Group__1__Impl rule__JoinCondition__Group__2 )
             // InternalSQLParser.g:9698:2: rule__JoinCondition__Group__1__Impl rule__JoinCondition__Group__2
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__JoinCondition__Group__1__Impl();
 
             state._fsp--;
@@ -34775,7 +34775,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9893:1: ( rule__UsingCols__Group_1_1__0__Impl rule__UsingCols__Group_1_1__1 )
             // InternalSQLParser.g:9894:2: rule__UsingCols__Group_1_1__0__Impl rule__UsingCols__Group_1_1__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__UsingCols__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -34938,7 +34938,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9947:1: ( rule__TableOrAlias__Group__0__Impl rule__TableOrAlias__Group__1 )
             // InternalSQLParser.g:9948:2: rule__TableOrAlias__Group__0__Impl rule__TableOrAlias__Group__1
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_51);
             rule__TableOrAlias__Group__0__Impl();
 
             state._fsp--;
@@ -35027,7 +35027,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:9974:1: ( rule__TableOrAlias__Group__1__Impl rule__TableOrAlias__Group__2 )
             // InternalSQLParser.g:9975:2: rule__TableOrAlias__Group__1__Impl rule__TableOrAlias__Group__2
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_51);
             rule__TableOrAlias__Group__1__Impl();
 
             state._fsp--;
@@ -35127,7 +35127,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:10001:1: ( rule__TableOrAlias__Group__2__Impl rule__TableOrAlias__Group__3 )
             // InternalSQLParser.g:10002:2: rule__TableOrAlias__Group__2__Impl rule__TableOrAlias__Group__3
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_51);
             rule__TableOrAlias__Group__2__Impl();
 
             state._fsp--;
@@ -35318,7 +35318,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:10055:1: ( rule__FromValues__Group__0__Impl rule__FromValues__Group__1 )
             // InternalSQLParser.g:10056:2: rule__FromValues__Group__0__Impl rule__FromValues__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__FromValues__Group__0__Impl();
 
             state._fsp--;
@@ -35577,7 +35577,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:10136:1: ( rule__FromValuesColumns__Group__1__Impl rule__FromValuesColumns__Group__2 )
             // InternalSQLParser.g:10137:2: rule__FromValuesColumns__Group__1__Impl rule__FromValuesColumns__Group__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_52);
             rule__FromValuesColumns__Group__1__Impl();
 
             state._fsp--;
@@ -36207,7 +36207,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:10332:1: ( rule__FromValuesColumnNames__Group_1_1__0__Impl rule__FromValuesColumnNames__Group_1_1__1 )
             // InternalSQLParser.g:10333:2: rule__FromValuesColumnNames__Group_1_1__0__Impl rule__FromValuesColumnNames__Group_1_1__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_52);
             rule__FromValuesColumnNames__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -38210,7 +38210,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:10967:1: ( rule__PivotTable__Group__2__Impl rule__PivotTable__Group__3 )
             // InternalSQLParser.g:10968:2: rule__PivotTable__Group__2__Impl rule__PivotTable__Group__3
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__PivotTable__Group__2__Impl();
 
             state._fsp--;
@@ -41754,7 +41754,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12108:1: ( rule__PivotColumns__Group_1__0__Impl rule__PivotColumns__Group_1__1 )
             // InternalSQLParser.g:12109:2: rule__PivotColumns__Group_1__0__Impl rule__PivotColumns__Group_1__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__PivotColumns__Group_1__0__Impl();
 
             state._fsp--;
@@ -42378,7 +42378,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12304:1: ( rule__PivotCols__Group_1_1__0__Impl rule__PivotCols__Group_1_1__1 )
             // InternalSQLParser.g:12305:2: rule__PivotCols__Group_1_1__0__Impl rule__PivotCols__Group_1_1__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__PivotCols__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -42541,7 +42541,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12358:1: ( rule__PivotCol__Group__0__Impl rule__PivotCol__Group__1 )
             // InternalSQLParser.g:12359:2: rule__PivotCol__Group__0__Impl rule__PivotCol__Group__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__PivotCol__Group__0__Impl();
 
             state._fsp--;
@@ -42719,7 +42719,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12412:1: ( rule__PivotCol__Group_1__0__Impl rule__PivotCol__Group_1__1 )
             // InternalSQLParser.g:12413:2: rule__PivotCol__Group_1__0__Impl rule__PivotCol__Group_1__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__PivotCol__Group_1__0__Impl();
 
             state._fsp--;
@@ -42843,7 +42843,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12454:3: ( rule__PivotCol__Group_1_1__0 )
             // InternalSQLParser.g:12454:4: rule__PivotCol__Group_1_1__0
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_47);
             rule__PivotCol__Group_1_1__0();
 
             state._fsp--;
@@ -42878,7 +42878,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSQLParser.g:12459:4: rule__PivotCol__Group_1_1__0
             	    {
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_47);
             	    rule__PivotCol__Group_1_1__0();
 
             	    state._fsp--;
@@ -42929,7 +42929,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12473:1: ( rule__PivotCol__Group_1_1__0__Impl rule__PivotCol__Group_1_1__1 )
             // InternalSQLParser.g:12474:2: rule__PivotCol__Group_1_1__0__Impl rule__PivotCol__Group_1_1__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__PivotCol__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -43092,7 +43092,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12527:1: ( rule__TableFull__Group__0__Impl rule__TableFull__Group__1 )
             // InternalSQLParser.g:12528:2: rule__TableFull__Group__0__Impl rule__TableFull__Group__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__TableFull__Group__0__Impl();
 
             state._fsp--;
@@ -43270,7 +43270,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12581:1: ( rule__TableFull__Group_1__0__Impl rule__TableFull__Group_1__1 )
             // InternalSQLParser.g:12582:2: rule__TableFull__Group_1__0__Impl rule__TableFull__Group_1__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__TableFull__Group_1__0__Impl();
 
             state._fsp--;
@@ -43394,7 +43394,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12623:3: ( rule__TableFull__Group_1_1__0 )
             // InternalSQLParser.g:12623:4: rule__TableFull__Group_1_1__0
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_47);
             rule__TableFull__Group_1_1__0();
 
             state._fsp--;
@@ -43429,7 +43429,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSQLParser.g:12628:4: rule__TableFull__Group_1_1__0
             	    {
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_47);
             	    rule__TableFull__Group_1_1__0();
 
             	    state._fsp--;
@@ -43480,7 +43480,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12642:1: ( rule__TableFull__Group_1_1__0__Impl rule__TableFull__Group_1_1__1 )
             // InternalSQLParser.g:12643:2: rule__TableFull__Group_1_1__0__Impl rule__TableFull__Group_1_1__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__TableFull__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -43643,7 +43643,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12696:1: ( rule__DbObjectNameAll__Group__0__Impl rule__DbObjectNameAll__Group__1 )
             // InternalSQLParser.g:12697:2: rule__DbObjectNameAll__Group__0__Impl rule__DbObjectNameAll__Group__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__DbObjectNameAll__Group__0__Impl();
 
             state._fsp--;
@@ -44273,7 +44273,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:12892:1: ( rule__OrderByColumns__Group_1_1__0__Impl rule__OrderByColumns__Group_1_1__1 )
             // InternalSQLParser.g:12893:2: rule__OrderByColumns__Group_1_1__0__Impl rule__OrderByColumns__Group_1_1__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__OrderByColumns__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -45008,7 +45008,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:13115:1: ( rule__GroupByColumns__Group_1_1__0__Impl rule__GroupByColumns__Group_1_1__1 )
             // InternalSQLParser.g:13116:2: rule__GroupByColumns__Group_1_1__0__Impl rule__GroupByColumns__Group_1_1__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__GroupByColumns__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -45549,7 +45549,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:13284:1: ( rule__ExpressionFragmentSecond__Group_0__0__Impl rule__ExpressionFragmentSecond__Group_0__1 )
             // InternalSQLParser.g:13285:2: rule__ExpressionFragmentSecond__Group_0__0__Impl rule__ExpressionFragmentSecond__Group_0__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__ExpressionFragmentSecond__Group_0__0__Impl();
 
             state._fsp--;
@@ -45901,7 +45901,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:13392:1: ( rule__ExpressionGroup__Group__2__Impl rule__ExpressionGroup__Group__3 )
             // InternalSQLParser.g:13393:2: rule__ExpressionGroup__Group__2__Impl rule__ExpressionGroup__Group__3
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__ExpressionGroup__Group__2__Impl();
 
             state._fsp--;
@@ -46732,7 +46732,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:13662:1: ( rule__XExpression__Group_5__0__Impl rule__XExpression__Group_5__1 )
             // InternalSQLParser.g:13663:2: rule__XExpression__Group_5__0__Impl rule__XExpression__Group_5__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__XExpression__Group_5__0__Impl();
 
             state._fsp--;
@@ -47484,7 +47484,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:13905:1: ( rule__XExpression___Group_5__0__Impl rule__XExpression___Group_5__1 )
             // InternalSQLParser.g:13906:2: rule__XExpression___Group_5__0__Impl rule__XExpression___Group_5__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__XExpression___Group_5__0__Impl();
 
             state._fsp--;
@@ -48035,7 +48035,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:14074:1: ( rule__XExpressionParams__Group_1_1__0__Impl rule__XExpressionParams__Group_1_1__1 )
             // InternalSQLParser.g:14075:2: rule__XExpressionParams__Group_1_1__0__Impl rule__XExpressionParams__Group_1_1__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__XExpressionParams__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -48371,7 +48371,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:14182:1: ( rule__IsNullValue__Group__0__Impl rule__IsNullValue__Group__1 )
             // InternalSQLParser.g:14183:2: rule__IsNullValue__Group__0__Impl rule__IsNullValue__Group__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__IsNullValue__Group__0__Impl();
 
             state._fsp--;
@@ -48450,7 +48450,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:14209:1: ( rule__IsNullValue__Group__1__Impl rule__IsNullValue__Group__2 )
             // InternalSQLParser.g:14210:2: rule__IsNullValue__Group__1__Impl rule__IsNullValue__Group__2
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__IsNullValue__Group__1__Impl();
 
             state._fsp--;
@@ -50169,7 +50169,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:14749:1: ( rule__ExistsOperator__Group__0__Impl rule__ExistsOperator__Group__1 )
             // InternalSQLParser.g:14750:2: rule__ExistsOperator__Group__0__Impl rule__ExistsOperator__Group__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__ExistsOperator__Group__0__Impl();
 
             state._fsp--;
@@ -50421,7 +50421,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:14830:1: ( rule__ExistsValue__Group__0__Impl rule__ExistsValue__Group__1 )
             // InternalSQLParser.g:14831:2: rule__ExistsValue__Group__0__Impl rule__ExistsValue__Group__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__ExistsValue__Group__0__Impl();
 
             state._fsp--;
@@ -52767,7 +52767,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:15593:1: ( rule__OperandFunction__Group__0__Impl rule__OperandFunction__Group__1 )
             // InternalSQLParser.g:15594:2: rule__OperandFunction__Group__0__Impl rule__OperandFunction__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__OperandFunction__Group__0__Impl();
 
             state._fsp--;
@@ -53367,7 +53367,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:15782:1: ( rule__FunctionExtract__Group__2__Impl rule__FunctionExtract__Group__3 )
             // InternalSQLParser.g:15783:2: rule__FunctionExtract__Group__2__Impl rule__FunctionExtract__Group__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__FunctionExtract__Group__2__Impl();
 
             state._fsp--;
@@ -56438,7 +56438,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:16781:1: ( rule__OrderByClause__Group_0_0__0__Impl rule__OrderByClause__Group_0_0__1 )
             // InternalSQLParser.g:16782:2: rule__OrderByClause__Group_0_0__0__Impl rule__OrderByClause__Group_0_0__1
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_41);
             rule__OrderByClause__Group_0_0__0__Impl();
 
             state._fsp--;
@@ -56670,7 +56670,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:16862:1: ( rule__OrderByClause__Group_0_1__1__Impl rule__OrderByClause__Group_0_1__2 )
             // InternalSQLParser.g:16863:2: rule__OrderByClause__Group_0_1__1__Impl rule__OrderByClause__Group_0_1__2
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_41);
             rule__OrderByClause__Group_0_1__1__Impl();
 
             state._fsp--;
@@ -57821,7 +57821,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:17220:1: ( rule__QueryPartitionClause__Group__0__Impl rule__QueryPartitionClause__Group__1 )
             // InternalSQLParser.g:17221:2: rule__QueryPartitionClause__Group__0__Impl rule__QueryPartitionClause__Group__1
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_41);
             rule__QueryPartitionClause__Group__0__Impl();
 
             state._fsp--;
@@ -58850,7 +58850,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:17551:1: ( rule__AnalyticExprArg__Group__0__Impl rule__AnalyticExprArg__Group__1 )
             // InternalSQLParser.g:17552:2: rule__AnalyticExprArg__Group__0__Impl rule__AnalyticExprArg__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__AnalyticExprArg__Group__0__Impl();
 
             state._fsp--;
@@ -59753,7 +59753,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:17828:1: ( rule__OpFunctionCast__Group__2__Impl rule__OpFunctionCast__Group__3 )
             // InternalSQLParser.g:17829:2: rule__OpFunctionCast__Group__2__Impl rule__OpFunctionCast__Group__3
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__OpFunctionCast__Group__2__Impl();
 
             state._fsp--;
@@ -60095,7 +60095,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:17936:1: ( rule__OpFunctionCast__Group_4__0__Impl rule__OpFunctionCast__Group_4__1 )
             // InternalSQLParser.g:17937:2: rule__OpFunctionCast__Group_4__0__Impl rule__OpFunctionCast__Group_4__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__OpFunctionCast__Group_4__0__Impl();
 
             state._fsp--;
@@ -60437,7 +60437,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18044:1: ( rule__OpFunctionCast__Group_4_2__0__Impl rule__OpFunctionCast__Group_4_2__1 )
             // InternalSQLParser.g:18045:2: rule__OpFunctionCast__Group_4_2__0__Impl rule__OpFunctionCast__Group_4_2__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__OpFunctionCast__Group_4_2__0__Impl();
 
             state._fsp--;
@@ -62002,7 +62002,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18537:1: ( rule__SqlCaseWhen__Group__0__Impl rule__SqlCaseWhen__Group__1 )
             // InternalSQLParser.g:18538:2: rule__SqlCaseWhen__Group__0__Impl rule__SqlCaseWhen__Group__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__SqlCaseWhen__Group__0__Impl();
 
             state._fsp--;
@@ -62596,7 +62596,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18726:1: ( rule__JoinType__Group__0__Impl rule__JoinType__Group__1 )
             // InternalSQLParser.g:18727:2: rule__JoinType__Group__0__Impl rule__JoinType__Group__1
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_48);
             rule__JoinType__Group__0__Impl();
 
             state._fsp--;
@@ -62692,7 +62692,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18753:1: ( rule__JoinType__Group__1__Impl rule__JoinType__Group__2 )
             // InternalSQLParser.g:18754:2: rule__JoinType__Group__1__Impl rule__JoinType__Group__2
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_48);
             rule__JoinType__Group__1__Impl();
 
             state._fsp--;
@@ -63046,7 +63046,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18861:1: ( rule__SignedLiteral__Group_1__0__Impl rule__SignedLiteral__Group_1__1 )
             // InternalSQLParser.g:18862:2: rule__SignedLiteral__Group_1__0__Impl rule__SignedLiteral__Group_1__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__SignedLiteral__Group_1__0__Impl();
 
             state._fsp--;
@@ -63203,7 +63203,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18915:1: ( rule__SignedLiteral__Group_2__0__Impl rule__SignedLiteral__Group_2__1 )
             // InternalSQLParser.g:18916:2: rule__SignedLiteral__Group_2__0__Impl rule__SignedLiteral__Group_2__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__SignedLiteral__Group_2__0__Impl();
 
             state._fsp--;
@@ -63360,7 +63360,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:18969:1: ( rule__TemporalLiteral__Group_0__0__Impl rule__TemporalLiteral__Group_0__1 )
             // InternalSQLParser.g:18970:2: rule__TemporalLiteral__Group_0__0__Impl rule__TemporalLiteral__Group_0__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__TemporalLiteral__Group_0__0__Impl();
 
             state._fsp--;
@@ -63513,7 +63513,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:19023:1: ( rule__TemporalLiteral__Group_1__0__Impl rule__TemporalLiteral__Group_1__1 )
             // InternalSQLParser.g:19024:2: rule__TemporalLiteral__Group_1__0__Impl rule__TemporalLiteral__Group_1__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__TemporalLiteral__Group_1__0__Impl();
 
             state._fsp--;
@@ -63666,7 +63666,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQLParser.g:19077:1: ( rule__TemporalLiteral__Group_2__0__Impl rule__TemporalLiteral__Group_2__1 )
             // InternalSQLParser.g:19078:2: rule__TemporalLiteral__Group_2__0__Impl rule__TemporalLiteral__Group_2__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__TemporalLiteral__Group_2__0__Impl();
 
             state._fsp--;
@@ -64953,28 +64953,24 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ColumnNameList__ColumnNameAssignment_0"
-    // InternalSQLParser.g:19511:1: rule__ColumnNameList__ColumnNameAssignment_0 : ( ruleColumnName ) ;
+    // InternalSQLParser.g:19511:1: rule__ColumnNameList__ColumnNameAssignment_0 : ( RULE_ID ) ;
     public final void rule__ColumnNameList__ColumnNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQLParser.g:19515:1: ( ( ruleColumnName ) )
-            // InternalSQLParser.g:19516:2: ( ruleColumnName )
+            // InternalSQLParser.g:19515:1: ( ( RULE_ID ) )
+            // InternalSQLParser.g:19516:2: ( RULE_ID )
             {
-            // InternalSQLParser.g:19516:2: ( ruleColumnName )
-            // InternalSQLParser.g:19517:3: ruleColumnName
+            // InternalSQLParser.g:19516:2: ( RULE_ID )
+            // InternalSQLParser.g:19517:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getColumnNameListAccess().getColumnNameColumnNameParserRuleCall_0_0()); 
+               before(grammarAccess.getColumnNameListAccess().getColumnNameIDTerminalRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_2);
-            ruleColumnName();
-
-            state._fsp--;
-            if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getColumnNameListAccess().getColumnNameColumnNameParserRuleCall_0_0()); 
+               after(grammarAccess.getColumnNameListAccess().getColumnNameIDTerminalRuleCall_0_0()); 
             }
 
             }
@@ -64998,28 +64994,24 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ColumnNameList__ColumnNameAssignment_1_1"
-    // InternalSQLParser.g:19526:1: rule__ColumnNameList__ColumnNameAssignment_1_1 : ( ruleColumnName ) ;
+    // InternalSQLParser.g:19526:1: rule__ColumnNameList__ColumnNameAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__ColumnNameList__ColumnNameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQLParser.g:19530:1: ( ( ruleColumnName ) )
-            // InternalSQLParser.g:19531:2: ( ruleColumnName )
+            // InternalSQLParser.g:19530:1: ( ( RULE_ID ) )
+            // InternalSQLParser.g:19531:2: ( RULE_ID )
             {
-            // InternalSQLParser.g:19531:2: ( ruleColumnName )
-            // InternalSQLParser.g:19532:3: ruleColumnName
+            // InternalSQLParser.g:19531:2: ( RULE_ID )
+            // InternalSQLParser.g:19532:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getColumnNameListAccess().getColumnNameColumnNameParserRuleCall_1_1_0()); 
+               before(grammarAccess.getColumnNameListAccess().getColumnNameIDTerminalRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_2);
-            ruleColumnName();
-
-            state._fsp--;
-            if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getColumnNameListAccess().getColumnNameColumnNameParserRuleCall_1_1_0()); 
+               after(grammarAccess.getColumnNameListAccess().getColumnNameIDTerminalRuleCall_1_1_0()); 
             }
 
             }
@@ -74233,23 +74225,23 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     static final String dfa_8s = "\20\uffff";
     static final String dfa_9s = "\1\u0092\1\22\14\u00a1\2\uffff";
     static final String dfa_10s = "\1\u0092\1\u0090\14\u00a8\2\uffff";
-    static final String dfa_11s = "\16\uffff\1\1\1\2";
+    static final String dfa_11s = "\16\uffff\1\2\1\1";
     static final String dfa_12s = "\20\uffff}>";
     static final String[] dfa_13s = {
             "\1\1",
             "\1\13\10\uffff\1\15\1\5\1\14\1\10\7\uffff\1\12\1\11\40\uffff\1\4\1\7\1\3\26\uffff\1\6\56\uffff\1\2",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
-            "\1\16\6\uffff\1\17",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
+            "\1\17\6\uffff\1\16",
             "",
             ""
     };
@@ -75282,43 +75274,43 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000200000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x1744080885200000L,0x0920006C00010000L,0x0000000000000440L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0010120000000100L,0x0004000000000040L,0x0000000000001000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0010120000000102L,0x0004000000000040L,0x0000000000001000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000003000000000L,0x0000000000000020L,0x0000000040000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000001000000L,0x1804004000402000L,0x0010400500000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00E0000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040400000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x2000000000100000L,0x0000000040100000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x2000000000100002L,0x0000000040100000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000010L,0x0000000000000004L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000400200000000L,0x0000001000000800L,0x00F0FC0040004000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x8000000000000000L,0x00000001010A4004L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000C00000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0008000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x4000400000000000L,0x0002001000000800L,0x00F0EC0041041000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00E0200000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000004L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00E0000000400000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000800000000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0002000000000400L,0x0000A40010041000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0002000000000402L,0x0000A40010041000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0080000000000000L,0x0000000004000000L,0x00E0000000400000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0010120000000100L,0x0004000000000040L,0x0000000000001000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0010120000000102L,0x0004000000000040L,0x0000000000001000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000003000000000L,0x0000000000000020L,0x0000000040000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000001000000L,0x1804004000402000L,0x0010400500000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00E0000000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040400000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x2000000000100000L,0x0000000040100000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x2000000000100002L,0x0000000040100000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000400200000000L,0x0000001000000800L,0x00F0FC0040004000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x8000000000000000L,0x00000001010A4004L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000C00000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0008000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x4000400000000000L,0x0002001000000800L,0x00F0EC0041041000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00E0200000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000004L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00E0000000400000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0002000000000400L,0x0000A40010041000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0002000000000402L,0x0000A40010041000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0080000000000000L,0x0000000004000000L,0x00E0000000400000L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
     public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
     public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L,0x0010EC0000000000L});
     public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040008000L});

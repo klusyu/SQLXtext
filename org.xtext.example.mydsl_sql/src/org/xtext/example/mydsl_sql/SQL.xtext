@@ -42,12 +42,12 @@ ColumnDefinition:
 ;
 
 TableConstraintDef:
-    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'   // 举例，仅包含主键约束
+    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'
     | 'FOREIGN' 'KEY' '(' columnNameList=ColumnNameList ')' 'REFERENCES' tableName=TableName '(' refColumnNameList=ColumnNameList ')'  // 举例，包含外键约束
 ;
 
 ColumnNameList:
-    columnName+=ColumnName (',' columnName+=ColumnName)*
+    columnName+=ID (',' columnName+=ID)*
 ;
 
 FieldDefinition:

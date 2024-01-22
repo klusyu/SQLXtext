@@ -439,7 +439,7 @@ public interface SQLPackage extends EPackage
   int COLUMN_NAME_LIST = 10;
 
   /**
-   * The feature id for the '<em><b>Column Name</b></em>' containment reference list.
+   * The feature id for the '<em><b>Column Name</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -4793,15 +4793,15 @@ public interface SQLPackage extends EPackage
   EClass getColumnNameList();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.ColumnNameList#getColumnName <em>Column Name</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl_sql.sQL.ColumnNameList#getColumnName <em>Column Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Column Name</em>'.
+   * @return the meta object for the attribute list '<em>Column Name</em>'.
    * @see org.xtext.example.mydsl_sql.sQL.ColumnNameList#getColumnName()
    * @see #getColumnNameList()
    * @generated
    */
-  EReference getColumnNameList_ColumnName();
+  EAttribute getColumnNameList_ColumnName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WithQuery <em>With Query</em>}'.
@@ -8267,12 +8267,12 @@ public interface SQLPackage extends EPackage
     EClass COLUMN_NAME_LIST = eINSTANCE.getColumnNameList();
 
     /**
-     * The meta object literal for the '<em><b>Column Name</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Column Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COLUMN_NAME_LIST__COLUMN_NAME = eINSTANCE.getColumnNameList_ColumnName();
+    EAttribute COLUMN_NAME_LIST__COLUMN_NAME = eINSTANCE.getColumnNameList_ColumnName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl <em>With Query</em>}' class.

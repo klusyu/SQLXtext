@@ -226,34 +226,6 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cTableElementAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cTableElementTableElementParserRuleCall_1_1_0 = (RuleCall)cTableElementAssignment_1_1.eContents().get(0);
 		
-		////
-		////TableRef:
-		////    qualifiedIdentifier=QualifiedIdentifier
-		////    | dotIdentifier=DotIdentifier
-		////;
-		////
-		////DuplicateAsQueryExpression: ('REPLACE' | 'IGNORE')? 'AS'? queryExpressionOrParens=QueryExpressionOrParens
-		////;
-		////
-		////QueryExpressionOrParens:
-		////    queryExpression=SelectQuery
-		////    | queryExpressionParens=QueryExpressionParens
-		////;
-		////
-		////QueryExpressionParens:
-		////    '(' (
-		////        queryExpressionParens=QueryExpressionParens
-		////        | queryExpression=SelectQuery
-		////    ) ')'
-		////;
-		////
-		////CreateTableOptions:
-		////    createTableOption (','? createTableOption)*
-		////;
-		////
-		////IfNotExists:
-		////    'IF' 'NOT' 'EXISTS'
-		////;
 		//TableElementList:
 		//    tableElement+=TableElement (',' tableElement+=TableElement)*
 		//;
@@ -364,12 +336,12 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightParenthesisKeyword_1_9 = (Keyword)cGroup_1.eContents().get(9);
 		
 		//TableConstraintDef:
-		//    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'   // 举例，仅包含主键约束
+		//    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'
 		//    | 'FOREIGN' 'KEY' '(' columnNameList=ColumnNameList ')' 'REFERENCES' tableName=TableName '(' refColumnNameList=ColumnNameList ')'  // 举例，包含外键约束
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'   // 举例，仅包含主键约束
+		//'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'
 		//| 'FOREIGN' 'KEY' '(' columnNameList=ColumnNameList ')' 'REFERENCES' tableName=TableName '(' refColumnNameList=ColumnNameList ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
@@ -440,37 +412,37 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl_sql.SQL.ColumnNameList");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cColumnNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cColumnNameColumnNameParserRuleCall_0_0 = (RuleCall)cColumnNameAssignment_0.eContents().get(0);
+		private final RuleCall cColumnNameIDTerminalRuleCall_0_0 = (RuleCall)cColumnNameAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cColumnNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cColumnNameColumnNameParserRuleCall_1_1_0 = (RuleCall)cColumnNameAssignment_1_1.eContents().get(0);
+		private final RuleCall cColumnNameIDTerminalRuleCall_1_1_0 = (RuleCall)cColumnNameAssignment_1_1.eContents().get(0);
 		
 		//ColumnNameList:
-		//    columnName+=ColumnName (',' columnName+=ColumnName)*
+		//    columnName+=ID (',' columnName+=ID)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//columnName+=ColumnName (',' columnName+=ColumnName)*
+		//columnName+=ID (',' columnName+=ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//columnName+=ColumnName
+		//columnName+=ID
 		public Assignment getColumnNameAssignment_0() { return cColumnNameAssignment_0; }
 		
-		//ColumnName
-		public RuleCall getColumnNameColumnNameParserRuleCall_0_0() { return cColumnNameColumnNameParserRuleCall_0_0; }
+		//ID
+		public RuleCall getColumnNameIDTerminalRuleCall_0_0() { return cColumnNameIDTerminalRuleCall_0_0; }
 		
-		//(',' columnName+=ColumnName)*
+		//(',' columnName+=ID)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//columnName+=ColumnName
+		//columnName+=ID
 		public Assignment getColumnNameAssignment_1_1() { return cColumnNameAssignment_1_1; }
 		
-		//ColumnName
-		public RuleCall getColumnNameColumnNameParserRuleCall_1_1_0() { return cColumnNameColumnNameParserRuleCall_1_1_0; }
+		//ID
+		public RuleCall getColumnNameIDTerminalRuleCall_1_1_0() { return cColumnNameIDTerminalRuleCall_1_1_0; }
 	}
 	public class FieldDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl_sql.SQL.FieldDefinition");
@@ -902,102 +874,6 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cAdditionalQueriesSelectQueryParserRuleCall_7_5_0 = (RuleCall)cAdditionalQueriesAssignment_7_5.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_7_6 = (Keyword)cGroup_7.eContents().get(6);
 		
-		////
-		////ColumnDefinition:
-		////    columnName=ColumnName fieldDefinition checkOrReferences?
-		////;
-		////
-		////TableConstraintDef:
-		////    type = ('KEY' | 'INDEX') indexNameAndType? keyListVariants indexOption*
-		////    | type = 'FULLTEXT' keyOrIndex? indexName? keyListVariants fulltextIndexOption*
-		////    | type = 'SPATIAL' keyOrIndex? indexName? keyListVariants spatialIndexOption*
-		////    | constraintName? (
-		////        (type = 'PRIMARY' 'KEY' | type = 'UNIQUE' keyOrIndex?) indexNameAndType? keyListVariants indexOption*
-		////        | type = 'FOREIGN' 'KEY' indexName? keyList references
-		////    )
-		////;
-		////
-		////FieldIdentifier:
-		////    dotIdentifier
-		////    | qualifiedIdentifier dotIdentifier?
-		////;
-		////
-		////PartitionClause:
-		////    'PARTITION' 'BY' partitionTypeDef ('PARTITIONS' real_ulong_number)? subPartitions? partitionDefinitions?
-		////;
-		////
-		////PartitionTypeDef:
-		////    LINEAR_SYMBOL? KEY_SYMBOL partitionKeyAlgorithm? '(' identifierList? ')' # partitionDefKey
-		////    | LINEAR_SYMBOL? HASH_SYMBOL '(' bitExpr ')'                             # partitionDefHash
-		////    | (RANGE_SYMBOL | LIST_SYMBOL) (
-		////        '(' bitExpr ')'
-		////        | 'COLUMNS' '(' identifierList? ')'
-		////    ) # partitionDefRangeList
-		////;
-		////
-		////SubPartitions:
-		////    'SUBPARTITION' 'BY' 'LINEAR'? (
-		////        'HASH' '(' bitExpr ')'
-		////        | 'KEY' partitionKeyAlgorithm? identifierListWithParentheses
-		////    ) ('SUBPARTITIONS' real_ulong_number)?
-		////;
-		////
-		////PartitionKeyAlgorithm: // Actually only 1 and 2 are allowed. Needs a semantic check.
-		////    'ALGORITHM' '=' real_ulong_number
-		////;
-		////
-		////PartitionDefinitions:
-		////    '(' partitionDefinition (',' partitionDefinition)* ')'
-		////;
-		////
-		////PartitionDefinition:
-		////    'PARTITION' identifier (
-		////        'VALUES' 'LESS' 'THAN' (
-		////            partitionValueItemListParen
-		////            | 'MAXVALUE'
-		////        )
-		////        | 'VALUES' 'IN' partitionValuesIn
-		////    )? partitionOption* (
-		////        '(' subpartitionDefinition (',' subpartitionDefinition)* ')'
-		////    )?
-		////;
-		////
-		////PartitionValuesIn:
-		////    partitionValueItemListParen
-		////    | '(' partitionValueItemListParen (
-		////        ',' partitionValueItemListParen
-		////    )* ')'
-		////;
-		////
-		////PartitionOption:
-		////    option = 'TABLESPACE' '='? identifier
-		////    | 'STORAGE'? option = 'ENGINE' '='? engineRef
-		////    | option = 'NODEGROUP' '='? real_ulong_number
-		////    | option = ('MAX_ROWS' | 'MIN_ROWS') '='? real_ulong_number
-		////    | option = ('DATA' | 'INDEX') 'DIRECTORY' '='? textLiteral
-		////    | option = 'COMMENT' '='? textLiteral
-		////;
-		////
-		////SubpartitionDefinition:
-		////    'SUBPARTITION' textOrIdentifier partitionOption*
-		////;
-		////
-		////PartitionValueItemListParen:
-		////    '(' partitionValueItem (',' partitionValueItem)* ')'
-		////;
-		////
-		////PartitionValueItem:
-		////    bitExpr
-		////    | 'MAXVALUE'
-		////;
-		////
-		////QualifiedIdentifier:
-		////    identifier=ID dotIdentifier=DotIdentifier?
-		////;
-		////
-		////DotIdentifier:
-		////    '.' identifier=ID
-		////;
 		///////////////////////////////////////////////////////
 		//WithQuery:
 		//    w='WITH' wname=DbObjectName withCols=(WithColumns)? 'AS' '(' query=SelectQuery ')' (',' additionalWname+=DbObjectName additionalWithCols+=(WithColumns)? 'AS' '(' additionalQueries+=SelectQuery ')')*;
@@ -6183,34 +6059,6 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getCreateTableAccess().getRule();
 	}
 	
-	////
-	////TableRef:
-	////    qualifiedIdentifier=QualifiedIdentifier
-	////    | dotIdentifier=DotIdentifier
-	////;
-	////
-	////DuplicateAsQueryExpression: ('REPLACE' | 'IGNORE')? 'AS'? queryExpressionOrParens=QueryExpressionOrParens
-	////;
-	////
-	////QueryExpressionOrParens:
-	////    queryExpression=SelectQuery
-	////    | queryExpressionParens=QueryExpressionParens
-	////;
-	////
-	////QueryExpressionParens:
-	////    '(' (
-	////        queryExpressionParens=QueryExpressionParens
-	////        | queryExpression=SelectQuery
-	////    ) ')'
-	////;
-	////
-	////CreateTableOptions:
-	////    createTableOption (','? createTableOption)*
-	////;
-	////
-	////IfNotExists:
-	////    'IF' 'NOT' 'EXISTS'
-	////;
 	//TableElementList:
 	//    tableElement+=TableElement (',' tableElement+=TableElement)*
 	//;
@@ -6246,7 +6094,7 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//TableConstraintDef:
-	//    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'   // 举例，仅包含主键约束
+	//    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'
 	//    | 'FOREIGN' 'KEY' '(' columnNameList=ColumnNameList ')' 'REFERENCES' tableName=TableName '(' refColumnNameList=ColumnNameList ')'  // 举例，包含外键约束
 	//;
 	public TableConstraintDefElements getTableConstraintDefAccess() {
@@ -6258,7 +6106,7 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//ColumnNameList:
-	//    columnName+=ColumnName (',' columnName+=ColumnName)*
+	//    columnName+=ID (',' columnName+=ID)*
 	//;
 	public ColumnNameListElements getColumnNameListAccess() {
 		return pColumnNameList;
@@ -6437,102 +6285,6 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getTableNameAccess().getRule();
 	}
 	
-	////
-	////ColumnDefinition:
-	////    columnName=ColumnName fieldDefinition checkOrReferences?
-	////;
-	////
-	////TableConstraintDef:
-	////    type = ('KEY' | 'INDEX') indexNameAndType? keyListVariants indexOption*
-	////    | type = 'FULLTEXT' keyOrIndex? indexName? keyListVariants fulltextIndexOption*
-	////    | type = 'SPATIAL' keyOrIndex? indexName? keyListVariants spatialIndexOption*
-	////    | constraintName? (
-	////        (type = 'PRIMARY' 'KEY' | type = 'UNIQUE' keyOrIndex?) indexNameAndType? keyListVariants indexOption*
-	////        | type = 'FOREIGN' 'KEY' indexName? keyList references
-	////    )
-	////;
-	////
-	////FieldIdentifier:
-	////    dotIdentifier
-	////    | qualifiedIdentifier dotIdentifier?
-	////;
-	////
-	////PartitionClause:
-	////    'PARTITION' 'BY' partitionTypeDef ('PARTITIONS' real_ulong_number)? subPartitions? partitionDefinitions?
-	////;
-	////
-	////PartitionTypeDef:
-	////    LINEAR_SYMBOL? KEY_SYMBOL partitionKeyAlgorithm? '(' identifierList? ')' # partitionDefKey
-	////    | LINEAR_SYMBOL? HASH_SYMBOL '(' bitExpr ')'                             # partitionDefHash
-	////    | (RANGE_SYMBOL | LIST_SYMBOL) (
-	////        '(' bitExpr ')'
-	////        | 'COLUMNS' '(' identifierList? ')'
-	////    ) # partitionDefRangeList
-	////;
-	////
-	////SubPartitions:
-	////    'SUBPARTITION' 'BY' 'LINEAR'? (
-	////        'HASH' '(' bitExpr ')'
-	////        | 'KEY' partitionKeyAlgorithm? identifierListWithParentheses
-	////    ) ('SUBPARTITIONS' real_ulong_number)?
-	////;
-	////
-	////PartitionKeyAlgorithm: // Actually only 1 and 2 are allowed. Needs a semantic check.
-	////    'ALGORITHM' '=' real_ulong_number
-	////;
-	////
-	////PartitionDefinitions:
-	////    '(' partitionDefinition (',' partitionDefinition)* ')'
-	////;
-	////
-	////PartitionDefinition:
-	////    'PARTITION' identifier (
-	////        'VALUES' 'LESS' 'THAN' (
-	////            partitionValueItemListParen
-	////            | 'MAXVALUE'
-	////        )
-	////        | 'VALUES' 'IN' partitionValuesIn
-	////    )? partitionOption* (
-	////        '(' subpartitionDefinition (',' subpartitionDefinition)* ')'
-	////    )?
-	////;
-	////
-	////PartitionValuesIn:
-	////    partitionValueItemListParen
-	////    | '(' partitionValueItemListParen (
-	////        ',' partitionValueItemListParen
-	////    )* ')'
-	////;
-	////
-	////PartitionOption:
-	////    option = 'TABLESPACE' '='? identifier
-	////    | 'STORAGE'? option = 'ENGINE' '='? engineRef
-	////    | option = 'NODEGROUP' '='? real_ulong_number
-	////    | option = ('MAX_ROWS' | 'MIN_ROWS') '='? real_ulong_number
-	////    | option = ('DATA' | 'INDEX') 'DIRECTORY' '='? textLiteral
-	////    | option = 'COMMENT' '='? textLiteral
-	////;
-	////
-	////SubpartitionDefinition:
-	////    'SUBPARTITION' textOrIdentifier partitionOption*
-	////;
-	////
-	////PartitionValueItemListParen:
-	////    '(' partitionValueItem (',' partitionValueItem)* ')'
-	////;
-	////
-	////PartitionValueItem:
-	////    bitExpr
-	////    | 'MAXVALUE'
-	////;
-	////
-	////QualifiedIdentifier:
-	////    identifier=ID dotIdentifier=DotIdentifier?
-	////;
-	////
-	////DotIdentifier:
-	////    '.' identifier=ID
-	////;
 	///////////////////////////////////////////////////////
 	//WithQuery:
 	//    w='WITH' wname=DbObjectName withCols=(WithColumns)? 'AS' '(' query=SelectQuery ')' (',' additionalWname+=DbObjectName additionalWithCols+=(WithColumns)? 'AS' '(' additionalQueries+=SelectQuery ')')*;

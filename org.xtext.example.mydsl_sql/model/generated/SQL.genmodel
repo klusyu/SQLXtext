@@ -83,7 +83,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableConstraintDef/refColumnNameList"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//ColumnNameList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//ColumnNameList/columnName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//ColumnNameList/columnName"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//WithQuery">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//WithQuery/w"/>
