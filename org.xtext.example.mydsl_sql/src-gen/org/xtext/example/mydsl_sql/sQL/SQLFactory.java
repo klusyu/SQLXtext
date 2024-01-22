@@ -60,6 +60,33 @@ public interface SQLFactory extends EFactory
   InsertStatement createInsertStatement();
 
   /**
+   * Returns a new object of class '<em>Insert From Constructor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Insert From Constructor</em>'.
+   * @generated
+   */
+  InsertFromConstructor createInsertFromConstructor();
+
+  /**
+   * Returns a new object of class '<em>Fields</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fields</em>'.
+   * @generated
+   */
+  Fields createFields();
+
+  /**
+   * Returns a new object of class '<em>Insert Value List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Insert Value List</em>'.
+   * @generated
+   */
+  InsertValueList createInsertValueList();
+
+  /**
    * Returns a new object of class '<em>Create Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -54,10 +54,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//SelectStatement/wq"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//SelectStatement/query"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//InsertStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertStatement/tbl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertStatement/cols"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertStatement/vals"/>
+    <genClasses ecoreClass="SQL.ecore#//InsertStatement"/>
+    <genClasses ecoreClass="SQL.ecore#//InsertFromConstructor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertFromConstructor/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//InsertFromConstructor/insertValueList"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//Fields">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//Fields/ids"/>
+    </genClasses>
+    <genClasses ecoreClass="SQL.ecore#//InsertValueList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//InsertValueList/vals"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//CreateStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//CreateStatement/create_tbl"/>
@@ -74,7 +80,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableElement/tableConstraintDef"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//ColumnDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//ColumnDefinition/columnName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//ColumnDefinition/columnName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//ColumnDefinition/fieldDefinition"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//TableConstraintDef">
@@ -156,6 +162,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//UsingCols/entries"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//TableOrAlias">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableOrAlias/ifc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableOrAlias/select"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableOrAlias/tfull"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableOrAlias/sq"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//TableOrAlias/values"/>
@@ -322,6 +330,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Operand/fext"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Operand/func"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Operand/sqlcase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//Operand/boolLiteral"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Operand/param"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Operand/eparam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Operand/scalar"/>

@@ -70,6 +70,9 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
       case SQLPackage.SIMPLE_STATEMENT: return createSimpleStatement();
       case SQLPackage.SELECT_STATEMENT: return createSelectStatement();
       case SQLPackage.INSERT_STATEMENT: return createInsertStatement();
+      case SQLPackage.INSERT_FROM_CONSTRUCTOR: return createInsertFromConstructor();
+      case SQLPackage.FIELDS: return createFields();
+      case SQLPackage.INSERT_VALUE_LIST: return createInsertValueList();
       case SQLPackage.CREATE_STATEMENT: return createCreateStatement();
       case SQLPackage.CREATE_TABLE: return createCreateTable();
       case SQLPackage.TABLE_ELEMENT_LIST: return createTableElementList();
@@ -272,6 +275,42 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
   {
     InsertStatementImpl insertStatement = new InsertStatementImpl();
     return insertStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InsertFromConstructor createInsertFromConstructor()
+  {
+    InsertFromConstructorImpl insertFromConstructor = new InsertFromConstructorImpl();
+    return insertFromConstructor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Fields createFields()
+  {
+    FieldsImpl fields = new FieldsImpl();
+    return fields;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InsertValueList createInsertValueList()
+  {
+    InsertValueListImpl insertValueList = new InsertValueListImpl();
+    return insertValueList;
   }
 
   /**

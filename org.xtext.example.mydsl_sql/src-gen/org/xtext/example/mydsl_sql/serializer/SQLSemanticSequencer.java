@@ -35,6 +35,7 @@ import org.xtext.example.mydsl_sql.sQL.ExistsOper;
 import org.xtext.example.mydsl_sql.sQL.ExpOperand;
 import org.xtext.example.mydsl_sql.sQL.ExprGroup;
 import org.xtext.example.mydsl_sql.sQL.FetchFirst;
+import org.xtext.example.mydsl_sql.sQL.Fields;
 import org.xtext.example.mydsl_sql.sQL.FromTable;
 import org.xtext.example.mydsl_sql.sQL.FromTableJoin;
 import org.xtext.example.mydsl_sql.sQL.FromValues;
@@ -44,7 +45,8 @@ import org.xtext.example.mydsl_sql.sQL.FunctionAnalytical;
 import org.xtext.example.mydsl_sql.sQL.FunctionExtract;
 import org.xtext.example.mydsl_sql.sQL.GroupByColumnFull;
 import org.xtext.example.mydsl_sql.sQL.InOper;
-import org.xtext.example.mydsl_sql.sQL.InsertStatement;
+import org.xtext.example.mydsl_sql.sQL.InsertFromConstructor;
+import org.xtext.example.mydsl_sql.sQL.InsertValueList;
 import org.xtext.example.mydsl_sql.sQL.IntegerValue;
 import org.xtext.example.mydsl_sql.sQL.JRParameter;
 import org.xtext.example.mydsl_sql.sQL.JoinCondition;
@@ -192,6 +194,9 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.FETCH_FIRST:
 				sequence_FetchFirst(context, (FetchFirst) semanticObject); 
 				return; 
+			case SQLPackage.FIELDS:
+				sequence_Fields(context, (Fields) semanticObject); 
+				return; 
 			case SQLPackage.FROM_TABLE:
 				sequence_FromTable(context, (FromTable) semanticObject); 
 				return; 
@@ -232,8 +237,11 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.IN_OPER:
 				sequence_InOperator(context, (InOper) semanticObject); 
 				return; 
-			case SQLPackage.INSERT_STATEMENT:
-				sequence_InsertStatement(context, (InsertStatement) semanticObject); 
+			case SQLPackage.INSERT_FROM_CONSTRUCTOR:
+				sequence_InsertFromConstructor(context, (InsertFromConstructor) semanticObject); 
+				return; 
+			case SQLPackage.INSERT_VALUE_LIST:
+				sequence_InsertValueList(context, (InsertValueList) semanticObject); 
 				return; 
 			case SQLPackage.INTEGER_VALUE:
 				sequence_IntegerValue(context, (IntegerValue) semanticObject); 
@@ -409,8 +417,15 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_TableElementList(context, (TableElementList) semanticObject); 
 				return; 
 			case SQLPackage.TABLE_OR_ALIAS:
-				sequence_TableOrAlias(context, (TableOrAlias) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getInsertStatementRule()) {
+					sequence_InsertStatement_TableOrAlias(context, (TableOrAlias) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTableOrAliasRule()) {
+					sequence_TableOrAlias(context, (TableOrAlias) semanticObject); 
+					return; 
+				}
+				else break;
 			case SQLPackage.UNIPIVOT_IN_CLAUSE:
 				sequence_UnpivotInClause(context, (UnipivotInClause) semanticObject); 
 				return; 
@@ -552,7 +567,7 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ColumnDefinition returns ColumnDefinition
 	 *
 	 * Constraint:
-	 *     (columnName=ColumnName fieldDefinition=FieldDefinition)
+	 *     (columnName=ID fieldDefinition=FieldDefinition)
 	 * </pre>
 	 */
 	protected void sequence_ColumnDefinition(ISerializationContext context, ColumnDefinition semanticObject) {
@@ -563,7 +578,7 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.COLUMN_DEFINITION__FIELD_DEFINITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getColumnDefinitionAccess().getColumnNameColumnNameParserRuleCall_0_0(), semanticObject.getColumnName());
+		feeder.accept(grammarAccess.getColumnDefinitionAccess().getColumnNameIDTerminalRuleCall_0_0(), semanticObject.getColumnName());
 		feeder.accept(grammarAccess.getColumnDefinitionAccess().getFieldDefinitionFieldDefinitionParserRuleCall_1_0(), semanticObject.getFieldDefinition());
 		feeder.finish();
 	}
@@ -924,6 +939,20 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Fields returns Fields
+	 *
+	 * Constraint:
+	 *     (ids+=ID ids+=ID*)
+	 * </pre>
+	 */
+	protected void sequence_Fields(ISerializationContext context, Fields semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     FromTableJoin returns FromTableJoin
 	 *
 	 * Constraint:
@@ -1103,26 +1132,57 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     InsertStatement returns InsertStatement
+	 *     InsertFromConstructor returns InsertFromConstructor
 	 *
 	 * Constraint:
-	 *     (tbl=Tables cols=Columns vals=Values)
+	 *     (fields=Fields insertValueList=InsertValueList)
 	 * </pre>
 	 */
-	protected void sequence_InsertStatement(ISerializationContext context, InsertStatement semanticObject) {
+	protected void sequence_InsertFromConstructor(ISerializationContext context, InsertFromConstructor semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__TBL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__TBL));
-			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__COLS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__COLS));
-			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__VALS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_STATEMENT__VALS));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_FROM_CONSTRUCTOR__FIELDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_FROM_CONSTRUCTOR__FIELDS));
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.INSERT_FROM_CONSTRUCTOR__INSERT_VALUE_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.INSERT_FROM_CONSTRUCTOR__INSERT_VALUE_LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInsertStatementAccess().getTblTablesParserRuleCall_2_0(), semanticObject.getTbl());
-		feeder.accept(grammarAccess.getInsertStatementAccess().getColsColumnsParserRuleCall_3_0(), semanticObject.getCols());
-		feeder.accept(grammarAccess.getInsertStatementAccess().getValsValuesParserRuleCall_4_0(), semanticObject.getVals());
+		feeder.accept(grammarAccess.getInsertFromConstructorAccess().getFieldsFieldsParserRuleCall_1_0(), semanticObject.getFields());
+		feeder.accept(grammarAccess.getInsertFromConstructorAccess().getInsertValueListInsertValueListParserRuleCall_4_0(), semanticObject.getInsertValueList());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     InsertStatement returns TableOrAlias
+	 *
+	 * Constraint:
+	 *     (
+	 *         (tfull=TableFull | sq=SubQueryOperand | values=FromValues) 
+	 *         (pivot=PivotTable | unpivot=UnpivotTable)? 
+	 *         alias='AS'? 
+	 *         tblAlias=DbObjectName? 
+	 *         (ifc=InsertFromConstructor | select=SelectQuery)
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_InsertStatement_TableOrAlias(ISerializationContext context, TableOrAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     InsertValueList returns InsertValueList
+	 *
+	 * Constraint:
+	 *     (vals+=InsertValues vals+=InsertValues*)
+	 * </pre>
+	 */
+	protected void sequence_InsertValueList(ISerializationContext context, InsertValueList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1336,7 +1396,8 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         fcast=OpFunctionCast | 
 	 *         fext=FunctionExtract | 
 	 *         func=OperandFunction | 
-	 *         sqlcase=SQLCASE
+	 *         sqlcase=SQLCASE | 
+	 *         boolLiteral=BoolLiteral
 	 *     )
 	 * </pre>
 	 */

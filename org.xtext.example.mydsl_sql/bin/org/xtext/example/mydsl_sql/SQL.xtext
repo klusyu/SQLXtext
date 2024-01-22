@@ -17,7 +17,47 @@ SelectStatement:
 ;
 
 InsertStatement:
-	'INSERT' 'INTO' tbl=Tables cols=Columns vals=Values
+    'INSERT' 'INTO' TableOrAlias (
+        ifc=InsertFromConstructor
+        | select=SelectQuery
+    ) ';'
+;
+
+InsertFromConstructor:
+    '(' fields=Fields ')' 'VALUES' insertValueList=InsertValueList
+;
+
+Fields:
+    ids+=ID (',' ids+=ID)*
+;
+
+InsertValueList:
+    '(' vals+=InsertValues ')' (',' '(' vals+=InsertValues ')')*
+;
+
+InsertValues:
+    Expr (',' Expr)*
+;
+
+Expr:
+    BoolExpr
+;
+
+BoolExpr:
+    BoolTerm ( ('OR' | '||') BoolTerm)*
+;
+
+BoolTerm:
+    BoolFactor ( ('AND' | '&&') BoolFactor)*
+;
+
+BoolFactor:
+    'NOT'? BoolPri
+;
+
+BoolPri:
+    Literal
+    | '(' Expr ')'   // 用于处理括号内的表达式
 ;
 
 CreateStatement:
@@ -38,7 +78,7 @@ TableElement:
 ;
 
 ColumnDefinition:
-    columnName=ColumnName fieldDefinition=FieldDefinition
+    columnName=ID fieldDefinition=FieldDefinition
 ;
 
 TableConstraintDef:
@@ -71,6 +111,7 @@ SimpleType:
     | 'NUMERIC'
     | 'BIT'
     | 'BOOL'
+    | 'BOOLEAN'
     | 'CHAR'
     | 'VARCHAR'
     | 'BINARY'
@@ -84,7 +125,7 @@ SimpleType:
 ;
 
 FieldLength:
-    '(' INT ')'
+    '(' UNSIGNED ')'
 ;
 
 FieldOptions:
@@ -363,7 +404,7 @@ Operand returns Operands:
 
 OperandFragment returns Operand:
 	column=ColumnOperand | xop=XOperandFragment | subq=SubQueryOperand | fcast=OpFunctionCast |
-	fext=FunctionExtract | func=OperandFunction | sqlcase=SQLCASE;
+	fext=FunctionExtract | func=OperandFunction | sqlcase=SQLCASE | boolLiteral=BoolLiteral;
 
 OperandFunction returns OpFunction:
 	{OpFunction} fname=FNAME (star=STAR | args=OpFunctionArg)? ')' fan=FunctionAnalytical?;
@@ -485,7 +526,7 @@ TextLiteral:
 ;
 
 NumLiteral:
-    INT
+    UNSIGNED | INT
 ;
 
 TemporalLiteral:
@@ -519,12 +560,12 @@ terminal JRNPARAM:
 terminal STAR:
 	"*";
 
-terminal UNSIGNED returns ecore::ELongObject:
+terminal UNSIGNED returns ecore::EInt:
 	('0'..'9')+;
 
 @Override 
 terminal INT returns ecore::EInt:
-	'-'? UNSIGNED;
+	('-')? UNSIGNED;
 
 terminal SIGNED_DOUBLE returns ecore::EBigDecimal:
 	'-'? UNSIGNED ('.'

@@ -19,13 +19,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//SelectQuery"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InsertStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tbl" eType="#//OrTable"
+  <eClassifiers xsi:type="ecore:EClass" name="InsertStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertFromConstructor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" eType="#//Fields"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cols" eType="#//OrColumn"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insertValueList" eType="#//InsertValueList"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vals" eType="#//Values"
-        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fields">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ids" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertValueList">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vals" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="create_tbl" eType="#//CreateTable"
@@ -48,8 +55,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColumnDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="columnName" eType="#//ColumnNames"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldDefinition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableConstraintDef">
@@ -88,8 +94,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Limit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="l1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="l2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="l1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="l2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectQuery"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectSubSet">
@@ -162,7 +168,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
         eType="#//DbObjectName" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableOrAlias">
+  <eClassifiers xsi:type="ecore:EClass" name="TableOrAlias" eSuperTypes="#//InsertStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifc" eType="#//InsertFromConstructor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="#//SelectQuery"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tfull" eType="#//TableFull"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sq" eType="#//SubQueryOperand"
@@ -262,7 +272,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="OrderByColumnFull" eSuperTypes="#//OrOrderByColumn">
     <eStructuralFeatures xsi:type="ecore:EReference" name="colOrder" eType="#//ColumnFull"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colOrderInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colOrderInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrGroupByColumn">
@@ -274,7 +284,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gbFunction" eType="#//OpFunction"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grByInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grByInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
@@ -404,6 +414,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sqlcase" eType="#//SQLCaseOperand"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="boolLiteral" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="#//POperand"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eparam" eType="#//ExpOperand"
@@ -480,8 +491,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="op" eType="#//Operands"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="p" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="p2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="p" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="p2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpFunctionArgAgregate"/>
   <eClassifiers xsi:type="ecore:EClass" name="POperand">
@@ -505,7 +516,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sodate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sotime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sodt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="soUInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="soUInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="soint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SQLCaseOperand">
@@ -553,7 +564,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="integer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnsignedValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="integer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="integer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Col" eSuperTypes="#//ColumnFull">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"

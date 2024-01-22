@@ -101,6 +101,27 @@ public class SQLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SQLPackage.INSERT_FROM_CONSTRUCTOR:
+      {
+        InsertFromConstructor insertFromConstructor = (InsertFromConstructor)theEObject;
+        T result = caseInsertFromConstructor(insertFromConstructor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.FIELDS:
+      {
+        Fields fields = (Fields)theEObject;
+        T result = caseFields(fields);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SQLPackage.INSERT_VALUE_LIST:
+      {
+        InsertValueList insertValueList = (InsertValueList)theEObject;
+        T result = caseInsertValueList(insertValueList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SQLPackage.CREATE_STATEMENT:
       {
         CreateStatement createStatement = (CreateStatement)theEObject;
@@ -273,6 +294,7 @@ public class SQLSwitch<T> extends Switch<T>
       {
         TableOrAlias tableOrAlias = (TableOrAlias)theEObject;
         T result = caseTableOrAlias(tableOrAlias);
+        if (result == null) result = caseInsertStatement(tableOrAlias);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1024,6 +1046,54 @@ public class SQLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInsertStatement(InsertStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Insert From Constructor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Insert From Constructor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInsertFromConstructor(InsertFromConstructor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Fields</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Fields</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFields(Fields object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Insert Value List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Insert Value List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInsertValueList(InsertValueList object)
   {
     return null;
   }

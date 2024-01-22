@@ -96,6 +96,21 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createInsertStatementAdapter();
       }
       @Override
+      public Adapter caseInsertFromConstructor(InsertFromConstructor object)
+      {
+        return createInsertFromConstructorAdapter();
+      }
+      @Override
+      public Adapter caseFields(Fields object)
+      {
+        return createFieldsAdapter();
+      }
+      @Override
+      public Adapter caseInsertValueList(InsertValueList object)
+      {
+        return createInsertValueListAdapter();
+      }
+      @Override
       public Adapter caseCreateStatement(CreateStatement object)
       {
         return createCreateStatementAdapter();
@@ -738,6 +753,51 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInsertStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.InsertFromConstructor <em>Insert From Constructor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.InsertFromConstructor
+   * @generated
+   */
+  public Adapter createInsertFromConstructorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.Fields <em>Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.Fields
+   * @generated
+   */
+  public Adapter createFieldsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.InsertValueList <em>Insert Value List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.InsertValueList
+   * @generated
+   */
+  public Adapter createInsertValueListAdapter()
   {
     return null;
   }

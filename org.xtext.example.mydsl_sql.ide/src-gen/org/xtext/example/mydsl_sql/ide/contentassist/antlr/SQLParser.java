@@ -32,6 +32,10 @@ public class SQLParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SQLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getSimpleStatementAccess().getAlternatives(), "rule__SimpleStatement__Alternatives");
+			builder.put(grammarAccess.getInsertStatementAccess().getAlternatives_3(), "rule__InsertStatement__Alternatives_3");
+			builder.put(grammarAccess.getBoolExprAccess().getAlternatives_1_0(), "rule__BoolExpr__Alternatives_1_0");
+			builder.put(grammarAccess.getBoolTermAccess().getAlternatives_1_0(), "rule__BoolTerm__Alternatives_1_0");
+			builder.put(grammarAccess.getBoolPriAccess().getAlternatives(), "rule__BoolPri__Alternatives");
 			builder.put(grammarAccess.getTableElementAccess().getAlternatives(), "rule__TableElement__Alternatives");
 			builder.put(grammarAccess.getTableConstraintDefAccess().getAlternatives(), "rule__TableConstraintDef__Alternatives");
 			builder.put(grammarAccess.getSimpleTypeAccess().getAlternatives(), "rule__SimpleType__Alternatives");
@@ -91,12 +95,26 @@ public class SQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDBIDAccess().getAlternatives(), "rule__DBID__Alternatives");
 			builder.put(grammarAccess.getSignedLiteralAccess().getAlternatives(), "rule__SignedLiteral__Alternatives");
 			builder.put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
+			builder.put(grammarAccess.getNumLiteralAccess().getAlternatives(), "rule__NumLiteral__Alternatives");
 			builder.put(grammarAccess.getTemporalLiteralAccess().getAlternatives(), "rule__TemporalLiteral__Alternatives");
 			builder.put(grammarAccess.getBoolLiteralAccess().getAlternatives(), "rule__BoolLiteral__Alternatives");
 			builder.put(grammarAccess.getXFunctionAccess().getAlternatives(), "rule__XFunction__Alternatives");
 			builder.put(grammarAccess.getEXTRACT_VALUESAccess().getAlternatives(), "rule__EXTRACT_VALUES__Alternatives");
 			builder.put(grammarAccess.getSelectStatementAccess().getGroup(), "rule__SelectStatement__Group__0");
 			builder.put(grammarAccess.getInsertStatementAccess().getGroup(), "rule__InsertStatement__Group__0");
+			builder.put(grammarAccess.getInsertFromConstructorAccess().getGroup(), "rule__InsertFromConstructor__Group__0");
+			builder.put(grammarAccess.getFieldsAccess().getGroup(), "rule__Fields__Group__0");
+			builder.put(grammarAccess.getFieldsAccess().getGroup_1(), "rule__Fields__Group_1__0");
+			builder.put(grammarAccess.getInsertValueListAccess().getGroup(), "rule__InsertValueList__Group__0");
+			builder.put(grammarAccess.getInsertValueListAccess().getGroup_3(), "rule__InsertValueList__Group_3__0");
+			builder.put(grammarAccess.getInsertValuesAccess().getGroup(), "rule__InsertValues__Group__0");
+			builder.put(grammarAccess.getInsertValuesAccess().getGroup_1(), "rule__InsertValues__Group_1__0");
+			builder.put(grammarAccess.getBoolExprAccess().getGroup(), "rule__BoolExpr__Group__0");
+			builder.put(grammarAccess.getBoolExprAccess().getGroup_1(), "rule__BoolExpr__Group_1__0");
+			builder.put(grammarAccess.getBoolTermAccess().getGroup(), "rule__BoolTerm__Group__0");
+			builder.put(grammarAccess.getBoolTermAccess().getGroup_1(), "rule__BoolTerm__Group_1__0");
+			builder.put(grammarAccess.getBoolFactorAccess().getGroup(), "rule__BoolFactor__Group__0");
+			builder.put(grammarAccess.getBoolPriAccess().getGroup_1(), "rule__BoolPri__Group_1__0");
 			builder.put(grammarAccess.getCreateStatementAccess().getGroup(), "rule__CreateStatement__Group__0");
 			builder.put(grammarAccess.getCreateTableAccess().getGroup(), "rule__CreateTable__Group__0");
 			builder.put(grammarAccess.getTableElementListAccess().getGroup(), "rule__TableElementList__Group__0");
@@ -287,9 +305,14 @@ public class SQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSimpleStatementAccess().getCreateAssignment_2(), "rule__SimpleStatement__CreateAssignment_2");
 			builder.put(grammarAccess.getSelectStatementAccess().getWqAssignment_1(), "rule__SelectStatement__WqAssignment_1");
 			builder.put(grammarAccess.getSelectStatementAccess().getQueryAssignment_2(), "rule__SelectStatement__QueryAssignment_2");
-			builder.put(grammarAccess.getInsertStatementAccess().getTblAssignment_2(), "rule__InsertStatement__TblAssignment_2");
-			builder.put(grammarAccess.getInsertStatementAccess().getColsAssignment_3(), "rule__InsertStatement__ColsAssignment_3");
-			builder.put(grammarAccess.getInsertStatementAccess().getValsAssignment_4(), "rule__InsertStatement__ValsAssignment_4");
+			builder.put(grammarAccess.getInsertStatementAccess().getIfcAssignment_3_0(), "rule__InsertStatement__IfcAssignment_3_0");
+			builder.put(grammarAccess.getInsertStatementAccess().getSelectAssignment_3_1(), "rule__InsertStatement__SelectAssignment_3_1");
+			builder.put(grammarAccess.getInsertFromConstructorAccess().getFieldsAssignment_1(), "rule__InsertFromConstructor__FieldsAssignment_1");
+			builder.put(grammarAccess.getInsertFromConstructorAccess().getInsertValueListAssignment_4(), "rule__InsertFromConstructor__InsertValueListAssignment_4");
+			builder.put(grammarAccess.getFieldsAccess().getIdsAssignment_0(), "rule__Fields__IdsAssignment_0");
+			builder.put(grammarAccess.getFieldsAccess().getIdsAssignment_1_1(), "rule__Fields__IdsAssignment_1_1");
+			builder.put(grammarAccess.getInsertValueListAccess().getValsAssignment_1(), "rule__InsertValueList__ValsAssignment_1");
+			builder.put(grammarAccess.getInsertValueListAccess().getValsAssignment_3_2(), "rule__InsertValueList__ValsAssignment_3_2");
 			builder.put(grammarAccess.getCreateStatementAccess().getCreate_tblAssignment_1(), "rule__CreateStatement__Create_tblAssignment_1");
 			builder.put(grammarAccess.getCreateTableAccess().getTableNameAssignment_1(), "rule__CreateTable__TableNameAssignment_1");
 			builder.put(grammarAccess.getCreateTableAccess().getTableElementListAssignment_3(), "rule__CreateTable__TableElementListAssignment_3");
@@ -448,6 +471,7 @@ public class SQLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOperandFragmentAccess().getFextAssignment_4(), "rule__OperandFragment__FextAssignment_4");
 			builder.put(grammarAccess.getOperandFragmentAccess().getFuncAssignment_5(), "rule__OperandFragment__FuncAssignment_5");
 			builder.put(grammarAccess.getOperandFragmentAccess().getSqlcaseAssignment_6(), "rule__OperandFragment__SqlcaseAssignment_6");
+			builder.put(grammarAccess.getOperandFragmentAccess().getBoolLiteralAssignment_7(), "rule__OperandFragment__BoolLiteralAssignment_7");
 			builder.put(grammarAccess.getOperandFunctionAccess().getFnameAssignment_1(), "rule__OperandFunction__FnameAssignment_1");
 			builder.put(grammarAccess.getOperandFunctionAccess().getStarAssignment_2_0(), "rule__OperandFunction__StarAssignment_2_0");
 			builder.put(grammarAccess.getOperandFunctionAccess().getArgsAssignment_2_1(), "rule__OperandFunction__ArgsAssignment_2_1");

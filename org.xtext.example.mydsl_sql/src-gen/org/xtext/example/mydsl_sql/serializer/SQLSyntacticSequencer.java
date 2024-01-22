@@ -94,7 +94,7 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * @Override 
 	 * terminal INT returns ecore::EInt:
-	 * 	'-'? UNSIGNED;
+	 * 	('-')? UNSIGNED;
 	 */
 	protected String getINTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
