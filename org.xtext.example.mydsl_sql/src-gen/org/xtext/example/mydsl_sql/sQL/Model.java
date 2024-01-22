@@ -14,10 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}</li>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}</li>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getInsert <em>Insert</em>}</li>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getCreate <em>Create</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.Model#getSimpleStatement <em>Simple Statement</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel()
@@ -27,91 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Wq</b></em>' containment reference.
+   * Returns the value of the '<em><b>Simple Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Wq</em>' containment reference.
-   * @see #setWq(WithQuery)
-   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Wq()
+   * @return the value of the '<em>Simple Statement</em>' containment reference.
+   * @see #setSimpleStatement(SimpleStatement)
+   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_SimpleStatement()
    * @model containment="true"
    * @generated
    */
-  WithQuery getWq();
+  SimpleStatement getSimpleStatement();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getSimpleStatement <em>Simple Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Wq</em>' containment reference.
-   * @see #getWq()
+   * @param value the new value of the '<em>Simple Statement</em>' containment reference.
+   * @see #getSimpleStatement()
    * @generated
    */
-  void setWq(WithQuery value);
-
-  /**
-   * Returns the value of the '<em><b>Query</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Query</em>' containment reference.
-   * @see #setQuery(SelectQuery)
-   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Query()
-   * @model containment="true"
-   * @generated
-   */
-  SelectQuery getQuery();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query</em>' containment reference.
-   * @see #getQuery()
-   * @generated
-   */
-  void setQuery(SelectQuery value);
-
-  /**
-   * Returns the value of the '<em><b>Insert</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Insert</em>' containment reference.
-   * @see #setInsert(InsertStatement)
-   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Insert()
-   * @model containment="true"
-   * @generated
-   */
-  InsertStatement getInsert();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getInsert <em>Insert</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Insert</em>' containment reference.
-   * @see #getInsert()
-   * @generated
-   */
-  void setInsert(InsertStatement value);
-
-  /**
-   * Returns the value of the '<em><b>Create</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Create</em>' containment reference.
-   * @see #setCreate(CreateTableStatement)
-   * @see org.xtext.example.mydsl_sql.sQL.SQLPackage#getModel_Create()
-   * @model containment="true"
-   * @generated
-   */
-  CreateTableStatement getCreate();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl_sql.sQL.Model#getCreate <em>Create</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Create</em>' containment reference.
-   * @see #getCreate()
-   * @generated
-   */
-  void setCreate(CreateTableStatement value);
+  void setSimpleStatement(SimpleStatement value);
 
 } // Model

@@ -67,17 +67,16 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
     switch (eClass.getClassifierID())
     {
       case SQLPackage.MODEL: return createModel();
+      case SQLPackage.SIMPLE_STATEMENT: return createSimpleStatement();
+      case SQLPackage.SELECT_STATEMENT: return createSelectStatement();
       case SQLPackage.INSERT_STATEMENT: return createInsertStatement();
-      case SQLPackage.CREATE_TABLE_STATEMENT: return createCreateTableStatement();
-      case SQLPackage.TABLE_DEFINITION: return createTableDefinition();
+      case SQLPackage.CREATE_STATEMENT: return createCreateStatement();
+      case SQLPackage.CREATE_TABLE: return createCreateTable();
+      case SQLPackage.TABLE_ELEMENT_LIST: return createTableElementList();
+      case SQLPackage.TABLE_ELEMENT: return createTableElement();
       case SQLPackage.COLUMN_DEFINITION: return createColumnDefinition();
-      case SQLPackage.KEY_DEFINITION: return createKeyDefinition();
-      case SQLPackage.ID_LIST_WITH_SIZE: return createIDListWithSize();
-      case SQLPackage.ID_WITH_SIZE: return createIDWithSize();
-      case SQLPackage.STORAGE_SIZE: return createStorageSize();
-      case SQLPackage.SHARD_KEY_DEFINITION: return createShardKeyDefinition();
-      case SQLPackage.TTL_DEFINITION: return createTtlDefinition();
-      case SQLPackage.REGION_DEFINITION: return createRegionDefinition();
+      case SQLPackage.TABLE_CONSTRAINT_DEF: return createTableConstraintDef();
+      case SQLPackage.COLUMN_NAME_LIST: return createColumnNameList();
       case SQLPackage.WITH_QUERY: return createWithQuery();
       case SQLPackage.WITH_COLUMNS: return createWithColumns();
       case SQLPackage.FETCH_FIRST: return createFetchFirst();
@@ -245,6 +244,30 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
+  public SimpleStatement createSimpleStatement()
+  {
+    SimpleStatementImpl simpleStatement = new SimpleStatementImpl();
+    return simpleStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SelectStatement createSelectStatement()
+  {
+    SelectStatementImpl selectStatement = new SelectStatementImpl();
+    return selectStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public InsertStatement createInsertStatement()
   {
     InsertStatementImpl insertStatement = new InsertStatementImpl();
@@ -257,10 +280,10 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public CreateTableStatement createCreateTableStatement()
+  public CreateStatement createCreateStatement()
   {
-    CreateTableStatementImpl createTableStatement = new CreateTableStatementImpl();
-    return createTableStatement;
+    CreateStatementImpl createStatement = new CreateStatementImpl();
+    return createStatement;
   }
 
   /**
@@ -269,10 +292,34 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public TableDefinition createTableDefinition()
+  public CreateTable createCreateTable()
   {
-    TableDefinitionImpl tableDefinition = new TableDefinitionImpl();
-    return tableDefinition;
+    CreateTableImpl createTable = new CreateTableImpl();
+    return createTable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableElementList createTableElementList()
+  {
+    TableElementListImpl tableElementList = new TableElementListImpl();
+    return tableElementList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableElement createTableElement()
+  {
+    TableElementImpl tableElement = new TableElementImpl();
+    return tableElement;
   }
 
   /**
@@ -293,10 +340,10 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public KeyDefinition createKeyDefinition()
+  public TableConstraintDef createTableConstraintDef()
   {
-    KeyDefinitionImpl keyDefinition = new KeyDefinitionImpl();
-    return keyDefinition;
+    TableConstraintDefImpl tableConstraintDef = new TableConstraintDefImpl();
+    return tableConstraintDef;
   }
 
   /**
@@ -305,70 +352,10 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public IDListWithSize createIDListWithSize()
+  public ColumnNameList createColumnNameList()
   {
-    IDListWithSizeImpl idListWithSize = new IDListWithSizeImpl();
-    return idListWithSize;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public IDWithSize createIDWithSize()
-  {
-    IDWithSizeImpl idWithSize = new IDWithSizeImpl();
-    return idWithSize;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public StorageSize createStorageSize()
-  {
-    StorageSizeImpl storageSize = new StorageSizeImpl();
-    return storageSize;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ShardKeyDefinition createShardKeyDefinition()
-  {
-    ShardKeyDefinitionImpl shardKeyDefinition = new ShardKeyDefinitionImpl();
-    return shardKeyDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TtlDefinition createTtlDefinition()
-  {
-    TtlDefinitionImpl ttlDefinition = new TtlDefinitionImpl();
-    return ttlDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public RegionDefinition createRegionDefinition()
-  {
-    RegionDefinitionImpl regionDefinition = new RegionDefinitionImpl();
-    return regionDefinition;
+    ColumnNameListImpl columnNameList = new ColumnNameListImpl();
+    return columnNameList;
   }
 
   /**

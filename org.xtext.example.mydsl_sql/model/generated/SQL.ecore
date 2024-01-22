@@ -2,13 +2,21 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sQL" nsURI="http://www.xtext.org/example/mydsl_sql/SQL" nsPrefix="sQL">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="wq" eType="#//WithQuery"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpleStatement" eType="#//SimpleStatement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//SelectQuery"
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="#//SelectStatement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="insert" eType="#//InsertStatement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateTableStatement"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wq" eType="#//WithQuery"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//SelectQuery"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InsertStatement">
@@ -19,50 +27,41 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="vals" eType="#//Values"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CreateTableStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tbl" eType="#//OrTable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table_definition" eType="#//TableDefinition"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ttl_definition" eType="#//TtlDefinition"
+  <eClassifiers xsi:type="ecore:EClass" name="CreateStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="create_tbl" eType="#//CreateTable"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="column_definition" upperBound="-1"
-        eType="#//ColumnDefinition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="key_definition" upperBound="-1"
-        eType="#//KeyDefinition" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateTable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableName" eType="#//TableOrAlias"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableElementList" eType="#//TableElementList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableElementList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableElement" upperBound="-1"
+        eType="#//TableElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnDefinition" eType="#//ColumnDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableConstraintDef" eType="#//TableConstraintDef"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColumnDefinition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="shard_key_definition" eType="#//ShardKeyDefinition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnName" eType="#//ColumnNames"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id_list_with_size" eType="#//IDListWithSize"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ttl_definition" eType="#//TtlDefinition"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldDefinition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IDListWithSize">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id_with_size" upperBound="-1"
-        eType="#//IDWithSize" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IDWithSize">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="storage_size" eType="#//StorageSize"
+  <eClassifiers xsi:type="ecore:EClass" name="TableConstraintDef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnNameList" eType="#//ColumnNameList"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refColumnNameList" eType="#//ColumnNameList"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StorageSize"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ShardKeyDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id_list_with_size" eType="#//IDListWithSize"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TtlDefinition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RegionDefinition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="region_name" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ColumnNameList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnName" upperBound="-1"
+        eType="#//ColumnNames" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WithQuery">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="w" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -550,7 +549,7 @@
     <eLiterals name="dayh" value="18" literal="DAY_HOUR"/>
     <eLiterals name="yearMonth" value="19" literal="YEAR_MONTH"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegerValue" eSuperTypes="#//StorageSize #//TtlDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="integer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnsignedValue">

@@ -19,12 +19,14 @@ import org.xtext.example.mydsl_sql.sQL.Between;
 import org.xtext.example.mydsl_sql.sQL.Col;
 import org.xtext.example.mydsl_sql.sQL.ColumnDefinition;
 import org.xtext.example.mydsl_sql.sQL.ColumnFull;
+import org.xtext.example.mydsl_sql.sQL.ColumnNameList;
 import org.xtext.example.mydsl_sql.sQL.ColumnNames;
 import org.xtext.example.mydsl_sql.sQL.ColumnOperand;
 import org.xtext.example.mydsl_sql.sQL.ColumnOrAlias;
 import org.xtext.example.mydsl_sql.sQL.Comparison;
 import org.xtext.example.mydsl_sql.sQL.Concat;
-import org.xtext.example.mydsl_sql.sQL.CreateTableStatement;
+import org.xtext.example.mydsl_sql.sQL.CreateStatement;
+import org.xtext.example.mydsl_sql.sQL.CreateTable;
 import org.xtext.example.mydsl_sql.sQL.DbObjectName;
 import org.xtext.example.mydsl_sql.sQL.DbObjectNameAll;
 import org.xtext.example.mydsl_sql.sQL.Division;
@@ -41,14 +43,11 @@ import org.xtext.example.mydsl_sql.sQL.FullExpression;
 import org.xtext.example.mydsl_sql.sQL.FunctionAnalytical;
 import org.xtext.example.mydsl_sql.sQL.FunctionExtract;
 import org.xtext.example.mydsl_sql.sQL.GroupByColumnFull;
-import org.xtext.example.mydsl_sql.sQL.IDListWithSize;
-import org.xtext.example.mydsl_sql.sQL.IDWithSize;
 import org.xtext.example.mydsl_sql.sQL.InOper;
 import org.xtext.example.mydsl_sql.sQL.InsertStatement;
 import org.xtext.example.mydsl_sql.sQL.IntegerValue;
 import org.xtext.example.mydsl_sql.sQL.JRParameter;
 import org.xtext.example.mydsl_sql.sQL.JoinCondition;
-import org.xtext.example.mydsl_sql.sQL.KeyDefinition;
 import org.xtext.example.mydsl_sql.sQL.Like;
 import org.xtext.example.mydsl_sql.sQL.LikeOperand;
 import org.xtext.example.mydsl_sql.sQL.Limit;
@@ -89,7 +88,6 @@ import org.xtext.example.mydsl_sql.sQL.Pivots;
 import org.xtext.example.mydsl_sql.sQL.Plus;
 import org.xtext.example.mydsl_sql.sQL.Prms;
 import org.xtext.example.mydsl_sql.sQL.QueryPartitionClause;
-import org.xtext.example.mydsl_sql.sQL.RegionDefinition;
 import org.xtext.example.mydsl_sql.sQL.Row;
 import org.xtext.example.mydsl_sql.sQL.RowValue;
 import org.xtext.example.mydsl_sql.sQL.RowValues;
@@ -101,15 +99,16 @@ import org.xtext.example.mydsl_sql.sQL.SQLPackage;
 import org.xtext.example.mydsl_sql.sQL.ScalarOperand;
 import org.xtext.example.mydsl_sql.sQL.Select;
 import org.xtext.example.mydsl_sql.sQL.SelectQuery;
+import org.xtext.example.mydsl_sql.sQL.SelectStatement;
 import org.xtext.example.mydsl_sql.sQL.SelectSubSet;
-import org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition;
+import org.xtext.example.mydsl_sql.sQL.SimpleStatement;
 import org.xtext.example.mydsl_sql.sQL.SqlCaseWhen;
-import org.xtext.example.mydsl_sql.sQL.StorageSize;
 import org.xtext.example.mydsl_sql.sQL.SubQueryOperand;
-import org.xtext.example.mydsl_sql.sQL.TableDefinition;
+import org.xtext.example.mydsl_sql.sQL.TableConstraintDef;
+import org.xtext.example.mydsl_sql.sQL.TableElement;
+import org.xtext.example.mydsl_sql.sQL.TableElementList;
 import org.xtext.example.mydsl_sql.sQL.TableFull;
 import org.xtext.example.mydsl_sql.sQL.TableOrAlias;
-import org.xtext.example.mydsl_sql.sQL.TtlDefinition;
 import org.xtext.example.mydsl_sql.sQL.UnipivotInClause;
 import org.xtext.example.mydsl_sql.sQL.UnpivotInClause;
 import org.xtext.example.mydsl_sql.sQL.UnpivotInClauseArg;
@@ -153,6 +152,20 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass simpleStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selectStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass insertStatementEClass = null;
 
   /**
@@ -160,14 +173,28 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass createTableStatementEClass = null;
+  private EClass createStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass tableDefinitionEClass = null;
+  private EClass createTableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableElementListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -181,49 +208,14 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass keyDefinitionEClass = null;
+  private EClass tableConstraintDefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass idListWithSizeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass idWithSizeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass storageSizeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass shardKeyDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass ttlDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass regionDefinitionEClass = null;
+  private EClass columnNameListEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1060,7 +1052,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getModel_Wq()
+  public EReference getModel_SimpleStatement()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -1071,9 +1063,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getModel_Query()
+  public EClass getSimpleStatement()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return simpleStatementEClass;
   }
 
   /**
@@ -1082,9 +1074,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getModel_Insert()
+  public EReference getSimpleStatement_Select()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+    return (EReference)simpleStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1093,9 +1085,53 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getModel_Create()
+  public EReference getSimpleStatement_Insert()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(3);
+    return (EReference)simpleStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSimpleStatement_Create()
+  {
+    return (EReference)simpleStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSelectStatement()
+  {
+    return selectStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSelectStatement_Wq()
+  {
+    return (EReference)selectStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSelectStatement_Query()
+  {
+    return (EReference)selectStatementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1148,9 +1184,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getCreateTableStatement()
+  public EClass getCreateStatement()
   {
-    return createTableStatementEClass;
+    return createStatementEClass;
   }
 
   /**
@@ -1159,9 +1195,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getCreateTableStatement_Tbl()
+  public EReference getCreateStatement_Create_tbl()
   {
-    return (EReference)createTableStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)createStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1170,9 +1206,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getCreateTableStatement_Table_definition()
+  public EClass getCreateTable()
   {
-    return (EReference)createTableStatementEClass.getEStructuralFeatures().get(1);
+    return createTableEClass;
   }
 
   /**
@@ -1181,9 +1217,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getCreateTableStatement_Ttl_definition()
+  public EReference getCreateTable_TableName()
   {
-    return (EReference)createTableStatementEClass.getEStructuralFeatures().get(2);
+    return (EReference)createTableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1192,9 +1228,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getTableDefinition()
+  public EReference getCreateTable_TableElementList()
   {
-    return tableDefinitionEClass;
+    return (EReference)createTableEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1203,9 +1239,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getTableDefinition_Column_definition()
+  public EClass getTableElementList()
   {
-    return (EReference)tableDefinitionEClass.getEStructuralFeatures().get(0);
+    return tableElementListEClass;
   }
 
   /**
@@ -1214,9 +1250,42 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getTableDefinition_Key_definition()
+  public EReference getTableElementList_TableElement()
   {
-    return (EReference)tableDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)tableElementListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTableElement()
+  {
+    return tableElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTableElement_ColumnDefinition()
+  {
+    return (EReference)tableElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTableElement_TableConstraintDef()
+  {
+    return (EReference)tableElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1236,9 +1305,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EAttribute getColumnDefinition_Id()
+  public EReference getColumnDefinition_ColumnName()
   {
-    return (EAttribute)columnDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)columnDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1247,7 +1316,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EAttribute getColumnDefinition_Type_definition()
+  public EAttribute getColumnDefinition_FieldDefinition()
   {
     return (EAttribute)columnDefinitionEClass.getEStructuralFeatures().get(1);
   }
@@ -1258,9 +1327,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getKeyDefinition()
+  public EClass getTableConstraintDef()
   {
-    return keyDefinitionEClass;
+    return tableConstraintDefEClass;
   }
 
   /**
@@ -1269,9 +1338,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getKeyDefinition_Shard_key_definition()
+  public EReference getTableConstraintDef_ColumnNameList()
   {
-    return (EReference)keyDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)tableConstraintDefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1280,9 +1349,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getKeyDefinition_Id_list_with_size()
+  public EAttribute getTableConstraintDef_TableName()
   {
-    return (EReference)keyDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)tableConstraintDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1291,9 +1360,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getKeyDefinition_Ttl_definition()
+  public EReference getTableConstraintDef_RefColumnNameList()
   {
-    return (EReference)keyDefinitionEClass.getEStructuralFeatures().get(2);
+    return (EReference)tableConstraintDefEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1302,9 +1371,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getIDListWithSize()
+  public EClass getColumnNameList()
   {
-    return idListWithSizeEClass;
+    return columnNameListEClass;
   }
 
   /**
@@ -1313,108 +1382,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getIDListWithSize_Id_with_size()
+  public EReference getColumnNameList_ColumnName()
   {
-    return (EReference)idListWithSizeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getIDWithSize()
-  {
-    return idWithSizeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getIDWithSize_Id()
-  {
-    return (EAttribute)idWithSizeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getIDWithSize_Storage_size()
-  {
-    return (EReference)idWithSizeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getStorageSize()
-  {
-    return storageSizeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getShardKeyDefinition()
-  {
-    return shardKeyDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getShardKeyDefinition_Id_list_with_size()
-  {
-    return (EReference)shardKeyDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getTtlDefinition()
-  {
-    return ttlDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getRegionDefinition()
-  {
-    return regionDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getRegionDefinition_Region_name()
-  {
-    return (EAttribute)regionDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)columnNameListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -4727,50 +4697,47 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__WQ);
-    createEReference(modelEClass, MODEL__QUERY);
-    createEReference(modelEClass, MODEL__INSERT);
-    createEReference(modelEClass, MODEL__CREATE);
+    createEReference(modelEClass, MODEL__SIMPLE_STATEMENT);
+
+    simpleStatementEClass = createEClass(SIMPLE_STATEMENT);
+    createEReference(simpleStatementEClass, SIMPLE_STATEMENT__SELECT);
+    createEReference(simpleStatementEClass, SIMPLE_STATEMENT__INSERT);
+    createEReference(simpleStatementEClass, SIMPLE_STATEMENT__CREATE);
+
+    selectStatementEClass = createEClass(SELECT_STATEMENT);
+    createEReference(selectStatementEClass, SELECT_STATEMENT__WQ);
+    createEReference(selectStatementEClass, SELECT_STATEMENT__QUERY);
 
     insertStatementEClass = createEClass(INSERT_STATEMENT);
     createEReference(insertStatementEClass, INSERT_STATEMENT__TBL);
     createEReference(insertStatementEClass, INSERT_STATEMENT__COLS);
     createEReference(insertStatementEClass, INSERT_STATEMENT__VALS);
 
-    createTableStatementEClass = createEClass(CREATE_TABLE_STATEMENT);
-    createEReference(createTableStatementEClass, CREATE_TABLE_STATEMENT__TBL);
-    createEReference(createTableStatementEClass, CREATE_TABLE_STATEMENT__TABLE_DEFINITION);
-    createEReference(createTableStatementEClass, CREATE_TABLE_STATEMENT__TTL_DEFINITION);
+    createStatementEClass = createEClass(CREATE_STATEMENT);
+    createEReference(createStatementEClass, CREATE_STATEMENT__CREATE_TBL);
 
-    tableDefinitionEClass = createEClass(TABLE_DEFINITION);
-    createEReference(tableDefinitionEClass, TABLE_DEFINITION__COLUMN_DEFINITION);
-    createEReference(tableDefinitionEClass, TABLE_DEFINITION__KEY_DEFINITION);
+    createTableEClass = createEClass(CREATE_TABLE);
+    createEReference(createTableEClass, CREATE_TABLE__TABLE_NAME);
+    createEReference(createTableEClass, CREATE_TABLE__TABLE_ELEMENT_LIST);
+
+    tableElementListEClass = createEClass(TABLE_ELEMENT_LIST);
+    createEReference(tableElementListEClass, TABLE_ELEMENT_LIST__TABLE_ELEMENT);
+
+    tableElementEClass = createEClass(TABLE_ELEMENT);
+    createEReference(tableElementEClass, TABLE_ELEMENT__COLUMN_DEFINITION);
+    createEReference(tableElementEClass, TABLE_ELEMENT__TABLE_CONSTRAINT_DEF);
 
     columnDefinitionEClass = createEClass(COLUMN_DEFINITION);
-    createEAttribute(columnDefinitionEClass, COLUMN_DEFINITION__ID);
-    createEAttribute(columnDefinitionEClass, COLUMN_DEFINITION__TYPE_DEFINITION);
+    createEReference(columnDefinitionEClass, COLUMN_DEFINITION__COLUMN_NAME);
+    createEAttribute(columnDefinitionEClass, COLUMN_DEFINITION__FIELD_DEFINITION);
 
-    keyDefinitionEClass = createEClass(KEY_DEFINITION);
-    createEReference(keyDefinitionEClass, KEY_DEFINITION__SHARD_KEY_DEFINITION);
-    createEReference(keyDefinitionEClass, KEY_DEFINITION__ID_LIST_WITH_SIZE);
-    createEReference(keyDefinitionEClass, KEY_DEFINITION__TTL_DEFINITION);
+    tableConstraintDefEClass = createEClass(TABLE_CONSTRAINT_DEF);
+    createEReference(tableConstraintDefEClass, TABLE_CONSTRAINT_DEF__COLUMN_NAME_LIST);
+    createEAttribute(tableConstraintDefEClass, TABLE_CONSTRAINT_DEF__TABLE_NAME);
+    createEReference(tableConstraintDefEClass, TABLE_CONSTRAINT_DEF__REF_COLUMN_NAME_LIST);
 
-    idListWithSizeEClass = createEClass(ID_LIST_WITH_SIZE);
-    createEReference(idListWithSizeEClass, ID_LIST_WITH_SIZE__ID_WITH_SIZE);
-
-    idWithSizeEClass = createEClass(ID_WITH_SIZE);
-    createEAttribute(idWithSizeEClass, ID_WITH_SIZE__ID);
-    createEReference(idWithSizeEClass, ID_WITH_SIZE__STORAGE_SIZE);
-
-    storageSizeEClass = createEClass(STORAGE_SIZE);
-
-    shardKeyDefinitionEClass = createEClass(SHARD_KEY_DEFINITION);
-    createEReference(shardKeyDefinitionEClass, SHARD_KEY_DEFINITION__ID_LIST_WITH_SIZE);
-
-    ttlDefinitionEClass = createEClass(TTL_DEFINITION);
-
-    regionDefinitionEClass = createEClass(REGION_DEFINITION);
-    createEAttribute(regionDefinitionEClass, REGION_DEFINITION__REGION_NAME);
+    columnNameListEClass = createEClass(COLUMN_NAME_LIST);
+    createEReference(columnNameListEClass, COLUMN_NAME_LIST__COLUMN_NAME);
 
     withQueryEClass = createEClass(WITH_QUERY);
     createEAttribute(withQueryEClass, WITH_QUERY__W);
@@ -5240,8 +5207,6 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     scalarOperandEClass.getESuperTypes().add(this.getRowValue());
     scalarOperandEClass.getESuperTypes().add(this.getOperandList());
     sqlCaseWhenEClass.getESuperTypes().add(this.getSQLCaseWhens());
-    integerValueEClass.getESuperTypes().add(this.getStorageSize());
-    integerValueEClass.getESuperTypes().add(this.getTtlDefinition());
     colEClass.getESuperTypes().add(this.getColumnFull());
     abcEClass.getESuperTypes().add(this.getFromValuesColumnNames());
     unipivotInClauseEClass.getESuperTypes().add(this.getUnpivotInClause());
@@ -5262,50 +5227,47 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Wq(), this.getWithQuery(), null, "wq", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Query(), this.getSelectQuery(), null, "query", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Insert(), this.getInsertStatement(), null, "insert", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Create(), this.getCreateTableStatement(), null, "create", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_SimpleStatement(), this.getSimpleStatement(), null, "simpleStatement", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleStatementEClass, SimpleStatement.class, "SimpleStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSimpleStatement_Select(), this.getSelectStatement(), null, "select", null, 0, 1, SimpleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleStatement_Insert(), this.getInsertStatement(), null, "insert", null, 0, 1, SimpleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleStatement_Create(), this.getCreateStatement(), null, "create", null, 0, 1, SimpleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selectStatementEClass, SelectStatement.class, "SelectStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSelectStatement_Wq(), this.getWithQuery(), null, "wq", null, 0, 1, SelectStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSelectStatement_Query(), this.getSelectQuery(), null, "query", null, 0, 1, SelectStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(insertStatementEClass, InsertStatement.class, "InsertStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInsertStatement_Tbl(), this.getOrTable(), null, "tbl", null, 0, 1, InsertStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsertStatement_Cols(), this.getOrColumn(), null, "cols", null, 0, 1, InsertStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsertStatement_Vals(), this.getValues(), null, "vals", null, 0, 1, InsertStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(createTableStatementEClass, CreateTableStatement.class, "CreateTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCreateTableStatement_Tbl(), this.getOrTable(), null, "tbl", null, 0, 1, CreateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCreateTableStatement_Table_definition(), this.getTableDefinition(), null, "table_definition", null, 0, 1, CreateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCreateTableStatement_Ttl_definition(), this.getTtlDefinition(), null, "ttl_definition", null, 0, 1, CreateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(createStatementEClass, CreateStatement.class, "CreateStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateStatement_Create_tbl(), this.getCreateTable(), null, "create_tbl", null, 0, 1, CreateStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(tableDefinitionEClass, TableDefinition.class, "TableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTableDefinition_Column_definition(), this.getColumnDefinition(), null, "column_definition", null, 0, -1, TableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTableDefinition_Key_definition(), this.getKeyDefinition(), null, "key_definition", null, 0, -1, TableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(createTableEClass, CreateTable.class, "CreateTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateTable_TableName(), this.getTableOrAlias(), null, "tableName", null, 0, 1, CreateTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateTable_TableElementList(), this.getTableElementList(), null, "tableElementList", null, 0, 1, CreateTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableElementListEClass, TableElementList.class, "TableElementList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTableElementList_TableElement(), this.getTableElement(), null, "tableElement", null, 0, -1, TableElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableElementEClass, TableElement.class, "TableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTableElement_ColumnDefinition(), this.getColumnDefinition(), null, "columnDefinition", null, 0, 1, TableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableElement_TableConstraintDef(), this.getTableConstraintDef(), null, "tableConstraintDef", null, 0, 1, TableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(columnDefinitionEClass, ColumnDefinition.class, "ColumnDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColumnDefinition_Id(), ecorePackage.getEString(), "id", null, 0, 1, ColumnDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getColumnDefinition_Type_definition(), ecorePackage.getEString(), "type_definition", null, 0, 1, ColumnDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getColumnDefinition_ColumnName(), this.getColumnNames(), null, "columnName", null, 0, 1, ColumnDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getColumnDefinition_FieldDefinition(), ecorePackage.getEString(), "fieldDefinition", null, 0, 1, ColumnDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(keyDefinitionEClass, KeyDefinition.class, "KeyDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getKeyDefinition_Shard_key_definition(), this.getShardKeyDefinition(), null, "shard_key_definition", null, 0, 1, KeyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getKeyDefinition_Id_list_with_size(), this.getIDListWithSize(), null, "id_list_with_size", null, 0, 1, KeyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getKeyDefinition_Ttl_definition(), this.getTtlDefinition(), null, "ttl_definition", null, 0, 1, KeyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(tableConstraintDefEClass, TableConstraintDef.class, "TableConstraintDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTableConstraintDef_ColumnNameList(), this.getColumnNameList(), null, "columnNameList", null, 0, 1, TableConstraintDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTableConstraintDef_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, TableConstraintDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableConstraintDef_RefColumnNameList(), this.getColumnNameList(), null, "refColumnNameList", null, 0, 1, TableConstraintDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(idListWithSizeEClass, IDListWithSize.class, "IDListWithSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIDListWithSize_Id_with_size(), this.getIDWithSize(), null, "id_with_size", null, 0, -1, IDListWithSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(idWithSizeEClass, IDWithSize.class, "IDWithSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIDWithSize_Id(), ecorePackage.getEString(), "id", null, 0, 1, IDWithSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIDWithSize_Storage_size(), this.getStorageSize(), null, "storage_size", null, 0, 1, IDWithSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(storageSizeEClass, StorageSize.class, "StorageSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(shardKeyDefinitionEClass, ShardKeyDefinition.class, "ShardKeyDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getShardKeyDefinition_Id_list_with_size(), this.getIDListWithSize(), null, "id_list_with_size", null, 0, 1, ShardKeyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ttlDefinitionEClass, TtlDefinition.class, "TtlDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(regionDefinitionEClass, RegionDefinition.class, "RegionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRegionDefinition_Region_name(), ecorePackage.getEString(), "region_name", null, 0, -1, RegionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(columnNameListEClass, ColumnNameList.class, "ColumnNameList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getColumnNameList_ColumnName(), this.getColumnNames(), null, "columnName", null, 0, -1, ColumnNameList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(withQueryEClass, WithQuery.class, "WithQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWithQuery_W(), ecorePackage.getEString(), "w", null, 0, 1, WithQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

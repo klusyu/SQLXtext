@@ -81,19 +81,39 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseSimpleStatement(SimpleStatement object)
+      {
+        return createSimpleStatementAdapter();
+      }
+      @Override
+      public Adapter caseSelectStatement(SelectStatement object)
+      {
+        return createSelectStatementAdapter();
+      }
+      @Override
       public Adapter caseInsertStatement(InsertStatement object)
       {
         return createInsertStatementAdapter();
       }
       @Override
-      public Adapter caseCreateTableStatement(CreateTableStatement object)
+      public Adapter caseCreateStatement(CreateStatement object)
       {
-        return createCreateTableStatementAdapter();
+        return createCreateStatementAdapter();
       }
       @Override
-      public Adapter caseTableDefinition(TableDefinition object)
+      public Adapter caseCreateTable(CreateTable object)
       {
-        return createTableDefinitionAdapter();
+        return createCreateTableAdapter();
+      }
+      @Override
+      public Adapter caseTableElementList(TableElementList object)
+      {
+        return createTableElementListAdapter();
+      }
+      @Override
+      public Adapter caseTableElement(TableElement object)
+      {
+        return createTableElementAdapter();
       }
       @Override
       public Adapter caseColumnDefinition(ColumnDefinition object)
@@ -101,39 +121,14 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createColumnDefinitionAdapter();
       }
       @Override
-      public Adapter caseKeyDefinition(KeyDefinition object)
+      public Adapter caseTableConstraintDef(TableConstraintDef object)
       {
-        return createKeyDefinitionAdapter();
+        return createTableConstraintDefAdapter();
       }
       @Override
-      public Adapter caseIDListWithSize(IDListWithSize object)
+      public Adapter caseColumnNameList(ColumnNameList object)
       {
-        return createIDListWithSizeAdapter();
-      }
-      @Override
-      public Adapter caseIDWithSize(IDWithSize object)
-      {
-        return createIDWithSizeAdapter();
-      }
-      @Override
-      public Adapter caseStorageSize(StorageSize object)
-      {
-        return createStorageSizeAdapter();
-      }
-      @Override
-      public Adapter caseShardKeyDefinition(ShardKeyDefinition object)
-      {
-        return createShardKeyDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseTtlDefinition(TtlDefinition object)
-      {
-        return createTtlDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseRegionDefinition(RegionDefinition object)
-      {
-        return createRegionDefinitionAdapter();
+        return createColumnNameListAdapter();
       }
       @Override
       public Adapter caseWithQuery(WithQuery object)
@@ -703,6 +698,36 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SimpleStatement <em>Simple Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SimpleStatement
+   * @generated
+   */
+  public Adapter createSimpleStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.SelectStatement <em>Select Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectStatement
+   * @generated
+   */
+  public Adapter createSelectStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.InsertStatement <em>Insert Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -718,31 +743,61 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.CreateTableStatement <em>Create Table Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.CreateStatement <em>Create Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.CreateTableStatement
+   * @see org.xtext.example.mydsl_sql.sQL.CreateStatement
    * @generated
    */
-  public Adapter createCreateTableStatementAdapter()
+  public Adapter createCreateStatementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableDefinition <em>Table Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.CreateTable <em>Create Table</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.TableDefinition
+   * @see org.xtext.example.mydsl_sql.sQL.CreateTable
    * @generated
    */
-  public Adapter createTableDefinitionAdapter()
+  public Adapter createCreateTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableElementList <em>Table Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElementList
+   * @generated
+   */
+  public Adapter createTableElementListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableElement <em>Table Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElement
+   * @generated
+   */
+  public Adapter createTableElementAdapter()
   {
     return null;
   }
@@ -763,106 +818,31 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.KeyDefinition <em>Key Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TableConstraintDef <em>Table Constraint Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.KeyDefinition
+   * @see org.xtext.example.mydsl_sql.sQL.TableConstraintDef
    * @generated
    */
-  public Adapter createKeyDefinitionAdapter()
+  public Adapter createTableConstraintDefAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.IDListWithSize <em>ID List With Size</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ColumnNameList <em>Column Name List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.IDListWithSize
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnNameList
    * @generated
    */
-  public Adapter createIDListWithSizeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.IDWithSize <em>ID With Size</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.IDWithSize
-   * @generated
-   */
-  public Adapter createIDWithSizeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.StorageSize <em>Storage Size</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.StorageSize
-   * @generated
-   */
-  public Adapter createStorageSizeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition <em>Shard Key Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition
-   * @generated
-   */
-  public Adapter createShardKeyDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.TtlDefinition <em>Ttl Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.TtlDefinition
-   * @generated
-   */
-  public Adapter createTtlDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl_sql.sQL.RegionDefinition <em>Region Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl_sql.sQL.RegionDefinition
-   * @generated
-   */
-  public Adapter createRegionDefinitionAdapter()
+  public Adapter createColumnNameListAdapter()
   {
     return null;
   }

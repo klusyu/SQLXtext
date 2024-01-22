@@ -69,40 +69,13 @@ public interface SQLPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Wq</b></em>' containment reference.
+   * The feature id for the '<em><b>Simple Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__WQ = 0;
-
-  /**
-   * The feature id for the '<em><b>Query</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__QUERY = 1;
-
-  /**
-   * The feature id for the '<em><b>Insert</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__INSERT = 2;
-
-  /**
-   * The feature id for the '<em><b>Create</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__CREATE = 3;
+  int MODEL__SIMPLE_STATEMENT = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -111,7 +84,90 @@ public interface SQLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 4;
+  int MODEL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SimpleStatementImpl <em>Simple Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SimpleStatementImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSimpleStatement()
+   * @generated
+   */
+  int SIMPLE_STATEMENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Select</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STATEMENT__SELECT = 0;
+
+  /**
+   * The feature id for the '<em><b>Insert</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STATEMENT__INSERT = 1;
+
+  /**
+   * The feature id for the '<em><b>Create</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STATEMENT__CREATE = 2;
+
+  /**
+   * The number of structural features of the '<em>Simple Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_STATEMENT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectStatementImpl <em>Select Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SelectStatementImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectStatement()
+   * @generated
+   */
+  int SELECT_STATEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Wq</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STATEMENT__WQ = 0;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STATEMENT__QUERY = 1;
+
+  /**
+   * The number of structural features of the '<em>Select Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STATEMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.InsertStatementImpl <em>Insert Statement</em>}' class.
@@ -121,7 +177,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getInsertStatement()
    * @generated
    */
-  int INSERT_STATEMENT = 1;
+  int INSERT_STATEMENT = 3;
 
   /**
    * The feature id for the '<em><b>Tbl</b></em>' containment reference.
@@ -160,87 +216,134 @@ public interface SQLPackage extends EPackage
   int INSERT_STATEMENT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.CreateTableStatementImpl <em>Create Table Statement</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.CreateStatementImpl <em>Create Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.CreateTableStatementImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCreateTableStatement()
+   * @see org.xtext.example.mydsl_sql.sQL.impl.CreateStatementImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCreateStatement()
    * @generated
    */
-  int CREATE_TABLE_STATEMENT = 2;
+  int CREATE_STATEMENT = 4;
 
   /**
-   * The feature id for the '<em><b>Tbl</b></em>' containment reference.
+   * The feature id for the '<em><b>Create tbl</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CREATE_TABLE_STATEMENT__TBL = 0;
+  int CREATE_STATEMENT__CREATE_TBL = 0;
 
   /**
-   * The feature id for the '<em><b>Table definition</b></em>' containment reference.
+   * The number of structural features of the '<em>Create Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CREATE_TABLE_STATEMENT__TABLE_DEFINITION = 1;
+  int CREATE_STATEMENT_FEATURE_COUNT = 1;
 
   /**
-   * The feature id for the '<em><b>Ttl definition</b></em>' containment reference.
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.CreateTableImpl <em>Create Table</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.CreateTableImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCreateTable()
+   * @generated
+   */
+  int CREATE_TABLE = 5;
+
+  /**
+   * The feature id for the '<em><b>Table Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CREATE_TABLE_STATEMENT__TTL_DEFINITION = 2;
+  int CREATE_TABLE__TABLE_NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Create Table Statement</em>' class.
+   * The feature id for the '<em><b>Table Element List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CREATE_TABLE_STATEMENT_FEATURE_COUNT = 3;
+  int CREATE_TABLE__TABLE_ELEMENT_LIST = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableDefinitionImpl <em>Table Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.TableDefinitionImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableDefinition()
-   * @generated
-   */
-  int TABLE_DEFINITION = 3;
-
-  /**
-   * The feature id for the '<em><b>Column definition</b></em>' containment reference list.
+   * The number of structural features of the '<em>Create Table</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TABLE_DEFINITION__COLUMN_DEFINITION = 0;
+  int CREATE_TABLE_FEATURE_COUNT = 2;
 
   /**
-   * The feature id for the '<em><b>Key definition</b></em>' containment reference list.
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableElementListImpl <em>Table Element List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.TableElementListImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableElementList()
+   * @generated
+   */
+  int TABLE_ELEMENT_LIST = 6;
+
+  /**
+   * The feature id for the '<em><b>Table Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TABLE_DEFINITION__KEY_DEFINITION = 1;
+  int TABLE_ELEMENT_LIST__TABLE_ELEMENT = 0;
 
   /**
-   * The number of structural features of the '<em>Table Definition</em>' class.
+   * The number of structural features of the '<em>Table Element List</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TABLE_DEFINITION_FEATURE_COUNT = 2;
+  int TABLE_ELEMENT_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableElementImpl <em>Table Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl_sql.sQL.impl.TableElementImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableElement()
+   * @generated
+   */
+  int TABLE_ELEMENT = 7;
+
+  /**
+   * The feature id for the '<em><b>Column Definition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_ELEMENT__COLUMN_DEFINITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Table Constraint Def</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_ELEMENT__TABLE_CONSTRAINT_DEF = 1;
+
+  /**
+   * The number of structural features of the '<em>Table Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_ELEMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnDefinitionImpl <em>Column Definition</em>}' class.
@@ -250,25 +353,25 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnDefinition()
    * @generated
    */
-  int COLUMN_DEFINITION = 4;
+  int COLUMN_DEFINITION = 8;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Column Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COLUMN_DEFINITION__ID = 0;
+  int COLUMN_DEFINITION__COLUMN_NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type definition</b></em>' attribute.
+   * The feature id for the '<em><b>Field Definition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COLUMN_DEFINITION__TYPE_DEFINITION = 1;
+  int COLUMN_DEFINITION__FIELD_DEFINITION = 1;
 
   /**
    * The number of structural features of the '<em>Column Definition</em>' class.
@@ -280,209 +383,78 @@ public interface SQLPackage extends EPackage
   int COLUMN_DEFINITION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.KeyDefinitionImpl <em>Key Definition</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableConstraintDefImpl <em>Table Constraint Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.KeyDefinitionImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getKeyDefinition()
+   * @see org.xtext.example.mydsl_sql.sQL.impl.TableConstraintDefImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableConstraintDef()
    * @generated
    */
-  int KEY_DEFINITION = 5;
+  int TABLE_CONSTRAINT_DEF = 9;
 
   /**
-   * The feature id for the '<em><b>Shard key definition</b></em>' containment reference.
+   * The feature id for the '<em><b>Column Name List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY_DEFINITION__SHARD_KEY_DEFINITION = 0;
+  int TABLE_CONSTRAINT_DEF__COLUMN_NAME_LIST = 0;
 
   /**
-   * The feature id for the '<em><b>Id list with size</b></em>' containment reference.
+   * The feature id for the '<em><b>Table Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY_DEFINITION__ID_LIST_WITH_SIZE = 1;
+  int TABLE_CONSTRAINT_DEF__TABLE_NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Ttl definition</b></em>' containment reference.
+   * The feature id for the '<em><b>Ref Column Name List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY_DEFINITION__TTL_DEFINITION = 2;
+  int TABLE_CONSTRAINT_DEF__REF_COLUMN_NAME_LIST = 2;
 
   /**
-   * The number of structural features of the '<em>Key Definition</em>' class.
+   * The number of structural features of the '<em>Table Constraint Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int KEY_DEFINITION_FEATURE_COUNT = 3;
+  int TABLE_CONSTRAINT_DEF_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.IDListWithSizeImpl <em>ID List With Size</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnNameListImpl <em>Column Name List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.IDListWithSizeImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIDListWithSize()
+   * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnNameListImpl
+   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnNameList()
    * @generated
    */
-  int ID_LIST_WITH_SIZE = 6;
+  int COLUMN_NAME_LIST = 10;
 
   /**
-   * The feature id for the '<em><b>Id with size</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ID_LIST_WITH_SIZE__ID_WITH_SIZE = 0;
-
-  /**
-   * The number of structural features of the '<em>ID List With Size</em>' class.
+   * The feature id for the '<em><b>Column Name</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ID_LIST_WITH_SIZE_FEATURE_COUNT = 1;
+  int COLUMN_NAME_LIST__COLUMN_NAME = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.IDWithSizeImpl <em>ID With Size</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.IDWithSizeImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIDWithSize()
-   * @generated
-   */
-  int ID_WITH_SIZE = 7;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The number of structural features of the '<em>Column Name List</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ID_WITH_SIZE__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Storage size</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ID_WITH_SIZE__STORAGE_SIZE = 1;
-
-  /**
-   * The number of structural features of the '<em>ID With Size</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ID_WITH_SIZE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.StorageSizeImpl <em>Storage Size</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.StorageSizeImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getStorageSize()
-   * @generated
-   */
-  int STORAGE_SIZE = 8;
-
-  /**
-   * The number of structural features of the '<em>Storage Size</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STORAGE_SIZE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ShardKeyDefinitionImpl <em>Shard Key Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.ShardKeyDefinitionImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getShardKeyDefinition()
-   * @generated
-   */
-  int SHARD_KEY_DEFINITION = 9;
-
-  /**
-   * The feature id for the '<em><b>Id list with size</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHARD_KEY_DEFINITION__ID_LIST_WITH_SIZE = 0;
-
-  /**
-   * The number of structural features of the '<em>Shard Key Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHARD_KEY_DEFINITION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TtlDefinitionImpl <em>Ttl Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.TtlDefinitionImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTtlDefinition()
-   * @generated
-   */
-  int TTL_DEFINITION = 10;
-
-  /**
-   * The number of structural features of the '<em>Ttl Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TTL_DEFINITION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RegionDefinitionImpl <em>Region Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl_sql.sQL.impl.RegionDefinitionImpl
-   * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRegionDefinition()
-   * @generated
-   */
-  int REGION_DEFINITION = 11;
-
-  /**
-   * The feature id for the '<em><b>Region name</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REGION_DEFINITION__REGION_NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Region Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REGION_DEFINITION_FEATURE_COUNT = 1;
+  int COLUMN_NAME_LIST_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl <em>With Query</em>}' class.
@@ -492,7 +464,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWithQuery()
    * @generated
    */
-  int WITH_QUERY = 12;
+  int WITH_QUERY = 11;
 
   /**
    * The feature id for the '<em><b>W</b></em>' attribute.
@@ -574,7 +546,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWithColumns()
    * @generated
    */
-  int WITH_COLUMNS = 13;
+  int WITH_COLUMNS = 12;
 
   /**
    * The number of structural features of the '<em>With Columns</em>' class.
@@ -593,7 +565,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFetchFirst()
    * @generated
    */
-  int FETCH_FIRST = 14;
+  int FETCH_FIRST = 13;
 
   /**
    * The feature id for the '<em><b>Fetch First</b></em>' containment reference.
@@ -630,7 +602,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOffset()
    * @generated
    */
-  int OFFSET = 15;
+  int OFFSET = 14;
 
   /**
    * The feature id for the '<em><b>Offset</b></em>' attribute.
@@ -658,7 +630,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLimit()
    * @generated
    */
-  int LIMIT = 16;
+  int LIMIT = 15;
 
   /**
    * The feature id for the '<em><b>L1</b></em>' attribute.
@@ -695,7 +667,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectQuery()
    * @generated
    */
-  int SELECT_QUERY = 17;
+  int SELECT_QUERY = 16;
 
   /**
    * The number of structural features of the '<em>Select Query</em>' class.
@@ -714,7 +686,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectSubSet()
    * @generated
    */
-  int SELECT_SUB_SET = 18;
+  int SELECT_SUB_SET = 17;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -760,7 +732,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelect()
    * @generated
    */
-  int SELECT = 19;
+  int SELECT = 18;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' containment reference list.
@@ -878,7 +850,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotForClause()
    * @generated
    */
-  int PIVOT_FOR_CLAUSE = 46;
+  int PIVOT_FOR_CLAUSE = 45;
 
   /**
    * The number of structural features of the '<em>Pivot For Clause</em>' class.
@@ -897,7 +869,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrColumn()
    * @generated
    */
-  int OR_COLUMN = 20;
+  int OR_COLUMN = 19;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -925,7 +897,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnOrAlias()
    * @generated
    */
-  int COLUMN_OR_ALIAS = 21;
+  int COLUMN_OR_ALIAS = 20;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -998,7 +970,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnFull()
    * @generated
    */
-  int COLUMN_FULL = 22;
+  int COLUMN_FULL = 21;
 
   /**
    * The number of structural features of the '<em>Column Full</em>' class.
@@ -1017,7 +989,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrTable()
    * @generated
    */
-  int OR_TABLE = 23;
+  int OR_TABLE = 22;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1045,7 +1017,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromTable()
    * @generated
    */
-  int FROM_TABLE = 24;
+  int FROM_TABLE = 23;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1091,7 +1063,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromTableJoin()
    * @generated
    */
-  int FROM_TABLE_JOIN = 25;
+  int FROM_TABLE_JOIN = 24;
 
   /**
    * The feature id for the '<em><b>Join</b></em>' attribute.
@@ -1146,7 +1118,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getJoinCondition()
    * @generated
    */
-  int JOIN_CONDITION = 26;
+  int JOIN_CONDITION = 25;
 
   /**
    * The feature id for the '<em><b>Use Cols</b></em>' containment reference.
@@ -1174,7 +1146,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUsingCols()
    * @generated
    */
-  int USING_COLS = 27;
+  int USING_COLS = 26;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1202,7 +1174,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableOrAlias()
    * @generated
    */
-  int TABLE_OR_ALIAS = 28;
+  int TABLE_OR_ALIAS = 27;
 
   /**
    * The feature id for the '<em><b>Tfull</b></em>' containment reference.
@@ -1284,7 +1256,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValues()
    * @generated
    */
-  int FROM_VALUES = 29;
+  int FROM_VALUES = 28;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference.
@@ -1321,7 +1293,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValuesColumns()
    * @generated
    */
-  int FROM_VALUES_COLUMNS = 30;
+  int FROM_VALUES_COLUMNS = 29;
 
   /**
    * The feature id for the '<em><b>Fv Cols</b></em>' containment reference.
@@ -1349,7 +1321,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFromValuesColumnNames()
    * @generated
    */
-  int FROM_VALUES_COLUMN_NAMES = 31;
+  int FROM_VALUES_COLUMN_NAMES = 30;
 
   /**
    * The number of structural features of the '<em>From Values Column Names</em>' class.
@@ -1368,7 +1340,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnNames()
    * @generated
    */
-  int COLUMN_NAMES = 32;
+  int COLUMN_NAMES = 31;
 
   /**
    * The feature id for the '<em><b>Col Name</b></em>' attribute.
@@ -1396,7 +1368,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getValues()
    * @generated
    */
-  int VALUES = 33;
+  int VALUES = 32;
 
   /**
    * The feature id for the '<em><b>Rows</b></em>' containment reference.
@@ -1424,7 +1396,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRows()
    * @generated
    */
-  int ROWS = 34;
+  int ROWS = 33;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1452,7 +1424,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRow()
    * @generated
    */
-  int ROW = 35;
+  int ROW = 34;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1489,7 +1461,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRowValues()
    * @generated
    */
-  int ROW_VALUES = 36;
+  int ROW_VALUES = 35;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1517,7 +1489,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRowValue()
    * @generated
    */
-  int ROW_VALUE = 37;
+  int ROW_VALUE = 36;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1554,7 +1526,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotTable()
    * @generated
    */
-  int PIVOT_TABLE = 38;
+  int PIVOT_TABLE = 37;
 
   /**
    * The feature id for the '<em><b>Pfun</b></em>' containment reference.
@@ -1600,7 +1572,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotFunctions()
    * @generated
    */
-  int PIVOT_FUNCTIONS = 39;
+  int PIVOT_FUNCTIONS = 38;
 
   /**
    * The feature id for the '<em><b>Abc</b></em>' attribute.
@@ -1628,7 +1600,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotFunction()
    * @generated
    */
-  int PIVOT_FUNCTION = 40;
+  int PIVOT_FUNCTION = 39;
 
   /**
    * The number of structural features of the '<em>Pivot Function</em>' class.
@@ -1647,7 +1619,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotInClause()
    * @generated
    */
-  int PIVOT_IN_CLAUSE = 41;
+  int PIVOT_IN_CLAUSE = 40;
 
   /**
    * The feature id for the '<em><b>Sq</b></em>' containment reference.
@@ -1693,7 +1665,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotTable()
    * @generated
    */
-  int UNPIVOT_TABLE = 42;
+  int UNPIVOT_TABLE = 41;
 
   /**
    * The feature id for the '<em><b>Pcols</b></em>' containment reference.
@@ -1739,7 +1711,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClause()
    * @generated
    */
-  int UNPIVOT_IN_CLAUSE = 43;
+  int UNPIVOT_IN_CLAUSE = 42;
 
   /**
    * The number of structural features of the '<em>Unpivot In Clause</em>' class.
@@ -1758,7 +1730,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClauseArgs()
    * @generated
    */
-  int UNPIVOT_IN_CLAUSE_ARGS = 44;
+  int UNPIVOT_IN_CLAUSE_ARGS = 43;
 
   /**
    * The number of structural features of the '<em>Unpivot In Clause Args</em>' class.
@@ -1777,7 +1749,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnpivotInClauseArg()
    * @generated
    */
-  int UNPIVOT_IN_CLAUSE_ARG = 45;
+  int UNPIVOT_IN_CLAUSE_ARG = 44;
 
   /**
    * The feature id for the '<em><b>Pcols</b></em>' containment reference.
@@ -1814,7 +1786,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotColumns()
    * @generated
    */
-  int PIVOT_COLUMNS = 47;
+  int PIVOT_COLUMNS = 46;
 
   /**
    * The number of structural features of the '<em>Pivot Columns</em>' class.
@@ -1833,7 +1805,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivots()
    * @generated
    */
-  int PIVOTS = 48;
+  int PIVOTS = 47;
 
   /**
    * The number of structural features of the '<em>Pivots</em>' class.
@@ -1852,7 +1824,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPivotCol()
    * @generated
    */
-  int PIVOT_COL = 49;
+  int PIVOT_COL = 48;
 
   /**
    * The number of structural features of the '<em>Pivot Col</em>' class.
@@ -1871,7 +1843,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableFull()
    * @generated
    */
-  int TABLE_FULL = 50;
+  int TABLE_FULL = 49;
 
   /**
    * The number of structural features of the '<em>Table Full</em>' class.
@@ -1890,7 +1862,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDbObjectNameAll()
    * @generated
    */
-  int DB_OBJECT_NAME_ALL = 51;
+  int DB_OBJECT_NAME_ALL = 50;
 
   /**
    * The feature id for the '<em><b>Dbname</b></em>' attribute.
@@ -1918,7 +1890,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDbObjectName()
    * @generated
    */
-  int DB_OBJECT_NAME = 52;
+  int DB_OBJECT_NAME = 51;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1955,7 +1927,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrOrderByColumn()
    * @generated
    */
-  int OR_ORDER_BY_COLUMN = 53;
+  int OR_ORDER_BY_COLUMN = 52;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -1983,7 +1955,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByColumnFull()
    * @generated
    */
-  int ORDER_BY_COLUMN_FULL = 54;
+  int ORDER_BY_COLUMN_FULL = 53;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2038,7 +2010,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrGroupByColumn()
    * @generated
    */
-  int OR_GROUP_BY_COLUMN = 55;
+  int OR_GROUP_BY_COLUMN = 54;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2066,7 +2038,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getGroupByColumnFull()
    * @generated
    */
-  int GROUP_BY_COLUMN_FULL = 56;
+  int GROUP_BY_COLUMN_FULL = 55;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2121,7 +2093,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrExpr()
    * @generated
    */
-  int OR_EXPR = 57;
+  int OR_EXPR = 56;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2149,7 +2121,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFullExpression()
    * @generated
    */
-  int FULL_EXPRESSION = 58;
+  int FULL_EXPRESSION = 57;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2294,7 +2266,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExprGroup()
    * @generated
    */
-  int EXPR_GROUP = 59;
+  int EXPR_GROUP = 58;
 
   /**
    * The feature id for the '<em><b>Isnot</b></em>' attribute.
@@ -2331,7 +2303,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getXExpr()
    * @generated
    */
-  int XEXPR = 60;
+  int XEXPR = 59;
 
   /**
    * The feature id for the '<em><b>Xf</b></em>' attribute.
@@ -2377,7 +2349,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPrms()
    * @generated
    */
-  int PRMS = 61;
+  int PRMS = 60;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2405,7 +2377,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getJRParameter()
    * @generated
    */
-  int JR_PARAMETER = 62;
+  int JR_PARAMETER = 61;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -2442,7 +2414,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 63;
+  int COMPARISON = 62;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -2488,7 +2460,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLike()
    * @generated
    */
-  int LIKE = 64;
+  int LIKE = 63;
 
   /**
    * The feature id for the '<em><b>Op Like</b></em>' attribute.
@@ -2525,7 +2497,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getLikeOperand()
    * @generated
    */
-  int LIKE_OPERAND = 65;
+  int LIKE_OPERAND = 64;
 
   /**
    * The feature id for the '<em><b>Op2</b></em>' attribute.
@@ -2580,7 +2552,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getBetween()
    * @generated
    */
-  int BETWEEN = 66;
+  int BETWEEN = 65;
 
   /**
    * The feature id for the '<em><b>Op Between</b></em>' attribute.
@@ -2626,7 +2598,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getInOper()
    * @generated
    */
-  int IN_OPER = 67;
+  int IN_OPER = 66;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2672,7 +2644,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExistsOper()
    * @generated
    */
-  int EXISTS_OPER = 68;
+  int EXISTS_OPER = 67;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2718,7 +2690,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperandListGroup()
    * @generated
    */
-  int OPERAND_LIST_GROUP = 69;
+  int OPERAND_LIST_GROUP = 68;
 
   /**
    * The feature id for the '<em><b>Op Group</b></em>' containment reference.
@@ -2746,7 +2718,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperandList()
    * @generated
    */
-  int OPERAND_LIST = 70;
+  int OPERAND_LIST = 69;
 
   /**
    * The number of structural features of the '<em>Operand List</em>' class.
@@ -2765,7 +2737,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArgAgregate()
    * @generated
    */
-  int OP_FUNCTION_ARG_AGREGATE = 90;
+  int OP_FUNCTION_ARG_AGREGATE = 89;
 
   /**
    * The number of structural features of the '<em>Op Function Arg Agregate</em>' class.
@@ -2784,7 +2756,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperands()
    * @generated
    */
-  int OPERANDS = 71;
+  int OPERANDS = 70;
 
   /**
    * The feature id for the '<em><b>Op1</b></em>' containment reference.
@@ -2830,7 +2802,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOperand()
    * @generated
    */
-  int OPERAND = 72;
+  int OPERAND = 71;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' containment reference.
@@ -2939,7 +2911,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunction()
    * @generated
    */
-  int OP_FUNCTION = 73;
+  int OP_FUNCTION = 72;
 
   /**
    * The feature id for the '<em><b>Fname</b></em>' attribute.
@@ -2994,7 +2966,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFunctionExtract()
    * @generated
    */
-  int FUNCTION_EXTRACT = 74;
+  int FUNCTION_EXTRACT = 73;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -3031,7 +3003,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getFunctionAnalytical()
    * @generated
    */
-  int FUNCTION_ANALYTICAL = 75;
+  int FUNCTION_ANALYTICAL = 74;
 
   /**
    * The feature id for the '<em><b>An Clause</b></em>' containment reference.
@@ -3059,7 +3031,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticClause()
    * @generated
    */
-  int ANALYTIC_CLAUSE = 76;
+  int ANALYTIC_CLAUSE = 75;
 
   /**
    * The feature id for the '<em><b>Abc</b></em>' containment reference.
@@ -3105,7 +3077,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClause()
    * @generated
    */
-  int WINDOWING_CLAUSE = 77;
+  int WINDOWING_CLAUSE = 76;
 
   /**
    * The number of structural features of the '<em>Windowing Clause</em>' class.
@@ -3124,7 +3096,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseBetween()
    * @generated
    */
-  int WINDOWING_CLAUSE_BETWEEN = 78;
+  int WINDOWING_CLAUSE_BETWEEN = 77;
 
   /**
    * The feature id for the '<em><b>Wco P</b></em>' containment reference.
@@ -3161,7 +3133,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseOperandFollowing()
    * @generated
    */
-  int WINDOWING_CLAUSE_OPERAND_FOLLOWING = 79;
+  int WINDOWING_CLAUSE_OPERAND_FOLLOWING = 78;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -3189,7 +3161,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWindowingClauseOperandPreceding()
    * @generated
    */
-  int WINDOWING_CLAUSE_OPERAND_PRECEDING = 80;
+  int WINDOWING_CLAUSE_OPERAND_PRECEDING = 79;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -3217,7 +3189,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClause()
    * @generated
    */
-  int ORDER_BY_CLAUSE = 81;
+  int ORDER_BY_CLAUSE = 80;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference.
@@ -3245,7 +3217,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClauseArgs()
    * @generated
    */
-  int ORDER_BY_CLAUSE_ARGS = 82;
+  int ORDER_BY_CLAUSE_ARGS = 81;
 
   /**
    * The number of structural features of the '<em>Order By Clause Args</em>' class.
@@ -3264,7 +3236,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOrderByClauseArg()
    * @generated
    */
-  int ORDER_BY_CLAUSE_ARG = 83;
+  int ORDER_BY_CLAUSE_ARG = 82;
 
   /**
    * The feature id for the '<em><b>Col</b></em>' containment reference.
@@ -3292,7 +3264,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getQueryPartitionClause()
    * @generated
    */
-  int QUERY_PARTITION_CLAUSE = 84;
+  int QUERY_PARTITION_CLAUSE = 83;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference.
@@ -3320,7 +3292,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticExprArgs()
    * @generated
    */
-  int ANALYTIC_EXPR_ARGS = 85;
+  int ANALYTIC_EXPR_ARGS = 84;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference.
@@ -3348,7 +3320,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAnalyticExprArg()
    * @generated
    */
-  int ANALYTIC_EXPR_ARG = 86;
+  int ANALYTIC_EXPR_ARG = 85;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference.
@@ -3394,7 +3366,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArg()
    * @generated
    */
-  int OP_FUNCTION_ARG = 87;
+  int OP_FUNCTION_ARG = 86;
 
   /**
    * The number of structural features of the '<em>Op Function Arg</em>' class.
@@ -3413,7 +3385,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionArgOperand()
    * @generated
    */
-  int OP_FUNCTION_ARG_OPERAND = 88;
+  int OP_FUNCTION_ARG_OPERAND = 87;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
@@ -3441,7 +3413,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFunctionCast()
    * @generated
    */
-  int OP_FUNCTION_CAST = 89;
+  int OP_FUNCTION_CAST = 88;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
@@ -3496,7 +3468,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPOperand()
    * @generated
    */
-  int POPERAND = 91;
+  int POPERAND = 90;
 
   /**
    * The feature id for the '<em><b>Prm</b></em>' attribute.
@@ -3524,7 +3496,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getExpOperand()
    * @generated
    */
-  int EXP_OPERAND = 92;
+  int EXP_OPERAND = 91;
 
   /**
    * The feature id for the '<em><b>Prm</b></em>' attribute.
@@ -3552,7 +3524,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnOperand()
    * @generated
    */
-  int COLUMN_OPERAND = 93;
+  int COLUMN_OPERAND = 92;
 
   /**
    * The feature id for the '<em><b>Cfull</b></em>' containment reference.
@@ -3589,7 +3561,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSubQueryOperand()
    * @generated
    */
-  int SUB_QUERY_OPERAND = 94;
+  int SUB_QUERY_OPERAND = 93;
 
   /**
    * The feature id for the '<em><b>Sel</b></em>' containment reference.
@@ -3617,7 +3589,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getScalarOperand()
    * @generated
    */
-  int SCALAR_OPERAND = 95;
+  int SCALAR_OPERAND = 94;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -3717,7 +3689,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSQLCaseOperand()
    * @generated
    */
-  int SQL_CASE_OPERAND = 96;
+  int SQL_CASE_OPERAND = 95;
 
   /**
    * The feature id for the '<em><b>Wop</b></em>' containment reference.
@@ -3763,7 +3735,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSQLCaseWhens()
    * @generated
    */
-  int SQL_CASE_WHENS = 97;
+  int SQL_CASE_WHENS = 96;
 
   /**
    * The number of structural features of the '<em>Case Whens</em>' class.
@@ -3782,7 +3754,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSqlCaseWhen()
    * @generated
    */
-  int SQL_CASE_WHEN = 98;
+  int SQL_CASE_WHEN = 97;
 
   /**
    * The feature id for the '<em><b>Wop</b></em>' containment reference.
@@ -3837,7 +3809,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIntegerValue()
    * @generated
    */
-  int INTEGER_VALUE = 99;
+  int INTEGER_VALUE = 98;
 
   /**
    * The feature id for the '<em><b>Integer</b></em>' attribute.
@@ -3846,7 +3818,7 @@ public interface SQLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTEGER_VALUE__INTEGER = STORAGE_SIZE_FEATURE_COUNT + 0;
+  int INTEGER_VALUE__INTEGER = 0;
 
   /**
    * The number of structural features of the '<em>Integer Value</em>' class.
@@ -3855,7 +3827,7 @@ public interface SQLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTEGER_VALUE_FEATURE_COUNT = STORAGE_SIZE_FEATURE_COUNT + 1;
+  int INTEGER_VALUE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.impl.UnsignedValueImpl <em>Unsigned Value</em>}' class.
@@ -3865,7 +3837,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnsignedValue()
    * @generated
    */
-  int UNSIGNED_VALUE = 100;
+  int UNSIGNED_VALUE = 99;
 
   /**
    * The feature id for the '<em><b>Integer</b></em>' attribute.
@@ -3893,7 +3865,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCol()
    * @generated
    */
-  int COL = 101;
+  int COL = 100;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -3921,7 +3893,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getabc()
    * @generated
    */
-  int ABC = 102;
+  int ABC = 101;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -3949,7 +3921,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getUnipivotInClause()
    * @generated
    */
-  int UNIPIVOT_IN_CLAUSE = 103;
+  int UNIPIVOT_IN_CLAUSE = 102;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -3986,7 +3958,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getuicargs()
    * @generated
    */
-  int UICARGS = 104;
+  int UICARGS = 103;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4014,7 +3986,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getpvcs()
    * @generated
    */
-  int PVCS = 105;
+  int PVCS = 104;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4042,7 +4014,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getpcols()
    * @generated
    */
-  int PCOLS = 106;
+  int PCOLS = 105;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4070,7 +4042,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#gettbls()
    * @generated
    */
-  int TBLS = 107;
+  int TBLS = 106;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4098,7 +4070,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpList()
    * @generated
    */
-  int OP_LIST = 108;
+  int OP_LIST = 107;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4126,7 +4098,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 109;
+  int PLUS = 108;
 
   /**
    * The feature id for the '<em><b>Op1</b></em>' containment reference.
@@ -4172,7 +4144,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 110;
+  int MINUS = 109;
 
   /**
    * The feature id for the '<em><b>Op1</b></em>' containment reference.
@@ -4218,7 +4190,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getConcat()
    * @generated
    */
-  int CONCAT = 111;
+  int CONCAT = 110;
 
   /**
    * The feature id for the '<em><b>Op1</b></em>' containment reference.
@@ -4264,7 +4236,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getMultiply()
    * @generated
    */
-  int MULTIPLY = 112;
+  int MULTIPLY = 111;
 
   /**
    * The feature id for the '<em><b>Op1</b></em>' containment reference.
@@ -4310,7 +4282,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 113;
+  int DIVISION = 112;
 
   /**
    * The feature id for the '<em><b>Op1</b></em>' containment reference.
@@ -4356,7 +4328,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOBCArgs()
    * @generated
    */
-  int OBC_ARGS = 114;
+  int OBC_ARGS = 113;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4384,7 +4356,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getAExpArgs()
    * @generated
    */
-  int AEXP_ARGS = 115;
+  int AEXP_ARGS = 114;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference.
@@ -4421,7 +4393,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getOpFList()
    * @generated
    */
-  int OP_FLIST = 116;
+  int OP_FLIST = 115;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4449,7 +4421,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getWhenList()
    * @generated
    */
-  int WHEN_LIST = 117;
+  int WHEN_LIST = 116;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -4477,7 +4449,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getXFunction()
    * @generated
    */
-  int XFUNCTION = 118;
+  int XFUNCTION = 117;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl_sql.sQL.EXTRACT_VALUES <em>EXTRACT VALUES</em>}' enum.
@@ -4487,7 +4459,7 @@ public interface SQLPackage extends EPackage
    * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getEXTRACT_VALUES()
    * @generated
    */
-  int EXTRACT_VALUES = 119;
+  int EXTRACT_VALUES = 118;
 
 
   /**
@@ -4501,48 +4473,90 @@ public interface SQLPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getWq <em>Wq</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getSimpleStatement <em>Simple Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Wq</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Model#getWq()
+   * @return the meta object for the containment reference '<em>Simple Statement</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.Model#getSimpleStatement()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Wq();
+  EReference getModel_SimpleStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getQuery <em>Query</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SimpleStatement <em>Simple Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Query</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Model#getQuery()
-   * @see #getModel()
+   * @return the meta object for class '<em>Simple Statement</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SimpleStatement
    * @generated
    */
-  EReference getModel_Query();
+  EClass getSimpleStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getInsert <em>Insert</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SimpleStatement#getSelect <em>Select</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Select</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SimpleStatement#getSelect()
+   * @see #getSimpleStatement()
+   * @generated
+   */
+  EReference getSimpleStatement_Select();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SimpleStatement#getInsert <em>Insert</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Insert</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Model#getInsert()
-   * @see #getModel()
+   * @see org.xtext.example.mydsl_sql.sQL.SimpleStatement#getInsert()
+   * @see #getSimpleStatement()
    * @generated
    */
-  EReference getModel_Insert();
+  EReference getSimpleStatement_Insert();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.Model#getCreate <em>Create</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SimpleStatement#getCreate <em>Create</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Create</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.Model#getCreate()
-   * @see #getModel()
+   * @see org.xtext.example.mydsl_sql.sQL.SimpleStatement#getCreate()
+   * @see #getSimpleStatement()
    * @generated
    */
-  EReference getModel_Create();
+  EReference getSimpleStatement_Create();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.SelectStatement <em>Select Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select Statement</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectStatement
+   * @generated
+   */
+  EClass getSelectStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SelectStatement#getWq <em>Wq</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wq</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectStatement#getWq()
+   * @see #getSelectStatement()
+   * @generated
+   */
+  EReference getSelectStatement_Wq();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.SelectStatement#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Query</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.SelectStatement#getQuery()
+   * @see #getSelectStatement()
+   * @generated
+   */
+  EReference getSelectStatement_Query();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.InsertStatement <em>Insert Statement</em>}'.
@@ -4588,79 +4602,110 @@ public interface SQLPackage extends EPackage
   EReference getInsertStatement_Vals();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.CreateTableStatement <em>Create Table Statement</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.CreateStatement <em>Create Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Create Table Statement</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.CreateTableStatement
+   * @return the meta object for class '<em>Create Statement</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.CreateStatement
    * @generated
    */
-  EClass getCreateTableStatement();
+  EClass getCreateStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.CreateTableStatement#getTbl <em>Tbl</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.CreateStatement#getCreate_tbl <em>Create tbl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Tbl</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.CreateTableStatement#getTbl()
-   * @see #getCreateTableStatement()
+   * @return the meta object for the containment reference '<em>Create tbl</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.CreateStatement#getCreate_tbl()
+   * @see #getCreateStatement()
    * @generated
    */
-  EReference getCreateTableStatement_Tbl();
+  EReference getCreateStatement_Create_tbl();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.CreateTableStatement#getTable_definition <em>Table definition</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.CreateTable <em>Create Table</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Table definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.CreateTableStatement#getTable_definition()
-   * @see #getCreateTableStatement()
+   * @return the meta object for class '<em>Create Table</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.CreateTable
    * @generated
    */
-  EReference getCreateTableStatement_Table_definition();
+  EClass getCreateTable();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.CreateTableStatement#getTtl_definition <em>Ttl definition</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.CreateTable#getTableName <em>Table Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ttl definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.CreateTableStatement#getTtl_definition()
-   * @see #getCreateTableStatement()
+   * @return the meta object for the containment reference '<em>Table Name</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.CreateTable#getTableName()
+   * @see #getCreateTable()
    * @generated
    */
-  EReference getCreateTableStatement_Ttl_definition();
+  EReference getCreateTable_TableName();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TableDefinition <em>Table Definition</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.CreateTable#getTableElementList <em>Table Element List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Table Definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.TableDefinition
+   * @return the meta object for the containment reference '<em>Table Element List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.CreateTable#getTableElementList()
+   * @see #getCreateTable()
    * @generated
    */
-  EClass getTableDefinition();
+  EReference getCreateTable_TableElementList();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.TableDefinition#getColumn_definition <em>Column definition</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TableElementList <em>Table Element List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Column definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.TableDefinition#getColumn_definition()
-   * @see #getTableDefinition()
+   * @return the meta object for class '<em>Table Element List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElementList
    * @generated
    */
-  EReference getTableDefinition_Column_definition();
+  EClass getTableElementList();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.TableDefinition#getKey_definition <em>Key definition</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.TableElementList#getTableElement <em>Table Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Key definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.TableDefinition#getKey_definition()
-   * @see #getTableDefinition()
+   * @return the meta object for the containment reference list '<em>Table Element</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElementList#getTableElement()
+   * @see #getTableElementList()
    * @generated
    */
-  EReference getTableDefinition_Key_definition();
+  EReference getTableElementList_TableElement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TableElement <em>Table Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table Element</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElement
+   * @generated
+   */
+  EClass getTableElement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableElement#getColumnDefinition <em>Column Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Column Definition</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElement#getColumnDefinition()
+   * @see #getTableElement()
+   * @generated
+   */
+  EReference getTableElement_ColumnDefinition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableElement#getTableConstraintDef <em>Table Constraint Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Table Constraint Def</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableElement#getTableConstraintDef()
+   * @see #getTableElement()
+   * @generated
+   */
+  EReference getTableElement_TableConstraintDef();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ColumnDefinition <em>Column Definition</em>}'.
@@ -4673,184 +4718,90 @@ public interface SQLPackage extends EPackage
   EClass getColumnDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getId <em>Id</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getColumnName <em>Column Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getId()
+   * @return the meta object for the containment reference '<em>Column Name</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getColumnName()
    * @see #getColumnDefinition()
    * @generated
    */
-  EAttribute getColumnDefinition_Id();
+  EReference getColumnDefinition_ColumnName();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getType_definition <em>Type definition</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getFieldDefinition <em>Field Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getType_definition()
+   * @return the meta object for the attribute '<em>Field Definition</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnDefinition#getFieldDefinition()
    * @see #getColumnDefinition()
    * @generated
    */
-  EAttribute getColumnDefinition_Type_definition();
+  EAttribute getColumnDefinition_FieldDefinition();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.KeyDefinition <em>Key Definition</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TableConstraintDef <em>Table Constraint Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Key Definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.KeyDefinition
+   * @return the meta object for class '<em>Table Constraint Def</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableConstraintDef
    * @generated
    */
-  EClass getKeyDefinition();
+  EClass getTableConstraintDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.KeyDefinition#getShard_key_definition <em>Shard key definition</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableConstraintDef#getColumnNameList <em>Column Name List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Shard key definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.KeyDefinition#getShard_key_definition()
-   * @see #getKeyDefinition()
+   * @return the meta object for the containment reference '<em>Column Name List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableConstraintDef#getColumnNameList()
+   * @see #getTableConstraintDef()
    * @generated
    */
-  EReference getKeyDefinition_Shard_key_definition();
+  EReference getTableConstraintDef_ColumnNameList();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.KeyDefinition#getId_list_with_size <em>Id list with size</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.TableConstraintDef#getTableName <em>Table Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Id list with size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.KeyDefinition#getId_list_with_size()
-   * @see #getKeyDefinition()
+   * @return the meta object for the attribute '<em>Table Name</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableConstraintDef#getTableName()
+   * @see #getTableConstraintDef()
    * @generated
    */
-  EReference getKeyDefinition_Id_list_with_size();
+  EAttribute getTableConstraintDef_TableName();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.KeyDefinition#getTtl_definition <em>Ttl definition</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.TableConstraintDef#getRefColumnNameList <em>Ref Column Name List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ttl definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.KeyDefinition#getTtl_definition()
-   * @see #getKeyDefinition()
+   * @return the meta object for the containment reference '<em>Ref Column Name List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.TableConstraintDef#getRefColumnNameList()
+   * @see #getTableConstraintDef()
    * @generated
    */
-  EReference getKeyDefinition_Ttl_definition();
+  EReference getTableConstraintDef_RefColumnNameList();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.IDListWithSize <em>ID List With Size</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ColumnNameList <em>Column Name List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>ID List With Size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.IDListWithSize
+   * @return the meta object for class '<em>Column Name List</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnNameList
    * @generated
    */
-  EClass getIDListWithSize();
+  EClass getColumnNameList();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.IDListWithSize#getId_with_size <em>Id with size</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl_sql.sQL.ColumnNameList#getColumnName <em>Column Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Id with size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.IDListWithSize#getId_with_size()
-   * @see #getIDListWithSize()
+   * @return the meta object for the containment reference list '<em>Column Name</em>'.
+   * @see org.xtext.example.mydsl_sql.sQL.ColumnNameList#getColumnName()
+   * @see #getColumnNameList()
    * @generated
    */
-  EReference getIDListWithSize_Id_with_size();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.IDWithSize <em>ID With Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>ID With Size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.IDWithSize
-   * @generated
-   */
-  EClass getIDWithSize();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl_sql.sQL.IDWithSize#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.IDWithSize#getId()
-   * @see #getIDWithSize()
-   * @generated
-   */
-  EAttribute getIDWithSize_Id();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.IDWithSize#getStorage_size <em>Storage size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Storage size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.IDWithSize#getStorage_size()
-   * @see #getIDWithSize()
-   * @generated
-   */
-  EReference getIDWithSize_Storage_size();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.StorageSize <em>Storage Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Storage Size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.StorageSize
-   * @generated
-   */
-  EClass getStorageSize();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition <em>Shard Key Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Shard Key Definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition
-   * @generated
-   */
-  EClass getShardKeyDefinition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition#getId_list_with_size <em>Id list with size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Id list with size</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.ShardKeyDefinition#getId_list_with_size()
-   * @see #getShardKeyDefinition()
-   * @generated
-   */
-  EReference getShardKeyDefinition_Id_list_with_size();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.TtlDefinition <em>Ttl Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Ttl Definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.TtlDefinition
-   * @generated
-   */
-  EClass getTtlDefinition();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.RegionDefinition <em>Region Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Region Definition</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.RegionDefinition
-   * @generated
-   */
-  EClass getRegionDefinition();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl_sql.sQL.RegionDefinition#getRegion_name <em>Region name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Region name</em>'.
-   * @see org.xtext.example.mydsl_sql.sQL.RegionDefinition#getRegion_name()
-   * @see #getRegionDefinition()
-   * @generated
-   */
-  EAttribute getRegionDefinition_Region_name();
+  EReference getColumnNameList_ColumnName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl_sql.sQL.WithQuery <em>With Query</em>}'.
@@ -8056,20 +8007,30 @@ public interface SQLPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Wq</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Simple Statement</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__WQ = eINSTANCE.getModel_Wq();
+    EReference MODEL__SIMPLE_STATEMENT = eINSTANCE.getModel_SimpleStatement();
 
     /**
-     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SimpleStatementImpl <em>Simple Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SimpleStatementImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSimpleStatement()
+     * @generated
+     */
+    EClass SIMPLE_STATEMENT = eINSTANCE.getSimpleStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Select</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__QUERY = eINSTANCE.getModel_Query();
+    EReference SIMPLE_STATEMENT__SELECT = eINSTANCE.getSimpleStatement_Select();
 
     /**
      * The meta object literal for the '<em><b>Insert</b></em>' containment reference feature.
@@ -8077,7 +8038,7 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__INSERT = eINSTANCE.getModel_Insert();
+    EReference SIMPLE_STATEMENT__INSERT = eINSTANCE.getSimpleStatement_Insert();
 
     /**
      * The meta object literal for the '<em><b>Create</b></em>' containment reference feature.
@@ -8085,7 +8046,33 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__CREATE = eINSTANCE.getModel_Create();
+    EReference SIMPLE_STATEMENT__CREATE = eINSTANCE.getSimpleStatement_Create();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.SelectStatementImpl <em>Select Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SelectStatementImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getSelectStatement()
+     * @generated
+     */
+    EClass SELECT_STATEMENT = eINSTANCE.getSelectStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Wq</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_STATEMENT__WQ = eINSTANCE.getSelectStatement_Wq();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_STATEMENT__QUERY = eINSTANCE.getSelectStatement_Query();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.InsertStatementImpl <em>Insert Statement</em>}' class.
@@ -8122,64 +8109,92 @@ public interface SQLPackage extends EPackage
     EReference INSERT_STATEMENT__VALS = eINSTANCE.getInsertStatement_Vals();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.CreateTableStatementImpl <em>Create Table Statement</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.CreateStatementImpl <em>Create Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.CreateTableStatementImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCreateTableStatement()
+     * @see org.xtext.example.mydsl_sql.sQL.impl.CreateStatementImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCreateStatement()
      * @generated
      */
-    EClass CREATE_TABLE_STATEMENT = eINSTANCE.getCreateTableStatement();
+    EClass CREATE_STATEMENT = eINSTANCE.getCreateStatement();
 
     /**
-     * The meta object literal for the '<em><b>Tbl</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Create tbl</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CREATE_TABLE_STATEMENT__TBL = eINSTANCE.getCreateTableStatement_Tbl();
+    EReference CREATE_STATEMENT__CREATE_TBL = eINSTANCE.getCreateStatement_Create_tbl();
 
     /**
-     * The meta object literal for the '<em><b>Table definition</b></em>' containment reference feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.CreateTableImpl <em>Create Table</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.CreateTableImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getCreateTable()
      * @generated
      */
-    EReference CREATE_TABLE_STATEMENT__TABLE_DEFINITION = eINSTANCE.getCreateTableStatement_Table_definition();
+    EClass CREATE_TABLE = eINSTANCE.getCreateTable();
 
     /**
-     * The meta object literal for the '<em><b>Ttl definition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Table Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CREATE_TABLE_STATEMENT__TTL_DEFINITION = eINSTANCE.getCreateTableStatement_Ttl_definition();
+    EReference CREATE_TABLE__TABLE_NAME = eINSTANCE.getCreateTable_TableName();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableDefinitionImpl <em>Table Definition</em>}' class.
+     * The meta object literal for the '<em><b>Table Element List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.TableDefinitionImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableDefinition()
      * @generated
      */
-    EClass TABLE_DEFINITION = eINSTANCE.getTableDefinition();
+    EReference CREATE_TABLE__TABLE_ELEMENT_LIST = eINSTANCE.getCreateTable_TableElementList();
 
     /**
-     * The meta object literal for the '<em><b>Column definition</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableElementListImpl <em>Table Element List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.TableElementListImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableElementList()
      * @generated
      */
-    EReference TABLE_DEFINITION__COLUMN_DEFINITION = eINSTANCE.getTableDefinition_Column_definition();
+    EClass TABLE_ELEMENT_LIST = eINSTANCE.getTableElementList();
 
     /**
-     * The meta object literal for the '<em><b>Key definition</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Table Element</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TABLE_DEFINITION__KEY_DEFINITION = eINSTANCE.getTableDefinition_Key_definition();
+    EReference TABLE_ELEMENT_LIST__TABLE_ELEMENT = eINSTANCE.getTableElementList_TableElement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableElementImpl <em>Table Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl_sql.sQL.impl.TableElementImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableElement()
+     * @generated
+     */
+    EClass TABLE_ELEMENT = eINSTANCE.getTableElement();
+
+    /**
+     * The meta object literal for the '<em><b>Column Definition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_ELEMENT__COLUMN_DEFINITION = eINSTANCE.getTableElement_ColumnDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Table Constraint Def</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_ELEMENT__TABLE_CONSTRAINT_DEF = eINSTANCE.getTableElement_TableConstraintDef();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnDefinitionImpl <em>Column Definition</em>}' class.
@@ -8192,154 +8207,72 @@ public interface SQLPackage extends EPackage
     EClass COLUMN_DEFINITION = eINSTANCE.getColumnDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Column Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COLUMN_DEFINITION__ID = eINSTANCE.getColumnDefinition_Id();
+    EReference COLUMN_DEFINITION__COLUMN_NAME = eINSTANCE.getColumnDefinition_ColumnName();
 
     /**
-     * The meta object literal for the '<em><b>Type definition</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Field Definition</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COLUMN_DEFINITION__TYPE_DEFINITION = eINSTANCE.getColumnDefinition_Type_definition();
+    EAttribute COLUMN_DEFINITION__FIELD_DEFINITION = eINSTANCE.getColumnDefinition_FieldDefinition();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.KeyDefinitionImpl <em>Key Definition</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TableConstraintDefImpl <em>Table Constraint Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.KeyDefinitionImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getKeyDefinition()
+     * @see org.xtext.example.mydsl_sql.sQL.impl.TableConstraintDefImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTableConstraintDef()
      * @generated
      */
-    EClass KEY_DEFINITION = eINSTANCE.getKeyDefinition();
+    EClass TABLE_CONSTRAINT_DEF = eINSTANCE.getTableConstraintDef();
 
     /**
-     * The meta object literal for the '<em><b>Shard key definition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Column Name List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY_DEFINITION__SHARD_KEY_DEFINITION = eINSTANCE.getKeyDefinition_Shard_key_definition();
+    EReference TABLE_CONSTRAINT_DEF__COLUMN_NAME_LIST = eINSTANCE.getTableConstraintDef_ColumnNameList();
 
     /**
-     * The meta object literal for the '<em><b>Id list with size</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Table Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY_DEFINITION__ID_LIST_WITH_SIZE = eINSTANCE.getKeyDefinition_Id_list_with_size();
+    EAttribute TABLE_CONSTRAINT_DEF__TABLE_NAME = eINSTANCE.getTableConstraintDef_TableName();
 
     /**
-     * The meta object literal for the '<em><b>Ttl definition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Ref Column Name List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY_DEFINITION__TTL_DEFINITION = eINSTANCE.getKeyDefinition_Ttl_definition();
+    EReference TABLE_CONSTRAINT_DEF__REF_COLUMN_NAME_LIST = eINSTANCE.getTableConstraintDef_RefColumnNameList();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.IDListWithSizeImpl <em>ID List With Size</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ColumnNameListImpl <em>Column Name List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.IDListWithSizeImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIDListWithSize()
+     * @see org.xtext.example.mydsl_sql.sQL.impl.ColumnNameListImpl
+     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getColumnNameList()
      * @generated
      */
-    EClass ID_LIST_WITH_SIZE = eINSTANCE.getIDListWithSize();
+    EClass COLUMN_NAME_LIST = eINSTANCE.getColumnNameList();
 
     /**
-     * The meta object literal for the '<em><b>Id with size</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Column Name</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ID_LIST_WITH_SIZE__ID_WITH_SIZE = eINSTANCE.getIDListWithSize_Id_with_size();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.IDWithSizeImpl <em>ID With Size</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.IDWithSizeImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getIDWithSize()
-     * @generated
-     */
-    EClass ID_WITH_SIZE = eINSTANCE.getIDWithSize();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ID_WITH_SIZE__ID = eINSTANCE.getIDWithSize_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Storage size</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ID_WITH_SIZE__STORAGE_SIZE = eINSTANCE.getIDWithSize_Storage_size();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.StorageSizeImpl <em>Storage Size</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.StorageSizeImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getStorageSize()
-     * @generated
-     */
-    EClass STORAGE_SIZE = eINSTANCE.getStorageSize();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.ShardKeyDefinitionImpl <em>Shard Key Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.ShardKeyDefinitionImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getShardKeyDefinition()
-     * @generated
-     */
-    EClass SHARD_KEY_DEFINITION = eINSTANCE.getShardKeyDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Id list with size</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHARD_KEY_DEFINITION__ID_LIST_WITH_SIZE = eINSTANCE.getShardKeyDefinition_Id_list_with_size();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.TtlDefinitionImpl <em>Ttl Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.TtlDefinitionImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getTtlDefinition()
-     * @generated
-     */
-    EClass TTL_DEFINITION = eINSTANCE.getTtlDefinition();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.RegionDefinitionImpl <em>Region Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl_sql.sQL.impl.RegionDefinitionImpl
-     * @see org.xtext.example.mydsl_sql.sQL.impl.SQLPackageImpl#getRegionDefinition()
-     * @generated
-     */
-    EClass REGION_DEFINITION = eINSTANCE.getRegionDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Region name</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REGION_DEFINITION__REGION_NAME = eINSTANCE.getRegionDefinition_Region_name();
+    EReference COLUMN_NAME_LIST__COLUMN_NAME = eINSTANCE.getColumnNameList_ColumnName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl_sql.sQL.impl.WithQueryImpl <em>With Query</em>}' class.

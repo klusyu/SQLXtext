@@ -33,6 +33,24 @@ public interface SQLFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Simple Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Statement</em>'.
+   * @generated
+   */
+  SimpleStatement createSimpleStatement();
+
+  /**
+   * Returns a new object of class '<em>Select Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Select Statement</em>'.
+   * @generated
+   */
+  SelectStatement createSelectStatement();
+
+  /**
    * Returns a new object of class '<em>Insert Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -42,22 +60,40 @@ public interface SQLFactory extends EFactory
   InsertStatement createInsertStatement();
 
   /**
-   * Returns a new object of class '<em>Create Table Statement</em>'.
+   * Returns a new object of class '<em>Create Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Create Table Statement</em>'.
+   * @return a new object of class '<em>Create Statement</em>'.
    * @generated
    */
-  CreateTableStatement createCreateTableStatement();
+  CreateStatement createCreateStatement();
 
   /**
-   * Returns a new object of class '<em>Table Definition</em>'.
+   * Returns a new object of class '<em>Create Table</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Table Definition</em>'.
+   * @return a new object of class '<em>Create Table</em>'.
    * @generated
    */
-  TableDefinition createTableDefinition();
+  CreateTable createCreateTable();
+
+  /**
+   * Returns a new object of class '<em>Table Element List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Table Element List</em>'.
+   * @generated
+   */
+  TableElementList createTableElementList();
+
+  /**
+   * Returns a new object of class '<em>Table Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Table Element</em>'.
+   * @generated
+   */
+  TableElement createTableElement();
 
   /**
    * Returns a new object of class '<em>Column Definition</em>'.
@@ -69,67 +105,22 @@ public interface SQLFactory extends EFactory
   ColumnDefinition createColumnDefinition();
 
   /**
-   * Returns a new object of class '<em>Key Definition</em>'.
+   * Returns a new object of class '<em>Table Constraint Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Key Definition</em>'.
+   * @return a new object of class '<em>Table Constraint Def</em>'.
    * @generated
    */
-  KeyDefinition createKeyDefinition();
+  TableConstraintDef createTableConstraintDef();
 
   /**
-   * Returns a new object of class '<em>ID List With Size</em>'.
+   * Returns a new object of class '<em>Column Name List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>ID List With Size</em>'.
+   * @return a new object of class '<em>Column Name List</em>'.
    * @generated
    */
-  IDListWithSize createIDListWithSize();
-
-  /**
-   * Returns a new object of class '<em>ID With Size</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>ID With Size</em>'.
-   * @generated
-   */
-  IDWithSize createIDWithSize();
-
-  /**
-   * Returns a new object of class '<em>Storage Size</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Storage Size</em>'.
-   * @generated
-   */
-  StorageSize createStorageSize();
-
-  /**
-   * Returns a new object of class '<em>Shard Key Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Shard Key Definition</em>'.
-   * @generated
-   */
-  ShardKeyDefinition createShardKeyDefinition();
-
-  /**
-   * Returns a new object of class '<em>Ttl Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Ttl Definition</em>'.
-   * @generated
-   */
-  TtlDefinition createTtlDefinition();
-
-  /**
-   * Returns a new object of class '<em>Region Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Region Definition</em>'.
-   * @generated
-   */
-  RegionDefinition createRegionDefinition();
+  ColumnNameList createColumnNameList();
 
   /**
    * Returns a new object of class '<em>With Query</em>'.

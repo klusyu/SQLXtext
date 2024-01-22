@@ -12,12 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.mydsl_sql.sQL.CreateTableStatement;
-import org.xtext.example.mydsl_sql.sQL.InsertStatement;
 import org.xtext.example.mydsl_sql.sQL.Model;
 import org.xtext.example.mydsl_sql.sQL.SQLPackage;
-import org.xtext.example.mydsl_sql.sQL.SelectQuery;
-import org.xtext.example.mydsl_sql.sQL.WithQuery;
+import org.xtext.example.mydsl_sql.sQL.SimpleStatement;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,10 +24,7 @@ import org.xtext.example.mydsl_sql.sQL.WithQuery;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getWq <em>Wq</em>}</li>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getQuery <em>Query</em>}</li>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getInsert <em>Insert</em>}</li>
- *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getCreate <em>Create</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl_sql.sQL.impl.ModelImpl#getSimpleStatement <em>Simple Statement</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,44 +32,14 @@ import org.xtext.example.mydsl_sql.sQL.WithQuery;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getWq() <em>Wq</em>}' containment reference.
+   * The cached value of the '{@link #getSimpleStatement() <em>Simple Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWq()
+   * @see #getSimpleStatement()
    * @generated
    * @ordered
    */
-  protected WithQuery wq;
-
-  /**
-   * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuery()
-   * @generated
-   * @ordered
-   */
-  protected SelectQuery query;
-
-  /**
-   * The cached value of the '{@link #getInsert() <em>Insert</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInsert()
-   * @generated
-   * @ordered
-   */
-  protected InsertStatement insert;
-
-  /**
-   * The cached value of the '{@link #getCreate() <em>Create</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCreate()
-   * @generated
-   * @ordered
-   */
-  protected CreateTableStatement create;
+  protected SimpleStatement simpleStatement;
 
   /**
    * <!-- begin-user-doc -->
@@ -104,9 +68,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public WithQuery getWq()
+  public SimpleStatement getSimpleStatement()
   {
-    return wq;
+    return simpleStatement;
   }
 
   /**
@@ -114,13 +78,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetWq(WithQuery newWq, NotificationChain msgs)
+  public NotificationChain basicSetSimpleStatement(SimpleStatement newSimpleStatement, NotificationChain msgs)
   {
-    WithQuery oldWq = wq;
-    wq = newWq;
+    SimpleStatement oldSimpleStatement = simpleStatement;
+    simpleStatement = newSimpleStatement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__WQ, oldWq, newWq);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__SIMPLE_STATEMENT, oldSimpleStatement, newSimpleStatement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -132,170 +96,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public void setWq(WithQuery newWq)
+  public void setSimpleStatement(SimpleStatement newSimpleStatement)
   {
-    if (newWq != wq)
+    if (newSimpleStatement != simpleStatement)
     {
       NotificationChain msgs = null;
-      if (wq != null)
-        msgs = ((InternalEObject)wq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__WQ, null, msgs);
-      if (newWq != null)
-        msgs = ((InternalEObject)newWq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__WQ, null, msgs);
-      msgs = basicSetWq(newWq, msgs);
+      if (simpleStatement != null)
+        msgs = ((InternalEObject)simpleStatement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__SIMPLE_STATEMENT, null, msgs);
+      if (newSimpleStatement != null)
+        msgs = ((InternalEObject)newSimpleStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__SIMPLE_STATEMENT, null, msgs);
+      msgs = basicSetSimpleStatement(newSimpleStatement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__WQ, newWq, newWq));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SelectQuery getQuery()
-  {
-    return query;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetQuery(SelectQuery newQuery, NotificationChain msgs)
-  {
-    SelectQuery oldQuery = query;
-    query = newQuery;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__QUERY, oldQuery, newQuery);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setQuery(SelectQuery newQuery)
-  {
-    if (newQuery != query)
-    {
-      NotificationChain msgs = null;
-      if (query != null)
-        msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__QUERY, null, msgs);
-      if (newQuery != null)
-        msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__QUERY, null, msgs);
-      msgs = basicSetQuery(newQuery, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__QUERY, newQuery, newQuery));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public InsertStatement getInsert()
-  {
-    return insert;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetInsert(InsertStatement newInsert, NotificationChain msgs)
-  {
-    InsertStatement oldInsert = insert;
-    insert = newInsert;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__INSERT, oldInsert, newInsert);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setInsert(InsertStatement newInsert)
-  {
-    if (newInsert != insert)
-    {
-      NotificationChain msgs = null;
-      if (insert != null)
-        msgs = ((InternalEObject)insert).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__INSERT, null, msgs);
-      if (newInsert != null)
-        msgs = ((InternalEObject)newInsert).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__INSERT, null, msgs);
-      msgs = basicSetInsert(newInsert, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__INSERT, newInsert, newInsert));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public CreateTableStatement getCreate()
-  {
-    return create;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCreate(CreateTableStatement newCreate, NotificationChain msgs)
-  {
-    CreateTableStatement oldCreate = create;
-    create = newCreate;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__CREATE, oldCreate, newCreate);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCreate(CreateTableStatement newCreate)
-  {
-    if (newCreate != create)
-    {
-      NotificationChain msgs = null;
-      if (create != null)
-        msgs = ((InternalEObject)create).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__CREATE, null, msgs);
-      if (newCreate != null)
-        msgs = ((InternalEObject)newCreate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.MODEL__CREATE, null, msgs);
-      msgs = basicSetCreate(newCreate, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__CREATE, newCreate, newCreate));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.MODEL__SIMPLE_STATEMENT, newSimpleStatement, newSimpleStatement));
   }
 
   /**
@@ -308,14 +122,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__WQ:
-        return basicSetWq(null, msgs);
-      case SQLPackage.MODEL__QUERY:
-        return basicSetQuery(null, msgs);
-      case SQLPackage.MODEL__INSERT:
-        return basicSetInsert(null, msgs);
-      case SQLPackage.MODEL__CREATE:
-        return basicSetCreate(null, msgs);
+      case SQLPackage.MODEL__SIMPLE_STATEMENT:
+        return basicSetSimpleStatement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -330,14 +138,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__WQ:
-        return getWq();
-      case SQLPackage.MODEL__QUERY:
-        return getQuery();
-      case SQLPackage.MODEL__INSERT:
-        return getInsert();
-      case SQLPackage.MODEL__CREATE:
-        return getCreate();
+      case SQLPackage.MODEL__SIMPLE_STATEMENT:
+        return getSimpleStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -352,17 +154,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__WQ:
-        setWq((WithQuery)newValue);
-        return;
-      case SQLPackage.MODEL__QUERY:
-        setQuery((SelectQuery)newValue);
-        return;
-      case SQLPackage.MODEL__INSERT:
-        setInsert((InsertStatement)newValue);
-        return;
-      case SQLPackage.MODEL__CREATE:
-        setCreate((CreateTableStatement)newValue);
+      case SQLPackage.MODEL__SIMPLE_STATEMENT:
+        setSimpleStatement((SimpleStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -378,17 +171,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__WQ:
-        setWq((WithQuery)null);
-        return;
-      case SQLPackage.MODEL__QUERY:
-        setQuery((SelectQuery)null);
-        return;
-      case SQLPackage.MODEL__INSERT:
-        setInsert((InsertStatement)null);
-        return;
-      case SQLPackage.MODEL__CREATE:
-        setCreate((CreateTableStatement)null);
+      case SQLPackage.MODEL__SIMPLE_STATEMENT:
+        setSimpleStatement((SimpleStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -404,14 +188,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SQLPackage.MODEL__WQ:
-        return wq != null;
-      case SQLPackage.MODEL__QUERY:
-        return query != null;
-      case SQLPackage.MODEL__INSERT:
-        return insert != null;
-      case SQLPackage.MODEL__CREATE:
-        return create != null;
+      case SQLPackage.MODEL__SIMPLE_STATEMENT:
+        return simpleStatement != null;
     }
     return super.eIsSet(featureID);
   }

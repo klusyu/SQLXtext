@@ -5,7 +5,16 @@ generate sQL "http://www.xtext.org/example/mydsl_sql/SQL"
 
 
 Model:
-	JRNPARAM? wq=WithQuery? (query=SelectQuery | insert=InsertStatement | create=CreateStatement);
+	simpleStatement=SimpleStatement
+;
+
+SimpleStatement:
+	select=SelectStatement | insert=InsertStatement | create=CreateStatement
+;
+
+SelectStatement:
+	JRNPARAM? wq=WithQuery? query=SelectQuery
+;
 
 InsertStatement:
 	'INSERT' 'INTO' tbl=Tables cols=Columns vals=Values
@@ -16,16 +25,236 @@ CreateStatement:
 ;
 
 CreateTable:
-	('TEMPORARY')? 'TABLE' ine=IfNotExists? tableName=TableOrAlias (
-        ('(' tableElementList ')')? createTableOptions? partitionClause? duplicateAsQueryExpression?
-        | 'LIKE' tableRef
-        | '(' 'LIKE' tableRef ')'
-    )
+    'TABLE' tableName=TableOrAlias '(' tableElementList=TableElementList ')'
+;
+//
+//TableRef:
+//    qualifiedIdentifier=QualifiedIdentifier
+//    | dotIdentifier=DotIdentifier
+//;
+//
+//DuplicateAsQueryExpression: ('REPLACE' | 'IGNORE')? 'AS'? queryExpressionOrParens=QueryExpressionOrParens
+//;
+//
+//QueryExpressionOrParens:
+//    queryExpression=SelectQuery
+//    | queryExpressionParens=QueryExpressionParens
+//;
+//
+//QueryExpressionParens:
+//    '(' (
+//        queryExpressionParens=QueryExpressionParens
+//        | queryExpression=SelectQuery
+//    ) ')'
+//;
+//
+//CreateTableOptions:
+//    createTableOption (','? createTableOption)*
+//;
+//
+//IfNotExists:
+//    'IF' 'NOT' 'EXISTS'
+//;
+
+TableElementList:
+    tableElement+=TableElement (',' tableElement+=TableElement)*
 ;
 
-IfNotExists:
-    'IF' 'NOT' 'EXISTS'
+TableElement:
+    columnDefinition=ColumnDefinition
+    | tableConstraintDef=TableConstraintDef
 ;
+
+ColumnDefinition:
+    columnName=ColumnName fieldDefinition=FieldDefinition
+;
+
+TableConstraintDef:
+    'PRIMARY' 'KEY' '(' columnNameList=ColumnNameList ')'   // 举例，仅包含主键约束
+    | 'FOREIGN' 'KEY' '(' columnNameList=ColumnNameList ')' 'REFERENCES' tableName=TableName '(' refColumnNameList=ColumnNameList ')'  // 举例，包含外键约束
+;
+
+ColumnNameList:
+    columnName+=ColumnName (',' columnName+=ColumnName)*
+;
+
+FieldDefinition:
+    DataType ColumnAttribute*
+;
+
+DataType:
+    SimpleType FieldLength? FieldOptions?
+;
+
+SimpleType:
+    'INT'
+    | 'TINYINT'
+    | 'SMALLINT'
+    | 'MEDIUMINT'
+    | 'BIGINT'
+    | 'REAL'
+    | 'DOUBLE'
+    | 'FLOAT'
+    | 'DECIMAL'
+    | 'NUMERIC'
+    | 'BIT'
+    | 'BOOL'
+    | 'CHAR'
+    | 'VARCHAR'
+    | 'BINARY'
+    | 'VARBINARY'
+    | 'DATE'
+    | 'TIME'
+    | 'TIMESTAMP'
+    | 'DATETIME'
+    | 'BLOB'
+    | 'TEXT'
+;
+
+FieldLength:
+    '(' INT ')'
+;
+
+FieldOptions:
+	('SIGNED' | 'UNSIGNED' | 'ZEROFILL')+
+;
+
+
+ColumnAttribute:
+    NullAttribute
+    | DefaultValue
+    | AutoIncrement
+    | PrimaryKey
+    | UniqueKey
+    | Comment
+;
+
+NullAttribute:
+    'NOT'? 'NULL'
+;
+
+DefaultValue:
+    'DEFAULT' ( SignedLiteral | 'NOW()' )
+;
+
+AutoIncrement:
+    'AUTO_INCREMENT'
+;
+
+PrimaryKey:
+    'PRIMARY' 'KEY'
+;
+
+UniqueKey:
+    'UNIQUE'
+;
+
+Comment:
+    'COMMENT' TextLiteral
+;
+
+TableName:
+    ID
+;
+
+//
+//ColumnDefinition:
+//    columnName=ColumnName fieldDefinition checkOrReferences?
+//;
+//
+//TableConstraintDef:
+//    type = ('KEY' | 'INDEX') indexNameAndType? keyListVariants indexOption*
+//    | type = 'FULLTEXT' keyOrIndex? indexName? keyListVariants fulltextIndexOption*
+//    | type = 'SPATIAL' keyOrIndex? indexName? keyListVariants spatialIndexOption*
+//    | constraintName? (
+//        (type = 'PRIMARY' 'KEY' | type = 'UNIQUE' keyOrIndex?) indexNameAndType? keyListVariants indexOption*
+//        | type = 'FOREIGN' 'KEY' indexName? keyList references
+//    )
+//;
+//
+//FieldIdentifier:
+//    dotIdentifier
+//    | qualifiedIdentifier dotIdentifier?
+//;
+//
+//PartitionClause:
+//    'PARTITION' 'BY' partitionTypeDef ('PARTITIONS' real_ulong_number)? subPartitions? partitionDefinitions?
+//;
+//
+//PartitionTypeDef:
+//    LINEAR_SYMBOL? KEY_SYMBOL partitionKeyAlgorithm? '(' identifierList? ')' # partitionDefKey
+//    | LINEAR_SYMBOL? HASH_SYMBOL '(' bitExpr ')'                             # partitionDefHash
+//    | (RANGE_SYMBOL | LIST_SYMBOL) (
+//        '(' bitExpr ')'
+//        | 'COLUMNS' '(' identifierList? ')'
+//    ) # partitionDefRangeList
+//;
+//
+//SubPartitions:
+//    'SUBPARTITION' 'BY' 'LINEAR'? (
+//        'HASH' '(' bitExpr ')'
+//        | 'KEY' partitionKeyAlgorithm? identifierListWithParentheses
+//    ) ('SUBPARTITIONS' real_ulong_number)?
+//;
+//
+//PartitionKeyAlgorithm: // Actually only 1 and 2 are allowed. Needs a semantic check.
+//    'ALGORITHM' '=' real_ulong_number
+//;
+//
+//PartitionDefinitions:
+//    '(' partitionDefinition (',' partitionDefinition)* ')'
+//;
+//
+//PartitionDefinition:
+//    'PARTITION' identifier (
+//        'VALUES' 'LESS' 'THAN' (
+//            partitionValueItemListParen
+//            | 'MAXVALUE'
+//        )
+//        | 'VALUES' 'IN' partitionValuesIn
+//    )? partitionOption* (
+//        '(' subpartitionDefinition (',' subpartitionDefinition)* ')'
+//    )?
+//;
+//
+//PartitionValuesIn:
+//    partitionValueItemListParen
+//    | '(' partitionValueItemListParen (
+//        ',' partitionValueItemListParen
+//    )* ')'
+//;
+//
+//PartitionOption:
+//    option = 'TABLESPACE' '='? identifier
+//    | 'STORAGE'? option = 'ENGINE' '='? engineRef
+//    | option = 'NODEGROUP' '='? real_ulong_number
+//    | option = ('MAX_ROWS' | 'MIN_ROWS') '='? real_ulong_number
+//    | option = ('DATA' | 'INDEX') 'DIRECTORY' '='? textLiteral
+//    | option = 'COMMENT' '='? textLiteral
+//;
+//
+//SubpartitionDefinition:
+//    'SUBPARTITION' textOrIdentifier partitionOption*
+//;
+//
+//PartitionValueItemListParen:
+//    '(' partitionValueItem (',' partitionValueItem)* ')'
+//;
+//
+//PartitionValueItem:
+//    bitExpr
+//    | 'MAXVALUE'
+//;
+//
+//QualifiedIdentifier:
+//    identifier=ID dotIdentifier=DotIdentifier?
+//;
+//
+//DotIdentifier:
+//    '.' identifier=ID
+//;
+
+/////////////////////////////////////////////////////
 
 WithQuery:
 	w='WITH' wname=DbObjectName withCols=(WithColumns)? 'AS' '(' query=SelectQuery ')' (',' additionalWname+=DbObjectName additionalWithCols+=(WithColumns)? 'AS' '(' additionalQueries+=SelectQuery ')')*;
@@ -362,6 +591,38 @@ JoinType:
 DBID:
 	ID | DBNAME | STRING;
 
+SignedLiteral:
+    Literal
+    | '+' NumLiteral
+    | '-' NumLiteral
+;
+
+Literal:
+    TextLiteral
+    | NumLiteral
+    | TemporalLiteral
+    | 'NULL'
+    | BoolLiteral
+;
+
+TextLiteral:
+	STRING_
+;
+
+NumLiteral:
+    INT
+;
+
+TemporalLiteral:
+    'DATE' STRING_
+    | 'TIME' STRING_
+    | 'TIMESTAMP' STRING_
+;
+
+BoolLiteral:
+    'TRUE' | 'FALSE'
+;
+
 StringOperand:
 	STRING_;
 
@@ -407,6 +668,7 @@ terminal TIME:
 terminal STRING_:
 	"'" ("''" | STRING_CORE | !('\\' | "'"))* "'";
 
+@Override 
 terminal STRING:
 	'"' (STRING_CORE | !('\\' | '"'))* '"';
 
@@ -416,20 +678,25 @@ terminal DBNAME:
 terminal fragment STRING_CORE:
 	'\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\');
 
+@Override 
 terminal ID:
 	('a'..'z' | 'A'..'Z' | 'À'..'ÿ' | 'Ā'..'ſ' |
 	'ƀ'..'ɏ' | 'А'..'я' | '_' | '$' | 'ぁ'..'ゟ' | '゠'..'ヿ' | 'ㇰ'..'ㇿ' | '一'..'鿿' | '歴'..'す' | 'ア'..'ン' | '豈'..'﫿' |
 	'㐀'..'䶿' | '＿') ('a'..'z' | 'A'..'Z' | 'À'..'ÿ' | 'Ā'..'ſ' | 'ƀ'..'ɏ' | 'А'..'я' | '_' | '-' |
 	'$' | 'ぁ'..'ゟ' | '゠'..'ヿ' | 'ㇰ'..'ㇿ' | '一'..'鿿' | '歴'..'す' | 'ア'..'ン' | '豈'..'﫿' | '㐀'..'䶿' | '＿' | '0'..'9')*;
 
+@Override 
 terminal ML_COMMENT:
 	'/*'->'*/';
 
+@Override 
 terminal SL_COMMENT:
 	('--' | '#' | '//') !('\n' | '\r')* ('\r'? '\n')?;
 
+@Override 
 terminal WS:
 	(' ' | '\t' | '\r' | '\n')+;
 
+@Override 
 terminal ANY_OTHER:
 	.;
